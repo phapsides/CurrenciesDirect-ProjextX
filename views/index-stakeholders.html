@@ -1,0 +1,45 @@
+<%-
+	include(
+		'./partials/head.html', {
+			title: 'CD Incubator - Stakeholders',
+			bodyClassList: [
+				'template',
+				'template-core',
+				'tmpl-whitelabel'
+			]
+		}
+	)
+%>
+
+	<nav class="main-nav">
+		<div class="row">
+			<div class="small-2 columns brand-logo-container">
+					<a class="brand-logo" href="/">
+						<!-- Currencies Direct -->
+					</a>
+				</h1>
+			</div>
+		</div>
+	</nav>
+
+
+	<%- 
+		include('./index-content-listing.html', {
+			pageHeading: 'Stakeholders'
+		})
+	%>
+
+
+    <%-
+        include('./partials/scripts.html', {
+        	developers: false, 
+        	stakeholders: true
+        })
+    %>
+
+
+    </div>
+
+
+	</body>
+</html>

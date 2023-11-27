@@ -1,0 +1,113 @@
+<%-
+include(
+	'../partials/head.html', {
+		title: 'Privacy Policy',
+		bodyClassList: [
+			'template', 
+			'template-core', 
+			'template-layout-grid'
+		]
+	}
+);
+%>
+
+	
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+
+<div class="row main-container main-container--legal-pages">
+	<div class="columns">
+		<%- /* include('../components/navigation-sub.html') */ %>
+		<header class="main-header">
+			<h1 class="title">
+				Our privacy policy
+			</h1>
+		</header>
+	</div>
+		<div class="columns">
+<div class="element-group pad--24">
+				<h6>
+					Collection of information
+				</h6>
+				<p>
+					You can visit our Web site without revealing any information about yourself. We collect only the domain names and not the e-mail addresses of the visitors. We use this information to measure the use of our site and to improve the content of our site.
+				</p> 
+				<p>
+					We would collect information such as your name, e-mail address, name of your company, and your contact details from you primarily during the following uses of the Web Site:
+				</p>
+				<ul>
+					<li>when registering for certain services;</li>
+					<li>when providing us feedback on our feedback form;</li>
+					<li>when you opt to receive e-mail or other communications from us.</li>
+				</ul>
+				<h6>
+					Use of information
+				</h6>
+				<p>
+					This information will be kept confidential. We will use the information primarily for the following purposes:
+				</p>
+				<ul>
+					<li>allow you to access specific account information;</li>
+					<li>providing customisation.We may use the information provided by you to customise your visit to the Web site by displaying appropriate content at your judgement and discretion;</li>
+					<li>send you information about us;</li>
+					<li>to contact you when required.</li>
+				</ul>
+				<p>
+					Occasionally, we may make the e-mail addresses, of those who provide information, available to other reputable organisations whose products or services we think you may find interesting. If you do not want us to share information about you with these organisations, you may inform us by email at <a href="mailto:info@torfx.com.au">info@torfx.com.au</a>.
+				</p>
+				<h6>
+					Disclosure of information
+				</h6>
+				<p>
+				   We will not disclose your information to any person, other than those business organisations mentioned above unless acting under a good faith belief that such action is necessary to:
+				</p>
+				<ul>
+					<li>conform to legal requirements or comply with legal process;</li>
+					<li>protect and defend our rights or property;</li>
+					<li>enforce the Teams of Use; or</li>
+					<li>act to protect the interests of our members or others.</li>
+				</ul>
+				<p>
+					Link to other sites Our Web site may contain links to other sites. While we try to link only to sites that share our high standards and respect for privacy, we are not responsible for the content or the privacy practices employed by other sites. Please be aware that advertisers or Web sites that have links on our site may collect personally identifiable information about you. This privacy statement does not cover the information practices of those Web sites or advertisers.
+				</p>
+				<h6>
+					Change of policy
+				</h6>
+				<p>
+					If we decide to change our privacy policy we will post those changes here so that you will always know what information we gather, how we might use that information and whether we will disclose it to anyone.  
+				</p>
+				<h6>
+					Contact us
+				</h6>
+				<p>
+					If you have any questions you may contact us at <a href="mailto:info@torfx.com.au">info@torfx.com.au</a> or at TorFX Pty Ltd, Suite 202, 25 Elkhorn Avenue, Surfers Paradise, Queensland 4217, Australia or call us at <a href="tel:+61755604444">+61 7 5560 4444</a> or fax us at +61 7 5560 4444.
+				</p>
+			</div>
+		</div>
+</div>
+			
+
+
+<%-
+    include('../partials/footer.html');
+%>

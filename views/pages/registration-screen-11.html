@@ -1,0 +1,65 @@
+<%-
+	/**
+	* Note: move extend for client styles to it's own stylesheet
+	*/
+	include(
+		'../partials/head.html', {
+			title: 'Register - 11',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-layout-centered', 
+				'template-registration',
+				'site-registration-11'
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-simple.html', {
+			title: 'Register',
+			loggedIn: false,
+			registrationProcess: true,
+			closeOpt: true
+
+		// 	Logo and x
+		// 	'../components/navigation-main-simple.html', {
+		// 	loggedIn: false,
+		// 	registrationProcess: false,
+		// 	closeOpt: true
+		}
+	);
+%>
+
+
+
+<div class="row main-container">
+	<div class="columns" data-page-state="">
+		<section class="large-5 medium-7 small-centered columns section content" data-form-section="account">
+			<div class="row icon-email-sent">
+				<span class="img img-email-2"></span>
+			</div>
+			<header class="main-header columns center">
+				<h1 class="title">
+					Thanks for uploading <br>your documents!
+				</h1>
+				<p class="description">
+					We will let you know as soon as we have <br class="show-for-large">approved your account.
+				</p>
+
+				<p class="description">
+					For now, <a href="https://www.torfx.com.au">visit our website</a> to find out more about our services and what’s happening in the currency market right now.
+				</p>
+			</header>
+		</section>
+	</div>
+</div>
+
+
+
+<%-
+	include('../partials/footer.html')
+%>

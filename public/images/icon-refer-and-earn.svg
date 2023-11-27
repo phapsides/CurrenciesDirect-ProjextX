@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <g fill="none" fill-rule="evenodd">
+        <path stroke="#9B9B9B" stroke-linecap="round" stroke-width="2" d="M16 26c5.523 0 10-4.477 10-10S21.523 6 16 6 6 10.477 6 16a9.968 9.968 0 0 0 2.855 6.997 10.023 10.023 0 0 0 3.001 2.107"/>
+        <text fill="#9B9B9B" font-family="GothamRounded-Bold, Gotham Rounded" font-size="14" font-weight="bold" letter-spacing="-.622" transform="translate(6 6)">
+            <tspan x="5" y="15">£</tspan>
+        </text>
+    </g>
+</svg>

@@ -1,0 +1,254 @@
+
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Transactions - Make Transfer Step Confirmation',
+				bodyClassList: [
+					'template',
+					'template-core', 
+					'template-navigation-progress',
+					'site-transfers',
+					'site-transfers-confirmation'
+				]
+			}
+		);
+	%>
+
+
+
+		
+	<%- 
+		include(
+			'../components/navigation-main.html', {
+				navigationOptions: [
+					{ 
+						title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+						subMenu: [
+							{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+							{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+							{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+							{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+						] 
+					},
+					{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+					{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+					{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+					{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+				]
+			}
+		) 
+	%>
+
+
+
+
+
+
+		<nav class="status-notification status-notification-success">
+			<div class="row">
+				<p class="small-12 columns">
+					<span>
+						Thanks, your purchase is complete. Your contract number is 8463129
+					</span>
+				</p>
+			</div>
+		</nav>
+
+
+
+
+		<div class="row main-container">
+			<div class="small-12 columns">
+
+				<div class="row">
+					<h3 class="small-8 columns end">
+						Let your recipient know the currency is on its way!
+					</h3>
+					<p class="small-12 medium-8 columns end description">
+						You can send a personalised message to your payee, so that they know the currency is on its way. Don’t worry about this section if you’re sending money to your own overseas bank account.
+					</p>
+				</div>
+
+
+				<div class="row">
+
+					<div class="small-12 large-8 columns">
+						<div class="row">
+
+							<form class="small-12 element-group" data-abide>
+
+
+
+							<fieldset>
+								<%-
+									include(
+										'../components/textarea.html',
+										{
+											assoc: 'currency',
+											labelText: 'Currency',
+											value: "Hi Andy Rubin, just letting you know I've sent €500 to your account ending XXX today, with Bloomberg Money Transfer. John.",
+											classList: [
+												'small-12',
+												'medium-8',
+												'columns',
+												'small-label'
+											]
+										}
+									);
+								%>
+							</fieldset>
+
+							<fieldset>
+								<%-
+									include(
+										'../components/input-type-email.html',
+										{
+											assoc: 'email-address',
+											labelText: 'Payee\'s email',
+											value: 'andy@apple.com',
+											classList: [
+												'small-12',
+												'medium-8',
+												'columns',
+												'small-label'
+											],
+											readOnly: true
+										}
+									);
+								%>
+							</fieldset>
+							<fieldset claas="row">
+								<%-
+									include(
+										'../components/button.html',
+										{
+											type: 'button',
+											text: 'Send email',
+											classList: [
+												'small-12',
+												'medium-6',
+												'button-outline'
+											],
+											dataAttr: {
+												'data-hyperlink': '#'
+											}
+										}
+									)
+								%>
+
+							</fieldset>
+
+
+
+							<footer class="row">
+								<p class="small-12 columns element-group-footer">
+									You can find the status of your transfer in your <a href="/whitelabel/activity-history/">Activity history</a>.
+								</p>
+							</footer>
+
+
+
+							</form>
+
+
+
+							<div class="small-12">
+								<div class="row">
+									<div class="medium-2 columns">
+										<a class="button-simple" href="/whitelabel/dashboard/" data-role="back">
+											<span>Back</span>
+										</a>
+									</div>
+
+									<%-
+										include(
+											'../components/button.html',
+											{
+												type: 'button',
+												text: 'Pay now',
+												classList: [
+													'small-12',
+													'medium-4',
+													'medium-offset-6',
+													'end',
+													'temp-btn-continue',
+													'temp-button-style-green'
+												],
+												dataAttr: {
+													'data-hyperlink': '/whitelabel/transactions/make-transfer/3/',
+													//'disabled': 'disabled'
+												},
+											}
+										)
+									%>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+
+					<div class="small-12 large-4 columns">
+						<div class="row">
+
+							<aside class="small-12 columns transfers-summary">
+								<div class="row">
+									<div class="small-12 element-group columns">
+										<div class="row">
+											<h5 class="columns small-12 transfers-summary-title">
+												Your Summary
+											</h5>
+											<h6 class="small-12 columns transfers-summary-sub-title">
+												Selected Payee
+											</h6>
+											<div class="small-12 columns transfers-summary-selected-payee">
+												<div class="row">
+													<div class="small-2 columns transfers-summary-initials">
+														<span>DQ</span>
+													</div>
+													<div class="small-10 columns">
+														<span>
+															Don Quixote
+														</span>
+														<span>
+															ES1182271MIFLGB221
+														</span>
+													</div>
+												</div>
+											</div>
+											<h6 class="small-12 columns transfers-summary-sub-title">
+												Transfer Amount
+											</h6>
+											<div class="small-12 columns transfers-summary-datalist">
+												<div class="row">
+													<dl class="small-10 columns">
+														<dt>Send to payee</dt><dd>EUR 11456</dd>
+														<dt>Rate</dt><dd>1.1456</dd>
+														<dt>Fee</dt><dd>GBP 0</dd>
+														<dt>Total you pay</dt><dd>GBP 1000</dd>
+													</dl>
+												</div>
+											</div>
+											<h6 class="small-12 columns transfers-summary-sub-title">
+												<br>Your rate will refresh in <span data-rate-resfresh>5 seconds</span>
+											</h6>
+										</div>
+									</div>
+								</div>
+							</aside>
+
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+        <%-
+                include('../partials/footer.html');
+        %>

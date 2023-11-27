@@ -1,0 +1,62 @@
+<%-
+include(
+	'../partials/head.html', {
+		title: 'Regulatory information',
+		bodyClassList: [
+			'template', 
+			'template-core', 
+			'template-layout-grid',
+			'site-page-dashboard'
+		]
+	}
+);
+%>
+
+	<%- 
+		include(
+			'../components/navigation-main.html', {
+				navigationOptions: [
+					{ 
+						title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+						subMenu: [
+							{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+							{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+							{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+							{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+						] 
+					},
+					{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+					{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+					{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+					{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+				]
+			}
+		) 
+	%>
+
+
+	<div class="row main-container main-container--legal-pages">
+
+		<div class="columns">
+
+			<%- /* include('../components/navigation-sub.html') */ %>
+			<header class="main-header">
+				<h1 class="title">
+					Regulatory information
+				</h1>
+			</header>
+		</div>
+
+		<div class="columns">
+			<div class="element-group pad--24">
+				<p>&copy; TorFX Pty Ltd, Suite 202, 25 Elkhorn Avenue, Surfers Paradise, Queensland 4217, Australia.</p>
+				<p>AFS Licence number 246838. TorFX Pty Limited under the Anti-Money Laundering and Counter Terrorism Financing Act 2006 is regulated by the Australian Transaction Reports and Analysis Centre 'AUSTRAC'. TorFX Pty Ltd ABN 27 103 142 829.</p>
+			</div>
+		</div>
+
+	</div>
+		
+
+<%-
+    include('../partials/footer.html');
+%>

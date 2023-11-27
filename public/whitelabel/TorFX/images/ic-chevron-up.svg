@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="8px"
+   height="5px"
+   viewBox="0 0 8 5"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="ic-chevron-up.svg">
+  <metadata
+     id="metadata23">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview21"
+     showgrid="false"
+     inkscape:zoom="38.75"
+     inkscape:cx="4"
+     inkscape:cy="2.5"
+     inkscape:window-x="182"
+     inkscape:window-y="52"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title4">962ED69C-216F-44D3-8883-997716FB5AB8</title>
+  <desc
+     id="desc6">Created with sketchtool.</desc>
+  <defs
+     id="defs8" />
+  <g
+     id="---Template"
+     transform="matrix(1,0,0,-1,4.8387097e-8,5.0193548)"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1">
+    <g
+       id="dashboard-reskin-ollie"
+       transform="translate(-467,-351)">
+      <g
+         id="Group"
+         transform="translate(381,334)">
+        <g
+           id="ico-smallchevron-24"
+           transform="translate(78,6)">
+          <g
+             id="ic-chevron-down-orange"
+             transform="matrix(-1,0,0,1,24,0)">
+            <polygon
+               id="bound"
+               points="0,24 0,0 24,0 24,24 " />
+            <g
+               id="g16"
+               transform="matrix(0,1,-1,0,15,12)"
+               style="stroke:#e5234f;stroke-width:2;stroke-linecap:round;stroke-linejoin:round">
+              <path
+                 d="M 3,3 0,0"
+                 id="Line"
+                 inkscape:connector-curvature="0" />
+              <path
+                 d="M 3,6 0,3"
+                 id="path19"
+                 transform="matrix(1,0,0,-1,0,9)"
+                 inkscape:connector-curvature="0" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

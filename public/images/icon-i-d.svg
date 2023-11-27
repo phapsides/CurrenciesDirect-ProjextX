@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128px" height="128px" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>72EDC822-5B1C-4D92-80BD-0EEF29714E40</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="largeicon-ID">
+            <path d="M128,64 C128,99.346 99.346,128 64,128 C28.654,128 0,99.346 0,64 C0,28.654 28.654,0 64,0 C99.346,0 128,28.654 128,64" id="Fill-287" fill="#9AD5EC"></path>
+            <path d="M114,37 L74,37 L74,19 L54,19 L54,37 L14,37 L14,96 L19.596,110.066 C31.105,121.163 46.75,128 64,128 C96.924,128 124.029,103.135 127.591,71.161 L114,37" id="Fill-288" fill="#8AB5C5"></path>
+            <polyline id="Fill-289" fill="#FFFFFF" points="77.636 37 114 37 114 96 14 96 14 37 77.636 37"></polyline>
+            <path d="M55,39 L55,40 C55,44.964 59.359,49 65,49 C70.641,49 75,44.964 75,40 L75,39 L55,39" id="Fill-290" fill="#E6E6E1"></path>
+            <path d="M64,19 L54,19 L54,39 C54,43.964 58.359,48 64,48 C69.641,48 74,43.964 74,39 L74,19 L64,19" id="Fill-291" fill="#FFFFFF"></path>
+            <path d="M64,46 C59.514,46 56,42.925 56,39 L56,21 L72,21 L72,39 C72,42.925 68.486,46 64,46" id="Fill-292" fill="#D8D8D8"></path>
+            <polygon id="Fill-293" fill="#D8D8D8" points="79 89 107 89 107 54 79 54"></polygon>
+            <polygon id="Fill-294" fill="#FFFFFF" points="81 87 105 87 105 56 81 56"></polygon>
+            <path d="M81,87 L105,87 C105,82.116 102.078,76.296 97.891,73.565 C99.779,71.535 101,68.574 101,66 C101,61.582 97.418,58 93,58 C88.581,58 85,61.582 85,66 C85,68.574 86.221,71.535 88.109,73.565 C83.922,76.296 81,82.116 81,87" id="Fill-295" fill="#D8D8D8"></path>
+            <path d="M64,42 C61.794,42 60,40.206 60,38 C60,35.794 61.794,34 64,34 C66.206,34 68,35.794 68,38 C68,40.206 66.206,42 64,42" id="Fill-296" fill="#FFFFFF"></path>
+            <polygon id="Fill-298" fill="#F3ECD6" points="74 39 75 39 75 37 74 37"></polygon>
+            <polygon id="Fill-299" fill="#D8D8D8" points="26 66 40 66 40 64 26 64"></polygon>
+            <polygon id="Fill-300" fill="#D8D8D8" points="26 70 50 70 50 68 26 68"></polygon>
+            <polygon id="Fill-301" fill="#D8D8D8" points="26 74 50 74 50 72 26 72"></polygon>
+        </g>
+    </g>
+</svg>

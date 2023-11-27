@@ -1,0 +1,454 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Rate Alerts - New Rate Alert',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'site-rate-alerts'
+			]
+		}
+	);
+%>
+
+	<%- 
+		include(
+			'../components/navigation-main.html', {
+				navigationOptions: [
+					{ 
+						title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+						subMenu: [
+							{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+							{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+							{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+							{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+						] 
+					},
+					{ title: 'Rate alerts', class: 'menu-item-alerts active', href: '/whitelabel/rate-alerts/management/' },
+					{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+					{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+					{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+				]
+			}
+		) 
+	%>
+ 
+
+
+<div class="row main-container">
+	<div class="large-8 medium-12 columns">
+		<div class="row">
+			<header class="main-header">
+				<h1 class="title">
+					New rate alert
+				</h1>
+				<p class="information">
+					Tell us which currencies you want, and your target exchange rate.<br class="show-for-medium-up">We’ll show you how much extra you’ll get when your target is reached.
+				</p>
+			</header>
+		</div>
+		<div class="row">
+			<form class="columns element-group">
+				<fieldset class="row">
+					<div class="medium-8 columns select-container">
+						<select id="title">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="GB">GBP - Pounds sterling</option>
+							<option value="US">EUR - Euro</option>
+							<option value="US">USD - US Dollar</option>
+							<option value="US">ZAR - South African rand</option>
+						</select>
+						<label for="title">
+							I intend to buy
+						</label>
+					</div>
+				</fieldset>
+
+				<fieldset class="row">
+					<div class="medium-8 columns select-container">
+						<select id="currencies-intend-to-sell-c0">
+							<option selected value="AU">AUD - Australian Dollar</option>
+							<option value="GB">GBP - Pounds sterling</option>
+							<option value="US">EUR - Euro</option>
+							<option value="US">USD - US Dollar</option>
+							<option value="US">ZAR - South African rand</option>
+						</select>
+						<label for="currencies-intend-to-sell-c0">
+							I intend to sell
+						</label>
+					</div>
+				</fieldset>
+
+				<!-- Expanding Section -->
+				<div class="row expanding-section" data-expanding-section="how-much-would-you-like-to-pay">
+
+					<div class="columns">
+						<h5>Enter an amount to buy, OR how much you would like to pay us</h5>
+					</div>
+
+					<fieldset class="row">
+						<div class="columns">
+							<div class="row collapse">
+								<div class="medium-5 columns">
+									<span class="column-operand">
+										You buy
+									</span>
+
+									<div class="row collapse">
+										<span class="small-3 medium-4 columns column-operand second-line">
+											<span>Currency</span><br>
+											<span class="currency eur">EUR</span>
+										</span>
+
+										<%-
+											include(
+												'../components/input-type-text.html',
+												{
+													assoc: 'current-rate-001',
+													labelText: 'Amount',
+													value: '1000.00',
+													classList: [
+														'small-9',
+														'medium-8',
+														'end',
+														'columns',
+														'current-rate'
+													]
+												}
+											)
+										%>
+										
+									</div>
+								</div>
+
+								<div class="medium-1 columns">
+									<div class="operand-or"><!-- or --></div>
+								</div>
+
+								<div class="medium-5 columns end">
+									<span class="column-operand">
+										You pay us
+									</span>
+
+									<div class="row collapse">
+										<span class="small-3 medium-4 columns column-operand second-line">
+											<span>Currency</span><br>
+											<span class="currency gbp">GBP</span>
+										</span>
+
+										<%-
+											include(
+												'../components/input-type-text.html',
+												{
+													assoc: 'amount-due-002',
+													labelText: 'Amount',
+													value: '1000.00',
+													classList: [
+														'small-9',
+														'medium-8',
+														'end',
+														'columns'
+													]
+												}
+											);
+										%>
+										
+									</div>
+									
+								</div>
+
+							</div>
+
+							<div class="row collapse">
+								<%-
+									include(
+										'../components/button.html',
+										{
+											type: 'button',
+											text: 'Get rate',
+											classList: [
+												'medium-5',
+												'end',
+												'button-outline',
+												'get-rate'
+											]
+										}
+									)
+								%>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+				<!-- Expanding Section -->
+				<div class="row expanding-section" data-expanding-section="current-targets-and-rates">
+					<div class="columns">
+						<h5>Current and target rates</h5>
+					</div>
+
+					<div class="columns">
+							
+						<fieldset class="row collapse">
+								<%-
+									include(
+										'../components/input-type-text.html',
+										{
+											assoc: 'amount-due',
+											value: '1000.00',
+											labelText: 'Current rate',
+											classList: [
+												'medium-5',
+												'end',
+												'columns',
+												'small-label'
+											],
+											disabled: true,
+											readOnly: true
+										}
+									);
+								%>
+
+							<small class="columns copy-rate-refresh">Your rate will refresh in <strong>5 seconds</strong>.</small>
+
+						</fieldset>
+
+						<fieldset class="row collapse">
+							<%-
+								include(
+									'../components/input-type-text.html',
+									{
+										assoc: 'target-rate-001',
+										value: '723.17',
+										labelText: 'Target rate',
+										classList: [
+											'medium-5',
+											'end',
+											'columns',
+											'small-label'
+										]
+									}
+								);
+							%>
+						</fieldset>
+
+						<fieldset class="row collapse">
+							<%-
+								include(
+									'../components/button.html',
+									{
+										type: 'button',
+										text: 'Continue',
+										classList: [
+											'medium-5',
+											'button-outline',
+											'continue-to-finalise-alert'
+										]
+									}
+								)
+							%>
+						</fieldset>
+
+					</div>
+				</div>
+
+				<!-- Expanding Section -->
+				<div class="row expanding-section" data-expanding-section="finalise-your-alert">
+					<div class="columns">
+						<h5>Complete your alert</h5>
+						<p>At your chosen amount and target rate, you will either:</p>
+					</div>
+
+					<fieldset class="row">
+						<div class="columns">
+							<div class="row collapse">
+								<div class="medium-5 columns">
+									<span class="column-operand">
+										Receive an extra
+									</span>
+
+									<div class="row collapse">
+										<span class="small-3 medium-4 columns column-operand second-line">
+											<span>Currency</span><br>
+											<span class="currency eur">EUR</span>
+										</span>
+										<%-
+											include(
+												'../components/input-type-number.html',
+												{
+													assoc: 'target-rate',
+													value: '1.00',
+													labelText: '',
+													classList: [
+														'small-9',
+														'medium-8',
+														'columns',
+														'small-label'
+													]
+												}
+											);
+										%>
+									</div>
+								</div>
+
+								<div class="medium-1 columns">
+									<div class="operand-or"><!-- or --></div>
+								</div>
+
+								<div class="medium-5 columns end">
+									<span class="column-operand">
+										Pay this much less
+									</span>
+
+									<div class="row collapse">
+										<span class="small-3 medium-4 columns column-operand second-line">
+											<span>Currency</span><br>
+											<span class="currency gbp">GBP</span>
+										</span>
+
+										<%-
+											include(
+												'../components/input-type-text.html',
+												{
+													assoc: 'pay-less-001',
+													value: '0.87',
+													labelText: '',
+													classList: [
+														'small-9',
+														'medium-8',
+														'end',
+														'columns',
+														'small-label'
+													]
+												}
+											);
+										%>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</fieldset>
+
+					<hr />
+				
+
+					<%-
+						include(
+							'../components/select.html',
+							{
+								assoc: 'email-and-sms',
+								text: 'Alert me via',
+								containerClassList: [
+									'medium-7',
+									'end',
+									'columns'
+								],
+								optionsClassList: [
+									'needsclick'
+								],
+								options: [
+									{ value: '2', text: 'Email and SMS' },
+									{ value: '3', text: 'Email only' },
+									{ value: '4', text: 'SMS only' }
+								]
+							}
+						);
+					%>
+
+					<%-
+						include(
+							'../components/input-type-email.html',
+							{
+								assoc: 'pay-less-003',
+								value: 'default@valuefromaccount.com',
+								labelText: 'Email addresss',
+								classList: [
+									'medium-7',
+									'end',
+									'columns',
+									'small-label'
+								]
+							}
+						);
+					%>
+
+					<div class="columns medium-7">
+						<div class="row collapse">
+							<div class="medium-4 columns select-container small-label">
+								<select id="country-code">
+								</select>
+								<label for="country-code">
+									Country
+								</label>
+							</div>
+							<%-
+								include(
+									'../components/input-type-tel.html',
+									{
+										assoc: 'telelphone-number-002',
+										labelText: 'Phone number',
+										value: '7907810242',
+										classList: [
+											'medium-7',
+											'columns',
+											'small-label'
+										]
+									}
+								);
+							%>
+						</div>
+					</div>
+
+					<%-
+						include(
+							'../components/select.html',
+							{
+								assoc: 'expire-this-alert',
+								text: 'Expire this alert',
+								containerClassList: [
+									'medium-7',
+									'end',
+									'columns'
+								],
+								optionsClassList: [
+									'needsclick'
+								],
+								options: [
+									{ value: '1', text: 'When my target rate is reached' },
+									{ value: '2', text: 'On a specific date' }
+								]
+							}
+						);
+					%>
+				</div>
+			</form>
+		</div>
+
+		<div class="row collapse">
+
+			<%-
+				include(
+					'../components/button.html',
+					{
+						type: 'submit',
+						text: 'Create alert',
+						classList: [
+							'medium-4',
+							'columns',
+							'medium-offset-8'
+						],
+						dataAttr: {
+							'data-hyperlink': '/whitelabel/rate-alerts/management/#new-rate-alert'
+						}
+					}
+				)
+			%>
+		</div>
+
+	</div>
+</div>
+
+<%-
+  include('../partials/footer.html');
+%>
+

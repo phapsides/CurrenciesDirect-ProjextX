@@ -1,0 +1,49 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Register - 09',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-layout-centered', 
+				'template-registration',
+				'site-registration-09'
+			]
+		}
+	);
+%>
+
+<%-
+	include(
+		'../components/navigation-main-simple.html', {
+			loggedIn: false,
+			registrationProcess: true,
+			closeOpt: true
+		}
+	);
+%>
+
+
+<div class="row main-container">
+	<div class="large-5 medium-7 small-centered columns" data-page-state="">
+		<section class="columns section content" data-form-section="account">
+			<div class="row icon-email-sent">
+				<span class="img img-email"></span>
+			</div>
+			<header class="main-header center columns">
+				<h1 class="title">
+					Thanks, you're now part of our community! <br>Check your email to activate your account.
+				</h1>
+				<p class="description">
+					We've sent you an email with an activation link - just follow this link and you'll be able to access your online account straight away.
+				</p>
+			</header>
+		</section>
+	</div>
+</div>
+
+
+
+<%-
+	include('../partials/footer.html')
+%>

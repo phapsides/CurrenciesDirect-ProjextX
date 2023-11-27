@@ -1,0 +1,44 @@
+<%
+/*
+
+# Input Email Component
+
+### Notes
+* We don't use HTML5's `pattern` regexp validation on email
+
+### Usage
+
+# Simple
+include('components/input-type-email.html', assoc: 'email-address');
+
+# Verbose
+include(
+	'components/input-type-email.html',
+	{
+		assoc: 'email-address',
+		value: 'grace.hopper@yale.edu',
+		labelText: 'Email address',
+		classList: [
+			'small-12',
+			'columns'
+		]
+	}
+);
+
+*/
+%>
+
+<div class="input-container <%=
+	(typeof classList != 'undefined' ? classList.join(' ') : '')
+%>">
+	<input
+		type="email"
+		id="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>"
+		value="<%= (typeof value != 'undefined' ? value : '') %>"
+		<% if (typeof readOnly != 'undefined') { %>readonly <% } %>
+	>
+	<label for="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>">
+		<%= (typeof labelText != 'undefined' ? labelText : 'Email address') %>
+	</label>
+</div>
+

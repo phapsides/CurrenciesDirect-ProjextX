@@ -1,0 +1,644 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Dashboard - Full',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-layout-grid',
+				'site-page-dashboard'
+			]
+		}
+	);
+%>
+
+
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-has-sub-menu menu-item-transfer', active: false, 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' },
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'test' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts', active: false, href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', active: false, href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients', active: false, href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', active: false, href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+
+
+<div class="row main-container">
+	<div class="columns">
+		<%- /* include('../components/navigation-sub.html') */ %>
+		<h1 class="title">
+			Hi <%= app.data.user.firstName %> 
+		</h1>
+		
+		<div class="row element-grid">
+			<!-- First Column -->
+			<div class="large-4 columns column-1">
+				<div class="row">
+					<form class="columns element-group quick-rate-finder" data-abide>
+						<header class="element-group-header element-group-header-connected row">
+							<h6 class="columns element-group-title">
+								Check the exchange rate
+							</h6>
+						</header>
+						<fieldset id="quick-rate-container" class="row input-container-group-segmented">
+							<!-- New element type: segmented input/select -->
+							<%-
+								include(
+									'../components/input-type-text.html',
+									{
+										assoc: 'you-send',
+										labelText: 'You send',
+										value: '25000.00',
+										classList: [
+											'small-7',
+											'columns',
+											'small-label'
+										]
+									}
+								);
+							%>
+							<div class="columns select-container small-5">
+
+								<select class="select2 CurrencyFrom" name="buyingCurr">
+
+									<%- include('../components/select-currencies.html'); %>
+						        </select>
+						        <label for="buyingCurr"></label>
+						    </div>
+
+
+						</fieldset>
+						<fieldset id="recipient-gets-container" class="row input-container-group-segmented">
+							<!-- New element type: segmented input/select -->
+							<%-
+								include(
+									'../components/input-type-text.html',
+									{
+										assoc: 'recipient-gets',
+										labelText: 'Recipient gets',
+										value: '31239.00',
+										classList: [	
+											'small-7',
+											'columns',
+											'small-label'
+										]
+									}
+								);
+							%>
+
+							<div class="columns select-container small-5">
+								<select class="select2 CurrencyTo" name="sellingCurr">
+									<%- include('../components/select-currencies.html'); %>
+								</select>
+								<label for="sellingCurr">&nbsp;</label>
+							</div>
+
+
+							<% /* 
+
+							<!-- KEEP ME FOR REFERENCE!5-->
+
+							<div class="columns select-container small-5" data-option-selected="currency-option-huf">
+								<select id="quick-rate-finder-currency">
+									<option value="GBP">
+										GBP
+									</option>
+									<option value="USD">
+										USD
+									</option>
+									<option value="ZAR">
+										ZAR
+									</option>
+									<option value="HUF" selected="selected" class="currency-option currency-option-huf">
+										HUF
+									</option>
+								</select>
+								<label for="quick-rate-finder-currency">
+								</label>
+							</div>
+							*/ %>
+						</fieldset>
+						<div  class="row">
+							<div class="columns">
+								<label class="exchange-rate-live">
+									Exchange rate is <em data-role="rate-refresh">1.1749</em>
+									<a href="#" title="">
+										<span class="rate-refresh-icon">Check rate</span>
+									</a>
+								</label>
+							</div>
+						</div>
+						<fieldset class="row">
+							<%-
+								include(
+									'../components/button.html',
+									{
+										type: 'button',
+										text: 'Buy now',
+										classList: [ 'button-outline', 'medium-4', 'large-12' ],
+										dataAttr: {
+											'data-role': 'buy-now',
+											'data-hyperlink': '/whitelabel/transactions/buy-currency/1/'
+										}
+									}
+								)
+							%>
+						</fieldset>
+					</form>
+				</div>
+
+				<!-- New row -->
+				<div class="row dashboard-create-alert-button">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'button',
+								text: 'Create new rate alert',
+								classList: [
+									'button-create-new-alert',
+									'button-grid-element',
+									'grid-item',
+									'columns-base-seperator'
+								],
+								dataAttr: {
+									'data-role': '',
+									'data-hyperlink': '/whitelabel/rate-alerts/management/new/'
+								}
+							}
+						)
+					%>
+				</div>
+
+				<hr class="show-for-small-only">
+
+
+				<div class="row dashboard-account-alerts">
+					<div class="columns element-group element-group-alerts">
+						<header class="element-group-header row">
+							<h6 class="columns element-group-title">
+								Account alerts
+							</h6>
+						</header>
+						<fieldset class="row">
+							<div class="columns dashboard-alert">
+								<div class="dashboard-calendar-date">
+									<span class="dashboard-calendar-day">
+										23
+									</span>
+									<span class="dashboard-calendar-month">
+										Dec
+									</span>
+								</div>
+								<div class="dashboard-alert-message">
+									<span class="title">You have</span><br>
+									<a class="alert" href="#"><span>36</span> transfers awaiting payment</a>
+								</div>
+							</div>
+						</fieldset>
+
+						<hr class="seperator">
+
+						<fieldset class="row">
+							<div class="columns dashboard-alert">
+								<div class="dashboard-calendar-date">
+									<span class="dashboard-calendar-day">
+										23
+									</span>
+									<span class="dashboard-calendar-month">
+										Dec
+									</span>
+								</div>
+								<div class="dashboard-alert-message">
+									<span class="title">You have</span><br>
+									<a class="alert" href="#"><span>36</span> transfers awaiting payment</a>
+								</div>
+							</div>
+						</fieldset>
+
+					</div>
+
+				</div>
+
+				</div>
+
+				<!-- 2nd Column -->
+				<div class="large-8 medium-12 columns column-2">
+
+					<div class="row element-grid dashboard-buttons">
+
+						<div class="medium-6 columns button-grid-element button-grid-element-image button-make-a-transfer">
+							<button type="button" class="columns button" data-role="buy-now" data-hyperlink="/whitelabel/transactions/make-transfer/1/">
+								<div class="_temporary_class_001">
+									<h5>
+										Make a transfer
+									</h5>
+									<p>
+										Send money to one of your recipients right now
+									</p>
+								</div>
+							</button>
+						</div>
+
+						<div class="medium-6 columns button-grid-element button-grid-element-image button-buy-currency">
+							<button type="button" class="columns button" data-role="buy-now" data-hyperlink="/whitelabel/transactions/buy-currency/1/">
+								<div class="_temporary_class_001">
+									<h5>
+										Buy currency
+									</h5>
+									<p>
+										Add to your currency balance – transfer to a recipient later
+									</p>
+								</div>
+							</button>
+						</div>
+
+					</div>
+
+
+					<div class="row">
+						<div class="small-columns element-group element-group-table table-your-recipients">
+							<header class="element-group-header columns">
+								<h6 class=" element-group-title">
+									Your recipients
+								</h6>
+								<small>
+									Choose a recipient you’d like to send money to
+								</small>
+							</header>
+							<div class="row">
+								<div class="columns table-container">
+									<table class="table row dashboard-your-recipients">
+										<tbody>
+											<tr class="row">
+												<td class="table-td-name">
+													<span>Captain America</span>
+												</td>
+												<td class="table-td-currency">
+													<span class="currency usd">USD</span>
+												</td>
+												<td class="table-td-card-number">
+													<span>********9101</span>
+												</td>
+												<td class="table-td-button">
+													<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/">
+														<span>Pay</span>
+													</a>
+												</td>
+											</tr>
+											<tr class="row">
+												<td class="table-td-name">
+													<span>Harry Potter</span>
+												</td>
+												<td class="table-td-currency">
+													<span class="currency gbp">GBP</span>
+												</td>
+												<td class="table-td-card-number">
+													<span>********5678</span>
+												</td>
+												<td class="table-td-button">
+													<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/">
+														<span>Pay</span>
+													</a>
+												</td>
+											</tr>
+											<tr class="row">
+												<td class="table-td-name">
+													<span>Captain America</span>
+												</td>
+												<td class="table-td-currency">
+													<span class="currency usd">USD</span>
+												</td>
+												<td>
+													<span>********1234</span>
+												</td>
+												<td class="table-td-button">
+													<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/">
+														<span>Pay</span>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="row">
+								<a class="small-7 medium-4 columns button-simple button-simple-inline" href="/whitelabel/recipients/manage/add/" data-role="add-payee">
+									<span>Add recipient</span>
+								</a>
+								<a class="small-5 medium-offset-6 medium-2 columns button-simple button-simple-inline justify-right show-all-recipients" href="/whitelabel/recipients/manage/" data-role="show-more">
+									<span>Show all</span>
+								</a>
+							</div>
+						</div>
+
+						<div class="small-columns element-group table-your-available-currency">
+							<div class="element-group-header row">
+								<header class="columns small-11">
+									<h6 class="element-group-title">
+										Your wallets
+									</h6>
+									<small>
+										Transfer any of your currency balances to a recipient straight away
+									</small>
+								</header>
+								<div class="small-1 columns end">
+									<a class="tooltip-popup" href="#" title="This amount is available for you to pay and does not include forward contracts that have not yet reached maturity."></a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="columns table-container table-available-balances">
+									<ul class="accordion">
+									  <li>
+									    <a class="toggle open flag USD" href="">
+									    	<span>12,312.43 USD</span> <span class="avail">(Avail.: 10,300.03 USD)</span>
+									    </a>
+									    <div class="inner" style="display: block;">
+
+									    	<table class="table row table-activity-wallets">
+												<tbody>
+													<tr class="transaction">
+														<td>18/01/18</td>
+														<td>Paid in to USD wallet</td>
+														<td>200.00 USD</td>
+													</tr>
+													<tr class="transaction">
+														<td>18/01/18</td>
+														<td>Sent to Moshin Elahi</td>
+														<td>2,500.00 EUR</td>
+													</tr>
+													<tr class="transaction">
+														<td>18/01/18</td>
+														<td><span class="fx-in">EUR wallet </span><br><span class="fx-out">USD wallet</span></td>
+														<td><em class="credit">+</em> 2,500.00 EUR<br>
+															<em class="debit">-</em> 2,800.00 USD
+														</td>
+													</tr>
+												</tbody>
+											</table>
+
+											<!-- <div class="buttons">
+												<div class="button-outline">
+													<button type="button" class="button" data-role="view" data-hyperlink="/whitelabel/activity-history/?clientId=currencies-direct">
+														<span>
+															View all
+														</span>
+													</button>
+												</div>
+																					    		
+												<div class="button-outline">
+													<button type="button" class="button" data-role="buy" data-hyperlink="/whitelabel/transactions/top-up-currency/?clientId=currencies-direct">
+														<span>
+															Buy currency
+														</span>
+													</button>
+												</div>
+
+												<div class="button-outline">
+													<button type="button" class="button" data-role="transfer" data-hyperlink="/whitelabel/dashboard-transfer-currency-screen/1/?clientId=currencies-direct">
+														<span>
+															Make a transfer
+														</span>
+													</button>
+												</div>
+									    	</div> -->
+									    </div>
+									  </li>
+									  <li>
+									    <a class="toggle flag GBP" href="">
+									    	<span>42,300 GBP</span> <span class="avail">(Avail.: 40,300.00 GBP)</span>
+									    </a>
+									    <div class="inner">
+
+									    	<table class="table row table-activity-wallets">
+												<tbody>
+													<tr class="transaction first">
+														<td>15/01/18</td>
+														<td>Sent to Moshin Elahi</td>
+														<td>1,500.00 GBP</td>
+													</tr>
+													<tr class="transaction">
+														<td>28/12/17</td>
+														<td><span class="fx-in">GBP wallet </span><br><span class="fx-out">EUR wallet</span></td>
+														<td><em class="credit">+</em> 980.00 GBP<br>
+															<em class="debit">-</em> 1,000.00 EUR
+														</td>
+													</tr>
+													<tr class="transaction first">
+														<td>28/12/17</td>
+														<td>Paid in to Currencies Direct</td>
+														<td> 1,000.00 EUR</td>
+													</tr>
+												</tbody>
+											</table>
+
+									    	<!-- <div class="buttons">
+												<div class="button-outline">
+													<button type="button" class="button" data-role="view" data-hyperlink="/whitelabel/activity-history/?clientId=currencies-direct">
+														<span>
+															View all
+														</span>
+													</button>
+												</div>
+																					    		
+												<div class="button-outline">
+													<button type="button" class="button" data-role="buy" data-hyperlink="/whitelabel/transactions/top-up-currency/?clientId=currencies-direct">
+														<span>
+															Buy currency
+														</span>
+													</button>
+												</div>
+
+												<div class="button-outline">
+													<button type="button" class="button" data-role="transfer" data-hyperlink="/whitelabel/dashboard-transfer-currency-screen/1/?clientId=currencies-direct">
+														<span>
+															Make a transfer
+														</span>
+													</button>
+												</div>
+									    	</div> -->
+									    </div>
+									  </li>
+									  <li>
+									    <a class="toggle flag EUR" href="">
+									    	<span>0.00 EUR</span> <span class="avail">(Avail.: 0.00 EUR)</span>
+									    </a>
+									    <div class="inner">
+									    	<table class="table row table-activity-wallets">
+												<tbody>
+													<tr class="transaction">
+														<td>28/12/17</td>
+														<td><span class="fx-in">GBP wallet </span><br><span class="fx-out">EUR wallet</span></td>
+														<td><em class="credit">+</em> 980.00 GBP<br>
+															<em class="debit">-</em> 1,000.00 EUR
+														</td>
+													</tr>
+													<tr class="transaction first">
+														<td>28/12/17</td>
+														<td>Paid in to Currencies Direct</td>
+														<td> 1,000.00 EUR</td>
+													</tr>
+													<tr class="transaction">
+														<td>20/12/17</td>
+														<td>Sent to Moshin Elahi</td>
+														<td>2,100.00 EUR</td>
+													</tr>
+												</tbody>
+											</table>
+									    	<!-- Nested accordion example -->
+									      <!-- 
+									      	<li>
+									        	<a href="#" class="toggle">Open Inner</a>
+									        	<div class="inner">
+									          	<p>
+									            
+									          	</p>
+									        	</div>
+									      	</li> 
+									      -->
+
+									    	<!-- <div class="buttons">
+												<div class="button-outline">
+													<button type="button" class="button" data-role="view" data-hyperlink="/whitelabel/activity-history/?clientId=currencies-direct">
+														<span>
+															View all
+														</span>
+													</button>
+												</div>
+																					    		
+												<div class="button-outline">
+													<button type="button" class="button" data-role="buy" data-hyperlink="/whitelabel/transactions/top-up-currency/?clientId=currencies-direct">
+														<span>
+															Buy currency
+														</span>
+													</button>
+												</div>
+
+												<div class="button-outline">
+													<button type="button" class="button" data-role="transfer" data-hyperlink="/whitelabel/dashboard-transfer-currency-screen/1/?clientId=currencies-direct">
+														<span>
+															Make a transfer
+														</span>
+													</button>
+												</div>
+									    	</div> -->
+									    </div>
+									  </li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="row">
+
+								<a class="medium-4 columns button-simple button-simple-inline" href="/whitelabel/transactions/pre-bought-currency/1/" data-role="transfer">
+									<span>Transfer from wallet</span>
+								</a>
+
+								<a class="medium-3 columns button-simple button-simple-inline button-viewActivity justify-right" href="/whitelabel/activity-history/" data-role="view">
+									<span>View activity</span>
+								</a>
+
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row" style="display: none;">
+						<div class="small-columns element-group table-your-available-currency">
+							<div class="element-group-header row">
+								<header class="columns small-11">
+									<h6 class="element-group-title">
+										Your available balances
+									</h6>
+									<small>
+										Transfer any of your currency balances to a recipient straight away
+									</small>
+								</header>
+								<div class="small-1 columns end">
+									<a class="tooltip-popup" href="#" title="This amount is available for you to pay and does not include forward contracts that have not yet reached maturity."></a>
+								</div>
+							</div>
+							<div class="row">
+								<div class="columns table-container table-available-balances">
+									<table class="row">
+										<tbody>
+											<tr class="row">
+												<td class="table-td-currency">
+													<span class="currency usd">USD</span>
+												</td>
+												<td class="table-td-amount">
+													<span>12,312.43</span>
+												</td>
+												<td class="table-td-button">
+													<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/">
+														<span>Transfer</span>
+													</a>
+												</td>
+											</tr>
+											<tr class="row">
+												<td class="table-td-currency">
+													<span class="currency gbp">GBP</span>
+												</td>
+												<td class="table-td-amount">
+													<span>42,300</span>
+												</td>
+												<td class="table-td-button">
+													<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/">
+														<span>Transfer</span>
+													</a>
+												</td>
+											</tr>
+											<tr class="row">
+												<td class="table-td-currency">
+													<span class="currency eur">EUR</span>
+												</td>
+												<td class="table-td-amount">
+													<span>20,0000,0000</span>
+												</td>
+												<td class="table-td-button">
+													<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/">
+														<span>Transfer</span>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="row">
+								<a class="small-7 medium-4 columns button-simple button-simple-inline" href="/whitelabel/transactions/buy-currency/1/" data-role="add-payee">
+									<span>Buy more currency</span>
+								</a>
+								<a class="small-5 medium-offset-6 medium-2 columns button-simple button-simple-inline justify-right" href="/whitelabel/transactions/pre-bought-currency/1/" data-role="show-more">
+									<span>Show more</span>
+								</a>
+							</div>
+						</div>
+					</div>
+						
+					
+				</div>
+			</div>
+		</div>
+</div>
+
+
+
+<%-
+    include('../partials/footer.html');
+%>

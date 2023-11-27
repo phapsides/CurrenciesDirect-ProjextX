@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Profile'
+			}
+		);
+	%>
+
+
+	<body>
+
+		<div class="template template-core template-layout-centered template-registration">
+
+
+		<%- 
+			include(
+				'../components/navigation-main.html', {
+					navigationOptions: [
+						{ 
+							title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+							subMenu: [
+								{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+								{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+								{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+								{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+							] 
+						},
+						{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+						{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+						{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+						{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+					]
+				}
+			) 
+		%>
+	
+
+		<div class="row main-container">
+			<div class="large-5 medium-7 small-centered section content center">
+				<section class="section content active">
+					<form class="callout" data-abide>
+						<header class="main-header">
+							<h1 class="title">
+								Profile management
+							</h1>
+							<p class="description">
+								To access or update your profile, we just need <br>to verify your password.
+							</p>
+
+						</header>
+						<fieldset class="row">
+							<%-
+								include(
+									'../components/input-type-password.html',
+									{
+										assoc: 'password',
+										labelText: 'Password',
+										classList: [
+											'columns'
+										]
+									}
+								);
+							%>
+						</fieldset>
+						<fieldset class="row">
+							<%-
+								include(
+									'../components/button.html',
+									{
+										type: 'submit',
+										text: 'Submit',
+										classList: [
+											'columns'
+										],
+										dataAttr: {
+											'data-hyperlink': '/whitelabel/profile/'
+										}
+									}
+								)
+							%>
+						</fieldset>
+					</form>
+				</section>
+			</div>
+		</div>
+
+
+		<%-
+		  /* Sitewide JS */
+		  include('../partials/footer.html');
+		%>
+
+		</div>
+	</body>
+</html>

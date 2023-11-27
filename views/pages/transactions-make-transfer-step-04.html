@@ -1,0 +1,259 @@
+
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Transactions - Make Transfer Step 4',
+				bodyClassList: [
+					'template',
+					'template-core', 
+					'template-navigation-progress',
+					'site-transfers',
+					'site-transfers-04'
+				]
+			}
+		);
+	%>
+
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Choose recipient', state: 'complete', href: '/whitelabel/transactions/make-transfer/1/' },
+				{ title: 'Transfer details', state: 'complete', href: '/whitelabel/transactions/make-transfer/2/' },
+				{ title: 'Payment', state: 'complete', href: '/whitelabel/transactions/make-transfer/3/' },
+				{ title: 'Confirm transfer', state: 'active', href: '/whitelabel/transactions/make-transfer/4/' }
+			],
+
+			backURL: '/whitelabel/transactions/make-transfer/0/',
+			
+			registrationProcess: false
+		}
+	);
+%>
+
+
+		<div class="row main-container">
+			<div class="row">
+				<header class="large-8 medium-7 main-header columns">
+					<h1 class="title">
+						Confirm your transfer
+					</h1>
+					<p class="description">
+						Please check the details of the transfer you are about to make and press ‘Confirm’.
+					</p>
+				</header>
+			</div>
+		
+			<div class="row">
+
+				<div class="large-8 medium-7 columns" id="sticky-anchor">
+
+					<form class="formNoBorder" data-abide>
+
+						<div class="element-group">
+							<fieldset class="row">
+								<%-
+									include(
+										'../components/input-type-text.html',
+										{
+											assoc: 'amount-due-001',
+											value: 'GBP 1,015.00',
+											labelText: 'Amount due',
+											classList: [
+												'large-8',
+												'medium-10',
+												'end',
+												'columns',
+												'small-label'
+											],
+											disabled: true,
+											readOnly: true
+										}
+									);
+								%>
+							</fieldset>
+
+							<fieldset class="row">
+								<%-
+									include(
+										'../components/select.html',
+										{
+											text: 'Source of funds',
+											containerClassList: [
+												'large-8',
+												'medium-10'
+											],
+
+											options: [
+												{ value: 'a1', text: 'Savings' },
+												{ value: 'a2', text: 'Sale of investment' },
+												{ value: 'a2', text: 'Investment Income' },
+												{ value: 'a2', text: 'Salary' },
+												{ value: 'a2', text: 'Other' }												
+											]
+										}
+									);
+								%>
+							</fieldset>
+
+							<fieldset class="row">
+								<%-
+									include(
+										'../components/input-type-text.html',
+										{
+											assoc: 'amount-due-002',
+											value: 'Funds already held',
+											labelText: "You’ve decided to pay via",
+											classList: [
+												'large-8',
+												'medium-10',
+												'columns',
+												'small-label'
+											],
+											disabled: true,
+											readOnly: true
+										}
+									);
+								%>
+							</fieldset>
+
+							<fieldset class="row">
+								<%-
+									include(
+										'../components/input-type-text.html',
+										{
+											assoc: 'card-number',
+											value: '4629 •••• •••• 1245',
+											labelText: 'Card number',
+											classList: [
+												'large-8',
+												'medium-10',
+												'end',
+												'columns',
+												'small-label'
+											],
+											disabled: true,
+											readOnly: true
+										}
+									);
+								%>
+							</fieldset>
+
+							<div class="row">
+								<p class="columns medium-8">
+									<small>Your card issuer may ask you to answer some security questions on the next page.</small>
+								</p>
+							</div>
+
+							<footer class="row border--top">
+								<p class="columns element-group-footer pad--24">
+									By clicking ‘Confirm’ you are committing to the purchase of currency and entering into a legally binding contract, as detailed in our <a target="_blank" href="/CustomerPortal/termsAndCondition.htm" title="">terms and conditions</a>. 
+								</p>
+							</footer>
+						</div>
+
+						<div class="row collapse">
+							<%-
+								include(
+									'../components/button.html',
+									{
+										type: 'button',
+										text: 'Confirm',
+										classList: [
+											'medium-4',
+											'medium-offset-8',
+											'end',
+											'temp-btn-continue',
+											'temp-button-style-green'
+										],
+										dataAttr: {
+											'data-hyperlink': '/whitelabel/transactions/make-transfer/confirmation/',
+											//'disabled': 'disabled'
+										},
+									}
+								)
+							%>
+						</div>						
+					</form>
+
+				</div>
+
+				<div class="large-4 medium-5 columns">
+					<div data-sticky-container>
+						<aside class="transfers-summary sticky" data-sticky  data-margin-top="6" data-top-anchor="sticky-anchor:top">
+							<div class="row">
+								<div class="element-group columns">
+									<div class="row">
+										<h5 class="columns transfers-summary-title">
+											Transfer summary
+										</h5>
+										<h6 class="small-6 columns transfers-summary-sub-title">
+											Recipient
+										</h6>
+										<a  class="transfers-edit-button" href="/whitelabel/transactions/make-transfer/1/?clientId=currencies-direct">Edit</a>
+										<div class="columns transfers-summary-selected-payee">
+											<div class="transfers-summary-initials">
+												<span>DQ</span>
+											</div>
+											<div class="transfers-summary-full-name">
+												<span>
+													Don Quixote
+												</span>
+												<span>
+													ES1182271MIFLGB221
+												</span>
+											</div>
+										</div>
+
+										<h6 class="small-6 columns transfers-summary-sub-title">
+											Transfer amount
+										</h6>
+										<a  class="transfers-edit-button" href="/whitelabel/transactions/make-transfer/1/?clientId=currencies-direct">Edit</a>
+
+										<table class="table-summary">
+											<thead></thead>
+											<tbody>
+												<tr>
+													<td><span>Sending</span></td>
+													<td><span>EUR 11456</span></td>
+												</tr>
+												<tr>
+													<td><span>Rate</span></td>
+													<td><span>1.1456</span></td>
+												</tr>
+												<tr>
+													<td><span>Fee</span></td>
+													<td><span>GBP 0</span></td>
+												</tr>
+												<tr>
+													<td><span>Total you pay</span></td>
+													<td><span>GBP 1000</span></td>
+												</tr>
+											</tbody>
+										</table>
+
+										<h6 class="columns transfers-summary-sub-title sub-title-refresh">
+											Your rate will refresh in <span data-rate-refresh>5 seconds</span>
+											<a class="tooltip-popup" href="#" title="We will hold this rate for you for 60 seconds, but as the markets are always moving, we need to periodically update the exchange rate we offer."></a>
+										</h6>
+
+									</div>
+								</div>
+							</div>
+						</aside>
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+
+        <%-
+                include('../partials/footer.html');
+        %>

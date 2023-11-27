@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en"><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>This payment doesn't seem to exist | Visa Direct</title>
+<link href="/resources/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="/resources/assets/css/main.css" rel="stylesheet" type="text/css" />
+<link href="/resources/assets/css/errors.css" rel="stylesheet" type="text/css" />
+<!-- Bootstrap -->
+<link href="/resources/bower_components/bootstrapvalidator/dist/css/bootstrapValidator.min.css" rel="stylesheet" />
+
+<script src="/resources/bower_components/modernizr/modernizr.js"></script>
+
+<script src="/resources/assets/js/analytics.js"></script>
+<script>
+			// Add global GA variables - taken from https://frique.me/blog/hosting-your-own-analytics-js/
+			window.ga = window.ga || function(){
+				window.ga.q = window.ga.q || [];
+				window.ga.q.push(arguments);
+			};
+			ga.l = 1 * new Date();
+			// end add global ga variables.
+
+			ga('create', 'UA-62373774-1', 'auto');
+			ga('set', 'forceSSL', true);
+			ga('set', 'anonymiseIp', true);
+
+			var paymentPage = '';
+			
+
+			if(paymentPage === '/payment') {
+				var host = window.location.protocol + '//' + window.location.hostname + paymentPage;
+				ga('set', 'location', host);
+				ga('set', 'page', paymentPage);
+			};
+
+			ga('send', 'pageview');
+		</script></head><body>
+
+
+	<header class="site-header">
+		<img src="/resources/assets/images/logo.png" alt="Visa Direct Logo" id="logo" />
+	</header>
+	<noscript>
+		<section id="error-screen" class="nojs blue-background">
+			<div class="row">
+				<div id="error-dialog" class="col-xs-12">
+					<h1 class="shelf-title">Sorry, this service requires JavaScript </h1>
+					<p>Please enable JavaScript  to use Visa Direct</p>
+				</div>
+			</div>
+		</section>
+	</noscript>
+	<main class="main hidden">
+		<section id="error-screen" class="blue-background">
+			<div class="row">
+				<div id="error-dialog" class="col-xs-12">
+					<img class="confirmation-icon" src="resources/assets/images/error-cross-large.png" alt="Error!" />
+					<h1 class="shelf-title">This payment doesn't seem to exist</h1>
+					<p>Make sure you have followed the correct link.</p>
+					<p>For more info, visit our <a href="/help">help page</a>.</p>
+				</div>
+			</div>
+		</section>
+</main><footer class="site-footer">
+    <div class="container small">
+        <ul>
+            <li><a href="/help">FAQs</a></li>
+            <li><a href="/accessibility.html">Accessibility</a></li>
+            <li><a href="/terms.html">Terms &amp; Conditions</a></li>
+        </ul>
+    </div>
+    <hr />
+
+    <div class="container small">
+        <form class="" method="">
+            <label class="control-label" for="lang-dropdown">Choose language</label>
+            <span class="for-screen-readers-only">Warning selecting a language will cause the page to reload</span>
+            <select class="form-control" id="lang-dropdown" name="language-dropdown">
+                    <option value="bg" lang="bg">български</option>
+                    <option value="el" lang="el">ελληνικά</option>
+                    <option value="es" lang="es">Español</option>
+                    <option value="en" lang="en">English</option>
+                    <option value="pt" lang="pt">Português</option>
+                    <option value="de" lang="de">Deutsch</option>
+                    <option value="pl" lang="pl">Polski</option>
+                    <option value="fi" lang="fi">Suomi</option>
+                    <option value="no" lang="no">Norsk</option>
+                    <option value="tr" lang="tr">Türkçe</option>
+                    <option value="it" lang="it">Italiano</option>
+                    <option value="ro" lang="ro">Română</option>
+                    <option value="ca" lang="ca">Català</option>
+                    <option value="hu" lang="hu">Magyar</option>
+                    <option value="sk" lang="sk">Slovenský</option>
+                    <option value="cs" lang="cs">Čeština</option>
+                    <option value="fr" lang="fr">Français
+</option>
+            </select>
+        </form>
+    </div>
+    <hr />
+    <div class="container small">
+        <p class="secondary">The Visa Direct service is for person to person payment only. Your issuer (card provider) will reserve the right to block cards or impose charges if it determines that you are using the service for business purposes.</p>
+        <p class="secondary visa-link">For more information visit <a href="http://www.visa.co.uk/products/visa-personal-payments/">visa.co.uk</a></p>
+    </div>
+    <hr />
+    <div class="container small mbl">
+        <div class="pull-left">
+            <p class="mtm">© Visa Europe 2016</p>
+        </div>
+        <div class="pull-right">
+            <img src="/resources/assets/images/visa-logo-footer-collection.png" height="25" alt="Visa Logo" />
+        </div>
+    </div>
+</footer>
+
+
+<script src="/swcres/ux/en/files/languageBundle.js"></script>
+
+<!-- These are required for the Cookie notice - Start -->
+<script src="/resources/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/resources/assets/js/cookies/jquery.cookie.js"></script>
+<script src="/resources/assets/js/cookies/jquery.cookiecuttr.js"></script>
+<!-- Cookie notice - End -->
+
+<script type="text/javascript" language="javascript">
+	if (window.top !== window.self) {window.top.location.replace(window.self.location.href)};
+	$.cookieCuttr();
+
+			//show main div content
+			$('.main').removeClass('hidden');
+		</script>
+		<script data-main="/resources/assets/js/main" src="/resources/bower_components/requirejs/require.js"></script></body>
+</html>

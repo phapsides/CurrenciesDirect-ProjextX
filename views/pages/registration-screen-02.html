@@ -1,0 +1,115 @@
+<%-
+
+	include(
+		'../partials/head.html', {
+			title: 'Register - 02',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-layout-centered', 
+				'template-registration',
+				'site-registration-02'
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Account', state: 'active', href: '/whitelabel/registration/2/' },
+				{ title: 'Details', state: '', href: '/whitelabel/registration/3/' },
+				{ title: 'Security', state: '', href: '/whitelabel/registration/6/' },
+				{ title: 'Confirm', state: '', href: '/whitelabel/registration/7/' }
+			],
+
+			backURL: '/whitelabel/registration/1/',
+			
+			registrationProcess: true
+		}
+	);
+%>
+
+
+<div class="row main-container">
+	<section class="large-5 medium-7 small-centered columns section content">
+		<form class="callout">
+			<header class="main-header columns">
+				<h1 class="title">
+					Create your login details
+				</h1>
+			</header>
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-email.html',
+						{
+							assoc: 'email-address',
+							labelText: 'Email address',
+							classList: [
+								'columns'
+							]
+						}
+					);
+				%>
+			</fieldset>
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-password.html',
+						{
+							assoc: 'password',
+							labelText: 'Password',
+							classList: [
+								'columns'
+							]
+						}
+					);
+				%>						
+			</fieldset>
+			<fieldset class="row">
+				<p class="columns information text-left">
+					Passwords should be at least 8 characters long with at least 1 number, 1 capital letter &amp; 1 lowercase letter.
+				</p>
+			</fieldset>
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'submit',
+							text: 'Next',
+							classList: [ 'small-12' ],
+							dataAttr: {
+								'data-role': 'progress',
+								'data-form-section-active': 'account',
+								'data-hyperlink': '/whitelabel/registration/3/'
+							}
+						}
+					)
+				%>
+			</fieldset>
+			<fieldset class="row languageSelector">
+					<div class="columns center">
+						<a class="button-simple button-simple-inline" href="#" data-index-link="LanguageSelect" data-open="language-select" aria-controls="language-select" aria-haspopup="true">
+							Change language preference
+						</a>
+					</div>
+				</fieldset>
+		</form>
+	</section>
+</div>
+
+
+
+<%-
+  include('../partials/modal-choose-language.html');
+%>
+
+
+
+<%-
+  include('../partials/footer.html');
+%>

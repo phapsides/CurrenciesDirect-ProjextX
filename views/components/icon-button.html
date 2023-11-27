@@ -1,0 +1,51 @@
+<%
+/*
+
+# Icon Button Component
+
+### Notes
+
+
+#####
+
+# Simple
+
+include('components/icon-button.html', { text: 'Click me', icon: 'icon-search.white.svg' })
+
+# Verbose
+
+include(
+	'components/con-button.html',
+	{
+		text: 'Search',
+		classList: [ '' ],
+		dataAttr: {
+			'data-role': 'debug-001',
+			'data-debug': 'debug',
+		}
+	}
+)
+
+*/
+%>
+
+<div class="columns button-icon <%=
+	(typeof classList != 'undefined' ? classList.join(' ') : '')
+%>">
+	<button
+		type="<%= (typeof type != 'undefined' ? type : 'button') %>"
+		class="columns button"
+		<% if (typeof dataAttr != 'undefined') { for (key in dataAttr) { %>
+		<%- key + '="' + dataAttr[key] + '" ' %>
+		<% } } %>
+	>
+		<img
+			src="<%= (typeof icon != 'undefined' ? icon : '') %>"
+			alt="<%= (typeof text != 'undefined' ? text : '') %>"
+		>
+
+		<!--span>
+			<%= (typeof text != 'undefined' ? text : '') %>
+		</span-->
+	</button>
+</div>

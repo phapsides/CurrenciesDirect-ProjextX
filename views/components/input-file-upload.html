@@ -1,0 +1,34 @@
+
+<!--
+Input Upload
+
+  include(
+ 	'components/input-fle-upload.html',
+ 	{
+		type: 'submit',
+ 		text: 'Next step',
+ 		classList: [ 'small-12' ],
+ 		dataAttr: {
+ 			'data-role': 'progress',
+ 			'data-form-section-active': 'account',
+ 		}
+ 	}
+ ) -->
+
+
+<div class="input-file-upload-container <%=
+	(typeof classList != 'undefined' ? classList.join(' ') : '')
+%>"
+<% if (typeof dataAttr != 'undefined') { for (key in dataAttr) { %>
+<%- key + '="' + dataAttr[key] + '" ' %>
+<% } } %>
+
+>
+	<div class="input-file-upload-buttons">
+		<div class="small-12 columns button">
+			<input type="file" accept="image/x-png,image/gif,image/jpeg" />
+			<label><span><%= (typeof text != 'undefined' ? text : '') %></span></label>
+		</div>
+	</div>
+</div>
+

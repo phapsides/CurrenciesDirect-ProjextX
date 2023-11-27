@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="74" height="49" viewBox="0 0 74 49">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M-4-16h80v80H-4z"/>
+        <g transform="translate(5.28 .291)">
+            <rect width="64.354" height="41.563" fill="#D2F1C4" rx="1.939"/>
+            <rect width="62.854" height="40.063" x=".75" y=".75" stroke="#65B142" stroke-width="1.5" rx="1.939"/>
+        </g>
+        <path stroke="#464444" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M59.881 5.407c.26 2.768 2.12 4.972 4.457 5.28V31.36c-2.336.307-4.197 2.512-4.457 5.28H14.938c-.26-2.768-2.12-4.973-4.457-5.28V10.686c2.337-.307 4.197-2.511 4.457-5.28h44.943" opacity=".2" style="mix-blend-mode:color-burn"/>
+        <path fill="#464444" fill-rule="nonzero" d="M44.933 21.174c0 4.823-3.347 8.733-7.476 8.733-4.128 0-7.475-3.91-7.475-8.733s3.347-8.733 7.475-8.733c4.13 0 7.476 3.91 7.476 8.733" opacity=".2" style="mix-blend-mode:color-burn"/>
+        <g fill="#FEE897" fill-rule="nonzero" stroke="#D7BE01" stroke-width="1.5" transform="translate(50.886 19.486)">
+            <ellipse cx="10.881" cy="25.71" rx="10.881" ry="2.881"/>
+            <path d="M0 25.614V3.154c0-.614.49-1.112 1.098-1.112h19.566c.607 0 1.098.498 1.098 1.112v22.46"/>
+            <ellipse cx="10.881" cy="2.881" rx="10.881" ry="2.881"/>
+            <path d="M0 7.892c0 1.591 4.872 2.881 10.881 2.881 6.01 0 10.881-1.29 10.881-2.88M0 13.832c0 1.59 4.872 2.88 10.881 2.88 6.01 0 10.881-1.29 10.881-2.88M0 19.77c0 1.592 4.872 2.882 10.881 2.882 6.01 0 10.881-1.29 10.881-2.881"/>
+        </g>
+        <g fill-rule="nonzero" transform="translate(1 25.328)">
+            <ellipse cx="10.964" cy="11.128" fill="#65B142" stroke="#458D24" stroke-width="1.5" rx="10.964" ry="11.128"/>
+            <g fill="#FFF">
+                <path d="M14.29 8.247L8.987 13.55a.75.75 0 1 0 1.06 1.06l5.304-5.303a.75.75 0 0 0-1.06-1.06z"/>
+                <path d="M9.851 13.747L7.73 11.625a.75.75 0 0 0-1.06 1.061l2.12 2.121a.75.75 0 0 0 1.061-1.06z"/>
+            </g>
+        </g>
+    </g>
+</svg>

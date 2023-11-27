@@ -1,0 +1,281 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Recipients - Add',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-02',
+				'site-recipients' // Correct class
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Recipient details', state: 'active', href: '/whitelabel/recipients/manage/add/' },
+				{ title: 'Bank details', state: '', href: '/whitelabel/recipients/manage/add/bank-details/'  },
+				{ title: 'Additional details', state: '', href: '/whitelabel/recipients/manage/view-edit/additional-details/' }
+			],
+
+			backURL: '/whitelabel/recipients/manage/',
+
+			registrationProcess: false
+		}
+	);
+%>
+
+
+
+<div class="row main-container">
+	<div class="row">
+		<h1 class="large-8 medium-12 columns end title">
+			Add your recipient
+		</h1>
+		<p class="large-8 medium-12 columns end description">
+			Add your recipient’s details below – you’ll need to continue to the last page to save any details.
+		</p>
+	</div>
+	<div class="row">
+		<div class="large-8 medium-12 columns">
+			<div class="row">
+				<form class="formNoBorder" data-abide id="addNewPayee">
+					<div class="element-group">
+						<header class="element-group-header row">
+							<h5 class="small-8 columns end element-group-title">
+								Recipient type
+							</h5>
+						</header>
+						<fieldset class="row">
+							<div class="small-6 medium-4 columns radio-container">
+								<input class="needsclick" type="radio" name="recipient-type" value="individual" id="no" checked="checked">
+								<label for="no">Individual</label>
+							</div>
+							<div class="small-6 medium-4 end columns radio-container">
+								<input class="needsclick" type="radio" name="recipient-type" value="company" id="yes">
+								<label for="yes">Company</label>
+							</div>
+						</fieldset>
+						<fieldset class="row expanding-section expanded" data-expanding-section="individual">
+							<%-
+								include(
+									'../components/input-type-text.html',
+									{
+										assoc: 'firstname',
+										labelText: 'First name',
+										classList: [
+											'medium-8',
+											'end',
+											'columns'
+										]
+									}
+								);
+							%>
+							<%-
+								include(
+									'../components/input-type-text.html',
+									{
+										assoc: 'lastname',
+										labelText: 'Last name',
+										classList: [
+											'medium-8',
+											'end',
+											'columns'
+										]
+									}
+								);
+							%>
+						</fieldset>
+
+						<fieldset class="row expanding-section" data-expanding-section="company">
+							<%-
+								include(
+									'../components/input-type-text.html',
+									{
+										assoc: 'company-name',
+										labelText: 'Company',
+										classList: [
+											'medium-8',
+											'end',
+											'columns'
+										]
+									}
+								);
+							%>
+						</fieldset>
+						<fieldset class="row">
+							<%-
+								include(
+									'../components/input-type-tel.html',
+									{
+										assoc: 'telelphone-number',
+										labelText: 'Phone number (optional)',
+										classList: [
+											'medium-8',
+											'columns'
+										]
+									}
+								);
+							%>
+						</fieldset>
+						<fieldset class="row">
+							<%-
+								include(
+									'../components/input-type-email.html',
+									{
+										assoc: 'email-address',
+										labelText: 'Email address (optional)',
+										classList: [
+											'medium-8',
+											'columns'
+										]
+									}
+								);
+							%>
+						</fieldset>
+						<hr>
+						<fieldset class="row">
+							<div class="small-10 medium-8 columns select-container">
+								<select id="select-country">
+									<option selected disabled hidden>&nbsp;</option>
+									<option value="GB">United Kingdom</option>
+									<option value="US">United States</option>
+								</select>
+								<label for="select-country">
+									Country
+								</label>
+							</div>
+							<div class="small-1 medium-2 columns end tooltip-hldr">
+								<a class="tooltip-popup" href="#" title="This is the country that your recipient’s bank account is located in."></a>
+							</div>
+						</fieldset>
+						<fieldset class="row">
+							<div class="small-10 medium-8">
+								<%-
+									include(
+										'../components/select.html',
+										{
+											assoc: 'select-currency',
+											text: 'Currency',
+											containerClassList: [
+												'columns'
+											],
+											optionsClassList: [
+												'needsclick'
+											],
+											options: [
+												{ text: 'GBP - Pounds sterling', value: 'GBP ' },
+												{ text: 'EUR - Euro', value: 'EUR' },
+												{ text: 'USD - US Dollar', value: 'USD' },
+												{ text: 'ZAR- South African rand', value: 'ZAR' },
+											]
+										}
+									);
+								%>
+								<!-- <select id="select-currency">
+									<option selected disabled hidden>&nbsp;</option>
+									<option value="GB">GBP - Pounds sterling</option>
+									<option value="EU">EUR - Euro</option>
+									<option value="US">USD - US Dollar</option>
+									<option value="US">ZAR - South African rand</option>
+								</select>
+								<label for="select-currency">
+									Currency
+								</label> -->
+							</div>
+							<div class="small-1 medium-2 columns end tooltip-hldr">
+								<a class="tooltip-popup" href="#" title="This is the currency you want your recipient to receive. The recipient must have a bank account set up to receive this currency."></a>
+							</div>
+						</fieldset>
+						<div class="recipients-address">
+							<hr>
+							<header class="element-group-header row">
+								<h5 class="small-8 columns end element-group-title">
+									Recipient address
+								</h5>
+							</header>
+							<div class="row">
+								<%-
+									include(
+										'../components/textarea.html',
+										{
+											assoc: 'recipient-address-details',
+											labelText: 'Address',
+											classList: [
+												'medium-8',
+												'columns',
+												'small-label'
+											]
+										}
+									);
+								%>
+								<%-
+									include(
+										'../components/input-type-text.html',
+										{
+											assoc: 'county',
+											labelText: 'County',
+											classList: [
+												'medium-8',
+												'columns'
+											]
+										}
+									);
+								%>
+								<%-
+										include(
+											'../components/input-type-text.html',
+											{
+												assoc: 'postcode-search',
+												labelText: 'Postal code / Zip code',
+												classList: [
+													'medium-8',
+													'columns',
+													'end'
+												]
+											}
+										);
+									%>
+							</div>
+						</div>
+					</div>
+
+					<div class="row collapse">
+						<%-
+							include(
+								'../components/button.html',
+								{
+									type: 'button',
+									text: 'Continue',
+									classList: [
+										'medium-4',
+										'medium-offset-8',
+										'end'
+									],
+									dataAttr: {
+										'data-role': 'button-continue',
+										'data-hyperlink': '/whitelabel/recipients/manage/add/bank-details/',
+										//'disabled': 'disabled'
+									},
+								}
+							)
+						%>
+					</div>
+
+				</form>
+					
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>

@@ -1,0 +1,189 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Recipients - Add Bank Details',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-02',
+				'site-recipients' // Correct class
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Recipient details', state: 'complete', href: '/whitelabel/recipients/manage/add/' },
+				{ title: 'Bank details', state: 'active', href: '/whitelabel/recipients/manage/add/bank-details/'  },
+				{ title: 'Additional details', state: '', href: '/whitelabel/recipients/manage/add/additional-details/' }
+			],
+
+			backURL: '/whitelabel/recipients/manage/',
+
+			registrationProcess: false
+		}
+	);
+%>
+
+<div class="row main-container">
+	<div class="columns">
+
+		<div class="row collapse">
+			<h1 class="large-8 medium-12 columns end title">
+				Add your recipient
+			</h1>
+			<p class="large-8 medium-12 columns end description">
+				Add your recipient’s details below – you’ll need to continue to the last page to save any details.
+			</p>
+		</div>
+
+
+		<div class="row collapse">
+
+			<div class="large-8 medium-12 columns">
+				<form class="formNoBorder" data-abide>
+					<div class="element-group">
+						
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'iban-number',
+									labelText: 'IBAN',
+									classList: [
+										'small-10',
+										'medium-8',
+										'end',
+										'columns'
+									]
+								}
+							);
+						%>
+						<div class="small-1 columns end tooltip-hldr">
+							<a class="tooltip-popup" href="#" title="Enter the account details and just select 'Retrieve bank details', or enter all details on this form manually."></a>
+						</div>
+					</fieldset>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/button.html',
+								{
+									type: 'button',
+									text: 'Retrieve bank details',
+									classList: [
+										'medium-6',
+										'button-outline',
+										'end'
+									],
+									dataAttr: {
+										'data-role': 'button-bank-details',
+										'data-hyperlink': '#'
+									},
+								}
+							)
+						%>
+					</fieldset>
+					
+					<hr>
+
+					<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'swift-code',
+								labelText: 'SWIFT code',
+								classList: [
+									'medium-8',
+									'columns'
+								]
+							}
+						);
+					%>
+					</fieldset>
+					<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'bank-name',
+								labelText: 'Bank name',
+								classList: [
+									'medium-8',
+									'columns'
+								]
+							}
+						);
+					%>
+					</fieldset>
+					<hr>
+
+					<fieldset class="row">
+						<div class="medium-8 columns">
+							<%-
+								include(
+									'../components/textarea.html',
+									{
+										assoc: 'ank-address',
+										labelText: 'Bank address',
+										value: '',
+										classList: [
+											'small-label'
+										]
+									}
+								);
+							%>
+						</div>
+						<small class="columns">
+							(Please note: your deal confirmation may display the bank’s HQ address by default.)						
+						</small>
+					</fieldset>
+					<fieldset class="row">
+						<p class="columns">
+							If you need to add intermediary bank details, <span class="nowrap">please contact us on <a href="tel:1800291073" title="" class="phone-number">1800 291 073</a></span> <span class="nowrap">or email us on <a href="mailto:contracts@currenciesdirect.com" title="">info@torfx.com.au</a>.</span>
+						</p>
+					</fieldset>
+					</div>
+
+					<div class="row collapse">
+						<%-
+							include(
+								'../components/button.html',
+								{
+									type: 'button',
+									text: 'Continue',
+									classList: [
+										'medium-4',
+										'medium-offset-8',
+										'end'
+									],
+									dataAttr: {
+										'data-role': 'button-continue',
+										'data-hyperlink': '/whitelabel/recipients/manage/add/additional-details/',
+										//'disabled': 'disabled'
+									},
+								}
+							)
+						%>
+					</div>
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>

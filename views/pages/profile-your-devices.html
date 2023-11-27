@@ -1,0 +1,94 @@
+<!-- 
+	Profile Your Devices 
+-->
+
+
+<div class="columns table-container">
+	<table class="table row">
+		<thead>
+			<tr class="row">
+				<th class="">
+					<span>Device name</span>
+				</th>
+				<th class="">
+					<span class="">Last accessed IP</span>
+				</th>
+				<th class="table-td-card-number">
+					<span>Last accessed time</span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="row">
+				<td>
+					<span class="device-name">Chrome(on Mac OS X)</span>
+				</td>
+				<td>
+					<span>83.244.243.130</span>
+				</td>
+				<td>
+					<span class="">Wed Mar 22 04:20:16 GMT 2017</span>
+				</td>
+				<td class="table-td-options">
+					<div class="table-button-options">
+						<a class="button-simple button-simple-x button-simple-inline" href="#" data-index-link="ManageDeviceDelete" data-open="delete-device">
+							<span>x</span> 
+						</a>
+					</div>
+				</td>
+			</tr>
+			<tr class="row">
+				<td>
+					<span class="device-name">Internet Explorer 11 PC</span>
+				</td>
+				<td>
+					<span>83.244.243.130</span>
+				</td>
+				<td>
+					<span class="">Wed Mar 22 04:20:16 GMT 2017</span>
+				</td>
+				<td class="table-td-options">
+					<div class="table-button-options">
+						<a class="button-simple button-simple-x button-simple-inline" href="#" data-index-link="ManageDeviceDelete" data-open="delete-device">
+							<span>x</span> 
+						</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+		<!-- Start modal -->
+		<div class="reveal modal-container row" id="delete-device" data-reveal>
+			<div class="modal-frame columns">
+				<header class="modal-header">
+					<span class="button-icon modal-close" aria-label="Close modal" data-close="">
+						Close
+					</span>
+					<h4>Do you want to delete this device?</h4>
+				</header>
+				<div class="modal-content clearfix">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'submit',
+								text: 'Confirm',
+								classList: [ 
+									'large-8',
+									'large-centered'
+								],
+								dataAttr: {
+									'data-role': 'confirm-deletion',
+									'data-hyperlink': '#'
+								}
+							}
+						)
+					%>
+				</div>
+			</div>
+		</div>
+		<!-- End modal -->
+

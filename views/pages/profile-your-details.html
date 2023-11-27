@@ -1,0 +1,385 @@
+
+<div class="row collapse">
+	<div class="columns large-6 medium-8">
+		<fieldset class="row">
+			<h5 class="columns title">
+				Personal details
+			</h5>
+			<div class="row">
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'title',
+							labelText: 'Title',
+							value: 'Mr',
+							classList: [
+								'medium-4',
+								'end',
+								'columns',
+								'small-label'
+							],
+							disabled: true,
+							readOnly: true
+						}
+					);
+				%>
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'firstname',
+							labelText: 'First name',
+							value: app.data.user.firstName,
+							classList: [
+								'medium-8',
+								'columns',
+								'end',
+								'small-label'
+							],
+							disabled: true,
+							readOnly: true
+						}
+					);
+				%>
+			</div>
+			<div class="row">
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'middlename',
+							labelText: 'Middle name',
+							value: 'John',
+							classList: [
+								'columns',
+								'small-label'
+							],
+							disabled: true,
+							readOnly: true
+						}
+					);
+				%>
+			</div>
+			<div class="row">
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'lastname',
+							labelText: 'Last name',
+							value: app.data.user.lastName,
+							classList: [
+								'columns',
+								'small-label'
+							],
+							disabled: true,
+							readOnly: true
+						}
+					);
+				%>
+			</div>
+			<div class="row">
+				<h6 class="columns">
+					Date of birth
+				</h6>
+				<div class="row-multi-columns">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'dob-day',
+								labelText: 'Day',
+								value: '07',
+								classList: [
+									'small-4',
+									'medium-4',
+									'columns',
+									'small-label'
+								],
+								disabled: true,
+								readOnly: true
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'dob-month',
+								labelText: 'Month',
+								value: '03',
+								classList: [
+									'small-4',
+									'medium-4',
+									'columns',
+									'small-label'
+								],
+								disabled: true,
+								readOnly: true
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'dob-year',
+								labelText: 'Year',
+								value: '1984',
+								classList: [
+									'small-4',
+									'medium-4',
+									'end',
+									'columns',
+									'small-label'
+								],
+								disabled: true,
+								readOnly: true
+							}
+						);
+					%>
+				</div>
+			</div>
+			<%-
+				include(
+					'../components/select.html',
+					{
+						assoc: 'occupation',
+						text: 'Occupation',
+						containerClassList: [
+							'columns',
+							'end'
+						],
+						optionsClassList: [
+							'needsclick'
+						],
+						options: [
+							{ text: 'Computer Scientist', value: 'Computer Scientist' },
+							{ text: 'Teacher', value: 'Teacher' },
+							{ text: 'Politician', value: 'Politician' },
+							{ text: 'Musician', value: 'Musician' }
+						]
+					}
+				);
+			%>
+
+			<%-
+				include(
+					'../components/select.html',
+					{
+						assoc: 'add-occupation',
+						text: 'Additional occupation',
+						containerClassList: [
+							'columns',
+							'end'
+						],
+						optionsClassList: [
+							'needsclick'
+						],
+						options: [
+							{ text: 'Computer Scientist', value: 'Computer Scientist' },
+							{ text: 'Teacher', value: 'Teacher' },
+							{ text: 'Politician', value: 'Politician' },
+							{ text: 'Musician', value: 'Musician' }
+						]
+					}
+				);
+			%>
+		</fieldset>
+	</div>
+</div>
+
+<!--  -->
+
+<hr>
+
+<div class="row collapse">
+	<div class="columns large-6 medium-8">
+		<fieldset class="row">
+			<h5 class="columns title">
+				Contact details
+			</h5>
+			
+			<%-
+				include(
+					'../partials/select-iso-countries.html',
+					{
+						assoc: 'country-list',
+						text: 'Country',
+						containerClassList: [
+							'columns select-container small-label'
+						]
+					}
+				);
+			%>
+
+			<div class="medium-6 columns input-container">
+				<input type="search" id="postcode-search">
+				<label for="postcode-search">Post code</label>
+			</div>
+			<%-
+				include(
+					'../components/button.html',
+					{
+						text: 'Search',
+						classList: [ 
+							'medium-6', 
+							'end',
+							'button-outline' 
+							],
+						dataAttr: {
+							'data-role': 'lookup',
+							'data-open': 'address-lookup',
+							'data-index-link': 'AddressListLookup',
+							'data-reveal-id': 'address-list'
+						}
+					}
+				)
+			%>
+			<%-
+				include(
+					'../components/input-type-text.html',
+					{
+						assoc: 'address-line-1',
+						labelText: 'Address line 1',
+						classList: [
+							'columns'
+						]
+					}
+				);
+			%>
+
+
+			<%-
+				include(
+					'../components/input-type-text.html',
+					{
+						assoc: 'city',
+						labelText: 'City',
+						classList: [
+							'columns'
+						]
+					}
+				);
+			%>
+
+
+			<%-
+				include(
+					'../components/input-type-text.html',
+					{
+						assoc: 'state',
+						labelText: 'State',
+						classList: [
+							'columns'
+						]
+					}
+				);
+			%>
+
+
+			<div class="medium-4 columns select-container small-label">
+				<select id="country-code">
+				</select>
+				<label for="country-code">
+					Country
+				</label>
+			</div>
+			<%-
+				include(
+					'../components/input-type-tel.html',
+					{
+						assoc: 'telelphone-number-002',
+						labelText: 'Phone number',
+						classList: [
+							'medium-8',
+							'columns'
+						]
+					}
+				);
+			%>
+
+			<div class="small-12 medium-4 columns select-container small-label">
+				<select id="country-code-landline">
+				</select>
+				<label for="country-code">
+					Country
+				</label>
+			</div>
+			<%-
+				include(
+					'../components/input-type-tel.html',
+					{
+						assoc: 'telelphone-number-003',
+						labelText: 'Landline',
+						classList: [
+							'medium-8',
+							'columns'
+						]
+					}
+				);
+			%>
+		</fieldset>
+	</div>
+</div>
+<!-- End Your Details -->
+
+
+
+<!-- Start modal -->
+<div class="reveal modal-container" id="address-lookup" data-reveal>
+	<div class="modal-frame">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">Close</span>
+			<h4>Select your address</h4>
+		</header>
+		<div class="modal-content clearfix">
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/select.html',
+						{
+							assoc: 'address-selection',
+							text: 'Address',
+							containerClassList: [
+								'small-label'
+							],
+							optionsClassList: [
+								'needsclick'
+							],
+							options: [
+								{ text: '1, Mulholland Drive', value: '1, Mulholland Drive', selected: 'selected' },
+								{ text: '2, Mulholland Drive', value: '2, Mulholland Drive' },
+								{ text: '3, Mulholland Drive', value: '3, Mulholland Drive' }
+							]
+						}
+					);
+				%>
+			</fieldset>
+
+
+			<div class="row">
+				<%-
+					include(
+						'../components/button.html',
+						{
+							// type: 'submit',
+							type: 'button',
+							text: 'Select',
+							classList: [
+								'large-offset-2',
+								'large-8',
+								'end'
+							],
+							dataAttr: {
+								'data-hyperlink': '#'
+							}
+						}
+					)
+				%>
+			</div>		
+		</div>
+	</div>
+</div>
+<!-- End modal -->

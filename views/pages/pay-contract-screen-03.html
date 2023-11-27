@@ -1,0 +1,173 @@
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Pay Contract',
+				bodyClassList: [
+					'template',
+					'template-core', 
+					'template-navigation-progress',
+					'site-transfers',
+					'site-transfers-04'
+				]
+			}
+		);
+	%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Choose deal', state: 'complete', href: '/whitelabel/transactions/pay-contract/1/' },
+				{ title: 'Payment', state: 'complete', href: '/whitelabel/transactions/pay-contract/2/' },
+				{ title: 'Confirm and pay', state: 'active', href: '/whitelabel/transactions/pay-contract/3/' }
+			],
+
+			backURL: '/whitelabel/transactions/currency/empty/',
+
+			registrationProcess: false
+		}
+	);
+%>
+
+
+
+
+
+        
+<div class="row main-container">
+	<div class="row">
+		<header class="large-8 medium-12 main-header columns">
+			<h1 class="title">
+				Confirm and pay your open deal
+			</h1>
+			<p class="description">
+				Please check your details below and press ‘Pay now’ to complete your payment.
+			</p>
+		</header>
+	</div>
+	<div class="row">
+		<div class="large-8 medium-12 columns">
+			<form data-abide class="formNoBorder">
+				<div class="element-group">
+
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'amount-due-001',
+								value: 'GBP 6,500',
+								labelText: 'Amount due',
+								classList: [
+									'medium-8',
+									'end',
+									'columns',
+									'small-label'
+								],
+								disabled: true,
+								readOnly: true
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'amount-due-002',
+								value: 'Bank transfer',
+								labelText: "You've decided to pay via",
+								classList: [
+									'medium-8',
+									'columns',
+									'small-label'
+								],
+								disabled: true,
+								readOnly: true
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'amount-due-003',
+								value: '1234567',
+								labelText: 'Contract number',
+								classList: [
+									'medium-8',
+									'end',
+									'columns',
+									'small-label'
+								],
+								disabled: true,
+								readOnly: true
+							}
+						);
+					%>
+				</fieldset>
+
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'acc-number',
+								value: '1234567890',
+								labelText: 'Account number',
+								classList: [
+									'medium-8',
+									'end',
+									'columns',
+									'small-label'
+								],
+								disabled: true,
+								readOnly: true
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<p class="columns">
+						Your card issuer may ask you to answer some security questions on the next page.
+					</p>
+				</fieldset>
+				</div>
+
+				<div class="row collapse">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'button',
+								text: 'Pay now',
+								classList: [
+									'medium-4',
+									'medium-offset-8',
+									'end',
+									'temp-btn-continue',
+									'temp-button-style-green'
+								],
+								dataAttr: {
+									'data-hyperlink': '/whitelabel/transactions/pay-contract/confirmation/',
+									//'disabled': 'disabled'
+								},
+							}
+						)
+					%>
+				</div>
+
+			</form>
+			
+		</div>
+	</div>
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>

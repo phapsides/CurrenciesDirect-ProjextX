@@ -1,0 +1,1068 @@
+body { 
+  padding: 64px 0 65px; 
+  margin: 0;
+}
+
+body,
+.section.content .callout {
+  background-color: white;
+
+  header.sub-header {
+    margin-top: 16px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: .625rem;
+    padding-right: .625rem
+  }
+}
+
+.template-maintenance {
+  .section.content .callout {
+    background: #f4f4f4;
+  }
+}
+
+html .template .show-for-medium-up {
+  display: none;
+}
+
+.row.option-toggle { 
+  display: none; 
+
+  &.show { display: block; }
+}
+
+.template-registration nav.main {
+  height: 100px;
+  .row {
+    .columns {
+      padding: 0 2.625em;
+      display: block;
+    }
+  }
+  .brand-logo {
+    display: none;
+  }
+  .page-title {
+    display: block;
+    top: 11px;
+    position: absolute;
+    left: 35px;
+    padding-left: 2.625rem;
+  }
+  ul.progress {
+    margin-top: 15px;
+    li {
+      width: 23.33333%;
+
+      &:first-child {
+        width: 30%;
+        &::before {
+          float: left;
+          margin-right: 0;
+        }
+        p {
+          display: block;
+          margin-left: 5px;
+        }
+      }
+      &::before {
+        float: right;
+        margin-right: 0;
+      }
+      p {
+        display: none;
+      }
+    }
+  }
+  .close {
+    position: absolute;
+    top: 12px;
+    left: 2.625rem;
+    width: 24px;
+    padding-top: 24px; 
+  }
+}
+
+html nav.main-nav .main-nav-content > ul > li.menu-item-has-sub-menu > a:after { transform: rotate(180deg); }
+ 
+
+
+h3 { 
+  font-size: 24px; 
+}
+
+.mobile-text-center {
+  text-align: center;
+}
+
+.button-simple.button-simple-inline span {
+  text-align: center;
+}
+
+
+html .tooltip-hldr {
+  margin-left: 20px;
+}
+
+.template.template-core { 
+
+  .element-group {
+
+    border: none;
+    margin-bottom: 0;
+
+    .columns {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .pad--24 {
+    padding: 0;
+
+    &.element-group-footer { margin-top: 16px; }
+
+  }
+}
+
+.row-multi-columns {
+  .column, .columns {
+    padding-right: .625rem !important;
+
+    &:last-child {
+      padding-right: 0 !important;
+    }
+  }
+}
+
+.main-container .tc-section { margin-top: 0; }
+
+.template.template-core footer {
+
+  &.main-footer {
+    padding-top: 0;
+  }
+}
+
+.template.template-core {
+
+  footer.border--top, 
+  .row.expanding-section,
+  hr,
+  &.site-page-dashboard .element-grid .row .table-your-available-currency.element-group,
+  &.site-page-dashboard .element-grid .row .columns.element-group.element-group-alerts {
+    margin-left: -.625rem !important;
+    padding-left: .625rem !important;
+    margin-right: -.625rem !important;
+    padding-right: .625rem !important;
+  }
+}
+
+.template.template-core .site-page-dashboard .element-group-alerts {
+  box-sizing: content-box;
+}
+
+.template.template-core .dashboard-account-alerts {
+  padding-top: 16px;
+
+  hr.seperator {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    &:last-child {
+      margin-left: -.625rem !important;
+      margin-right: -.625rem !important;
+    }
+  }
+}
+
+.site-page-dashboard .element-group-alerts { box-sizing: content-box; }
+
+.site-page-dashboard .dashboard-create-alert-button {
+  margin-top: 16px;
+}
+
+.expanding-section { padding-top: 16px; }
+
+.pending-approval { margin-top: 0; }
+
+.template.template-core {
+
+  .row .column.table-container, .template.template-core .row .columns.table-container {
+    margin-bottom: 0;
+  }
+
+  footer.main-footer { font-size: $size-small; }
+
+}
+
+footer.main-footer { 
+  position: static;
+  border-top: 1px solid $border-color;
+  margin-top: 16px;
+}
+
+.footer-links {
+  text-align: center;
+  margin: 15px 0 0;
+}
+
+html .template.template-core {
+  .row.main-container {
+    //margin-top: 70px;
+    margin-top: 0;
+    //padding: 30px 0 20px; 
+    padding: 30px 0 0;
+
+    & > .columns > .row > .columns {
+      //padding: 0;
+    }
+
+    .languageSelector {
+      margin: 0 !important;
+    }
+  }
+
+  form > fieldset:first-child { margin-top: 0; }
+
+}
+
+.td-box {
+  background: white;
+  border-radius: 4px;
+  padding: 10px;
+
+}
+
+  .columns.table-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+.site-page-dashboard.template.template-core {
+
+  h3 { margin-bottom: -6px; }
+
+  .element-grid .columns {
+    padding-left: 0; 
+    padding-right: 0;
+  }
+
+  .row.main-container {
+    margin-top: 0 !important;
+
+    .element-grid {
+      > .columns {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    }
+  }
+
+  .columns.element-group-title {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .element-group-header {
+    border-bottom: none;
+  }
+
+  .element-group-alerts {
+    border-bottom: 1px solid $border-color;
+    border-radius: 0;
+    //margin-bottom: 16px;
+    margin-bottom: 8px;
+    padding-left: 0;
+    padding-right: 0;
+
+    .element-group-title {
+      margin-bottom: -16px !important;
+      //padding-left: 0.675rem;
+      //padding-right: 0.675rem;
+    }
+  }
+
+  .dashboard-alert {
+    //padding-left: 0.675rem !important;
+    //padding-right: 0.675rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .columns .row .element-group.element-group-alerts {
+    //margin-bottom: 24px !important;
+    //margin-bottom: 24px !important;
+    //border-bottom: 1px solid $border-color !important;
+    border-radius: 0;
+    padding-top: 0 !important;
+    //padding-left: 0 !important;
+    //padding-right: 0 !important;
+  }
+
+  .table-your-available-currency {
+    border-top: 1px solid $border-color !important;
+    border-bottom: 1px solid $border-color !important;
+    border-radius: 0;
+
+    .table-activity-wallets {
+
+      tbody, tr { 
+        display: block; 
+        overflow: hidden;
+        width: 100%;
+      }
+
+      tr {
+        padding: 10px 0;
+        margin: 0;
+        border-bottom: 1px solid $border-color !important;
+      }
+
+      td { 
+        display: block; 
+        padding: 0;
+        border: none;
+        font-size: 15px;
+
+        &:nth-child(2) { 
+          float: left;
+          width: 50%;
+        }
+
+        &:last-child {
+          float: right;
+          width: 50%;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .avail { letter-spacing: -0.04em; }
+
+    .buttons { padding-bottom: 0; }
+  }
+
+  .row.dashboard-buttons {
+    //border-bottom: 1px solid $border-color;
+    //padding-right: 7.5px;
+    //padding-left: 7.5px;
+    clear: both;
+
+    button {
+      p { 
+        display: none; 
+      }
+    }
+  }
+
+  .row.main-container .dashboard-account-alerts {
+    > .columns.element-group { 
+      padding-top: 0 !important;
+    }
+  }
+
+  .columns.button-add-a-payee-quick.button-grid-element {
+    margin-top: -24px; 
+
+   .button {
+      a, p {
+        display: none !important;
+      }
+    }
+  }
+
+  .button-create-new-alert {
+    margin-bottom: 0;
+    //padding-left: 7.5px !important;
+    //padding-right: 7.5px !important;
+  }
+}
+
+.site-page-profile {
+  .row.main-container {
+    margin-top: 36px;
+  }
+}
+
+.site-refer-and-earn.template.template-core .row.main-container .element-group {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.site-refer-and-earn .row.main-container .element-grid {
+  .large-6 { 
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+
+form {
+  border: none !important;
+  //padding: 0;  
+}
+
+.radio-container { margin-bottom: 0; }
+
+
+.site-transfers,
+.site-refer-and-earn, 
+.site-page-profile,
+.site-page-dashboard,
+.site-rate-alerts,
+.modal-make-transfer-show-details {
+
+  form.element-group-table,
+  form.table-transfers-pre-bought-currency,
+  form.element-table-group {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important; 
+    & > .row {
+      padding: 0 !important; 
+      .columns {
+        padding: 0 !important;
+      } 
+    }
+  }
+
+
+  thead {
+    display: none;
+  }
+  tbody {
+    background-color: transparent;
+  }
+
+  tr.row {
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    display: inline-block;
+    float: left;
+    margin: 0 16px 16px 0 !important;
+    padding: 16px;
+    width: 100%;
+    td {
+      border: none;
+      display: inline-block;
+      width: 100%;
+      clear: both;
+      padding: 0;
+      &:empty {
+        display: none;
+      }
+      .table-button-options {
+        width: 100%;
+        margin-top: 16px;
+        a:first-child {
+          float: left !important;
+        }
+        a:last-child {
+          float: right;
+        }
+      }
+    } 
+  } 
+  a.button-simple.columns[data-role="add-payee"] {
+    border: 1px solid $active-color;
+    color: $active-color;
+    text-align: center;
+    padding: 16px 0 !important; 
+    border-radius: 4px !important;
+    span {
+      font-size: $size-main;
+    }
+  }
+
+  a.button-simple.columns[data-role="show-more"] {
+    display: block;
+    text-align: center;
+    padding: 4px 0 !important;
+    height: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+
+  // Transfer from balance table
+  form.table-transfers-pre-bought-currency {
+    .table-head-expanding-section {
+      display: inline-block;
+      tr { 
+        display: block; 
+        width: 100%; 
+        padding: 0;
+        margin: 0 !important;
+        background-color: white !important;
+        th { 
+          padding-top: 12px !important; 
+          padding-left: 0 !important; 
+        }
+      }
+    }
+    .table-td-contract-no,
+    .table-td-date,
+    .table-td-balance {
+      padding-bottom: 6px !important;
+      &::before {
+        position: relative;
+        display: block;
+        clear: both;
+        float: left;
+        width: 100%;
+        color: $text-tertiary;
+        font-size: $size-small;
+      }
+    }
+    .table-td-contract-no {
+      &::before {
+        content: 'Contract no.';
+      }
+    }
+    .table-td-date {
+      &::before {
+        content: 'Date bought';
+      }
+    }
+    .table-td-balance {
+      &::before {
+        content: 'Remaining balance';
+      }
+    }
+  }
+}
+
+.site-rate-alerts tr.row { 
+  width: 100%; 
+  position: relative;
+
+  td { 
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  td:before { 
+    color: $text-main;
+  }
+
+  .table-td-payee {
+    font-family: $font-bold;
+    &:before { 
+      content: 'Created:'; 
+    }
+  }
+
+  .table-td-currency {
+    @extend .td-box;
+    width: 48%;
+    font-family: $font-bold;
+    &:before { 
+      content: 'Selling';
+      display: block;
+      color: $text-secondary;
+     }
+  }
+
+  .table-td-currency + .table-td-currency {
+    float: right;
+    &:before { content: 'Buying'; }
+  }
+
+  td:nth-child(4) {
+    &:before { content: 'Target rate:'; }
+  }
+
+  td:nth-child(5) {
+    &:before { content: 'Current rate:'; }
+  }
+
+  td:nth-child(6) {
+    &:before { content: 'Expires:'; }
+  }
+
+  a[data-open="manage-recipients-delete"] {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+}
+
+.site-rate-alerts tr.row td .table-button-options {
+  margin-top: 0;
+}
+
+.template.site-transfers {
+
+  .button-simple[data-role="show-more"] {
+    float: none !important;
+  }
+
+  .table-transfers-pre-bought-currency .table-button-options {
+    margin-top: -16px; 
+  }
+}
+
+.site-page-dashboard {
+
+  .element-grid .columns .row .element-group {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  &.template.template-core .row .columns .row {
+    .table-your-recipients,
+    .table-available-balances {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .table-your-recipients {
+      margin-top: -32px !important;
+    }
+
+    .table-available-balances {
+      .table-td-amount {
+        max-width: 50% !important;
+        @extend .td-box;
+        font-family: $font-bold;
+        margin-top: 4px;
+        margin-bottom: 4px;
+
+        &:before {
+          content: 'Balance';
+          display: block;
+        }
+
+      }
+    }
+
+    .button-create-new-alert button {
+      margin-top: 16px; 
+      margin-bottom: 16px;
+    }
+  }
+
+
+  .table.dashboard-your-recipients,
+  .table-available-balances {
+    tr.row {
+      width: 100%;
+      margin-right: 0 !important;
+
+      .table-td-button {
+        text-align: left;
+        padding-top: 5px !important;
+
+        a { float: none; }
+      }
+
+      &:nth-child(even) {
+        background-color: $table-row-color-odd !important;
+      }
+    }
+  }
+
+  .button-grid-element.button-grid-element-image  > button[data-role="buy-now"] div {
+    width: auto;
+  }
+
+  .button-simple-inline[data-role="show-more"] {
+    margin-top: 16px;
+  }
+}
+
+
+  html .modal-make-transfer-show-details table {
+  margin: 12px 0 24px;
+
+  tr.row {
+    width: calc(100% - 24px);
+    margin: 0 12px !important;
+    background: $table-row-color-odd !important;
+    border-radius: 0;
+    position: relative;
+
+    &:first-child {
+      border-radius: 4px 4px 0 0;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      border-bottom: 1px solid $border-color;
+
+    }
+
+    &:last-child {
+      border-radius: 0 0 4px 4px;
+      &:after { border: none; }
+    }
+
+    td {
+      width: calc(100% - 16px);
+      &:empty { 
+        display: none; 
+      }
+      &:first-child {
+        width: 50%;
+      }
+      &:nth-child(2) {
+        width: 50%;
+        float: right;
+        text-align: right;
+        color: $text-main;
+      }
+
+      &:nth-child(3), &:nth-child(4) { 
+        background: #fff;
+        color: $text-main;
+        padding: 12px !important;
+        width: calc(50% - 6px);
+        border-radius: 4px;
+        margin: 10px 0;
+
+        & span:before {
+          content: 'Amount';
+          display: block;
+        }
+      }
+
+      &:nth-child(4) { 
+        color: $text-main;
+        float: right;
+
+        & span:before {
+          content: 'Balance';
+        }
+      }
+
+      &:nth-child(5):before { 
+        content: 'Payee';
+        color: $text-main;
+        padding-right: 6px;
+      }
+
+
+      &:nth-child(6):before { 
+        content: 'Reference';
+        color: $text-main;
+        padding-right: 6px;
+      }
+    }
+  }     
+}
+
+  aside.transfers-summary {
+  position: fixed !important;
+  z-index: 100;
+  padding-left: 0;
+  padding-right: 0;
+  left: 0;
+  bottom: 1000px; //rendering the height outside the screen
+  width: 100%;
+  max-width: 100% !important;
+  border-radius: 50px;
+
+  transition: transform .5s ease-in-out;
+
+  .transfers-summary-title {
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 3px;
+      width: 10px;
+      height: 10px;
+      background: url('../images/ic-chevron-up-white.svg') right center no-repeat;
+      background-size: 10px 10px;
+      transition: transform .5s ease-in-out;
+    }
+
+  }
+
+  &.open .transfers-summary-title:after  {
+    transform: rotate(180deg);
+  }
+
+  .row .transfers-summary-selected-payee.columns {
+    padding-left: .625rem;
+    padding-right: .625rem;
+  }
+
+}
+
+.sticky-container { height: 0 !important; }
+
+.row {
+  display: block;
+
+  &.expanding-section {
+    display: none;
+
+    &.expanded { display: block; }
+  }
+
+  .small-12.columns {
+    float: left;
+    width: 100%;
+
+    li {
+      float: left;
+      a {
+        span {
+          display: none;
+        }
+      }
+      &.active {
+        a {
+          span {
+            display: inline-block;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.main-nav-content,
+.user-profile { 
+  display: none;
+}
+
+.template .status-notification  {
+  position: relative;
+  top: 0;
+
+  > .row > .columns {
+    padding-right: 50px;
+  }
+
+  a.close {
+    position: absolute;
+    margin-top: 0;
+    top: 5px;
+    right: 0px;
+    left: auto;
+  }
+
+  .button-outline button {
+    float: none;
+    margin: 0 auto 16px;
+  }
+
+}
+
+.template.template-registration.site-registration-10 .title { padding: 0; }
+
+.tab-page-container {
+
+  .button-simple.button-simple-inline {
+    width: auto;
+    margin-top: 0 !important;
+    span { text-align: left; }
+  }
+
+  table tr.row { width: 100%; }
+
+  a[data-open="delete-card"] { float: right; }
+
+  .button-simple[data-open="add-new-card"] { 
+    //margin-bottom: 0; 
+  } 
+
+  .new-password--panel,
+  .new-email--panel {
+
+    a.button-simple-inline {
+        margin-top: 20px !important;
+        margin-left: 40px;
+      }
+  }
+}
+
+.button-simple { 
+  height: auto; 
+  span { margin-top: 10px; }
+}
+
+.button-simple-x span {
+  font-size: 22px;
+}
+
+.button-simple.button-simple-back {
+  height: auto;
+
+  span { 
+    margin-top: 0; 
+  }
+}
+
+
+.button-simple.button-outline-mobile {
+  background-color: transparent;
+  border: 1px solid #f64200;
+  border-radius: 4px;
+  color: #f64200;
+  height: 60px;
+  line-height: 1.2;
+  padding-top: 1.25em;
+
+  &:hover {
+    background: #f64200;
+    color: #fff;
+  }
+
+}
+
+.element-group .element-group-header h5.element-group-title {
+  margin-top: 10px;
+}
+
+html table tbody tr:hover td:first-child {
+  border-left: 0;
+}
+
+.operand-or {
+  text-transform:capitalize;
+  margin-top: 0;
+  text-align: left;
+  margin-bottom: 14px;
+  color: $text-secondary;
+}
+
+.column-operand.second-line { 
+  margin-top: 10px; 
+
+  & + .input-container { margin-top: 3px; }
+}
+
+.input-container, .select-container {
+  margin-bottom: 16px;
+}
+
+.textarea-container textarea {
+  min-height: 140px;
+}
+
+.copy-rate-refresh { margin-top: 0; }
+
+.template.template-core .row {
+  .column, .columns {
+    .table-container {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.site-page-dashboard {
+  .element-grid {
+    .columns.table-container {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }  
+}
+
+
+
+.row.navigation-tab-container {
+  margin-left: -.625rem !important;
+  margin-right: -.625rem !important;
+}
+
+.table-activity-history {
+  .navigation-tab-container {
+    height: 61px;
+    background-color: #fff;
+    border-top:none;
+    overflow: hidden;
+
+    .navigation-tabs {
+      padding-left: 0;
+    }
+  }
+}
+
+
+
+#submit button {
+  margin: 16px 0 32px;
+}
+
+.switch-field label {
+  margin: 0;
+}
+
+button, button[type="button"], button[type="submit"], button[type="reset"], .button {
+  margin-bottom: 16px; 
+}
+
+.tooltip-popup { top: 0; }
+p .tooltip-popup { top: 6px; }
+
+.small-1 .tooltip-popup { top: 6px; }
+.ui-tooltip .arrow { display: none; }
+.ui-tooltip { margin-left: 15px; margin-right: 15px; }
+
+.add-recipients { padding-top: 10px; }
+
+.refer-share-icon {
+  display: block;
+}
+
+.refer-share-icon-link { margin-top: -16px; }
+
+.refer-share-icon-twitter { margin-bottom: -36px; }
+
+.reveal  { top: 0 !important; }
+
+.device-name {
+  padding-right: 20px;
+  display: block; 
+}
+
+.button-grid-element.button-grid-element-image.button-add-a-payee-quick > button[data-role="buy-now"] {
+  margin-top: -14px;
+}
+
+  .row.main-container form > fieldset:first-child, .row.main-container form > .element-group > fieldset:first-child { margin-top: 0; }
+
+.modal-frame {
+  // padding-left: 0 !important;
+  // padding-right: 0 !important;
+
+  dt { float: none !important; font-weight: 700 !important; }
+  dd { float: none !important; }
+}
+
+
+html body .extra-height {
+  input:not([type="checkbox"]), select {
+    height: 85px;
+    padding-top: 56px;
+  }
+}
+
+.site-registration-06 .radio-group-container .tooltip-hldr {
+  margin-left: 6px;
+}
+
+
+.multi-buttons {
+  > .column, > .columns {
+    padding-left: 0; 
+    padding-right: 0;
+  }
+}

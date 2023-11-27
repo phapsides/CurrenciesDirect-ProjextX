@@ -1,0 +1,72 @@
+<!doctype html>
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Account activation sent'
+			}
+		);
+	%>
+
+
+	<body class="template template-core template-layout-centered template-registration">
+
+		<%-
+			include(
+				'../components/navigation-main-simple.html', {
+				loggedIn: false,
+				registrationProcess: false,
+				closeOpt: true
+				}
+			);
+		%>
+
+
+
+		<div class="row main-container">
+			<section class="large-5 medium-7 small-centered section content">
+				<header class="main-header columns center">
+					<h1 class="title">
+						Please check your inbox<br>for your activation link
+					</h1>
+					<p class="description">
+						We have sent an activation link to your email address <strong>email@example.com</strong>. 
+					</p>
+					<p class="description">
+						Please click on the link inside this email to continue. If you do not see this email, please check your email spam or junk folders. 
+					</p>
+					<p class="description">
+						If after 10 minutes you have still not received our email, click the button below to send a new one.
+					</p>
+				</header>
+				<div class="row">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'submit',
+								text: 'Resend email',
+								classList: [
+									'small-12'
+								],
+								dataAttr: {
+									'data-hyperlink': './#'
+								}
+							}
+						)
+					%>
+				</div>
+			</section>
+		</div>
+
+
+
+
+    <%-
+      /* Sitewide JS */
+      include('../partials/footer.html');
+    %>
+
+
+	</body>
+</html>

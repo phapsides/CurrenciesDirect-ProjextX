@@ -1,0 +1,44 @@
+<%-
+	include(
+		'./partials/head.html', {
+			title: 'CD Incubator - Developer Reference',
+			bodyClassList: [
+				'template',
+				'template-core',
+				'tmpl-whitelabel'
+			]
+		}
+	)
+%>
+
+	<nav class="main-nav">
+		<div class="row">
+			<div class="small-2 columns brand-logo-container">
+				<a class="brand-logo" href="/">
+					<!-- Currencies Direct -->
+				</a>
+			</div>
+		</div>
+	</nav>
+
+
+	<%- 
+		include('./index-content-listing.html', {
+			pageHeading: 'Developers'
+		})
+	%>
+
+
+    <%-
+        include('./partials/scripts.html', {
+        	developers: true, 
+        	stakeholders: false
+        })
+    %>
+
+
+    </div>
+    <!-- End "pseudo-body" -->
+
+	</body>
+</html>

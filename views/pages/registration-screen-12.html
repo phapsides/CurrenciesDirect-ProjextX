@@ -1,0 +1,68 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Register - 04',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-layout-centered', 
+				'template-registration',
+				'site-registration-04'
+			],
+			metaOptions: [
+				{ httpEquiv: 'refresh', content: '3; url=/whitelabel/registration/11/?clientId=TMOz' },
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			classList: 'progress-container-has-sub-title',
+			progressOptions: [
+				{ title: 'Account', state: 'complete', subTitle: 'Personal', href: '/whitelabel/registration/2/' },
+				{ title: 'Details', state: 'complete', subTitle: app.data.user.firstName + ' ' + app.data.user.lastName, href: '/whitelabel/registration/3/' },
+				{ title: 'Security', state: 'active', href: '/whitelabel/registration/6/' },
+				{ title: 'Confirm', state: '', href: '/whitelabel/registration/7/' }
+			],
+
+			backURL: '/whitelabel/registration/1/',
+			
+			registrationProcess: true
+		}
+	);
+%>
+
+
+
+
+
+<div class="row main-container">
+	<section class="columns section content">
+		<div class="callout">
+			<div class="loader-container">
+				<svg class="loader" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+					<circle class="internal-circle" cx="60" cy="60" r="30"></circle>
+					<circle class="external-circle" cx="60" cy="60" r="50"></circle>
+				</svg>
+			</div>
+			<header class="main-header row">
+				<h1 class="title columns">
+					Checking details…
+				</h1>
+				<p class="information center columns">
+					We're just running some security checks, so that we can complete your account.
+				</p>
+			</header>
+		</div>
+	</section>
+</div>
+
+
+
+
+<%-
+  include('../partials/footer.html');
+%>

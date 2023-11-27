@@ -1,0 +1,108 @@
+
+<!-- Note: move extend for client styles to it's own stylesheet -->
+<%-
+	
+	include(
+		'../partials/head.html', {
+			title: 'Register - 01',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-layout-centered', 
+				'template-registration',
+				'site-registration-01'
+			]
+		}
+	);
+%>
+
+<%-
+	include(
+		'../components/navigation-main-simple.html', {
+			title: 'Register',
+			loggedIn: false,
+			registrationProcess: true,
+			closeOpt: true
+		}
+	);
+%>
+
+<div class="row main-container">
+	<div class="large-5 medium-7 small-centered columns" data-page-state="">
+		<section class="section content" data-form-section="account">
+			<form class="callout" data-abide>
+				<header class="main-header columns">
+					<h1 class="title">
+						Tell us what type of account you're looking for.
+					</h1>
+					<p class="description">
+						Already have an account? <a href="/whitelabel/" title="">Log in now.</a>
+					</p>
+				</header>
+				<%-
+					include(
+						'../components/radio-button-group.html',
+						{
+							assoc: 'account-type',
+							containerClassList: [ '__containerClassTest' ],
+							optionsClassList: [ '__optionsClassTest', 'needsclick' ],
+							options: [
+								{
+									assoc: 'personal',
+									value: 'Personal'
+								},
+								{
+									assoc: 'business',
+									value: 'Business'
+								}
+							]
+						}
+					);
+				%>
+				<fieldset class="row information-holder">
+					<p class="columns information hide" data-assoc="personal">
+						Simple overseas money transfers at great exchange rates – online, by phone or in-branch.
+					</p>
+					<p class="columns information hide" data-assoc="business">
+						For companies with overseas sales, suppliers or operations that need foreign exchange services.
+					</p>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'submit',
+								text: 'Select an account type',
+								classList: [ 
+									'small-12'
+								],
+								dataAttr: {
+									'disabled': 'disabled',
+									'data-role': 'next',
+									'data-hyperlink': '/whitelabel/registration/2/'
+								}
+							}
+						)
+					%>
+				</fieldset>
+				<fieldset class="row languageSelector">
+					<div class="columns center">
+						<a class="button-simple button-simple-inline" title="" href="#" data-index-link="LanguageSelect" data-open="language-select" aria-controls="language-select" aria-haspopup="true">
+							Change language preference
+						</a>
+					</div>
+				</fieldset>
+			</form>
+		</section>
+	</div>
+</div>
+
+<%-
+  include('../partials/modal-choose-language.html');
+%>
+
+
+<%-
+	include('../partials/footer.html')
+%>

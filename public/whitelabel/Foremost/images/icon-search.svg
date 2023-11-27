@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>C97A7663-F981-42DA-A5B3-2641A9EBE92A</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-search-orange" fill="#1f3368">
+            <g id="Group-2" transform="translate(5.000000, 5.000000)">
+                <path d="M6,12 C9.3137085,12 12,9.3137085 12,6 C12,2.6862915 9.3137085,0 6,0 C2.6862915,0 0,2.6862915 0,6 C0,9.3137085 2.6862915,12 6,12 Z M6,10 C3.790861,10 2,8.209139 2,6 C2,3.790861 3.790861,2 6,2 C8.209139,2 10,3.790861 10,6 C10,8.209139 8.209139,10 6,10 Z" id="Oval"></path>
+                <path d="M8.79289322,11.2071068 L11.342403,13.7566165 C11.7329273,14.1471408 12.3660922,14.1471408 12.7566165,13.7566165 C13.1471408,13.3660922 13.1471408,12.7329273 12.7566165,12.342403 L10.2071068,9.79289322 C9.81658249,9.40236893 9.18341751,9.40236893 8.79289322,9.79289322 C8.40236893,10.1834175 8.40236893,10.8165825 8.79289322,11.2071068 Z" id="Line"></path>
+            </g>
+        </g>
+    </g>
+</svg>

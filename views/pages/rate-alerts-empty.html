@@ -1,0 +1,72 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Rate Alerts - Empty',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-registration'
+			]
+		}
+	);
+%>
+
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts active', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+
+<div class="row main-container">
+	<div class="large-5 medium-7 small-centered section content center">
+		<form class="callout">
+			<header class="main-header columns">
+				<h1 class="title">
+					You haven't set up a rate alert yet.
+				</h1>
+				<p class="information centered">
+					Choose your currency amount and desired exchange rate, and we'll email &amp; SMS you when your target is achieved!
+				</p>
+			</header>
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'submit',
+							text: 'Create a rate alert',
+							classList: [ 'small-12' ],
+							dataAttr: {
+								'data-role': 'next',
+								'data-hyperlink': '/whitelabel/rate-alerts/management/new/'
+							}
+						}
+					)
+				%>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>
+

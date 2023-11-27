@@ -1,0 +1,811 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+/**
+ * Foremost Theme
+ */
+$get-path-to-assets: '/whitelabel/Foremost/images';
+$link-weight: 400;
+$nav-link-weight: 600;
+$button-weight: 600;
+$title-weight: 600;
+$whitelabel-primary: #1f3368;
+$whitelabel-primary-text: #1f3368;
+$whitelabel-secondary: #f47933;
+$whitelabel-secondary-text: #f47933;
+$whitelabel-nav-bg: #FFFFFF;
+$whitelabel-nav-links: #000000;
+$whitelabel-button-bg: $whitelabel-primary;
+$whitelabel-button-bg-hover: lighten( $whitelabel-primary, 10% );
+$whitelabel-button-bg-click: lighten( $whitelabel-button-bg-hover, 10% );
+$whitelabel-button-text: white;
+$whitelabel-button-text-hover: $whitelabel-button-text;
+$whitelabel-button-text-click: $whitelabel-button-text-hover;
+// SHOW/HIDE SPECIFIC ELEMENTS
+.menu-item-refer-and-earn {
+  display: none !important;
+}
+
+.mobile-menu-toggle--container .mobile-menu-toggle {
+  background: url("/whitelabel/Foremost/images/icon-mobile-menu.svg") no-repeat center center !important;
+  &:hover {
+    background: url("/whitelabel/Foremost/images/icon-mobile-menu.svg") no-repeat center center !important;
+  }
+}
+
+.open .mobile-menu-toggle--container .mobile-menu-toggle {
+  background: url("/whitelabel/Foremost/images/icon-mobile-menu-close.svg") no-repeat center center !important;
+}
+
+* {
+  font-family: 'Open Sans', Calibri, Arial, sans-serif;
+}
+
+body {
+  nav.main-progress-nav ul li .title,
+  h1, h2, h3, h4, h5, h6, th,
+  h1.title,
+  .button-simple, th, .table-td-name,
+  nav.main-progress-nav ul.progress-container-has-sub-title li.progress-has-sub-title div .title,
+  .radio-group-container .radio > label,
+  #quick-rate-container .select-container:first-child input, 
+  #quick-rate-container .input-container:first-child input, 
+  #recipient-gets-container .select-container:first-child input, 
+  #recipient-gets-container .input-container:first-child input,
+  .exchange-rate-live,
+  nav.main-nav .main-nav-content a, nav.main-nav .main-nav-content span,
+  .button-grid-element.button-grid-element-image.button-make-a-transfer p,
+  .button-grid-element.button-grid-element-image.button-buy-currency p,
+  .button-grid-element.button-grid-element-image.button-add-a-payee-quick > button[data-role="buy-now"] p,
+  button, button[type="button"], button[type="submit"], button[type="reset"], input[type="button"], input[type="submit"], input[type="reset"], .button,
+  .modal-add-new-card .modal-content label[for="store-card-details"], .modal-add-new-card .modal-content label[for="canReuse"],
+  .modal-add-new-card .modal-content label[for="store-card-details"] small, .modal-add-new-card .modal-content label[for="canReuse"] small,
+  .main-container aside.transfers-summary .columns.sub-title-refresh,
+  .main-container aside.transfers-summary .columns.sub-title-refresh span[data-rate-refresh],
+  .modal-deal-confirmation .modal-content dt,
+  .reveal .modal-frame .modal-content dl dd,
+  .main-container .tc-section a,
+  .filter-container .button-simple span
+
+  {
+    font-family: 'Open Sans', Calibri, Arial, sans-serif;
+  }
+}
+
+
+
+.row.main-container {
+  padding-top: 32px;
+  
+  @media screen and (max-width: 960px) {
+    padding-top: 48px;
+  }
+  
+}
+
+
+body {
+  .template, &.template {
+    &.template-core {
+      font-family: 'Open Sans', Calibri, Arial, sans-serif !important;
+
+      a,
+      a:active,
+      a:hover,
+      a:visited,
+      em {
+        font-weight: $link-weight !important;
+        color: $whitelabel-primary-text;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: $title-weight;
+        letter-spacing: -0.4px !important;
+      }
+
+      input,
+      textarea {
+        caret-color: $whitelabel-primary;
+      }
+
+      
+
+      nav {
+        &.main-nav {
+          background: #2964a6; /* For browsers that do not support gradients */
+          background: -webkit-linear-gradient(left top, #2964a6, #1f3368); /* For Safari 5.1 to 6.0 */
+          background: -o-linear-gradient(bottom right, #2964a6, #1f3368); /* For Opera 11.1 to 12.0 */
+          background: -moz-linear-gradient(bottom right, #2964a6, #1f3368); /* For Firefox 3.6 to 15 */
+          background: linear-gradient(to bottom right, #2964a6, #1f3368); /* Standard syntax */ 
+          .brand-logo-container {
+            margin: 10px 0;
+            
+            @media (max-width: 960px) {
+              margin: 13px 0 0;
+            }
+            
+            ::after {
+              color: $whitelabel-nav-bg;
+            }
+
+            .brand-logo {
+              &::before {
+                content: '';
+                background-image: url("#{$get-path-to-assets}/ForemostLogo.svg") !important;
+                background-position: none !important;
+                -ms-interpolation-mode: bicubic;
+                width: 110px !important;
+                height: 90px !important;
+                background-size: 68%;
+                background-position: 0 0 !important;
+                color: white !important; 
+              }
+              
+              @media (max-width: 960px) {
+                &::before {
+                  background-size: 50px !important;
+                  height: 50px !important;
+                  width: 50px !important;
+                }
+                
+              }
+              
+            }
+          }
+
+          .main-nav-content {
+            ul {
+              li {
+                a {
+                  color: #fff !important;
+                  font-weight: $nav-link-weight !important;
+                }
+
+                &.active,
+                &.open {
+                  border-bottom: 2px solid #f47932 !important;
+                }
+                
+                &.menu-item-has-sub-menu {
+                  a {
+                    &::after {
+                      background-image: url("#{$get-path-to-assets}/ic-chevron-down.svg") !important;
+                    }
+                  }
+                }
+
+                ul.sub-menu {
+                  background: #f47932;
+
+                  li {
+                    background: inherit;
+                    a {
+                      color: #fff !important;
+                      font-weight: $nav-link-weight !important;
+                      
+                      &:hover {
+                        color: #000;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .user-profile {
+            background-color: transparent;
+            &.open {
+              background-color: #fff; 
+              .user-profile-name {
+                color: #1f3368 !important;
+              }
+            }
+            li {
+              .user-profile-name {
+                color: #fff !important;
+                letter-spacing: normal !important;
+                font-weight: $nav-link-weight !important;
+              }
+               .user-profile-id {
+                @media screen and (max-width: 960px) {
+                    color: #FFFFFF;
+                }
+              }
+            }
+            
+            &::after {
+              background-image: url("#{$get-path-to-assets}/ic-chevron-down.svg") !important;
+            }
+            .sub-menu {
+              @media only screen and (max-width: 960px) {
+                top: 490px;
+              }
+            }
+          }
+        }
+
+        &.main-progress-nav {
+          ul {
+            li {
+              a {
+                font-weight: $nav-link-weight !important;
+
+                &:before {
+                  padding-top: 3px;
+                  
+                  @media (max-width: 960px) {
+                      padding-top: 2px;
+                    }
+                }
+              }
+
+              &.active {
+                a {
+                  &::before {
+                    background-color: $whitelabel-secondary;
+                    color: #fff;
+                    font-weight: $title-weight;
+                  }
+                }
+              }
+
+              &.complete {
+                a {
+                  &::before {
+                    background-image: url("#{$get-path-to-assets}/ico-ff-tick-green.svg") !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .main-nav-close {
+          a {
+            background-image: url("#{$get-path-to-assets}/ico-cross.svg") !important;
+          }
+        }
+      }
+
+      .navigation-tab-container {
+        .navigation-tabs {
+          .tab-toggle {
+            &.active {
+              span {
+                border-bottom: 2px solid $whitelabel-primary;
+              }
+            }
+          }
+        }
+      }
+
+      .reveal-overlay .reveal-modal [data-reveal-id="loading-image"] .modal-loading {
+        border-top: 4px solid $whitelabel-secondary;
+        border-right: 4px solid $whitelabel-secondary;
+      }
+
+      #quick-rate-container .input-container input,
+      #quick-rate-container .select-container input,
+      #recipient-gets-container .input-container input,
+      #recipient-gets-container .select-container input {
+        font-weight: $title-weight !important;
+      }
+
+      .temp-add-new-payee {
+        height: 46px !important;
+        color: white !important;
+      }
+    }
+  }
+  
+  table {
+    thead {
+      *,
+      *:hover {
+        font-weight: $title-weight !important;
+      }
+    }
+
+  }
+  
+}
+// IMAGE OVERWRITES
+body {
+  .close {
+    background-image: url("#{$get-path-to-assets}/icon-close.svg");
+  }
+
+  .button-grid-element.button-grid-element-image.button-make-a-transfer button {
+    background-image: url("#{$get-path-to-assets}/icon-make-a-transfer.svg");
+  }
+
+  .button-grid-element.button-grid-element-image.button-buy-currency button {
+    background-image: url("#{$get-path-to-assets}/icon-buy-currency.svg");
+  }
+
+  .button-grid-element.button-grid-element-image.button-add-a-payee-quick button {
+    background-image: url("#{$get-path-to-assets}/ic-profile.svg") !important;
+  }
+
+  .radio-container input[type="radio"]:checked, .row.main-container form .row .radio-container input[type=radio]:checked {
+    background-image: url("#{$get-path-to-assets}/ff-radiobutton-active.svg");
+  }
+
+  .row.main-container form .row .input-container {
+    *[data-role=show-password], *[data-role=show-password]:hover {
+      background-image: url("#{$get-path-to-assets}/icon-password-show.svg") !important;
+      background-repeat: no-repeat  !important;
+      background-color: transparent !important;
+      background-position: center !important;
+
+      &.checked {
+        background-image: url("#{$get-path-to-assets}/icon-password-hide.svg") !important;
+      }
+    }
+
+  }
+
+  /*.row.main-container form .row .input-container input[type=search] {
+    background-image: url("#{$get-path-to-assets}/icon-search.svg");
+  }*/
+
+  .radio-group-container .radio input[type=radio]:checked ~ label::after {
+    background-image: url("#{$get-path-to-assets}/ff-radiobutton-active.svg");
+  }
+
+  .row.main-container form .row .input-container select {
+    background-image: url("#{$get-path-to-assets}/icon-drop-down.svg");
+  }
+
+  .filter-container .hasDatepicker {
+    background-image: url("#{$get-path-to-assets}/icon-calendar.svg");
+    
+    &:focus {
+      background: #fff;
+    }
+    
+  }
+  
+  .ui-datepicker {
+    
+    .ui-datepicker-prev span {
+      background-image: url("#{$get-path-to-assets}/ic-chevron-left.svg");
+    }
+    
+    .ui-datepicker-next span {
+      background-image: url("#{$get-path-to-assets}/ic-chevron-right.svg");
+    }
+    
+  }
+  
+  #ui-datepicker-div {
+    .ui-datepicker-current-day a {
+      background: $whitelabel-primary;
+    }
+  }
+
+  .exchange-rate-live {
+    em {
+      color: $whitelabel-primary-text;
+    }
+
+    .rate-refresh-icon {
+      background-color: $whitelabel-primary;
+
+      &:hover { background: lighten($whitelabel-primary, 10); }
+    }
+  }
+  // Registration transfer range icons
+  .button-grid-element.button-grid-element-image-small.button-icon-less-than-25k > label::before {
+    background-image: url("#{$get-path-to-assets}/icon-transfer-amount-less-than-25k.svg");
+  }
+
+  .button-grid-element.button-grid-element-image-small.button-icon-between-25k-50k > label::before {
+    background-image: url("#{$get-path-to-assets}/icon-transfer-amount-between-25k-50k.svg");
+  }
+
+  .button-grid-element.button-grid-element-image-small.button-icon-more-than-50k > label::before {
+    background-image: url("#{$get-path-to-assets}/icon-transfer-amount-between-50k.svg");
+  }
+  
+  .accordion-item {
+    .accordion-title:before {
+      content: url("#{$get-path-to-assets}/ic-chevron-down.svg");
+    }
+    &.is-active {
+      .accordion-title:before {
+        content: url("#{$get-path-to-assets}/ic-chevron-up.svg");
+      }  
+    }
+  }
+}
+
+body .section.content .callout {
+  //background-color: #f7f7f7 !important;
+}
+
+body ul.progress li {
+  color: white;
+}
+
+body ul.progress li::before {
+  background-color: #eeeeee;
+  color: #29235c;
+}
+
+body ul.progress li.active {
+  color: $whitelabel-primary;
+}
+
+body ul.progress li.active::before {
+  background-color: $whitelabel-primary;
+}
+
+body ul.progress li.complete {
+  color: white;
+}
+
+
+body .button,
+body .button:active,
+body .button:focus,
+body .button:visited,
+body button,
+body button:active,
+body button:focus,
+body button:visited,
+body button[type="button"],
+body button[type="button"]:active,
+body button[type="button"]:focus,
+body button[type="button"]:visited,
+body button[type="reset"],
+body button[type="reset"]:active,
+body button[type="reset"]:focus,
+body button[type="reset"]:visited,
+body button[type="submit"],
+body button[type="submit"]:active,
+body button[type="submit"]:focus,
+body button[type="submit"]:visited {
+  background-color: $whitelabel-primary;
+  color: $whitelabel-button-text;
+
+  span {
+    font-size: 1rem;
+    font-weight: $button-weight;
+  }
+}
+
+body  {
+  button[type="button"]:hover,
+  button[type="submit"]:hover,
+  button[type="reset"]:hover,
+  button:hover,
+  .button:hover
+
+   { background-color: $whitelabel-button-bg-hover !important; }
+}
+
+
+body .button:hover,
+body button:hover,
+body button[type="button"]:hover,
+body button[type="reset"]:hover,
+body button[type="submit"]:hover {
+  background-color: $whitelabel-button-bg-hover;
+  color: $whitelabel-button-text-hover;
+}
+
+body .button:active,
+body button:active,
+body button[type="button"]:active,
+body button[type="reset"]:active,
+body button[type="submit"]:active {
+  background-color: $whitelabel-button-bg-click;
+  color: $whitelabel-button-text-click;
+}
+
+body .button[disabled],
+body button[disabled],
+body button[type="button"][disabled],
+body button[type="reset"][disabled],
+body button[type="submit"][disabled] {
+  color: #9b9b9b !important;
+  background: #d8d8d8 !important;
+  opacity: 1;
+}
+
+body .button-tertiary button,
+body .button-tertiary button[type="button"],
+body .button-tertiary button[type="reset"],
+body .button-tertiary button[type="submit"] {
+  background-color: transparent !important;
+  color: $whitelabel-primary !important;
+}
+
+body .button-simple button,
+body .button-simple button[type="button"],
+body .button-simple button[type="reset"],
+body .button-simple button[type="submit"] {
+  background-color: transparent !important;
+  color: $whitelabel-primary !important;
+}
+
+body .button-simple.button-simple-inline {
+  background-color: transparent !important;
+  color: $whitelabel-primary !important;
+
+  span {
+    font-weight: $button-weight;
+  }
+}
+
+body .button-outline button,
+body .button-outline button[type="button"],
+body .button-outline button[type="reset"],
+body .button-outline button[type="submit"]
+ {
+  background-color: transparent !important;
+  border: 1px solid $whitelabel-primary !important;
+  color: $whitelabel-primary !important;
+}
+
+body .button-outline button:hover,
+body .button-outline button:active,
+body .button-outline button:focus,
+body .button-outline button:visited,
+body .button-outline button[type="button"]:hover,
+body .button-outline button[type="button"]:active,
+body .button-outline button[type="button"]:focus,
+body .button-outline button[type="button"]:visited,
+body .button-outline button[type="reset"]:hover,
+body .button-outline button[type="reset"]:active,
+body .button-outline button[type="reset"]:focus,
+body .button-outline button[type="reset"]:visited,
+body .button-outline button[type="submit"]:hover,
+body .button-outline button[type="submit"]:active,
+body .button-outline button[type="submit"]:focus,
+body .button-outline button[type="submit"]:visited {
+  background-color: $whitelabel-primary !important;
+  border: 1px solid $whitelabel-primary !important;
+  color: $whitelabel-button-text-hover !important;
+}
+
+body .button-grid-element button,
+body .button-grid-element button,
+body .button-grid-element button[type="button"],
+body .button-grid-element button[type="reset"],
+body .button-grid-element button[type="submit"] {
+  background-color: white;
+  background-image: url("#{$get-path-to-assets}/icon-chevron-right.svg");
+  background-repeat: no-repeat;
+
+  &:hover {
+    border: 1px solid $whitelabel-primary !important;
+    color: black;
+  }
+}
+
+body .template .input-file-upload-container .input-file-upload-buttons button { 
+  border: 1px solid $whitelabel-primary;
+  background: transparent;
+  label {
+    color: $whitelabel-primary;
+  }
+}
+
+body .button-grid-element.button-grid-element-image button {
+  background-position: center left 24px;
+  background-repeat: no-repeat;
+}
+
+body .button-grid-element.button-grid-element-image button div p {
+  color: #757575;
+}
+
+body .button-grid-element.button-grid-element-image button:hover {
+  border: 1px solid $whitelabel-primary !important;
+}
+
+@media only screen and (max-width: 39.9375em) {
+  body {
+    .site-transfers a.button-simple.columns[data-role="add-payee"],
+    .site-refer-and-earn a.button-simple.columns[data-role="add-payee"],
+    .site-page-profile a.button-simple.columns[data-role="add-payee"],
+    .site-page-dashboard a.button-simple.columns[data-role="add-payee"],
+    .site-rate-alerts a.button-simple.columns[data-role="add-payee"], 
+    .modal-make-transfer-show-details a.button-simple.columns[data-role="add-payee"],
+    .button-simple.button-outline-mobile {
+      border: 1px solid $whitelabel-primary;
+    }
+  }
+
+  .site-page-dashboard.template.template-core .row .columns .row .table-your-recipients { margin-top: -20px !important; }
+  .template.template-core .dashboard-account-alerts { padding-top: 0; margin-top: -10px; }
+}
+
+@media (max-width: 1023px) {
+  .filter-container .button-simple {
+    background-color: $whitelabel-primary !important
+  }  
+}
+
+body .footer-help .footer-help-toggle {
+  background-color: $whitelabel-primary !important;
+  
+  span {
+    color: white;
+  }
+  
+}
+
+body .section.content .callout header.main-header .description strong {
+  color: $whitelabel-primary;
+}
+// STATUS NOTIFICATIONS
+body {
+  .status-notification {
+    background-color: $whitelabel-primary;
+
+    &.status-notification-announcement {
+      background-color: darken( $whitelabel-primary, 10% );
+    }
+    
+    .button-outline button {
+      border: 1px solid #fff !important;
+      span {
+        color: #fff;
+      }
+      &:hover {
+        background: #fff !important;
+        border: 1px solid #fff !important;
+        font-size: 14px !important;
+        span {
+          color: $whitelabel-primary;
+          font-size: 14px !important;
+        }
+      }
+    }
+  }
+}
+
+body {
+  .loader .internal-circle,
+  .loader .external-circle {
+    stroke: $whitelabel-primary;
+  }
+}
+
+body {
+  .switch-field {
+    input:checked + label {
+      border: 1px solid $whitelabel-primary;
+    }
+    label {
+      &:hover {
+        border: 1px solid $whitelabel-primary;
+      }
+    }
+  }
+}
+
+body {
+  .select2.select2-container.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    background-image: url("#{$get-path-to-assets}/ic-chevron-down.svg") !important;
+  }
+  
+  .select2 .select2-selection__rendered { 
+    font-weight: $title-weight !important;
+  }
+  
+}
+
+body {
+  
+  th .currency {
+    color: $whitelabel-primary;
+  }
+  
+}
+
+nav.main-progress-nav ul li div {
+
+  .title, .sub-title {
+    color: #fff !important; 
+  }
+
+} 
+
+.img-email, .img-email-2 {
+  background-image: url(#{$get-path-to-assets}/ic-email.svg);
+}
+
+.template .input-file-upload-container .input-file-upload-buttons div.button {
+    background-color: #fff!important;
+    border-color: $whitelabel-primary;
+
+    label {
+      color: $whitelabel-primary;
+    }
+}
+
+.template.template-registration form .forget a {
+  color: $whitelabel-primary;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label::after {
+  border-color:  $whitelabel-primary;
+}
+
+html .main-container aside.transfers-summary a:hover {
+  color: #fff;
+}
+
+body button.tab-toggle {
+  background: transparent !important;
+}
+
+.template.site-page-dashboard .button-grid-element button {
+  background-color: #fff!important;
+}
+
+nav.main-nav .mobile-menu-toggle--container {
+  right: 10px;
+
+  .mobile-menu-toggle:hover {
+    // background-color:  $whitelabel-primary !important;
+  }
+
+  .mobile-menu-toggle {
+    background-image: url(#{$get-path-to-assets}/icon-mobile-menu.svg);  
+  }
+}
+
+nav.main-nav.open .mobile-menu-toggle {
+  background-image: url(#{$get-path-to-assets}/icon-mobile-menu-close.svg);  
+}
+
+.minus {
+  background-image: url("#{$get-path-to-assets}/ic-remove.svg");  
+}
+
+.plus {
+  background-image: url("#{$get-path-to-assets}/ic-add.svg");
+}
+
+.select-container select { padding-top: 26px; }
+
+@media only screen and (max-width: 740px) {
+  .input-container label[for], .select-container label[for] {
+      letter-spacing: -0.02em;
+  }
+}
+
+body .template.template-core nav.main-nav.open .row, 
+body.template.template-core nav.main-nav.open .row {
+  background: #2964a6; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #2964a6, #1f3368); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #2964a6, #1f3368); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #2964a6, #1f3368); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #2964a6, #1f3368); /* Standard syntax */  
+}
+nav.main-nav .user-profile.user-logged-in .sub-menu li a {
+   @media screen and (max-width: 960px) {
+      color: #fff !important;
+    } 
+}
+nav.main-nav.open .user-profile {
+  bottom: 5px;
+}
+
+@media only screen and (max-width: 960px) {
+  nav.main-nav.open {
+    .user-profile-name, .user-profile-id 
+    { margin-top: 5px; margin-left: 20px; }
+  }
+}
+

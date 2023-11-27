@@ -1,0 +1,75 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimal-ui">
+		<meta name="description" content="A website">
+		<meta name="author" content="<%= (typeof metaAuthor != 'undefined' ? metaAuthor : '') %>">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="apple-mobile-web-app-title" content="<%= (typeof metaWebAppTitle != 'undefined' ? metaWebAppTitle : '') %>">
+
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+		<%
+			/**
+			 * Examples: 
+			 * <meta http-equiv="refresh" content="5; url=http://example.com/">
+			 * <meta name="format-detection" content="telephone=no">
+			 */
+
+
+			if (typeof metaOptions != 'undefined') {
+				for (var i = 0; i < metaOptions.length; i++) {
+
+		%>
+
+			<meta 
+				<%- (typeof metaOptions[i].name != 'undefined' ? 'name="' + metaOptions[i].state + '" ' : '') %>
+				<%- (typeof metaOptions[i].content != 'undefined' ? 'content="' + metaOptions[i].content + '" ' : '') %> 
+				<%- (typeof metaOptions[i].httpEquiv != 'undefined' ? 'http-equiv="' + metaOptions[i].httpEquiv + '" ' : '') %>
+			>
+
+		<%
+				}
+			} 
+		%>
+
+
+		<link rel="icon" sizes="152x152" href="/images/icon.152.png">
+
+		<title><%= (typeof title != 'undefined' ? title : '') %></title>
+
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+		<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7505072/7127192/css/fonts.css" />
+		<link href="/css/vnd/foundation.min.css" rel="stylesheet">
+
+		<!-- Select2 -->
+		<link href="/css/vnd/select2/select2.min.css" rel="stylesheet">
+		<link href="/css/vnd/flag-icon.min.css" rel="stylesheet">
+
+		<link href="/css/vnd/swiper.min.css" rel="stylesheet">
+		<link href="/css/vnd/highlight/highlight.default.min.css" rel="stylesheet">
+
+		<link href="/css/core.new.css" rel="stylesheet">
+
+		<% /* Include alternative theme file via some method */%>
+
+		<% if (typeof query.clientId != 'undefined') { %>
+		<% /* Usage: clientId=TorFX */ %>
+		<link href="/whitelabel/<%= query.clientId %>/css/theme.min.css" rel="stylesheet">
+		<!-- Experiment -->
+		<link href="https://cloud.typography.com/7505072/6504772/css/fonts.css" rel="stylesheet">				
+		<% } %>
+
+	</head>
+
+<body>
+
+	<!-- ==== Start - Content Container ==== -->
+	<div class="<%= (typeof bodyClassList != 'undefined' ? bodyClassList.join(' ') : '') %>">

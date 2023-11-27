@@ -1,0 +1,357 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Add new card'
+			}
+		);
+	%>
+
+	<body class="template template-core wireframe-transfers">
+
+
+
+	<%- 
+		include(
+			'../components/navigation-main.html', {
+				navigationOptions: [
+					{ 
+						title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+						subMenu: [
+							{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+							{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+							{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+							{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+						] 
+					},
+					{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+					{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+					{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+					{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+				]
+			}
+		) 
+	%>
+
+
+
+
+
+
+		<% /*  Requires all form states!!! */ %>
+
+
+		<div class="row main-container">
+			<div class="small-12 columns">
+				<div class="row">
+					<h4 class="small-8 columns">Add new card</h4>
+				</div>
+
+				<div class="row">
+					<p class="medium-6 columns element-group-title information information-small">
+							The bank card used must be in your name, and registered to your home address.
+					</p>
+				</div>
+
+				<div class="row">
+					<div class="columns">
+						<form class="columns element-group">
+
+							<fieldset class="row">
+								<h5 class="columns">Card details</h5>
+
+								<div class="row">
+									<%-
+										include(
+											'../components/select.html',
+											{
+												assoc: 'bank-cards',
+												text: 'Card type',
+												containerClassList: [
+													'end',
+													'medium-6',
+													'columns'
+												],
+												optionsClassList: [
+													'needsclick'
+												],
+												options: [
+													{ value: '01', text: 'Visa Debit' },
+													{ value: '02', text: 'Mastercard Debit' },
+													{ value: '03', text: 'Electron' },
+													{ value: '04', text: 'Solo' }
+												]
+											}
+										);
+									%>
+
+								</div>
+
+								<div class="row">
+
+									<%-
+										include(
+											'../components/input-type-text.html',
+											{
+												assoc: 'card-holder-name',
+												value: '',
+												labelText: 'Name on a card',
+												classList: [
+													'end',
+													'medium-6',
+													'columns'
+												]
+											}
+										);
+									%>
+
+								</div>
+
+								
+
+								<div class="row">
+								<%-
+									include(
+										'../components/input-type-number.html',
+										{
+											assoc: 'card-number',
+											value: '',
+											labelText: 'Card number',
+											classList: [
+												'medium-6',
+												'end',
+												'columns'
+											]
+										}
+									);
+								%>
+								</div>
+
+
+								<div class="row">
+									<%-
+										include(
+											'../components/input-type-number.html',
+											{
+												assoc: 'card-valid-from',
+												value: '',
+												labelText: 'Valid from (mm yy)',
+												classList: [
+													'medium-3',
+													'end',
+													'columns'
+												]
+											}
+										);
+									%>
+									<%-
+										include(
+											'../components/input-type-number.html',
+											{
+												assoc: 'card-expires-ends',
+												value: '',
+												labelText: 'Expiry date (mm yy)',
+												classList: [
+													'medium-3',
+													'end',
+													'columns'
+												]
+											}
+										);
+									%>
+								</div>
+								<div class="row">
+									<%-
+										include(
+											'../components/input-type-number.html',
+											{
+												assoc: 'card-issue-no',
+												value: '',
+												labelText: 'Issue number',
+												classList: [
+													'medium-3',
+													'end',
+													'columns'
+												]
+											}
+										);
+									%>
+									<%-
+										include(
+											'../components/input-type-number.html',
+											{
+												assoc: 'card-cvv',
+												value: '',
+												labelText: 'CVV',
+												classList: [
+													'medium-3',
+													'end',
+													'columns'
+												]
+											}
+										);
+									%>
+								</div>
+							</fieldset>
+
+							<hr>
+
+							<fieldset class="row">
+
+								<h5 class="columns">Billing Address</h5>
+
+								<div class="columns checkbox-container">
+									<input class="needsclick" type="checkbox" name="same-as-billing" value="same-as-billing" id="same-as-billing">
+									<label for="same-as-billing">
+										Use the same as your billing address?
+									</label>
+								</div>
+
+								<div class="row">
+									<%-
+										include(
+											'../components/select.html',
+											{
+												assoc: 'country',
+												text: 'Country',
+												containerClassList: [
+													'medium-6',
+													'end'
+												],
+												optionsClassList: [
+													'needsclick'
+												],
+												options: [
+		                                            { value: 'bg', text: 'Belgium' },
+		                                            { value: 'brz', text: 'Brazil' },
+		                                            { value: 'fr', text: 'France' },
+		                                            { value: 'de', text: 'Germany' },
+		                                            { value: 'usa', text: 'United States of America' },
+		                                            { value: 'rus', text: 'Russia' },
+		                                            { value: 'aus', text: 'AUS - Australia' },
+		                                            { value: 'other', text: 'Other Countries' }
+		                                        ]
+											}
+										);
+									%>
+
+								</div>
+
+								<div class="row">
+
+									<div class="medium-3 columns input-container">
+										<input type="search" id="postcode-search">
+										<label for="postcode-search">Post code</label>
+									</div>
+
+									<%-
+									include(
+										'../components/button.html',
+										{
+											type: 'button',
+											text: 'Find address',
+											classList: [
+												'button-outline',
+												'columns',
+												'medium-3',
+												'end'
+											],
+											dataAttr: {
+												'data-hyperlink': '#'
+											}
+										}
+									)
+									%>
+
+								</div>
+
+								<div class="row">
+									<%-
+										include(
+											'../components/input-type-text.html',
+											{
+												assoc: 'bill-address',
+												labelText: 'Address',
+												classList: [
+													'columns',
+													'medium-6'
+												]
+											}
+										);
+									%>
+								</div>
+
+								<div class="row">
+									<%-
+										include(
+											'../components/input-type-text.html',
+											{
+												assoc: 'bill-town',
+												labelText: 'Town/City',
+												classList: [
+													'columns',
+													'medium-6'
+												]
+											}
+										);
+									%>
+								</div>
+
+								<div class="row">
+									<%-
+										include(
+											'../components/input-type-text.html',
+											{
+												assoc: 'bill-county',
+												labelText: 'County',
+												classList: [
+													'columns',
+													'medium-6'
+												]
+											}
+										);
+									%>
+								</div>
+
+							</fieldset>
+
+						</form>
+					</div>
+				</div>
+
+
+				<fieldset class="row">
+					<div class="columns medium-6">
+						<a href="/whitelabel/profile/" class="button-simple button-simple-inline" data-role="back"><span>Back</span></a>
+					</div>
+					<div class="columns small-12 medium-3 ">
+						<button
+							type="submit"
+							class="columns button"
+							data-hyperlink="/whitelabel/profile/account-details/"
+						>
+							<span>
+								Save
+							</span>
+						</button>
+					</div>
+				</fieldset>
+
+
+			</div>
+		</div>
+
+
+
+
+
+        <%-
+                include('../partials/footer.html');
+        %>
+
+
+	</body>
+</html>

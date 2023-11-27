@@ -1,0 +1,190 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Testing'
+			}
+		);
+	%>
+
+
+	<body class="template template-core template-layout-grid template-component-library">
+
+		<style type="text/css" scoped>
+		* {
+			outline: none !important;
+		}
+		</style>
+
+
+
+
+
+		
+	<%- 
+		include(
+			'../components/navigation-main.html', {
+				navigationOptions: [
+					{ 
+						title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+						subMenu: [
+							{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+							{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+							{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+							{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+						] 
+					},
+					{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+					{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+					{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+					{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+				]
+			}
+		) 
+	%>
+
+
+
+
+		<div class="row main-container">
+
+			<h4 class="small-12 columns section-title" data-style-sticky>URL Scheme Tests</h4>
+
+			<div class="small-12 columns">
+				<section class="row">
+					<h6 class="small-12 columns">Messages</h6>
+					<p class="small-12 columns">
+						<a href="sms:">Launch Messages App</a><br>
+						<a href="sms:07595771514">Text Panos</a><br>
+					</p>
+				</section>
+			</div>
+
+			<div class="small-12 columns">
+				<section class="row">
+					<h6 class="small-12 columns">Facetime</h6>
+					<p class="small-12 columns">
+						<a href="facetime:p.hapsides@live.com">FaceTime Panos (Video)</a><br>
+						<a href="facetime-audio:p.hapsides@live.com">FaceTime Panos (Audio Only)</a>
+					</p>
+				</section>
+			</div>
+
+			<div class="small-12 columns">
+				<section class="row">
+					<h6 class="small-12 columns">Phone</h6>
+					<p class="small-12 columns">
+						<a href="tel:07595771514">Call Panos (please don't)</a><br>
+					</p>
+				</section>
+			</div>
+
+			<div class="small-12 columns">
+				<section class="row">
+					<h6 class="small-12 columns">Other (experimental)</h6>
+					<p class="small-12 columns">
+
+						<a href="playground:">Playground (yay)</a><br>
+
+						<a href="mailto:">Launch Mail App?</a><br>
+						<a href="googlechrome:">Launch Google Chrome App</a><br>
+						<a href="googlemail:">Launch Google Mail App</a><br>
+						<a href="inbox-gmail:">Launch Google Inbox App</a><br>
+						<a href="http:">Launch Safari? (it's already open!)</a><br>
+						<a href="currenciesdirect:">Launch Currencies Direct!? (nope)</a><br>
+					</p>
+				</section>
+			</div>
+
+			<div class="small-12 columns"><hr></div>
+
+			<h4 class="small-12 columns section-title" data-style-sticky>Select Options with Flag Emoji's</h4>
+			<small class="small-12 columns">Ollie Evil's genuis idea</small>
+
+
+			<%-
+				include(
+					'../components/select.html',
+					{
+						assoc: 'title',
+						text: 'Calling Code',
+						containerClassList: [
+							'small-12'
+						],
+						dataAttr: {
+							'data-test': 'Test!'
+						},
+						optionsClassList: [
+							'needsclick'
+						],
+						options: [
+							{ text: '🇦🇨 +247', value: '' },
+							{ text: '🇦🇩 +376', value: '' },
+							{ text: '🇺🇸 +1', value: '' },
+							{ text: '🇬🇧 +44', value: '' },
+							{ text: '🇩🇪 +49', value: '' },
+							{ text: '🇳🇿 +64', value: '' },
+							{ text: '🇪🇸 +34', value: '' }
+						]
+					}
+				);
+			%>
+
+
+
+			<%-
+				include(
+					'../components/select.html',
+					{
+						assoc: 'title',
+						text: 'Payment Method',
+						containerClassList: [
+							'small-12'
+						],
+						dataAttr: {
+							'data-test': 'Test!'
+						},
+						optionsClassList: [
+							'needsclick'
+						],
+						options: [
+							{ text: 'Debit Card', value: '' },
+							{ text: 'Bank Transfer', value: '' }
+						]
+					}
+				);
+			%>
+
+
+		</div>
+
+
+
+
+
+
+
+
+		<div class="row main-container">
+			<div class="small-12 columns">
+				<br><br><br><br><br><br><br><br>
+			</div>
+		</div>
+
+
+
+		<script src="/js/vnd/jquery.min.js"></script>
+		<script src="/js/vnd/fastclick.min.js"></script>
+
+		<script src="/js/vnd/foundation.min.js"></script>
+		<script src="/js/vnd/foundation.abide.js"></script>
+		<script src="/js/vnd/swiper.jquery.min.js"></script>
+
+
+		<script src="/js/all.min.js"></script>
+
+
+	</body>
+</html>

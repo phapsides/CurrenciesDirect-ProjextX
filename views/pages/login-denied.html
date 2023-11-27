@@ -1,0 +1,51 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Login Authentication denied'
+			}
+		);
+	%>
+
+	<body>
+
+		<div class="template template-core template-layout-centered template-registration template-access-account">
+
+		<%-
+			include(
+				'../components/navigation-main-simple.html', {
+					loggedIn: false,
+					registrationProcess: false,
+					closeOpt: true
+				}
+			);
+		%>
+
+
+		<div class="row main-container">
+			<section class="large-5 medium-7 small-centered section content">
+
+				<div class="callout">
+					<header class="main-header columns">
+						<h1 class="title">
+							Access your account
+						</h1>
+						<p class="description">
+							To access your account please call us on  <strong style="white-space: nowrap;">1800 291 073</strong>.
+						</p>
+					</header>
+
+				</div>
+			</section>
+		</div>
+
+	  <%-
+	    /* Sitewide JS */
+	    include('../partials/footer.html');
+	  %>
+
+	</div>
+	</body>
+</html>

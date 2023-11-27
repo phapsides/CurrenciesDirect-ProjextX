@@ -1,0 +1,208 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Register - 10',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-layout-centered', 
+				'template-registration',
+				'site-registration-10'
+			]
+		}
+	);
+%>
+
+<%-
+	include(
+		'../components/navigation-main-simple.html', {
+			registrationProcess: true,
+			closeOpt: true
+		}
+	);
+%>
+
+<div class="row main-container">
+	<section class="large-5 medium-7 small-centered columns section content">
+
+		<form class="callout">
+
+		<header class="main-header columns">
+			<h1 class="title center">
+				Just a moment, we need two more bits for security.
+				<a class="tooltip-popup" href="#" title="You'll need to scan one of these documents and save it onto your computer - you'll then be able to upload it by clicking the 'Upload' button and finding your saved document."></a>
+			</h1>
+			<p class="information centered">
+				Please upload copies of your identification and proof of address below, so we can <br class="show-for-medium-up">securely activate your account.
+			</p>
+			<p class="information centered">
+				You can <a href="#" title="">skip this step</a> and submit <br class="show-for-medium-up">your documents later.
+			</p>
+		</header>
+
+		<fieldset class="row docs-identification">
+			<h4 class="title center">Identification</h4>
+
+			<fieldset class="row radio-group-container seperated">
+
+				<div class="columns radio radio-expanding-section">
+					<input class="needsclick" type="radio" name="id-type" value="Passport" id="passport">
+					<label for="passport">Passport</label>
+					<div class="row">
+						<p class="columns">Please upload a clear copy of the photo page of your passport.</p>
+						<%-
+							include(
+								'../components/input-file-upload.html',
+								{
+									text: 'Upload identification',
+									classList: [ 
+										'medium-10', 
+										'medium-offset-1',
+										'columns',
+										'end'
+									]
+								}
+							)
+						%>
+					</div>
+				</div>
+
+				<div class="columns radio radio-expanding-section">
+					<input class="needsclick" type="radio" name="id-type" value="Other document" id="Other document">
+					<label for="Other document">Other document</label>
+
+					<div class="row">
+					
+						<p class="columns">See <a href="#" data-index-link="" data-open="acceptable-documents" title="">a list</a> of acceptable forms of ID</p>
+
+						<%-
+							include(
+								'../components/input-file-upload.html',
+								{
+									text: 'Upload Front',
+									classList: [ 
+										'medium-10', 
+										'medium-offset-1',
+										'columns',
+										'end'
+									]
+								}
+							)
+						%>
+
+						<%-
+							include(
+								'../components/input-file-upload.html',
+								{
+									text: 'Upload Back',
+									classList: [ 
+										'medium-10', 
+										'medium-offset-1',
+										'columns',
+										'end'
+									]
+								}
+							)
+						%>
+					</div>
+				</div>
+			</fieldset>
+
+		</fieldset>
+		<fieldset class="row docs-address">
+			
+				<div class="columns">
+
+					<h4 class="title center">Proof of address</h4>
+
+					<div class="inner">
+
+						<h5>Proof of address <a class="tooltip-popup" href="#" title="One way to scan a document is to take a picture of it on your smartphone."></a></h5>
+
+						<div class="row">
+							<p class="columns">Bank statement, Driving license, utility bill, phone bill (landline), lease for property, rental agreement, proof of insurance. <b>Must be less than 3 months old, posted to your address.</b></p>
+							<%-
+								include(
+									'../components/input-file-upload.html',
+									{
+										text: 'Upload proof of address',
+										classList: [ 
+											'medium-10', 
+											'medium-offset-1',
+											'columns',
+											'end'
+										]
+									}
+								)
+							%>
+						</div>
+					</div>
+				</div>
+			
+		</fieldset>
+
+		<fieldset class="row">
+
+			<%-
+				include(
+					'../components/button.html',
+					{
+						type: 'submit',
+						text: 'Upload your documents',
+						dataAttr: {
+							'data-role': 'next',
+							'data-form-section-active': 'account',
+							'data-hyperlink': '/whitelabel/registration/12/'
+						}
+					}
+				)
+			%>
+
+			<div class="columns center">
+				<a class="button-simple button-simple-inline" href="#" title="">Skip this step</a>
+			</div>
+		</fieldset>
+
+	</form>
+	</section>
+</div>
+
+<!-- Begin modal -->
+<div class="reveal modal-container row" id="acceptable-documents" data-reveal>
+	<div class="modal-frame columns">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">Close</span>
+			<h4>Acceptable documentation</h4>
+		</header>
+		<div class="modal-content clearfix">
+			<div class="columns">
+				<p>We will also accept the below forms of identification if you're domiciled in any of the following countries:</p> 
+
+				<h5>Spain</h5> 
+				<p>Citizen's permit, social secutiry card, visa.</p> 
+
+				<h5>France</h5> 
+				<p>Resident's permit, Carte de Sejour, visa. </p>
+
+				<h5>Italy </h5>
+				<p>Citizen's permit. 
+
+				<h5>South Africa</h5> 
+				<p>Resident's premit, social security cards, visa. </p>
+
+				<h5>Australia</h5> 
+				<p>International driving permit, citizen's certificate, benefit statement, pension document, visa, certified birth certificate, card issued for the person's age. </p>
+
+				<h5>Dubai</h5> 
+				<p>Citizens certificate, card issued for the purpose of proving the person's age, visa, certified birth certificate, international driving permit.</p>
+				</p>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	<%-
+	    include('../partials/footer.html');
+	%>

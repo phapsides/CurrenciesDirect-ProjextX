@@ -1,0 +1,190 @@
+
+
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Transactions - Make Transfer Step Confirmation',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-confirmation'
+			]
+		}
+	);
+%>
+
+	
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu active', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+
+<nav class="status-notification status-notification-success">
+	<div class="row">
+		<p class="columns">
+			Thanks, your purchase is complete. Your contract number is 8463129.
+		</p>
+	</div>
+</nav>
+
+
+<div class="row main-container">
+	<div class="row">
+		<header class="large-8 medium-7 main-header columns">
+			<h1 class="title">
+				Let your recipient know the currency is on its way!
+			</h1>
+			<p class="description">
+				You can send a personalised message to your recipient, so that they know the currency is on its way. Don’t worry about this section if you’re sending money to your own overseas bank account.
+			</p>
+		</header>
+	</div>
+
+	<div class="row">
+		<div class="large-8 medium-7 columns" id="sticky-anchor">
+			<div class="row">
+				<form class="element-group" data-abide>
+				<fieldset>
+					<%-
+						include(
+							'../components/textarea.html',
+							{
+								assoc: 'message',
+								labelText: 'Your personalised message',
+								value: "Hi Andy Rubin, just letting you know I've sent €500 to your account ending XXX today, with Bloomberg Money Transfer. John.",
+								classList: [
+									'large-8',
+									'medium-10',
+									'columns',
+									'small-label'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset>
+					<%-
+						include(
+							'../components/input-type-email.html',
+							{
+								assoc: 'email-address',
+								labelText: 'Recipient\'s email',
+								value: 'andy@apple.com',
+								classList: [
+									'large-8',
+									'medium-10',
+									'columns',
+									'small-label'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset claas="row">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'button',
+								text: 'Send email',
+								classList: [
+									'large-6',
+									'medium-8',
+									'button-outline'
+								],
+								dataAttr: {
+									'data-hyperlink': '#'
+								}
+							}
+						)
+					%>
+				</fieldset>
+				<footer class="row border--top">
+					<p class="columns element-group-footer pad--24">
+						You can find the status of your transfer in the <a href="/whitelabel/activity-history/">activity section</a>.
+					</p>
+				</footer>
+				</form>
+			</div>
+		</div>
+		<div class="large-4 medium-5 columns">
+			<div class="row" data-sticky-container>
+				<aside class="transfers-summary sticky" data-sticky  data-margin-top="6" data-top-anchor="sticky-anchor:top">
+					<div class="element-group columns">
+						<div class="row">
+							<h5 class="columns transfers-summary-title">
+								Transfer summary
+							</h5>
+							<h6 class="small-6 columns transfers-summary-sub-title">
+								Recipient
+							</h6>
+
+							<div class="columns transfers-summary-selected-payee">
+								<div class="transfers-summary-initials">
+									<span>DQ</span>
+								</div>
+								<div class="transfers-summary-full-name">
+									<span>
+										Don Quixote
+									</span>
+									<span>
+										ES1182271MIFLGB221
+									</span>
+								</div>
+							</div>
+							<h6 class="small-6 columns transfers-summary-sub-title">
+								Transfer Amount
+							</h6>
+							<table class="table-summary">
+								<thead></thead>
+								<tbody>
+									<tr>
+										<td><span>Sending</span></td>
+										<td><span>EUR 11456</span></td>
+									</tr>
+									<tr>
+										<td><span>Rate</span></td>
+										<td><span>1.1456</span></td>
+									</tr>
+									<tr>
+										<td><span>Fee</span></td>
+										<td><span>GBP 0</span></td>
+									</tr>
+									<tr>
+										<td><span>Total you pay</span></td>
+										<td><span>GBP 1000</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>

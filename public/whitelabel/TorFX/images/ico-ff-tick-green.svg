@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>ico-ff-tick-green copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ico-ff-tick-green-copy">
+            <g id="Correct" fill="#e5234f">
+                <circle id="Oval-Copy-3" cx="12" cy="12" r="12"></circle>
+            </g>
+            <g id="Group-2" transform="translate(5.333333, 7.333333)" fill="#FFFFFF">
+                <path d="M10.787987,0.626226552 L3.7169192,7.69729436 C3.32639491,8.08781866 3.32639491,8.72098363 3.7169192,9.11150793 C4.10744349,9.50203222 4.74060847,9.50203222 5.13113276,9.11150793 L12.2022006,2.04044011 C12.5927249,1.64991582 12.5927249,1.01675084 12.2022006,0.626226552 C11.8116763,0.23570226 11.1785113,0.23570226 10.787987,0.626226552 Z" id="Line"></path>
+                <path d="M4.86886724,7.95955989 L2.04044011,5.13113276 C1.64991582,4.74060847 1.01675084,4.74060847 0.626226552,5.13113276 C0.23570226,5.52165705 0.23570226,6.15482203 0.626226552,6.54534632 L3.45465368,9.37377345 C3.84517797,9.76429774 4.47834295,9.76429774 4.86886724,9.37377345 C5.25939153,8.98324916 5.25939153,8.35008418 4.86886724,7.95955989 Z" id="Line-Copy-3"></path>
+            </g>
+        </g>
+    </g>
+</svg>

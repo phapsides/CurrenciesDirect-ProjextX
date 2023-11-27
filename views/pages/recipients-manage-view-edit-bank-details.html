@@ -1,0 +1,184 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Recipients - View / Edit Bank Details',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-02',
+				'site-recipients' // Correct class
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Recipient details', state: 'complete', href: '/whitelabel/recipients/manage/view-edit/' },
+				{ title: 'Bank details', state: 'active', href: '/whitelabel/recipients/manage/view-edit/bank-details/'  },
+				{ title: 'Additional details', state: '', href: '/whitelabel/recipients/manage/view-edit/additional-details/' }
+			],
+
+			backURL: '/whitelabel/recipients/manage/',
+			
+			registrationProcess: false
+		}
+	);
+%>
+
+
+
+<div class="row main-container">
+	<div class="row">
+		<header class="large-8 medium-12 end main-header columns">
+			<h1 class="title">
+				View and edit your recipient
+			</h1>
+			<p class="description">
+				Please view or update the recipient's details below. <br>You'll need to continue to the last page to save any updates.
+			</p>
+		</header>
+	</div>
+	<div class="row">
+		<div class="large-8 medium-12 columns">
+			<div class="row">
+				<form class="element-group" data-abide>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'iban-number',
+									labelText: 'IBAN',
+									classList: [
+										'small-10',
+										'medium-8',
+										'end',
+										'columns'
+									]
+								}
+							);
+						%>
+						<div class="small-1 columns end tooltip-hldr">
+							<a class="tooltip-popup" href="#" title="Enter the account details and just select 'Retrieve bank details', or enter all details on this form manually."></a>
+						</div>
+					</fieldset>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/button.html',
+								{
+									type: 'button',
+									text: 'Retrieve bank details',
+									classList: [
+										'medium-6',
+										'button-outline',
+										'end'
+									],
+									dataAttr: {
+										'data-role': 'button-bank-details',
+										'data-hyperlink': '#'
+									},
+								}
+							)
+						%>
+					</fieldset>
+						<hr>
+					<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'swift-code',
+								labelText: 'SWIFT code',
+								classList: [
+									'medium-8',
+									'columns'
+								]
+							}
+						);
+					%>
+					</fieldset>
+					<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'bank-name',
+								labelText: 'Bank name',
+								classList: [
+									'medium-8',
+									'columns'
+								]
+							}
+						);
+					%>
+					</fieldset>
+					<hr>
+
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/textarea.html',
+								{
+									assoc: 'bank-address',
+									labelText: 'Bank address',
+									value: "",
+									classList: [
+										'medium-8',
+										'columns',
+										'end',
+										'small-label'
+									]
+								}
+							);
+						%>
+							<small class="medium-8 end columns add-margin-bottom">
+							(Please note: your deal confirmation may display the bank’s HQ address by default.)	
+							</small>
+					</fieldset>
+
+					<hr />
+					
+					<fieldset class="row">
+						<p class="columns">
+							If you need to add intermediary bank details, <span class="nowrap">please contact us on <a href="tel:1800291073" title="" class="phone-number">1800 291 073</a></span> <span class="nowrap">or email us on <a href="mailto:contracts@currenciesdirect.com" title="">info@torfx.com.au</a>.</span>
+						</p>
+					</fieldset>
+				</form>
+				</div>
+
+				<div class="row collapse">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'button',
+								text: 'Continue',
+								classList: [
+									'medium-4',
+									'medium-offset-8',
+									'end'
+								],
+								dataAttr: {
+									'data-role': 'button-continue',
+									'data-hyperlink': '/whitelabel/recipients/manage/view-edit/additional-details/',
+									// 'disabled': 'disabled'
+								},
+							}
+						)
+					%>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>

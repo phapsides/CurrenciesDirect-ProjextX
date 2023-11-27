@@ -1,0 +1,362 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Form'
+			}
+		);
+	%>
+
+	<body class="template template-core template-layout-grid">
+
+
+		<style type="text/css" scoped>
+		* {
+			outline: none !important;
+		}
+
+		body > .row.main-container {
+			max-width: 760px !important;
+		}
+
+		.online[data-data] {
+			color: green;
+		}
+		.offline[data-data] {
+			color: red;
+		}
+		</style>
+
+
+		
+	<%- 
+		include(
+			'../components/navigation-main.html', {
+				navigationOptions: [
+					{ 
+						title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+						subMenu: [
+							{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+							{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+							{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+							{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+						] 
+					},
+					{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+					{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+					{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+					{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+				]
+			}
+		) 
+	%>
+
+
+
+
+		<div class="row main-container">
+
+			<div class="small-12 columns">
+				<div class="row">
+					<h1 class="small-12 columns">On Form</h1>
+					<p class="small-12 columns">
+						Very simple demo with the following features:<br><br>
+						Everything you type into the input fields will be saved,
+						even on refresh, or if you close your browser or re-open it at a later date
+						(just as long as you don't clear your browsers "cache").<br>
+						If you don't have an internet connection, selecting either "Go Back" or "Submit and Complete!"
+						button will throw an alert warning you that you're currently not connected to a
+						network.<br><br>
+						Obviously this is work in progress (e.g. I haven't bothered supporting the select/dropdown, because: you get the idea).
+					</p>
+				</div>
+
+
+				<div class="row">
+					<p class="small-12 columns">
+						<strong data-data class="online"></strong><br>
+					</p>
+				</div>
+
+				<fieldset class="row">
+
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'testing-0001',
+								labelText: 'Input*',
+								classList: [
+									'small-12',
+									'columns'
+								]
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'testing-0002',
+								labelText: 'Type Word',
+								value: 'Type Word',
+								classList: [
+									'small-12',
+									'columns',
+									'small-label'
+								]
+							}
+						);
+					%>
+
+					<%-
+						include(
+							'../components/input-type-email.html',
+							{
+								assoc: 'email-address',
+								labelText: 'Email address',
+								classList: [
+									'small-12',
+									'columns'
+								]
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/input-type-password.html',
+							{
+								assoc: 'password',
+								labelText: 'Password',
+								classList: [
+									'small-12',
+									'columns'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/select.html',
+							{
+								assoc: 'title',
+								text: 'Calling Code',
+								containerClassList: [
+									'small-12',
+									'large-5'
+								],
+								dataAttr: {
+									'data-test': 'Test!'
+								},
+								optionsClassList: [
+									'needsclick'
+								],
+								options: [
+									{ text: '🇦🇨 +247', value: '' },
+									{ text: '🇦🇩 +376', value: '' },
+									{ text: '🇺🇸 +1', value: '' },
+									{ text: '🇬🇧 +44', value: '' },
+									{ text: '🇩🇪 +49', value: '' },
+									{ text: '🇳🇿 +64', value: '' },
+									{ text: '🇪🇸 +34', value: '' }
+								]
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/input-type-tel.html',
+							{
+								assoc: 'telelphone-number',
+								labelText: 'Telelphone Number',
+								classList: [
+									'small-12',
+									'large-7',
+									'columns'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'button',
+								text: 'Go Back',
+								classList: [
+									'small-12',
+									'large-6',
+									'button-tertiary'
+								],
+								dataAttr: {
+									'data-hyperlink': './#history/back'
+								}
+							}
+						)
+					%>
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'submit',
+								text: 'Submit and Complete!',
+								classList: [
+									'small-12',
+									'large-6'
+								],
+								dataAttr: {
+									'data-hyperlink': './#some/next/step'
+								}
+							}
+						)
+					%>
+				</fieldset>
+				<hr class="row">
+				<fieldset class="row">
+					<h5 class="small-12 columns">
+						Debug Options
+					</h5>
+				</fieldset>
+				<fieldset>
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'submit',
+								id: 'clear-local-storage',
+								text: 'Clear localStorage',
+								classList: [
+									'small-12',
+									'large-6',
+									'button-tertiary'
+								],
+								dataAttr: {
+									'data-role': 'clearLocalStorage',
+									'data-hyperlink': '#'
+								}
+							}
+						)
+					%>
+				</fieldset>
+
+
+		</div>
+
+
+
+
+
+
+
+
+		<!-- 
+			<div class="row main-container">
+				<div class="small-12 columns">
+					<br><br><br><br><br><br><br><br>
+				</div>
+			</div> 
+		-->
+
+
+
+		<script src="/js/vnd/jquery.min.js"></script>
+		<script src="/js/vnd/fastclick.min.js"></script>
+
+		<script src="/js/vnd/foundation.min.js"></script>
+		<script src="/js/vnd/foundation.abide.js"></script>
+		<script src="/js/vnd/swiper.jquery.min.js"></script>
+
+
+		<script src="/js/all.min.js"></script>
+
+
+		<script type="text/javascript">
+
+		var labFormlocalStorage = localStorage
+		var Lab = {
+			Form: () => {
+
+				var $inputTypes = $(
+					'input[type="text"], ' +
+					'input[type="email"], ' +
+					'input[type="number"], ' +
+					'input[type="tel"], ' +
+					'input[type="password"]'
+					)
+
+				console.log(
+					'localStorage?',
+					labFormlocalStorage
+				)
+
+				for (id in labFormlocalStorage) {
+					console.log(id, labFormlocalStorage[id])
+					$('input#' + id)
+						.val(labFormlocalStorage[id])
+					$('input#' + id)
+						.parent('.input-container').addClass('small-label')
+				}
+
+				var clearLocalStorage = () => {
+					var fersher = window.confirm('This will remove the form data you\'ve already entered. Are you sure you want to do that>')
+					if (fersher) {
+						localStorage.clear()
+					}
+				}
+
+				$('[data-role="clearLocalStorage"]').click(clearLocalStorage)
+
+				$inputTypes.blur(function(ev) {
+					var $this = $(this)
+					console.log('Blur?', $this.attr('id'), $this.val())
+					localStorage.setItem($this.attr('id'), $this.val())
+				})
+
+
+				<% /*
+					// Android and modern browsers only (Safari sucks)
+					var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
+					var type = connection.type
+					var updateConnectionStatus = function() {
+						console.log('Connection type is change from ' + type + ' to ' + connection.type)
+					}
+					connection.addEventListener('typechange', updateConnectionStatus)
+				*/ %>
+
+
+
+				var dataData = $('[data-data]')
+				var dataDataWords = [
+					'You\'re online. Yay! :-D',
+					'Oh noes: you\'re offline :-('
+				]
+				dataData.text(dataDataWords[0])
+
+
+				// Are we online?
+				function updateOnlineStatus(event) {
+					var condition = navigator.onLine ? dataDataWords[0] : dataDataWords[1]
+					console.log('Event: ' + event.type + '; Status: ' + condition)
+					dataData.text(condition).attr('class', event.type)
+				}
+				window.addEventListener('online',  updateOnlineStatus)
+				window.addEventListener('offline', updateOnlineStatus)
+				updateOnlineStatus()
+
+
+
+			}
+		}
+
+
+		$(document).ready(Lab.Form)
+		</script>
+
+	</body>
+</html>

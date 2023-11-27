@@ -1,0 +1,658 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Register - 03',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-layout-centered', 
+				'template-registration',
+				'site-registration-03'
+			]
+		}
+	);
+%>
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			classList: 'progress-container-has-sub-title',
+			progressOptions: [
+				{ title: 'Account', state: 'complete', subTitle: 'Personal', href: '/whitelabel/registration/2/' },
+				{ title: 'Details', state: 'active', href: '/whitelabel/registration/3/' },
+				{ title: 'Security', state: '', href: '/whitelabel/registration/6/' },
+				{ title: 'Confirm', state: '', href: '/whitelabel/registration/7/' }
+			],
+
+			backURL: '/whitelabel/registration/1/',
+			
+			registrationProcess: true
+		}
+	);
+%>
+
+<section id="your-details">
+	<div class="row main-container">
+		<section class="large-5 medium-7 small-centered section content page-your-details" data-form-section="details">
+			<div class="callout">
+				<header class="main-header columns">
+					<h1 class="title">
+						Your details
+					</h1>
+				</header>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/select.html',
+							{
+								assoc: 'title',
+								text: 'Title',
+								containerClassList: [
+									'medium-4'
+								],
+								optionsClassList: [
+									'needsclick'
+								],
+								options: [
+									{ text: 'Ms', value: 'Ms' },
+									{ text: 'Miss', value: 'Miss' },
+									{ text: 'Mrs', value: 'Mrs' },
+									{ text: 'Mr', value: 'Mr' },
+									{ text: 'Lady', value: 'Lady' },
+									{ text: 'Lord', value: 'Lord' },
+									{ text: 'Sir', value: 'Sir' },
+									{ text: 'Rev', value: 'Rev' },
+									{ text: 'Dr', value: 'Dr' },
+									{ text: 'Professor', value: 'Professor' }
+								]
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'first-and-middle-names',
+								labelText: 'First and middle names',
+								value: '',
+								classList: [
+									'medium-8',
+									'columns'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'lastname',
+								labelText: 'Last name',
+								classList: [
+									'columns'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<div class="columns">
+						<label>Mobile number</label>
+					</div>
+					<div class="medium-4 columns select-container small-label">
+						<select id="country-code" class="select-country-list" aria-hidden="true">
+						</select>
+						<label for="country-code">
+							Country
+						</label>
+					</div>
+
+					<%-
+						include(
+							'../components/input-type-tel.html',
+							{
+								assoc: 'telelphone-number',
+								labelText: 'Number',
+								classList: [
+									'medium-8',
+									'columns'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<div class="columns">
+						<label>Date of birth</label>
+					</div>
+					<div class="small-4 medium-4 columns select-container">
+						<select id="dob-day">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="01">01</option>
+							<option value="02">02</option>
+						</select>
+						<label for="dob-day">
+							Day
+						</label>
+					</div>
+					<div class="small-4 medium-4 columns select-container">
+						<select id="dob-month">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="01">January</option>
+							<option value="02">Feburary</option>
+							<option value="03">March</option>
+							<option value="04">April</option>
+							<option value="05">May</option>
+							<option value="06">June</option>
+							<option value="07">July</option>
+							<option value="08">August</option>
+							<option value="09">September</option>
+							<option value="10">October</option>
+							<option value="11">November</option>
+							<option value="12">December</option>
+						</select>
+						<label for="dob-month">
+							Month
+						</label>
+					</div>
+					<div class="small-4 medium-4 columns select-container">
+						<select id="dob-year">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="1998">1998</option>
+							<option value="1997">1997</option>
+						</select>
+						<label for="dob-year">
+							Year
+						</label>
+					</div>
+				</fieldset>
+
+				<fieldset class="row">
+					<%-
+						include(
+							'../partials/select-iso-countries.html',
+							{
+								assoc: 'nationality-list',
+								text: 'Nationality',
+								containerClassList: [
+									'columns small-label'
+								]
+							}
+						);
+					%>
+				</fieldset>
+
+
+				<fieldset class="row">
+					<div class="columns select-container">
+						<select id="occupation">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="Accountant">Accountant</option>
+							<option value="Salesperson">Sales Person</option>
+						</select>
+						<label for="occupation">
+							Occupation
+						</label>
+					</div>
+				</fieldset>
+				<header class="sub-header">
+					<h4 class="title">
+						Your address
+					</h4>
+				</header>
+				<fieldset class="row">
+					<%-
+						include(
+							'../partials/select-iso-countries.html',
+							{
+								assoc: 'country-list',
+								text: 'Country',
+								containerClassList: [
+									'columns small-label'
+								]
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'postcode-search',
+								labelText: 'Post code',
+								classList: [
+									'medium-6', 
+									'columns'
+								]
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/button.html',
+							{
+								text: 'Search',
+								classList: [ 'medium-6', 'button-outline' ],
+								dataAttr: {
+									'data-role': 'lookup',
+									'data-open': 'address-lookup',
+									'data-index-link': 'AddressListLookup',
+									'data-reveal-id': 'address-list'
+								}
+							}
+						)
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'address-line-1',
+								labelText: 'Address line 1',
+								classList: [
+									'columns'
+								]
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'city',
+								labelText: 'City',
+								classList: [
+									'columns'
+								]
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'state',
+								labelText: 'State',
+								classList: [
+									'columns'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<header class="sub-header">
+					<h4 class="title">
+						Add another person?
+					</h4>
+				</header>
+				<fieldset class="row">
+					<div class="medium-6 columns radio-container">
+						<input class="needsclick" type="radio" name="add-another-person" value="No" id="no">
+						<label for="no">No, I'm fine on my own</label>
+					</div>
+					<div class="medium-6 columns radio-container">
+						<input class="needsclick" type="radio" name="add-another-person" value="Yes" id="yes">
+						<label for="yes">Yes, I'd like a joint account</label>
+					</div>
+				</fieldset>
+			</div>
+		</section>
+	</div>
+</section>
+<section id="their-details">
+	<div class="row main-container">
+		<section class="large-5 medium-7 small-centered section content" data-form-section="details">
+			<form class="callout">
+				<header class="main-header">
+					<h3 class="title">
+						Their details
+					</h3>
+				</header>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/select.html',
+							{
+								assoc: 'title',
+								text: 'Title',
+								containerClassList: [
+									'medium-4'
+								],
+								optionsClassList: [
+									'needsclick'
+								],
+								options: [
+									{ text: 'Mx', value: 'Mx' },
+									{ text: 'Ms', value: 'Ms' },
+									{ text: 'Miss', value: 'Miss' },
+									{ text: 'Mrs', value: 'Mrs' },
+									{ text: 'Mr', value: 'Mr' },
+									{ text: 'Lady', value: 'Lady' },
+									{ text: 'Lord', value: 'Lord' },
+									{ text: 'Sir', value: 'Sir' },
+									{ text: 'Rev', value: 'Rev' },
+									{ text: 'Dr', value: 'Dr' },
+									{ text: 'Professor', value: 'Professor' }
+								]
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'first-and-middle-names',
+								labelText: 'Full first and middle names',
+								value: '',
+								classList: [
+									'medium-8',
+									'columns'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'lastname',
+								labelText: 'Last name',
+								classList: [
+									'columns'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<div class="columns">
+						<label>Phone number</label>
+					</div>
+					<div class="medium-4 columns select-container small-label">
+						<select id="country-code">
+						</select>
+						<label for="country-code">
+							Country
+						</label>
+					</div>
+					<%-
+						include(
+							'../components/input-type-tel.html',
+							{
+								assoc: 'telelphone-number',
+								labelText: 'Number',
+								classList: [
+									'medium-8',
+									'columns'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<div class="columns">
+						<label>Date of birth</label>
+					</div>
+					<div class="small-4 medium-4 columns select-container">
+						<select id="dob-day">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="01">01</option>
+							<option value="02">02</option>
+						</select>
+						<label for="dob-day">
+							Day
+						</label>
+					</div>
+					<div class="small-4 medium-4 columns select-container">
+						<select id="dob-month">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="01">January</option>
+							<option value="02">Feburary</option>
+							<option value="03">March</option>
+							<option value="04">April</option>
+							<option value="05">May</option>
+							<option value="06">June</option>
+							<option value="07">July</option>
+							<option value="08">August</option>
+							<option value="09">September</option>
+							<option value="10">October</option>
+							<option value="11">November</option>
+							<option value="12">December</option>
+						</select>
+						<label for="dob-month">
+							Month
+						</label>
+					</div>
+					<div class="small-4 medium-4 columns select-container">
+						<select id="dob-year">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="1998">1998</option>
+							<option value="1997">1997</option>
+						</select>
+						<label for="dob-year">
+							Year
+						</label>
+					</div>
+				</fieldset>
+				<fieldset class="row">
+					<div class="columns select-container">
+						<select id="occupation">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="Accountant">Accountant</option>
+							<option value="Salesperson">Sales Person</option>
+						</select>
+						<label for="occupation">
+							Occupation
+						</label>
+					</div>
+				</fieldset>
+				<fieldset class="row">
+					<div class="input-container columns">
+						<input id="secondary-email-address" value="" type="email">
+						<label for="secondary-email-address">
+							Email address
+						</label>
+					</div>
+				</fieldset>
+				<fieldset class="row">
+					<div class="columns">
+						<label>Preferred method of contact</label>
+					</div>
+					<div class="small-6 medium-4 large-3 columns radio-container">
+						<input class="needsclick" type="radio" name="contact-method" value="Email" id="email">
+						<label for="email">Email</label>
+					</div>
+					<div class="small-6 medium-4 large-3 columns end radio-container">
+						<input class="needsclick" type="radio" name="contact-method" value="Mobile" id="mobile">
+						<label for="mobile">Mobile</label>
+					</div>
+				</fieldset>
+				<header class="sub-header">
+					<h4 class="title">
+						Their address
+					</h4>
+				</header>
+				<fieldset class="row">
+					<p class="columns text-left">103 Hibbert Rd, Walthamstow, London E17 8HE <br><a href="#" class="change-address" title="">Change</a></p>
+					<div class="add-new-address">
+						<%-
+							include(
+								'../partials/select-iso-countries.html',
+								{
+									assoc: 'country-list',
+									text: 'Country',
+									containerClassList: [
+										'columns small-label'
+									]
+								}
+							);
+						%>
+
+
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'postcode-search',
+									labelText: 'Post code',
+									classList: [
+										'medium-6', 
+										'columns'
+									]
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/button.html',
+								{
+									text: 'Search',
+									classList: [ 'medium-6', 'button-outline' ],
+									dataAttr: {
+										'data-role': 'lookup',
+										'data-open': 'address-lookup',
+										'data-index-link': 'AddressListLookup',
+										'data-reveal-id': 'address-list'
+									}
+								}
+							)
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'address-line-1',
+									labelText: 'Address line 1',
+									classList: [
+										'columns'
+									]
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'city',
+									labelText: 'City',
+									classList: [
+										'columns'
+									]
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'state',
+									labelText: 'State',
+									classList: [
+										'columns'
+									]
+								}
+							);
+						%>
+					</div>
+				</fieldset>
+			</form>
+		</section>
+	</div>	
+</section>
+<section id="submit">
+	<div class="row main-container">
+		<section class="large-5 medium-7 small-centered section content" data-form-section="details">
+			<form class="callout">
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'submit',
+								text: 'Next',
+								classList: [ 'small-12' ],
+								dataAttr: {
+									'data-role': 'next',
+									'data-form-section-active': 'account',
+									'data-hyperlink': '/whitelabel/registration/4/'
+								}
+							}
+						)
+					%>
+				</fieldset>
+			</form>
+		</section>
+	</div>
+</section>
+
+
+
+<!-- Start modal -->
+<div class="reveal modal-container" id="address-lookup" data-reveal>
+	<div class="modal-frame">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">Close</span>
+			<h4>Select your address</h4>
+		</header>
+		<div class="modal-content clearfix">
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/select.html',
+						{
+							assoc: 'address-selection',
+							text: 'Address',
+							containerClassList: [
+								'small-label'
+							],
+							optionsClassList: [
+								'needsclick'
+							],
+							options: [
+								{ text: '1, Mulholland Drive', value: '1, Mulholland Drive', selected: 'selected' },
+								{ text: '2, Mulholland Drive', value: '2, Mulholland Drive' },
+								{ text: '3, Mulholland Drive', value: '3, Mulholland Drive' }
+							]
+						}
+					);
+				%>
+			</fieldset>
+
+
+			<div class="row">
+				<%-
+					include(
+						'../components/button.html',
+						{
+							// type: 'submit',
+							type: 'button',
+							text: 'Select',
+							classList: [
+								'large-offset-2',
+								'large-8',
+								'end'
+							],
+							dataAttr: {
+								'data-hyperlink': '#'
+							}
+						}
+					)
+				%>
+			</div>		
+		</div>
+	</div>
+</div>
+<!-- End modal -->
+		
+
+
+
+
+
+<%-
+  include('../partials/footer.html');
+%>

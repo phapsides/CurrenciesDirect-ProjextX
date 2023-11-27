@@ -1,0 +1,275 @@
+
+<div class="reveal modal-container row modal-add-new-card" id="add-new-card" data-reveal>
+	<div class="modal-frame columns">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">Close</span>
+			<h4>Add a new card</h4>
+		</header>
+		<div class="modal-content text-left clearfix">
+			<div class="row">
+				<h5 class="column">Card details</h5>
+			</div>
+			<fieldset class="row add-new-card-fields">
+				<%-
+					include(
+						'../components/select.html',
+						{
+							assoc: 'bank-cards',
+							text: 'Card type',
+							containerClassList: [
+								'columns'
+							],
+							optionsClassList: [
+								'needsclick'
+							],
+							options: [
+								{ value: '01', text: 'Visa Debit' },
+								{ value: '02', text: 'Mastercard Debit' },
+								{ value: '03', text: 'Electron' },
+								{ value: '04', text: 'Solo' }
+							]
+						}
+					);
+				%>
+
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'card-name',
+							value: 'Simon Hill',
+							labelText: 'Name on card',
+							classList: [
+								'columns',
+								'small-label'
+							]
+						}
+					);
+				%>
+
+				<%-
+					include(
+						'../components/input-type-number.html',
+						{
+							assoc: 'card-number',
+							value: '',
+							labelText: 'Card number',
+							classList: [
+								'columns'
+							]
+						}
+					);
+				%>
+
+				<%-
+					include(
+						'../components/input-type-number.html',
+						{
+							assoc: 'card-valid-from',
+							value: '',
+							labelText: 'Valid from (mm yy)',
+							classList: [
+								'medium-6',
+								'columns'
+							]
+						}
+					);
+				%>
+				<%-
+					include(
+						'../components/input-type-number.html',
+						{
+							assoc: 'card-expires-ends',
+							value: '',
+							labelText: 'Expires/Ends (mm yy)',
+							classList: [
+								'medium-6',
+								'end',
+								'columns'
+							]
+						}
+					);
+				%>
+
+
+				<%-
+					include(
+						'../components/input-type-number.html',
+						{
+							assoc: 'card-issue-no',
+							value: '',
+							labelText: 'Issue number',
+							classList: [
+								'medium-6',
+								'end',
+								'columns'
+							]
+						}
+					);
+				%>
+				<%-
+					include(
+						'../components/input-type-number.html',
+						{
+							assoc: 'card-cvv',
+							value: '',
+							labelText: 'CVV',
+							classList: [
+								'medium-6',
+								'end',
+								'columns'
+							]
+						}
+					);
+				%>
+
+			</fieldset>
+
+			<hr>
+
+			<fieldset class="row add-new-card-fields">
+
+				<h5 class="columns">Billing address</h5>
+				
+
+				<div class="columns checkbox-container button-grid-element-image-small">
+					<input class="needsclick" type="checkbox" checked="checked" name="same-as-billing" value="same-as-billing" id="same-as-billing">
+					<label for="same-as-billing">
+						Use the same as your billing address?
+					</label>
+				</div>
+
+				<div class="columns select-container small-label">
+					<select id="country">
+						<option selected disabled hidden>&nbsp;</option>
+						<option value="GB">United Kingdom</option>
+						<option value="US" selected>United States</option>
+					</select>
+					<label for="country">
+						Country
+					</label>
+				</div>
+
+				<div class="medium-6 columns input-container">
+					<input type="search" id="postcode-search">
+					<label for="postcode-search">Post code</label>
+				</div>
+
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Find address',
+							classList: [
+								'button-outline',
+								'medium-6'
+							],
+							dataAttr: {
+								'data-hyperlink': '#',
+								'link-expanding-section': 'select-address'
+							}
+						}
+					)
+				%>
+
+				<fieldset class="row expanding-section" data-expanding-section="select-address">
+					<%-
+						include(
+							'../components/select.html',
+							{
+								assoc: 'address-selection',
+								text: 'Address',
+								containerClassList: [
+									'small-label'
+								],
+								optionsClassList: [
+									'needsclick'
+								],
+								options: [
+									{ text: '1, Mulholland Drive', value: '1, Mulholland Drive', selected: 'selected' },
+									{ text: '2, Mulholland Drive', value: '2, Mulholland Drive' },
+									{ text: '3, Mulholland Drive', value: '3, Mulholland Drive' }
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'bill-address',
+							labelText: 'Address',
+							classList: [
+								'columns'
+							]
+						}
+					);
+				%>
+
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'bill-town',
+							labelText: 'Town/City',
+							classList: [
+								'columns'
+							]
+						}
+					);
+				%>
+
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'bill-county',
+							labelText: 'County',
+							classList: [
+								'columns'
+							]
+						}
+					);
+				%>
+
+
+			</fieldset>
+
+			<hr>
+
+			<fieldset class="row add-new-card-fields">
+				
+
+				<div class="columns checkbox-container button-grid-element-image-small medium-6">
+					<input class="needsclick" type="checkbox" name="store-card-details" value="store-card-details" id="store-card-details">
+					<label for="store-card-details">
+						I’d like to store this card <br>
+						<small>We can only store this card if you use it to complete this transaction.</small>
+					</label>
+				</div>
+
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Save',
+							classList: [
+								'medium-6',
+								'end'
+							],
+							dataAttr: {
+								'data-role': 'button-continue',
+							},
+						}
+					)
+				%>
+
+			</fieldset>
+
+
+		</div>
+	</div>
+</div>

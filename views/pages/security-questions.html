@@ -1,0 +1,129 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Security questions',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-layout-centered', 
+				'template-registration'
+			]
+		}
+	);
+%>
+
+<%-
+	include(
+		'../components/navigation-main-simple.html', {
+		loggedIn: false,
+		registrationProcess: false,
+		closeOpt: true
+		
+		// '../components/navigation-main.html', {
+		// loggedIn: false,
+		// isLoginTmpl: true
+		}
+	);
+%>
+
+
+<div class="row main-container">
+	<section class="large-5 medium-7 small-centered section content">
+		<form class="callout" data-abide>
+			<header class="main-header columns">
+				<h1 class="title">Answer your security questions</h1>
+				<p class="description columns">
+					These questions are used to verify your identity or help reset your password.
+				</p>
+			</header>
+
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'question-1',
+							labelText: 'What is your favourite children’s book?',
+							value: 'Rover',
+
+							classList: [
+								'columns',
+								'small-label'
+							]
+						}
+					);
+				%>
+			</fieldset>
+
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'question-2',
+							labelText: 'What is the name of your first App?',
+							value: 'New Zealand',
+
+							classList: [
+								'columns',
+								'small-label'
+							]
+						}
+					);
+				%>
+			</fieldset>
+
+
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Log in',
+							classList: [
+								'small-12'
+							],
+							dataAttr: {
+								'data-hyperlink': '/whitelabel/dashboard/'
+							}
+						}
+					)
+				%>
+			</fieldset>
+		</form>
+
+		<br class="show-for-medium-up">
+
+		<div class="row">
+			<p class="columns medium-6">
+				Or verify your identity with a 5-digit PIN code.
+				<a class="tooltip-popup" href="#" title="Help keep the bad guys out of your account by using both your password and a 5-digit PIN code."></a>
+			</p>
+
+			<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Enter PIN',
+							classList: [
+								'medium-6',
+								'button-outline'
+							],
+							dataAttr: {
+								'data-hyperlink': '/whitelabel/pin/'
+							}
+						}
+					)
+				%>
+		</div>
+	</section>
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>
+
+

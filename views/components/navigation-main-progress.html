@@ -1,0 +1,50 @@
+<% /* # Navigation Main */ %>
+
+
+
+<nav class="main-nav main-nav-progress <%= (typeof registrationProcess != 'undefined' && registrationProcess == true ? 'main-nav-registration' : '') %>">
+	<div class="row">
+		<div class="large-1 medium-2 small-1 columns brand-logo-container">
+			<a class="brand-logo" href="/whitelabel/dashboard/full-state/">
+				<!-- Currencies Direct -->
+			</a>
+		</div>
+		<nav class="large-10 medium-9 small-10 main-progress-nav columns">
+			<ul class="clearfix <%= (typeof classList != 'undefined' ? classList : '') %>">
+			<%
+			if (typeof progressOptions != 'undefined') {
+				for (var i = 0; i < progressOptions.length; i++) {
+			%>
+					<!-- Single value -->
+
+					<li class="progress-step-<%- i %> <%= (typeof progressOptions[i].state != 'undefined' ? progressOptions[i].state : '') %> <%= (typeof progressOptions[i].subTitle != 'undefined' ? 'progress-has-sub-title' : '') %>">
+						<div class="">						
+							<a class="title" href="<%= (typeof progressOptions[i].href != 'undefined' ? progressOptions[i].href : '#') %>">
+								<%= (typeof progressOptions[i].title != 'undefined' ? progressOptions[i].title : '') %>
+							</a>
+
+							<% if (typeof progressOptions[i].subTitle != 'undefined') { %>
+								<span class="sub-title">
+									<%- progressOptions[i].subTitle %>
+								</span>
+							<% } %>
+						</div>
+					</li>
+
+			<%
+				}
+			}
+			%>
+
+
+
+			</ul>
+		</nav>
+
+		<div class="large-1 medium-1 small-1 columns main-nav-close">
+			<a href="<%= (typeof backURL != 'undefined' ? backURL : '') %>">Close</a>
+		</div>
+
+	</div>
+</nav>
+

@@ -1,0 +1,231 @@
+<%-
+include(
+	'../partials/head.html', {
+		title: 'Terms and Conditions',
+		bodyClassList: [
+			'template', 
+			'template-core', 
+			'template-layout-grid'
+		]
+	}
+);
+%>
+	
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+
+<div class="row main-container main-container--legal-pages">
+	<%- /* include('../components/navigation-sub.html') */ %>
+	<header class="main-header columns">
+		<h1 class="title">
+			Our terms of use
+		</h1>
+	</header>
+
+	<div class="row">
+		<div class="columns">
+			<div class="element-group">
+
+				<div class="pad--24 tc-section">
+					<p>
+							For a downloadable PDF of our terms and conditions, <a target="_blank" name="aTag" href="http://www.torfx.com.au/assets/docs/PDF_Private_Terms.pdf" title="">please click here</a>. <!-- <br>The 'Currencies Direct Financial Markets' terms and conditions <a href="#?clientId=TorFX" title="">can be found here</a>. -->
+					</p>
+				</div>
+
+				<div class="pad--24">
+					<p>
+						The Service (hereinafter defined) is offered to you on condition that you accept all the terms contained herein, without modification or reservation of any of the terms and conditions.
+					</p> 
+					<p>
+						For the purpose of this Terms of Use, &quot;Service&quot; shall mean and include, access to or use of all, any, or some of the following: HTML code, literature, information, software, products, calculators or services provided or available on www.torfx.com.au.
+					</p>
+					<h6>
+						Service
+					</h6>
+					<p>
+						The Service is deemed to be in use when it is loaded in temporary or permanent memory of your computer.
+					</p>
+					<h6>
+						Your registration obligations
+					</h6>
+					<p>
+						In consideration of your use of the Service, you agree to:
+					</p>
+					<ul>
+						<li>
+							provide true, accurate, current and complete information about yourself and your company, if any, and all other information as prompted by the Service&rsquo;s registration form (such information being the &quot;Registration Data&quot;) and maintain and promptly update the Registration Data to keep it true, accurate, current and complete.
+						</li>
+						<li>
+							If you provide any information that is untrue, inaccurate, not current or incomplete, or we have reasonable grounds to suspect that such information is untrue, inaccurate, not current or incomplete, we have the right to suspend or terminate the Service (or any portion thereof).
+						</li>
+					</ul>
+					<h6>
+						Limits of use
+					</h6>
+					<p>
+						You agree to use the Service strictly for personal, corporate, internal and non-commercial use. You may download, retrieve and display the Service from the Web site on the computer screen, print individual pages on paper, photocopy and store such pages in an electronic form on disk, provided all the intellectual property in the Service continues to vest with us (but not on any server or other storage device connected to a network).
+					</p>
+					<h6>
+						You shall not:
+					</h6>
+					<ul>
+						<li>
+							reverse engineer, decompile, disassemble, copy , reproduce, distribute, modify, transmit, perform, reproduce, publish or create derivative works from or in any way exploit any of the Service in violation of this Terms of Use or the laws of any country
+						</li>
+						<li>
+							redistribute the Service (including by using it as a part of any library, archive or similar device) create a database in electronic or structured manual form by systematically downloading and storing all or any of the Service
+						</li>
+						<li>
+							rent, lease, sell, sublicense or lend your access to the Service
+						</li>
+						<li>
+							cache or permit caching by any person
+						</li>
+						<li>
+							do any act that violates our intellectual property in the Service
+						</li>
+						<li>
+							engage in any fraudulent, abusive or illegal activity, including but not limited to any communication or solicitation designed or intended to fraudulently obtain the password or any private information of any user		
+						</li>
+						<li>
+							use the Web site or Service to violate the security of any computer network, crack pass words or security encryption codes, transfer or store illegal material including threatening or obscene material or engage in any kind of illegal activity
+						</li>
+						<li>
+							run mail list or any form of auto-responder, or Spam on our Web site or any processes that are run or are activated while you are not logged on.
+						</li>
+					</ul>
+					<h6>Access restriction</h6>
+					<p>
+						We reserve the right to deny to you, at our sole discretion, access to the Service including or any portion thereof without any prior notice.</p>
+					<h6>Intellectual property</h6>
+					<p>
+						We grant you the right to use the Service in accordance with these terms and conditions, and for no other purpose. Please note that the elements of the Web site including all parts of the Service (&quot;Intellectual Property&quot;) is owned by us and/or our suppliers and is protected by copyright and trademark laws, international treaty provisions, and this Terms of Use.
+					</p>
+					<p>
+						Any reproduction, reverse engineering, decompiling, disassembling, modifi cation, copying, distribution, transmission, display, publishing, sublicensing, creation of derivative works from, transferring or redistribution of the Service is expressly prohibited by law, and may result in severe civil and criminal penalties.
+					</p>
+					<p>
+						We shall be entitled to obtain equitable relief (including all damage, direct, indirect, consequential and exemplary), over and above all other remedies available to us, to protect our interests therein. Violators will be prosecuted to the maximum extent possible.
+					</p>
+					<p>
+						The Service is licensed to you, not sold. We own the Service, its application and the intellectual property connected with the Service.
+					</p>
+					<h6>Links to third-party websites</h6>
+					<p>
+						This Web site may contain links to Web sites operated by parties other than us. The links in this Web site will let you leave www.torfx.com.au. Your use of such Web site is also subject to the terms of use and other terms and guidelines, if any, contained within each such Web site. In the event that any of the terms contained herein conflict with the terms of use or other terms and guidelines contained within any such Web site, then the terms of use and other terms and guidelines for such Web site shall prevail.
+					</p>
+					<p>
+						You agree to click on the links to, and familiarise with, the terms of use and other terms found throughout this Web site and sites to which this Web site has links to, and abide by them.
+					</p>
+					<p>
+						The linked Web sites are not under our control and we are not responsible for the contents of any linked Web site or any link contained in a linked Web site, or any changes or updates to such Web sites. We are providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement by us of the Web site.
+					</p>
+					<p>
+						Our Web site may contain advertising and sponsorship. We will not be responsible for an error or inaccuracy in the advertising or promotional material.
+					</p>
+					<h6>Privacy</h6>
+					<p>The use of the Service is subject to our Privacy Policy. For more information, please see our full Privacy Policy available as a pdf on our website.</p>
+					<h6>Indemnification</h6>
+					<p>
+						You agree to indemnify and hold us harmless from any claim or demand, including reasonable attorney&rsquo;s fees, made by any third party due to or arising out of your use of this Web site, the Service, or the violation of any intellectual property or other right of any person or entity by you.
+					</p>
+					<h6>Disclaimer of warranties</h6>
+					<p>
+						You agree that use of the Service is at your sole risk. The Service is provided on an &quot;as is&quot; and &quot;as available&quot; basis.
+					</p>
+					<p>
+						Except as warranted in this Terms of Use, we expressly disclaim all warranties of any kind, whether express or implied or statutory, including, but not limited to the implied warranties of merchantability, fitness for a particular purpose, data accuracy &amp; completeness, and any warranties relating to non-infringement in the Service.
+					</p>
+					<p>
+						We shall be not responsible or liable for the authenticity, accuracy, completeness, errors, omission, typographic errors, disruption, delay, interruption, failure, deletion, defect of any information, research, reports, analysis, quotes etc in this Web site or any part thereof.
+					</p>
+					<p>
+						We shall not incur any liability direct or indirect, to you or any third party, as a consequence of non-functioning of any equipment belonging to you, any third party or us. We shall not be responsible for any downtime of such equipment.
+					</p>
+					<p>
+						We make no warranty that the Service will meet your requirements. The Service is for your general information and is not intended to address your specific requirements. The Service does not render any form of advice and is not intended to be relied on by you in making any investments or decisions.
+					</p>
+					<p>
+						We do not warrant that the Service will be uninterrupted, timely, secure, or error free; nor do we make any warranty as to the results that may be obtained from the use of the Service or as to the accuracy or reliability of the Service. We clarify that there is no warranty of title, authority or non-infringement in the Service.
+					</p>
+					<p>
+						We make no representations or warranties, either express or implied that the research, development, marketing, distribution, use or sale of the Service will not infringe any patent, copyright or other right of any third party.
+					</p>
+					<p>
+						We make no warranty regarding the Service obtained or purchased through or from the Service or any transactions entered into through the Service. No advice or information, whether oral or written, obtained by you from the, or through, or from, the Service or any person shall create any warranty not expressly stated herein.
+					</p>
+					<p>
+						We shall not be liable for any action taken by you based on or relying on the information provided in or by the Service. We will not be liable for any virus that may enter your system as a result of you using the Service.
+					</p>
+					<p>
+						We make no guarantees to you or third parties that the Service would be virus free. We will not be liable for any direct, incidental or consequential loss, which may be caused to you as a result of your use of the Service.
+					</p>
+					<h6>Limitation of liability</h6>
+					<p>
+						You agree that we, our employees, directors etc., shall not be liable for any direct, indirect, incidental, special or consequential damages, (including, but not limited to, damages caused by any virus, personal injury, loss of profits, data or other intangible, business interruption, loss of privacy, or any other pecuniary loss) resulting from the use/delivery/performance or the inability to use/deliver/perform the Service or for cost of procurement of substitute goods and repair &amp; correction services or resulting from the Service subscribed to or obtained or messages received or transactions entered into through or from the Service or resulting from unauthorised access to or alteration of your transmissions or data, even if we have been advised of the possibility of such damages.
+					</p>
+					<p>
+						You agree that we shall not be liable for any damages arising from interruption, suspension or termination of Service, including but not limited to direct, indirect, incidental, special, consequential or exemplary damages, whether such interruption, suspension or termination was justified or not, negligent or intentional, inadvertent or advertent.
+					</p>
+					<p>
+						In no event will our liability for any claim, whether in contract, tort, or any other theory of liability, exceed one USD.
+					</p>
+					<p>
+						You also agree that your sole remedy under this Terms of Use is cancellation of the Service.
+					</p>
+					<h6>Termination</h6>
+					<p>
+						If you violate any term or we have grounds to believe that you have violated any term of this Terms of Use, we may terminate this Terms of Use without waiving any other rights. If this Terms of Use is terminated, you will be denied access to the Service or any part thereof. We shall not refund the subscription fee or any part thereof, if the access is denied or this Terms of Use is terminated for any of the reasons mentioned above.</p>
+					<h6>Governing law and jurisdiction</h6>
+					<p>
+						This Terms of Use is governed by the laws of the Australia. You consent to the exclusive jurisdiction and venue of courts in Australia in all disputes arising out of or relating to the use of this Web site or Service. Use of this Web site is unauthorised in any jurisdiction that does not give effect to all provisions of this Terms of Use, including without limitation, this paragraph.
+					</p>
+					<h6>General</h6>
+					<p>
+						We reserve the right to change, without notice, the terms and conditions under which the Service is offered. You are responsible for regularly reviewing the Terms of Use.
+					</p>
+					<p>
+						You agree that no joint venture, partnership, employment, or agency relationship exists between us as a result of this Terms of Use or use of this Web site.
+					</p>
+					<p>
+						If any part of this Terms of Use is determined to be invalid or unenforceable pursuant to applicable law including, but not limited to, the warranty disclaimers and liability limitations set forth above, then the invalid or unenforceable provision will be deemed superseded by a valid, enforceable provision that most closely matches the intent of the original provision and the remainder of the Terms of Use shall continue in effect.
+					</p>
+					<p>
+						This Terms of Use constitutes the entire agreement between us with respect to this Web site and Service and it supersedes all prior or contemporaneous communications and proposals, whether electronic, oral or written, between us with respect to this Web site and Service.
+					</p>
+					<h6>Contact us</h6>
+					<p>
+						If you have any questions you may contact us at <a href="mailto:info@torfx.com.au">info@torfx.com.au</a> or at TorFX Pty Ltd, Suite 202, 25 Elkhorn Avenue, Surfers Paradise, Queensland 4217, Australia or call us at <a href="tel:+61 7 5560 4444">+61 7 5560 4444</a> or fax us at +61 7 5560 4444.
+					</p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+			
+
+
+<%-
+  include('../partials/footer.html');
+%>

@@ -1,0 +1,287 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Buy currency',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-02'
+			]
+		}
+	);
+%>
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Choose amount', state: 'active' },
+				{ title: 'Payment', state: '' },
+				{ title: 'Confirm purchase', state: '' }
+			],
+
+			backURL: '/whitelabel/transactions/currency/empty/',
+
+			registrationProcess: false
+		}
+	);
+%>
+
+
+
+<div class="row main-container">
+	<div class="large-8 medium-12 columns">
+		<header class="main-header ">
+			<h1 class="title">
+				Buy currency
+			</h1>
+			<p class="information">
+				We'll add this to your balance to send later.
+			</p>
+		</header>
+			
+		<div class="row">
+			<form class="formNoBorder" data-abide>
+			
+				<div class="columns element-group">
+
+					<br>
+					<h5 class="columns">
+						Choose your currencies and the amount you’d like to buy OR pay us
+					</h5>
+
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/select.html',
+								{
+									assoc: 'transfer-details-reason-for-transfer-1',
+									text: 'I would like to buy',
+									containerClassList: [
+										'medium-7',
+										'columns'
+									],
+									options: [
+										{ text: 'GBP - Pounds sterling', value: 'gbp' },
+										{ text: 'EUR - Euro', value: 'eur' },
+										{ text: 'USD - US Dollar', value: 'usd' },
+										{ text: 'ZAR - South African rand', value: 'zar' }
+									]
+								}
+							);
+						%>
+
+						<span class="small-3 medium-1 columns column-operand second-line">
+							<span class="currency currency-buy"></span>
+						</span>
+
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'amount-due-002',
+									labelText: 'Amount',
+									value: '',
+									classList: [
+										'small-9',
+										'medium-4',
+										'columns',
+										'end'
+									]
+								}
+							);
+						%>
+
+					</fieldset>
+					<fieldset class="row">
+
+						<%-
+							include(
+								'../components/select.html',
+								{
+									assoc: 'transfer-details-sell-currency',
+									text: 'I would like to pay',
+									containerClassList: [
+										'medium-7',
+										'columns'
+									],
+
+									options: [
+										{ text: 'AUD - Australian Dollar', value: 'aud' },
+										{ text: 'GBP - Pounds sterling', value: 'gbp' },
+										{ text: 'EUR - Euro', value: 'eur' },
+										{ text: 'USD - US Dollar', value: 'usd' },
+										{ text: 'ZAR - South African rand', value: 'zar' }
+									]
+								}
+							);
+						%>
+
+						<span class="small-3 medium-1 columns column-operand second-line">
+							<span class="currency currency-pay"></span>
+						</span>
+
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'amount-due-001',
+									labelText: 'Amount',
+									value: '',
+									classList: [
+										'small-9',
+										'medium-4',
+										'columns',
+										'end'
+									]
+								}
+							)
+						%>
+						<div class="wallet-balance-hint">
+							<div class="columns medium-6 wallets-container">
+								<small class="wallet gbp">(Your wallet balance: <strong>1,340.00 GBP</strong>)</small>
+								<small class="wallet usd">(Your wallet balance: <strong>22,542.30 USD</strong>)</small>
+								<small class="wallet eur">(Your wallet balance: <strong>00.00 EUR</strong>)</small>
+							</div>
+							<div class="columns medium-1 end">
+								<a class="tooltip-popup" href="#" title="Explanation goes here."></a>
+							</div>
+						</div>
+
+
+					</fieldset>
+
+					<div class="row">
+
+						<div class="small-12">
+
+							<fieldset class="row">
+
+
+								<div class="row">
+									
+									<%-
+										include(
+											'../components/button.html',
+											{
+												type: 'button',
+												text: 'Get rate',
+												classList: [
+													'button-outline',
+													'get-rate',
+													'medium-3',
+													'end'
+												]
+											}
+										)
+									%>
+
+									<%-
+										include(
+											'../components/input-type-text.html',
+											{
+												assoc: 'amount-due-005',
+												value: '1.14567',
+												labelText: 'Exchange rate',
+												classList: [
+													'small-9',
+													'medium-4',
+													'columns',
+													'small-label',
+													'end'
+												],
+												disabled: true,
+												readOnly: true
+											}
+										);
+									%>
+						
+								</div>
+
+								<div class="row">
+									<small class="medium-6 medium-offset-3 columns copy-rate-refresh">The rate will refresh in <strong>5 sec</strong>.</small>
+									
+								</div>
+
+
+							</fieldset>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row collapse">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'button',
+								text: 'Continue',
+								classList: [
+									'medium-4',
+									'medium-offset-8',
+									'end'
+								],
+								dataAttr: {
+									'data-role': 'button-continue',
+									'data-hyperlink': '/whitelabel/transactions/buy-currency/2/',
+									'disabled': 'disabled'
+								},
+							}
+						)
+					%>
+				</div>			
+			</form>
+		</div>		
+			
+		
+
+
+		<% /*
+		<div class="large-4 columns">
+			<div class="row">
+
+				<aside class="columns transfers-summary">
+					<div class="row">
+						<div class="element-group columns">
+							<div class="row">
+								<h5 class="columns transfers-summary-title">
+									Transfer summary
+								</h5>
+								<h6 class="small-6 columns transfers-summary-sub-title">
+									Recipient
+								</h6>
+								<small class="transfers-edit-button">Edit</small>
+								<div class="columns transfers-summary-selected-payee">
+									<div class="row">
+										<div class="transfers-summary-initials">
+											<span>DQ</span>
+										</div>
+										<div class="transfers-summary-full-name">
+											<span style="color: #c5c5c5; font-size: 14px;">
+												Don Quixote
+											</span>
+											<span style="font-size: 14px;">
+												ES1182271MIFLGB221
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</div>
+		*/ %>
+
+	</div>
+
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>

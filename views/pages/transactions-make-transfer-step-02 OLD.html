@@ -1,0 +1,379 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Transactions - Make Transfer Step 2',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-02'
+			]
+		}
+	);
+%>
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Choose recipient', state: 'complete', href: '/whitelabel/transactions/make-transfer/1/' },
+				{ title: 'Transfer details', state: 'active', href: '/whitelabel/transactions/make-transfer/2/' },
+				{ title: 'Payment', state: '', href: '/whitelabel/transactions/make-transfer/3/' },
+				{ title: 'Confirm transfer', state: '', href: '/whitelabel/transactions/make-transfer/4/' }
+			],
+
+			backURL: '/whitelabel/transactions/make-transfer/0/',
+			
+			registrationProcess: false
+		}
+	);
+%>
+
+
+<div class="row main-container">
+	<div class="row">
+		<header class="large-8 medium-7 main-header columns">
+			<h1 class="title">
+				Your transfer details
+			</h1>
+			<p class="end description">
+				Tell us some information about your transfer, and how much you’re looking to send.
+			</p>
+		</header>
+	</div>
+	<div class="row">
+		<div class="large-8 medium-7 columns" id="sticky-anchor">
+			<form class="formNoBorder" data-abide>
+
+				<div class="element-group">
+
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/select.html',
+								{
+									assoc: 'transfer-details-reason-for-transfer-1',
+									text: 'Reason for this transfer',
+									containerClassList: [
+										'medium-12',	
+										'large-8',
+										'end',
+										'columns'
+									],
+									optionsClassList: [
+										'needsclick'
+									],
+									options: [
+										{ value: '2', text: 'Payment of salaries' },
+										{ value: '3', text: 'Repatriation of overseas earnings' },
+										{ value: '4', text: 'Property purchase' },
+										{ value: '5', text: 'International investment' },
+										{ value: '6', text: 'E-commerce sales' },
+										{ value: '7', text: 'Charitable payment' },
+										{ value: '0', text: 'Other' }
+									]
+								}
+							);
+						%>
+					</fieldset>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'recipient-reference',
+									labelText: 'Recipient reference',
+									max: '18',
+									classList: [
+										'medium-12',	
+										'large-8',
+										'end',
+										'columns'
+									]
+								}
+							);
+						%>
+					</fieldset>
+					
+
+					<div class="row expanding-section" data-expanding-section="how-much-do-you-want-to-transfer">
+
+						<div class="small-12">
+							<fieldset class="row">
+								<h5 class="columns">
+									How much do you want to transfer?
+								</h5>
+							</fieldset>
+							<fieldset class="row">
+								<div class="medium-5 columns">
+									<div class="row collapse">
+										<span class="small-11 columns column-operand">
+											Send to recipient
+										</span>
+									</div>
+									<div class="row collapse">
+										<div class="small-3 medium-6 large-4 columns column-operand second-line">
+											<span>Currency</span><br>
+											<span class="currency eur">EUR</span>
+										</div>
+										<%-
+											include(
+												'../components/input-type-text.html',
+												{
+													assoc: 'amount-due-001',
+													labelText: 'Amount',
+													value: '1000.00',
+													classList: [
+														'small-9',
+														'medium-12',
+														'large-8',
+														'end',
+														'columns'
+													]
+												}
+											)
+										%>
+									</div>
+								</div>
+
+								<div class="medium-1 end columns">
+									<div class="row">
+										<div class="operand-or">
+											or
+										</div>
+									</div>
+								</div>
+
+								<div class="medium-5 end columns">
+									<div class="row collapse">
+										<span class="columns column-operand">
+											You pay
+										</span>
+									</div>
+									<div class="row collapse">
+										<div class="small-3 medium-6 large-4 columns column-operand second-line">
+											<span>Currency</span><br>
+											<span class="currency gbp">GBP</span>
+										</div>
+										<%-
+											include(
+												'../components/input-type-text.html',
+												{
+													assoc: 'amount-due-002',
+													labelText: 'Amount',
+													value: '1000.00',
+													classList: [
+														'small-9',
+														'medium-12',
+														'large-8',
+														'end',
+														'columns'
+													]
+												}
+											);
+										%>
+									</div>
+								</div>
+							</fieldset>
+							<div class="row">
+								<%-
+									include(
+										'../components/button.html',
+										{
+											type: 'button',
+											text: 'Get rate',
+											classList: [
+												'medium-5',
+												'end',
+												'button-outline',
+												'get-rate'
+											]
+										}
+									)
+								%>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="row expanding-section" data-expanding-section="details-of-transfer">
+
+						<div class="small-12">
+							<fieldset class="row">
+								<h5 class="columns">
+									Details of transfer
+								</h5>
+							</fieldset>
+							<fieldset class="row">
+								<div class="medium-5 columns">
+									<div class="row collapse">
+										<div class="columns column-operand">
+											Send to recipient
+										</div>
+									</div>
+									<div class="row collapse">
+										<div class="small-3 medium-6 large-4 columns column-operand second-line">
+											<span>Currency</span><br>
+											<span class="currency eur">EUR</span>
+										</div>
+										<%-
+											include(
+												'../components/input-type-text.html',
+												{
+													assoc: 'amount-due-004',
+													value: '1,000.00',
+													labelText: 'Amount',
+													classList: [
+														'small-9',
+														'medium-12',
+														'large-8',
+														'end',
+														'columns',
+														'small-label'
+													],
+													disabled: true,
+													readOnly: true
+												}
+											);
+										%>
+									</div>
+									<div class="row collapse">
+										<%-
+											include(
+												'../components/input-type-text.html',
+												{
+													assoc: 'amount-due-005',
+													value: '1.14567',
+													labelText: 'Exchange rate',
+													classList: [
+														'small-9',
+														'small-offset-3',
+														'medium-offset-0',
+														'medium-12',
+														'large-8',
+														'large-offset-4',
+														'end',
+														'columns',
+														'small-label'
+													],
+													disabled: true,
+													readOnly: true
+												}
+											);
+										%>
+
+										<small class="large-8 large-offset-4 medium-12 medium-offset-0 columns copy-rate-refresh">Your rate will refresh in <strong>5 seconds</strong>.</small>
+
+									</div>
+
+
+								</div>
+								
+								<div class="medium-1 end columns">
+									<div class="row">
+										<div class="operand-or">
+											or
+										</div>
+									</div>
+								</div>
+
+								<div class="medium-5 end columns">
+									<div class="row">
+										<div class="column-operand">
+											<!-- Hack: &nbsp; added for alignment purpose -->
+											You pay in total&nbsp;
+										</div>
+									</div>
+									<div class="row collapse">
+										<div class="small-3 medium-6 large-4 columns column-operand second-line">
+											<span>Currency</span><br>
+											<span class="currency gbp">GBP</span>
+										</div>
+										<%-
+											include(
+												'../components/input-type-text.html',
+												{
+													assoc: 'amount-due-007',
+													value: '723. 17',
+													labelText: 'Amount',
+													classList: [
+														'small-9',
+														'medium-12',
+														'large-8',
+														'end',
+														'columns',
+														'small-label'
+													],
+													disabled: true,
+													readOnly: true
+												}
+											);
+										%>
+									</div>
+									<div class="row collapse">
+										<%-
+											include(
+												'../components/input-type-text.html',
+												{
+													assoc: 'amount-due-006',
+													value: '0',
+													labelText: 'Transfer fee',
+													classList: [
+														'small-9',
+														'small-offset-3',
+														'medium-offset-0',
+														'medium-12',
+														'large-8',
+														'large-offset-4',
+														'end',
+														'columns',
+														'small-label'
+													],
+													disabled: true,
+													readOnly: true
+												}
+											);
+										%>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+
+				<div class="row collapse">
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Continue',
+							classList: [
+								'medium-4',
+								'medium-offset-8',
+								'end'
+							],
+							dataAttr: {
+								'data-role': 'button-continue',
+								'data-hyperlink': '/whitelabel/transactions/make-transfer/3/',
+								'disabled': 'disabled'
+							},
+						}
+					)
+				%>
+			</div>
+
+			</form>
+			
+		</div>
+
+		
+	</div>
+
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>

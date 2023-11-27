@@ -1,0 +1,433 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Transactions - Make Transfer Step 1',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'site-transfers',
+				'site-transfers-pre-bought-currency-01'
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Choose funds', state: 'active', href: '/whitelabel/transactions/pre-bought-currency/1/' },
+				{ title: 'Recipient and amount', state: '', href: '/whitelabel/transactions/pre-bought-currency/2/' },
+				{ title: 'Confirm', state: '', href: '/whitelabel/transactions/pre-bought-currency/3/' }
+			],
+
+			backURL: '/whitelabel/transactions/currency/empty/',
+
+			registrationProcess: false
+		}
+	);
+%>
+
+
+<div class="row main-container">
+	<div class="row">
+		<header class="main-header columns">
+			<h1 class="title">
+				Transfer from balance
+			</h1>
+			<p class="large-8 medium-7 end information">
+				Select an existing balance to make your transfer from. If you don't have any available, you can <a href="#" title="">buy currency here</a>.
+			</p>
+		</header>
+	</div>
+	<div class="columns">
+		<div class="row">
+			<form class="small-columns element-group element-group-table table-transfers-pre-bought-currency">
+				<div class="row">
+					<div class="columns table-container">
+						<table class="table row">
+							<thead class="table-head-expanding-section" data-expanding-section="table-eur">
+								<tr class="row">
+									<th colspan="4">
+										<span class="currency">Euros (EUR)</span>
+									</th>
+								</tr>
+							</thead>
+							<thead data-expanding-section="table-eur">
+								<tr class="row table-row-header">
+									<th class="table-td-contract-no">
+										<span>Contract no.</span>
+									</th>
+									<th class="table-td-date">
+										<span>Date bought</span>
+									</th>
+									<th class="table-td-balance" colspan="2">
+										<span>Remaining balance</span>
+									</th>
+								</tr>
+							</thead>
+							<tbody data-expanding-section="table-eur">
+								<tr class="row">
+									<td class="table-td-contract-no">
+										<span>1593574852</span>
+									</td>
+									<td class="table-td-date">
+										<span>10/09/14</span>
+									</td>
+									<td class="table-td-balance">
+										<span>AUD 5,000</span>
+									</td>
+									<td>
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="make-transfer-show-details">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/pre-bought-currency/2/">
+												<span>Send</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr class="row">
+									<td class="table-td-contract-no">
+										<span>159547896</span>
+									</td>
+									<td class="table-td-date">
+										<span>23/08/14</span>
+									</td>
+									<td class="table-td-balance">
+										<span>AUD 2,300</span>
+									</td>
+									<td>
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="make-transfer-show-details">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/pre-bought-currency/2/">
+												<span>Send</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr class="row">
+									<td class="table-td-contract-no">
+										<span>159345842</span>
+									</td>
+									<td class="table-td-date">
+										<span>01/08/14</span>
+									</td>
+									<td class="table-td-balance">
+										<span>AUD 1,000</span>
+									</td>
+									<td class="table-td-card-number">
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="make-transfer-show-details">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/pre-bought-currency/2/">
+												<span>Send</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<thead class="table-head-expanding-section" data-expanding-section="table-usd">
+								<tr class="row">
+									<th class="" colspan="4">
+										<span class="currency">US dollars (USD)</span>
+									</th>
+								</tr>
+							</thead>
+							<thead data-expanding-section="table-usd">
+								<tr class="row table-row-header">
+									<th class="table-td-contract-no">
+										<span>Contract no.</span>
+									</th>
+									<th class="table-td-date">
+										<span>Date bought</span>
+									</th>
+									<th colspan="2" class="table-td-balance">
+										<span>Remaining balance</span>
+									</th>
+								</tr>
+							</thead>
+							<tbody data-expanding-section="table-usd">
+								<tr class="row">
+									<td class="table-td-contract-no">
+										<span>1593574852</span>
+									</td>
+									<td class="table-td-date">
+										<span>10/09/14</span>
+									</td>
+									<td class="table-td-balance">
+										<span>AUD 5,000</span>
+									</td>
+									<td>
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="make-transfer-show-details">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/pre-bought-currency/2/">
+												<span>Send</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr class="row">
+									<td class="table-td-contract-no">
+										<span>159547896</span>
+									</td>
+									<td class="table-td-date">
+										<span>23/08/14</span>
+									</td>
+									<td class="table-td-balance">
+										<span>AUD 2,300</span>
+									</td>
+									<td class="table-td-card-number">
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="make-transfer-show-details">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/pre-bought-currency/2/">
+												<span>Send</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr class="row">
+									<td class="table-td-contract-no">
+										<span>159345842</span>
+									</td>
+									<td class="table-td-date">
+										<span>01/08/14</span>
+									</td>
+									<td class="table-td-balance">
+										<span>AUD 1,000</span>
+									</td>
+									<td class="table-td-card-number">
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="make-transfer-show-details">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/pre-bought-currency/2/">
+												<span>Send</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<thead class="table-head-expanding-section" data-expanding-section="table-gbp">
+								<tr class="row">
+									<th colspan="4">
+										<span class="currency">Pounds Sterling (GBP)</span>
+									</th>
+								</tr>
+							</thead>
+							<thead data-expanding-section="table-gbp">
+								<tr class="row table-row-header">
+									<th class="table-td-contract-no">
+										<span>Contract no.</span>
+									</th>
+									<th class="table-td-date">
+										<span>Date bought</span>
+									</th>
+									<th colspan="2" class="table-td-balance">
+										<span>Remaining balance</span>
+									</th>
+								</tr>
+							</thead>
+							<tbody data-expanding-section="table-gbp">
+								<tr class="row">
+									<td class="table-td-contract-no">
+										<span>1593574852</span>
+									</td>
+									<td class="table-td-date">
+										<span>10/09/14</span>
+									</td>
+									<td class="table-td-balance">
+										<span>AUD 5,000</span>
+									</td>
+									<td class="table-td-card-number">
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="make-transfer-show-details">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/pre-bought-currency/2/">
+												<span>Send</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr class="row">
+									<td class="table-td-contract-no">
+										<span>159547896</span>
+									</td>
+									<td class="table-td-date">
+										<span>23/08/14</span>
+									</td>
+									<td class="table-td-balance">
+										<span>AUD 2,300</span>
+									</td>
+									<td class="table-td-card-number">
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="make-transfer-show-details">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/pre-bought-currency/2/">
+												<span>Send</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr class="row">
+									<td class="table-td-contract-no">
+										<span>159345842</span>
+									</td>
+									<td class="table-td-date">
+										<span>01/08/14</span>
+									</td>
+									<td class="table-td-balance">
+										<span>AUD 1,000</span>
+									</td>
+									<td class="table-td-card-number">
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="make-transfer-show-details">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/pre-bought-currency/2/">
+												<span>Send</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Begin modal -->
+<div class="reveal modal-container row modal-make-transfer-show-details" id="make-transfer-show-details" data-reveal>
+	<div class="modal-frame columns">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">Close</span>
+			<h4>Contract details</h4>
+		</header>
+
+		<div class="modal-content clearfix">
+
+			<table class="table row">
+				<thead>
+					<tr class="row">
+						<th>Contract</th>
+						<th>Date</th>
+						<th>Amount</th>
+						<th>Remaining</th>
+						<th>Recipient</th>
+						<th>Reference</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="row">
+						<td>
+							<span>3674727</span>
+						</td>
+						<td>
+							<span>10/04/14</span>
+						</td>
+						<td>
+							<span class="amount">GBP 15,750</span>
+						</td>
+						<td>
+							<span class="amount">GBP 6,500</span>
+						</td>
+						
+						<td></td>
+						<td></td>
+					</tr>
+
+					<tr class="row">
+						<td>
+							<span>Transfer</span>
+						</td>
+						<td>
+							<span>09/04/14</span>
+						</td>
+						<td>
+							<span class="amount">GBP 7,750</span>
+						</td>
+						<td></td>
+						<td>
+							<span>Mrs W jones</span>
+						</td>
+						<td>
+							<span>Lorem ipsum dolor sit amet.</span>
+						</td>
+					</tr>
+
+					<tr class="row">
+						<td>
+							<span>Transfer</span>
+						</td>
+						<td>
+							<span>09/04/14</span>
+						</td>
+						<td>
+							<span class="amount">GBP 2,000</span>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="medium-3 columns">
+				<ul class="links-export">
+					<li>
+						<a href="#" title="" class="link-pdf">Export</a>
+					</li>
+					<li>
+						<a href="#" title="" class="link-print">Print</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End modal -->
+
+
+
+
+
+
+
+
+<%-
+  include('../partials/footer.html');
+%>
+

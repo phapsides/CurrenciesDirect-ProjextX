@@ -1,0 +1,49 @@
+<%
+/*
+
+# Input Number Component
+
+### Notes
+
+### Usage
+
+# Simple
+include('components/input-type-number.html', assoc: 'currency-amount');
+
+# Verbose
+include(
+	'components/input-type-number.html',
+	{
+		assoc: 'currency-amount',
+		value: '1000',
+		labelText: 'Amount',
+		classList: [
+			'small-12',
+			'columns'
+		],
+		required: false
+	}
+);
+
+*/
+%>
+
+<div class="input-container <%=
+	(typeof classList != 'undefined' ? classList.join(' ') : '')
+%>">
+	<input
+		type="number"
+		id="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>"
+		value="<%= (typeof value != 'undefined' ? value : '') %>"
+		min="<%= (typeof min != 'undefined' ? min : '0') %>"
+		<% if (typeof maxLength != 'undefined') { %>maxlength="<%- maxLength %>" <% } %>
+		<% if (typeof step != 'undefined') { %>
+		step="<%= (typeof step != 'undefined' ? step : '') %>"
+		<% } %>
+		<% if (typeof readOnly != 'undefined') { %>readonly <% } %>
+	>
+	<label for="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>">
+		<%= (typeof labelText != 'undefined' ? labelText : '') %>
+	</label>
+</div>
+

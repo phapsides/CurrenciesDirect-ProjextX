@@ -1,0 +1,643 @@
+<!-- 
+Profile Account Details 
+-->
+
+<div class="row collapse">
+	<div class="columns">
+		<fieldset class="row">
+			<h5 class="columns">
+				Account details
+			</h5>
+			<%-
+				include(
+					'../components/input-type-text.html',
+					{
+						assoc: 'title',
+						labelText: 'Account type',
+						value: 'Single',
+						classList: [
+							'medium-6',
+							'columns',
+							'small-label'
+						],
+						disabled: true,
+						readOnly: true
+					}
+				);
+			%>
+			<a class="medium-6 columns end button-simple button-simple-inline" href="#" data-open="swith-to-joint-account" title="Switch to joint account">
+				<span>Switch to joint account</span>
+			</a>
+		</fieldset>
+	</div>
+</div>
+
+<hr>
+
+<div class="row collapse">
+	<div class="columns">
+		<fieldset class="row">
+			<h5 class="columns end">
+				Login details
+			</h5>
+			<%-
+				include(
+					'../components/input-type-text.html',
+					{
+						assoc: 'title',
+						labelText: 'Email address',
+						value: 'Sihill@gmail.com',
+						classList: [
+							'medium-6',
+							'columns',
+							'small-label'
+						],
+						disabled: true,
+						readOnly: true
+					}
+				);
+			%>
+			<a class="small-6 medium-4 end columns button-simple button-simple-inline toggle-show" href="#" title="">
+				<span>Change</span>
+			</a>
+		</fieldset>
+		<div class="new-email--panel">
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'input-012',
+							labelText: 'New email address',
+							classList: [
+								'medium-6',
+								'columns'
+							]
+						}
+					);
+				%>
+			</fieldset>
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'input-013',
+							labelText: 'Confirm email address',
+							classList: [
+								'medium-6',
+								'columns'
+							]
+						}
+					);
+				%>
+			</fieldset>
+
+			<div class="row">
+
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Save',
+							classList: [ 
+								'small-6',
+								'medium-3',
+								'columns',
+								'button-outline'
+							]
+						}
+					)
+				%>
+
+				<a class="small-6 medium-3 end columns button-simple button-simple-inline toggle-hide" href="#" title="">
+					<span>Cancel</span>
+				</a>
+
+			</div>
+		</div>
+
+		<fieldset class="row">
+			<%-
+				include(
+					'../components/input-type-text.html',
+					{
+						assoc: 'title',
+						labelText: 'Password',
+						value: '••••••••',
+						classList: [
+							'medium-6',
+							'columns',
+							'small-label'
+						],
+						disabled: true,
+						readOnly: true
+					}
+				);
+			%>
+			<a class="small-6 medium-4 end columns button-simple button-simple-inline toggle-show" href="#" title="">
+				<span>Change</span>
+			</a>
+		</fieldset>
+		<div class="new-password--panel">
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'input-014',
+							labelText: 'New password',
+							classList: [
+								'medium-6',
+								'columns'
+							]
+						}
+					);
+				%>
+			</fieldset>
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-text.html',
+						{
+							assoc: 'input-015',
+							labelText: 'Confirm password',
+							classList: [
+								'medium-6',
+								'columns'
+							]
+						}
+					);
+				%>
+				
+			</fieldset>
+
+			<div class="row">
+
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Save',
+							classList: [ 
+								'small-6',
+								'medium-3',
+								'columns',
+								'button-outline'
+							]
+						}
+					)
+				%>
+
+				<a class="small-6 medium-3 end columns button-simple button-simple-inline toggle-hide" href="#" title="">
+					<span>Cancel</span>
+				</a>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<hr>
+		
+<div class="row collapse">
+	<div class="columns medium-6">
+		<fieldset class="row">
+			<h5 class="columns title">
+				Security details
+			</h5>
+
+			<%-
+				include(
+					'../components/select.html',
+					{
+						assoc: 'inpiut-010',
+						text: 'Security question 1',
+						containerClassList: [
+							'madium-7',	
+							'columns',
+							'small-label'
+						],
+						optionsClassList: [
+							'needsclick'
+						],
+						options: [
+							{ text: 'Your first pet\'s name', value: 'Your first pet\'s name' }
+						]
+					}
+				);
+			%>
+			<%-
+				include(
+					'../components/input-type-text.html',
+					{
+						assoc: 'input-011',
+						labelText: 'Answer 1',
+						value: 'Rover',
+						classList: [
+							'madium-7',
+							'end',
+							'columns',
+							'small-label'
+						]
+					}
+				);
+			%>
+
+			<%-
+				include(
+					'../components/select.html',
+					{
+						assoc: 'inpiut-020',
+						text: 'Security question 2',
+						containerClassList: [
+							'madium-7',	
+							'columns',
+							'small-label'
+						],
+						optionsClassList: [
+							'needsclick'
+						],
+						options: [
+							{ text: 'Your favourite place?', value: 'Your favourite place?' }
+						]
+					}
+				);
+			%>
+			<%-
+				include(
+					'../components/input-type-text.html',
+					{
+						assoc: 'input-021',
+						labelText: 'Answer 2',
+						value: 'New Zealand',
+						classList: [
+							'madium-7',
+							'end',
+							'columns',
+							'small-label'
+						]
+					}
+				);
+			%>
+		</fieldset>
+	</div>
+</div>
+
+<hr>
+
+<!-- Start modal -->
+<div class="reveal modal-container row" id="delete-card" data-reveal>
+	<div class="modal-frame columns">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">
+				Close
+			</span>
+			<h4>Do you want to delete this card?</h4>
+		</header>
+		<div class="modal-content clearfix">
+			<%-
+				include(
+					'../components/button.html',
+					{
+						type: 'submit',
+						text: 'Confirm',
+						classList: [ 
+							'large-8',
+							'large-centered'
+						],
+						dataAttr: {
+							'data-role': 'confirm-deletion',
+							'data-hyperlink': '#'
+						}
+					}
+				)
+			%>
+		</div>
+	</div>
+</div>
+<!-- End modal -->
+
+
+
+<!-- Begin modal -->
+<div class="reveal modal-container row" id="swith-to-joint-account" data-reveal>
+	<div class="modal-frame columns">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">Close</span>
+			<h4>Invite someone to a joint account</h4>
+		</header>
+		<div class="modal-content clearfix">
+				<div class="row">
+					<h5 class="columns">Personal details</h5>
+				</div>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/select.html',
+							{
+								assoc: 'title',
+								text: 'Title',
+								containerClassList: [
+									'medium-4'
+								],
+								optionsClassList: [
+									'needsclick'
+								],
+								options: [
+									{ text: 'Mx', value: 'Mx' },
+									{ text: 'Ms', value: 'Ms' },
+									{ text: 'Miss', value: 'Miss' },
+									{ text: 'Mrs', value: 'Mrs' },
+									{ text: 'Mr', value: 'Mr' },
+									{ text: 'Lady', value: 'Lady' },
+									{ text: 'Lord', value: 'Lord' },
+									{ text: 'Sir', value: 'Sir' },
+									{ text: 'Rev', value: 'Rev' },
+									{ text: 'Dr', value: 'Dr' },
+									{ text: 'Professor', value: 'Professor' }
+								]
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'first-and-middle-names',
+								labelText: 'Full first and middle names',
+								value: '',
+								classList: [
+									'medium-8',
+									'columns'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'lastname',
+								labelText: 'Last name',
+								classList: [
+									'columns'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<h5 class="columns">Mobile number</h5>
+					<div class="medium-4 columns select-container small-label">
+						<select id="country-code">
+						</select>
+						<label for="country-code">
+							Country
+						</label>
+					</div>
+					<%-
+						include(
+							'../components/input-type-tel.html',
+							{
+								assoc: 'telelphone-number',
+								labelText: 'Number',
+								classList: [
+									'medium-8',
+									'columns'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<h5 class="columns">Date of birth</h5>
+					<div class="medium-4 columns select-container">
+						<select id="dob-day">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="01">01</option>
+							<option value="02">02</option>
+						</select>
+						<label for="dob-day">
+							Day
+						</label>
+					</div>
+					<div class="medium-4 columns select-container">
+						<select id="dob-month">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="01">January</option>
+							<option value="02">Feburary</option>
+							<option value="03">March</option>
+							<option value="04">April</option>
+							<option value="05">May</option>
+							<option value="06">June</option>
+							<option value="07">July</option>
+							<option value="08">August</option>
+							<option value="09">September</option>
+							<option value="10">October</option>
+							<option value="11">November</option>
+							<option value="12">December</option>
+						</select>
+						<label for="dob-month">
+							Month
+						</label>
+					</div>
+					<div class="medium-4 columns select-container">
+						<select id="dob-year">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="1998">1998</option>
+							<option value="1997">1997</option>
+						</select>
+						<label for="dob-year">
+							Year
+						</label>
+					</div>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../partials/select-iso-countries.html',
+							{
+								assoc: 'nationality-list',
+								text: 'Nationality',
+								containerClassList: [
+									'columns small-label'
+								]
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<div class="columns select-container">
+						<select id="occupation">
+							<option selected disabled hidden>&nbsp;</option>
+							<option value="Accountant">Accountant</option>
+							<option value="Salesperson">Sales Person</option>
+						</select>
+						<label for="occupation">
+							Occupation
+						</label>
+					</div>
+				</fieldset>
+				<fieldset class="row">
+					<div class="input-container columns">
+						<input id="secondary-email-address" value="" type="email">
+						<label for="secondary-email-address">
+							Email address
+						</label>
+					</div>
+				</fieldset>
+				<div class="row">
+					<h5 class="column">Contact details</h5>
+				</div>
+				<fieldset class="row">
+					<div class="columns checkbox-container">
+						<input class="needsclick" name="agree-to-tc" value="Yes" id="yes" type="checkbox">
+						<label for="yes">
+							Use the same details as the primary contact.
+						</label>
+					</div>
+				</fieldset>
+				<fieldset class="row">
+					<div class="add-new-address">
+						<%-
+							include(
+								'../partials/select-iso-countries.html',
+								{
+									assoc: 'country-list',
+									text: 'Country',
+									containerClassList: [
+										'columns small-label'
+									]
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'postcode-search',
+									labelText: 'Post code',
+									classList: [
+										'medium-6', 
+										'columns'
+									]
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/button.html',
+								{
+									type: 'button',
+									text: 'Search',
+									classList: [
+										'button-outline',
+										'medium-6'
+									],
+									dataAttr: {
+										'data-hyperlink': '#',
+										'link-expanding-section': 'select-address'
+									}
+								}
+							)
+						%>
+						<fieldset class="row expanding-section" data-expanding-section="select-address">
+							<%-
+								include(
+									'../components/select.html',
+									{
+										assoc: 'address-selection',
+										text: 'Address',
+										containerClassList: [
+											'small-label'
+										],
+										optionsClassList: [
+											'needsclick'
+										],
+										options: [
+											{ text: '1, Mulholland Drive', value: '1, Mulholland Drive', selected: 'selected' },
+											{ text: '2, Mulholland Drive', value: '2, Mulholland Drive' },
+											{ text: '3, Mulholland Drive', value: '3, Mulholland Drive' }
+										]
+									}
+								);
+							%>
+						</fieldset>
+
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'address-line-1',
+									labelText: 'Address line 1',
+									classList: [
+										'columns'
+									]
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'city',
+									labelText: 'City',
+									classList: [
+										'columns'
+									]
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'county',
+									labelText: 'County',
+									classList: [
+										'columns'
+									]
+								}
+							);
+						%>
+					</div>
+				</fieldset>
+				<fieldset class="row">
+					<div class="columns">
+						<p>
+							(Please leave the 'email address' field blank if you share an email address. If this is the case, then only the primary account holder will be able to make a transaction.)
+						</p>
+						<hr>
+					</div>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'button',
+								text: 'Save',
+								classList: [
+									'large-4',
+									'large-offset-8',
+									'end'
+								],
+								dataAttr: {
+									'data-role': 'button-save',
+									'data-hyperlink': '#',
+								},
+							}
+						)
+					%>
+				</fieldset>
+		
+		</div>
+	</div>
+</div>
+<!-- End modal -->

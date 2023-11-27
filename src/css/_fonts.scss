@@ -1,0 +1,18 @@
+
+@font-face {
+	font-family: 'main';
+	src: 	url('/resources/core/fonts/Gotham Rounded Book.woff2') format('woff2'),
+       		url('/resources/core/fonts/Gotham Rounded Book.woff') format('woff'),
+       		url('/resources/core/fonts/Gotham Rounded Book.otf')  format('truetype');
+	font-style: none;
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: 'bold';
+	src: 	url('/resources/core/fonts/GothamRoundedMedium_21022.woff2') format('woff2'),
+       		url('/resources/core/fonts/GothamRoundedMedium_21022.woff') format('woff'),
+       		url('/resources/core/fonts/GothamRoundedMedium_21022.ttf') 	format('truetype');
+	font-style: none;
+	font-weight: 100;
+}

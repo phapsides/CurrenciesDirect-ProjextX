@@ -1,0 +1,280 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Recipients - Add Bank Details',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-02',
+				'site-recipients', // Correct class
+				'site-recipients-02'
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Recipient details', state: 'complete', href: '/whitelabel/recipients/manage/add-2/' },
+				{ title: 'Bank details', state: 'active', href: '/whitelabel/recipients/manage/add/bank-details/'  },
+				{ title: 'Additional details', state: '', href: '/whitelabel/recipients/manage/add/additional-details/' }
+			],
+
+			backURL: '/whitelabel/recipients/manage/',
+
+			registrationProcess: false
+		}
+	);
+%>
+
+<div class="row main-container">
+	<div class="columns">
+
+		<div class="row collapse">
+			<h1 class="large-8 medium-12 columns end title">
+				Add your recipient
+			</h1>
+			<p class="large-8 medium-12 columns end description">
+				Add your recipient’s details below – you’ll need to have your phone with you to receive a confirmation PIN.
+			</p>
+		</div>
+
+
+		<div class="row collapse">
+
+			<div class="large-8 medium-12 columns">
+				<form class="formNoBorder" data-abide>
+					<div class="element-group">
+						
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'iban-number',
+									labelText: 'IBAN',
+									classList: [
+										'small-10',
+										'medium-8',
+										'end',
+										'columns'
+									]
+								}
+							);
+						%>
+						<div class="small-1 columns end tooltip-hldr">
+							<a class="tooltip-popup" href="#" title="Enter the account details and just select 'Retrieve bank details', or enter all details on this form manually."></a>
+						</div>
+
+						
+
+					</fieldset>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/button.html',
+								{
+									type: 'button',
+									text: 'Retrieve bank details',
+									classList: [
+										'medium-6',
+										'button-outline',
+										'end'
+									],
+									dataAttr: {
+										'data-role': 'button-bank-details',
+										'data-hyperlink': '#'
+									},
+								}
+							)
+						%>
+					</fieldset>
+
+					
+					<div class="expanding-section" style="border:none;">
+					
+						<div class="row hide retrieve-fail">
+							<p class="medium-10 columns"><strong>We couldn't retrieve the details. Please enter manually:</strong></p>
+						</div>
+
+						<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'swift-code',
+									labelText: 'SWIFT code',
+									classList: [
+										'medium-8',
+										'columns'
+									]
+								}
+							);
+						%>
+						</fieldset>
+						<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'bank-name',
+									labelText: 'Bank name',
+									classList: [
+										'medium-8',
+										'columns'
+									]
+								}
+							);
+						%>
+
+						</fieldset>
+
+						<fieldset class="row">
+							<div class="medium-8 columns">
+								<%-
+									include(
+										'../components/textarea.html',
+										{
+											assoc: 'ank-address',
+											labelText: 'Bank address',
+											value: '',
+											classList: [
+												'small-label'
+											]
+										}
+									);
+								%>
+							</div>
+							<small class="columns">
+								(Please note: your deal confirmation may display the bank’s HQ address by default.)						
+							</small>
+						</fieldset>
+
+
+					</div>
+
+					<div class="row">
+							<p class="columns"><br>
+								Need to add <a href="#" class="link-need-interm-bank">intermediary bank details?</a>
+								<div class="hide need-interm-bank columns">
+									Please contact us on <a href="tel:+442078479494" title="" class="phone-number">+44 (0) 20 7847 9494</a> or email us on <a href="mailto:contracts@currenciesdirect.com" title="">contracts@currenciesdirect.com</a>.<br>&nbsp;
+								</div>
+							</p>
+						</div>
+
+					
+					</div>
+
+					<div class="row collapse">
+
+						<div class="medium-7  columns" style="text-align: right">
+							Please have your phone with you to receive <br>a confirmation PIN.
+						</div>
+						<%-
+							include(
+								'../components/button.html',
+								{
+									type: 'button',
+									text: 'Continue',
+									classList: [
+										'medium-4',
+										'medium-offset-1',
+										'end'
+									],
+									dataAttr: {
+										'data-role': 'button-continue',
+										//'data-hyperlink': '/whitelabel/recipients/manage/add/additional-details/',
+										//'disabled': 'disabled',
+										'data-open':  'pin-code'
+									},
+								}
+							)
+						%>
+					</div>
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div class="reveal modal-container row" id="pin-code" data-reveal>
+	<div class="modal-frame columns">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">Close</span>
+			<h4>Confirm a new recipient</h4>
+
+		</header>
+	
+
+		<div class="modal-content clearfix">
+			<div class="row">
+
+				<p class="columns p-modal-pin">Please enter a 5-digit PIN code we've sent <br>to phone <b>+44*********388</b></p>
+				<p class="columns p-modal-pin hide">We've resent PIN code to phone <b>+44*********388</b>. <br>Please enter now.</p>
+				<p class="columns p-modal-pin hide">Your PIN code entered is incorrect. Please try again.</p>
+
+				<div class="input-container columns inputs-PIN ">
+					<input type="number" id="pin-number" value="" min="0" max="9" maxlength="1">
+					<input type="number" id="pin-number" value="" min="0" max="9">
+					<input type="number" id="pin-number" value="" min="0" max="9">
+					<input type="number" id="pin-number" value="" min="0" max="9">
+					<input type="number" id="pin-number" value="" min="0" max="9">
+				</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class="columns medium-4 button-outline no-margin-bottom">
+				<button type="button" class="columns button button-resend-PIN disabled" data-hyperlink="#">
+					<span>
+						Resend PIN
+					</span>
+				</button>
+			</div>
+			
+
+			<div class="columns medium-4 float-right">
+				<button type="button" class="columns button" data-role="button-continue" data-hyperlink="/whitelabel/recipients/manage/">
+					<span>
+						Submit
+					</span>
+				</button>
+			</div>
+
+			<div class="loader-container hide" style="position: absolute;
+    top: 72px;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: white;">
+				<svg class="loader" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" style="width: 100px; height: 100px;">
+					<circle class="internal-circle" cx="60" cy="60" r="30"></circle>
+					<circle class="external-circle" cx="60" cy="60" r="50"></circle>
+				</svg>
+				
+			</div>
+
+		</div>
+
+
+		</div>
+	</div>
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>
+
+

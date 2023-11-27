@@ -1,0 +1,113 @@
+<%-
+	include(
+		'../partials/head.html', {
+				title: 'Password Update',
+			bodyClassList: [
+				'template',
+				'template-core',
+				'template-layout-centered', 
+				'template-registration'
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-simple.html', {
+		loggedIn: false,
+		registrationProcess: false,
+		closeOpt: true
+
+		// '../components/navigation-main.html', {
+		// loggedIn: false,
+		// isLoginTmpl: true
+		}
+	);
+%>
+
+
+<div class="row main-container">
+	<section class="large-5 medium-7 small-centered section content">
+		<form class="callout" data-abide>
+			<header class="main-header columns">
+				<h1 class="title">
+					Update your password
+				</h1>
+				<p class="description">
+					Your password has expired – please update it now. If you’ve forgotten your password, you can <a href="/whitelabel/password/forgotten/" title="" class="nowrap">reset it here</a>.
+				</p>
+			</header>
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-password.html',
+						{
+							assoc: 'password',
+							labelText: 'Old password',
+							classList: [
+								'columns'
+							]
+						}
+					);
+				%>
+			</fieldset>
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-password.html',
+						{
+							assoc: 'password',
+							labelText: 'New password',
+							classList: [
+								'columns'
+							]
+						}
+					);
+				%>
+			</fieldset>
+			<!-- <fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-password.html',
+						{
+							assoc: 'password',
+							labelText: 'Confirm password',
+							classList: [
+								'columns'
+							]
+						}
+					);
+				%>
+			</fieldset> -->
+			<fieldset class="row ">
+				<p class="columns text-left">
+					Passwords should be at least 8 characters long with at least 1 number, 1 capital letter &amp; 1 lowercase letter.
+				</p>
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'submit',
+							text: 'Update password',
+							classList: [
+								'small-12'
+							],
+							dataAttr: {
+								'data-hyperlink': '/whitelabel/'
+							}
+						}
+					)
+				%>
+			</fieldset>
+		</form>
+	</section>
+</div>
+
+
+
+<%-
+  /* Sitewide JS */
+  include('../partials/footer.html');
+%>

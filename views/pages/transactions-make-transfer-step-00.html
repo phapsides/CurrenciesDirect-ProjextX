@@ -1,0 +1,77 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Transactions - Make Transfer Step 0',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-registration'
+			]
+		}
+	);
+%>
+
+
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu active', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+
+
+<div class="row main-container">
+	<div class="large-5 medium-7 small-centered section content center">
+		<header class="main-header columns">
+			<h1 class="title">
+				Looks like you haven’t got <br class="show-for-medium-up">any recipients
+			</h1>
+			<p class="description">
+				Click below to add an individual or business 
+			</p>
+		</header>
+		<div class="row">
+			<%-
+				include(
+					'../components/button.html',
+					{
+						type: 'submit',
+						text: 'Add recipient',
+						classList: [
+							'small-12'
+						],
+						dataAttr: {
+							'data-hyperlink': '/whitelabel/recipients/manage/add/'
+						}
+					}
+				)
+			%>
+		</div>
+		<div class="row">
+			<a class="block button-simple button-simple-inline" href="/whitelabel/transactions/buy-currency/1/?clientId=currencies-direct" title="">Or add to your balance now <br>and transfer to a recipient later</a>
+		</div>
+	</div>
+</div>
+
+
+<%-
+  /* Sitewide JS */
+  include('../partials/footer.html');
+%>
+

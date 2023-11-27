@@ -1,0 +1,47 @@
+<%
+/*
+
+# Input Text Component
+
+### Notes
+
+### Usage
+
+# Simple
+include('components/input-type-text.html', assoc: 'firstname');
+
+# Verbose
+include(
+	'components/input-type-text.html',
+	{
+		assoc: 'email-address',
+		value: 'Grace',
+		labelText: 'First name',
+		classList: [
+			'small-12',
+			'columns'
+		],
+		required: false,
+		readonly: false
+	}
+);
+
+*/
+%>
+
+<div class="input-container <%=
+	(typeof classList != 'undefined' ? classList.join(' ') : '')
+%>">
+	<input
+		type="text"
+		id="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>"
+		value="<%= (typeof value != 'undefined' ? value : '') %>"
+		<% if (typeof maxLength != 'undefined') { %>maxlength="<%- maxLength %>" <% } %>
+		<% if (typeof title != 'undefined') { %>title="<%- title %>" <% } %>
+		<% if (typeof readOnly != 'undefined') { %>readonly <% } %>
+	>
+	<label for="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>">
+		<%= (typeof labelText != 'undefined' ? labelText : '') %>
+	</label>
+</div>
+

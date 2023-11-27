@@ -1,0 +1,253 @@
+<%
+/*
+
+# Navigation Main
+
+*/
+%>
+
+
+<nav class="main-nav">
+	<div class="row">
+
+
+		<%
+			if (typeof loggedIn != 'undefined') {
+				if (loggedIn == false) {
+		%>
+
+			<div class="large-2 medium-2 small-1 columns brand-logo-container brand-logo-alternative">
+				<a class="brand-logo" href="/whitelabel/">
+					<!-- Currencies Direct -->
+				</a>
+			</div>
+
+
+			<!-- @OllieEvill: I'll centre the navigation shortly -->
+
+		<%
+				}
+			} else {
+		%>
+
+			<div class="large-2 medium-2 small-1 columns brand-logo-container">
+				<a class="brand-logo" href="/whitelabel/dashboard/full-state/">
+					<!-- Currencies Direct -->
+				</a>
+			</div>
+
+
+
+
+
+			<% if (typeof progressIndicator != 'undefined') {
+					if (typeof progressIndicator == true) { 
+			%>
+
+			<div class="medium-12 main-nav-content small-centered small-9 columns">
+				Progress
+			</div>
+
+
+			<% }
+			} else { 
+			%>
+
+			<div class="medium-12 main-nav-content small-centered small-9 columns">
+				<ul class="clearfix">
+
+
+
+				<%
+					if (typeof navigationOptions != 'undefined') {
+						for (var i = 0; i < navigationOptions.length; i++) {
+				%>
+
+					<li class="menu-item <%= (typeof navigationOptions[i].class != 'undefined' ? navigationOptions[i].class : '') %>">
+
+
+						<% if (typeof navigationOptions[i].subMenu != 'undefined') { %>
+
+						<a href="<%= (typeof navigationOptions[i].href != 'undefined' ? navigationOptions[i].href : '') %>">
+							<%= (typeof navigationOptions[i].title != 'undefined' ? navigationOptions[i].title : '') %>
+						</a>
+						<% } else { %>
+							<a href="<%= (typeof navigationOptions[i].href != 'undefined' ? navigationOptions[i].href : '') %>">
+								<%= (typeof navigationOptions[i].title != 'undefined' ? navigationOptions[i].title : '') %>
+							</a>
+						<% } %>
+
+						<%
+							if (typeof navigationOptions[i].subMenu != 'undefined') {
+								//for (var i2 = 0; i2 < navigationOptions[i2].subMenu.length; i2++) {
+						%>
+
+							<ul class="sub-menu clearfix">
+								<li>
+									<a href="/whitelabel/transactions/make-transfer/1/">Make a transfer</a>
+								</li>
+								<li>
+									<a href="/whitelabel/transactions/buy-currency/1/">Buy Currency</a>
+								</li>
+								<li>
+									<a href="/whitelabel/transactions/pre-bought-currency/1/">Transfer from my balance</a>
+								</li>
+								<li>
+									<a href="/whitelabel/transactions/pay-contract/1/">Pay open deals</a>
+								</li>
+							</ul>
+
+						<% 
+								//} 
+							} 
+						%>
+
+
+
+
+					</li>
+
+
+
+				<% 
+						} 
+					} 
+				%>
+
+
+
+
+					<!--
+					<li class="menu-item menu-item-transfer menu-item-has-sub-menu<%= (typeof navOpt0Active != 'undefined' ? ' active' : '') %>">
+						<span>Transfer</span>
+						<ul class="sub-menu">
+							<li>
+								<a href="/whitelabel/transactions/make-transfer/1/">Make a transfer</a>
+							</li>
+							<li>
+								<a href="/whitelabel/transactions/buy-currency/1/">Buy Currency</a>
+							</li>
+							<li>
+								<a href="/whitelabel/transactions/pre-bought-currency/1/">Transfer pre-bought Currency</a>
+							</li>
+							<li>
+								<a href="/whitelabel/transactions/pay-contract/1/">Contract payment method</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="menu-item menu-item-alerts<%= (typeof navOpt1Active != 'undefined' ? ' active' : '') %>">
+						<a href="/whitelabel/rate-alerts/management/">
+							Rate alerts
+						</a>
+					</li>
+					<li class="menu-item menu-item-activity-history<%= (typeof navOpt2Active != 'undefined' ? ' active' : '') %>">
+						<a href="/whitelabel/activity-history/">
+							Activity
+						</a>
+					</li>
+					<li class="menu-item menu-item-recipients<%= (typeof navOpt3Active != 'undefined' ? ' active' : '') %>">
+						<a href="/whitelabel/recipients/manage/">
+							Recipients
+						</a>
+					</li>
+					<li class="menu-item menu-item-refer-and-earn<%= (typeof navOpt04Active != 'undefined' ? ' active' : '') %>">
+						<a href="/whitelabel/refer-and-earn/">
+							Recommend us
+						</a>
+					</li>
+					-->
+
+
+				</ul>
+			</div>
+
+
+
+
+
+		<%
+				}
+			}
+		%>
+
+
+
+
+		<ul class="small-2 columns user-profile <%= (typeof loggedIn != 'undefined' && loggedIn == false ? 'user-logged-out' : 'user-logged-in')  %>">
+
+
+
+			<li>
+
+
+
+				<%
+					if (typeof loggedIn != 'undefined') {
+						if (loggedIn == false) {
+
+							if (typeof registration != 'undefined') {
+								if (registration == true) {
+				%>
+
+							<% /* TODO - Close button */ %>
+
+							<span class="user-profile-name">
+								<a href="/whitelabel/">Close</a>
+							</span>
+
+							<% 
+							}
+								} else { 
+							%>
+
+							<span class="user-profile-name">
+								<a href="/whitelabel/">Log in</a>
+							</span>
+
+				<%
+							}
+						}
+
+					} else {
+				%>
+
+					<!--
+						Note: this a logged in state
+					-->
+					<span class="user-profile-name">
+						<%= app.data.user.firstName %> <%= app.data.user.lastName %>
+					</span>
+
+					<span class="user-profile-id">
+						ID: <%= app.data.user.id %>
+					</span>
+					<ul class="sub-menu clearfix">
+						<li>
+							<a href="/whitelabel/profile/">
+								Profile management
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								Log out
+							</a>
+						</li>
+					</ul>
+
+				<%
+					}
+				%>
+
+			</li>
+		</ul>
+
+		<div class="mobile-menu-toggle--container">
+			<button class="mobile-menu-toggle">
+				<span>Menu</span>
+			</button>
+		</div>
+
+
+	</div>
+</nav>

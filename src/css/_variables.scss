@@ -1,0 +1,66 @@
+
+$size-main          			: 16px;
+$size-small	        			: 14px;
+$size-big	        			: 18px;
+
+$bg-color						: #f4f4f4;
+$border-color 					: #e9e9e9;
+
+$active-color					: #f64200;
+
+$main           				: #626262;
+$dark          					: #121212;
+$dark-grey						: #3e3e3e;
+$medium							: #757575;
+$lighter		    			: #c5c5c5;
+$white         					: #ffffff;
+$red                			: #df0000;
+
+$text-main          			: $main;
+$text-secondary					: $dark;
+$text-tertiary					: $medium;
+
+$link-active					: $active-color;
+$btn-active         			: $active-color;
+$btn-inactive       			: #9b9b9b;
+
+$input-disabled					: #e8e8e8;
+
+$table-row-color-even			: #ffffff;
+$table-row-color-odd			: #f7f7f7;
+$table-row-highlight			: #e9e9e9;
+
+
+$status-indicator-bg			: #808080;
+$status-indicator-complete-bg	: #00aa67;
+$status-indicator-awaiting-bg	: #ffb100;
+$status-indicator-error-bg		: #ff0000;
+
+
+$font-main : "Gotham Rounded SSm A","Gotham Rounded SSm B",Helvetica,Roboto,Arial,sans-serif;
+$font-bold : "Gotham Rounded SSm A","Gotham Rounded SSm B",Helvetica,Roboto,Arial,sans-serif;
+
+
+// h2
+$h2-font-size: 32px;
+$h2-line-height: 0.88;
+$h2-letter-spacing: -1.3px;
+
+// h3
+$h3-font-size: 28px;
+$h3-line-height: 1.33;
+$h3-letter-spacing: -1.5px;
+
+// h4
+$h4-font-size: 23px;
+$h4-line-height: 1.33;
+$h4-letter-spacing: -1px;
+
+
+// h5
+$h5-font-size: 18px;
+$h5-line-height: 20px;
+$h5-letter-spacing: -0.6px;
+
+// h6
+$h5-font-size: $size-main;

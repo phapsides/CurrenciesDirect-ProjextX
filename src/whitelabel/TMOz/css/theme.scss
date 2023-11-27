@@ -1,0 +1,936 @@
+/**
+ * TMOz Theme
+ */
+
+$get-path-to-assets: '/whitelabel/TMOz/images';
+$get-path-to-fonts: '/whitelabel/TMOz/fonts';
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+
+@font-face {
+  font-family: 'semi';
+  src:  url('#{$get-path-to-fonts}/PreloSlab-SemiBold.woff2') format('woff2'),
+          url('#{$get-path-to-fonts}/PreloSlab-SemiBold.woff') format('woff'),
+          url('#{$get-path-to-fonts}/PreloSlab-SemiBold.otf')  format('truetype');
+  font-style: none;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'bold';
+  src:  url('#{$get-path-to-fonts}/PreloSlab-ExtraBold.woff2') format('woff2'),
+          url('#{$get-path-to-fonts}/PreloSlab-ExtraBold.woff') format('woff'),
+          url('#{$get-path-to-fonts}/PreloSlab-ExtraBold.ttf')  format('truetype');
+  font-style: none;
+  font-weight: 100;
+}
+
+$font-main  : 'Open Sans', Calibri, Arial, sans-serif;
+$font-semi  : 'semi';
+$font-bold  : 'bold';
+
+
+$link-weight: 700;
+$nav-link-weight: 600;
+$button-weight: 600;
+$title-weight: 600;
+$whitelabel-primary: #1d592c; //GREEN
+$whitelabel-primary-text: #1d592c;
+$whitelabel-secondary: #061922;  //BLACK
+$whitelabel-secondary-text: #061922;
+$whitelabel-highlight-text: #4d4d4f; //GREY
+$whitelabel-nav-bg: #061922; 
+$whitelabel-nav-links: #FFFFFF;
+$whitelabel-button-bg: $whitelabel-primary;
+$whitelabel-button-bg-hover: lighten( $whitelabel-primary, 10% );
+$whitelabel-button-bg-click: lighten( $whitelabel-button-bg-hover, 10% );
+$whitelabel-button-text: white;
+$whitelabel-button-text-hover: $whitelabel-button-text;
+$whitelabel-button-text-click: $whitelabel-button-text-hover;
+
+
+* {
+  font-family: $font-main;
+}
+
+nav.main-nav .mobile-menu-toggle--container {
+  right: 10px;
+}
+
+
+nav.main-nav .user-profile.user-logged-in .sub-menu li a {
+   @media screen and (max-width: 960px) {
+      color: #fff !important;
+    } 
+}
+
+body {
+  color: $whitelabel-secondary-text;
+  font-family: $font-main;
+
+  .exchange-rate-live,
+  .radio-group-container .radio > label,
+  .main-container .tc-section a,
+  //.button-simple,
+  th,
+  #ui-datepicker-div td a
+  { font-family: $font-main; }
+
+  .button-simple-x span {
+    font-family: $font-main !important;
+    font-weight: 700;
+    font-size: 1.1em !important;
+    //font-weight: 600 !important
+  }
+
+  .transfers-summary-sub-title.sub-title-refresh {
+    font-family: $font-main !important;
+  }
+
+  .checkbox-container label {
+    color: $whitelabel-secondary-text;
+  }
+
+  a, a:active, a:hover, a:visited,
+  em,
+  .footer-help .footer-help-content footer a,
+  .template.template-registration form .forget a
+  {
+    font-weight: $link-weight !important;
+    color: $whitelabel-primary-text;
+  }
+
+  h1, h1.title { 
+    font-family: $font-bold !important; 
+    font-weight: 100 !important; 
+    letter-spacing: .04em !important;
+  }
+
+  .links-export a {
+    font-weight: 400 !important;
+    color: $whitelabel-highlight-text !important;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-semi !important;
+    font-weight: 100 !important; 
+    letter-spacing: 0.02em !important;
+  }
+
+  h5, h6 { font-size: 17px; }
+
+  .reveal table th { color: $whitelabel-secondary-text; }
+
+  .template, &.template {
+    &.template-core {
+
+      input,
+      textarea {
+        caret-color: $whitelabel-primary;
+      }
+
+      nav {
+        &.main-nav {
+          background-color: $whitelabel-nav-bg !important;
+          border-bottom: 1px solid #f4f4f4 !important;
+          
+          @media screen and (max-width: 960px) {
+            .row {
+              background-color: $whitelabel-secondary;  
+            }
+
+            .mobile-menu-toggle--container .mobile-menu-toggle {
+              background-color: $whitelabel-primary;
+            }
+
+            .user-profile .user-profile-name, .user-profile .user-profile-id {
+              left: 0;
+            }
+          }
+
+          .brand-logo-container {
+
+            margin-top: 17px;
+
+            ::after {
+              color: $whitelabel-nav-bg;
+            }
+
+            .brand-logo {
+
+              &::before {
+                content: '';
+                background-image: url("#{$get-path-to-assets}/logo.svg") !important;
+                background-position: none !important;
+                width: 230px;
+                height: 50px;
+                background-size: 100%;
+                background-position: initial !important;
+                color: white !important; 
+                
+              }
+              
+              @media screen and (max-width: 960px) {
+                width: 165px;
+                height: 36px;
+                
+                &::before {
+                  width: 36px !important;
+                  height: 36px !important;
+                  overflow: hidden;
+                  background-image: url("#{$get-path-to-assets}/logo-small.svg") !important;
+                  margin-top: -2px;
+                }
+                
+              }
+              
+            }
+          }
+
+          .main-nav-content {
+            ul {
+              li {
+                  
+                a {
+                  font-family: $font-main;
+                  letter-spacing: 0.015em;
+                  color: $whitelabel-nav-links !important;
+                  font-weight: 600 !important;
+                }
+
+                &.active,
+                &.open {
+                  border-bottom: 2px solid $whitelabel-primary !important;
+                }
+                
+                &.menu-item-has-sub-menu {
+                  a {
+                    
+                    &::after {
+                      background-image: url("#{$get-path-to-assets}/ic-chevron-down.svg") !important;
+                    }
+                  }
+                }
+
+                ul.sub-menu {
+                  
+                  background-color: $whitelabel-primary;
+                  
+                  li {
+                    a {
+                      font-weight: $nav-link-weight !important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .user-profile {
+            background-color: white;
+
+            li {
+              .user-profile-name {
+                letter-spacing: normal;
+                font-weight: $nav-link-weight;
+                
+                @media screen and (max-width: 960px) {
+                    color: #FFFFFF;
+                }
+                
+              }
+            
+              .user-profile-id {
+                @media screen and (max-width: 960px) {
+                    color: #FFFFFF;
+                }
+              }
+              
+            }
+            
+            &::after {
+              background-image: url("#{$get-path-to-assets}/ic-chevron-down.svg") !important;
+            }
+            
+          }
+          
+          .mobile-menu-toggle--container {
+            .mobile-menu-toggle {
+              background-image: url("#{$get-path-to-assets}/icon-mobile-menu.svg");
+            }
+          }
+          
+          &.open {
+            
+            .mobile-menu-toggle--container {
+              .mobile-menu-toggle {
+                background-image: url("#{$get-path-to-assets}/icon-mobile-menu-close.svg");
+              }
+            }
+
+            //.brand-logo { opacity: 0; }
+            
+            .main-nav-content {
+              ul {
+                li {
+                   ul {
+                     &.sub-menu {
+                       background: $whitelabel-primary;
+                       li {
+                         background: $whitelabel-primary;
+                       }
+                     }
+                   }
+                }
+              }
+            }
+            
+          }
+          
+        }
+        
+        .main-nav-close {
+          a {
+            background-image: url("#{$get-path-to-assets}/ico-cross-black.svg") !important;
+          }
+        }
+
+        &.main-progress-nav {
+          ul {
+            li {
+              a {
+                font-weight: $nav-link-weight !important;
+                color: #FFFFFF !important;
+                font-family: $font-main; 
+
+                &::before {
+                  background-color: #FFFFFF;
+                  color: $whitelabel-secondary-text;
+
+                  @media (max-width: 960px) {
+                    padding-top: 2px;
+                  }
+                }
+              }
+
+              &.active {
+                a {
+                  &::before {
+                    background-color: $whitelabel-primary-text;
+                    color: $whitelabel-nav-links;
+                    font-weight: $title-weight;
+                  }
+                }
+              }
+
+              &.complete {
+                a {
+                  &::before {
+                    background-image: url("#{$get-path-to-assets}/ico-ff-tick-green.svg") !important;
+                    background-color: transparent;
+                  }
+                }
+              }
+            }
+          }
+
+          .sub-title { color: #fff; }
+        }
+      }
+
+      .navigation-tab-container {
+        .navigation-tabs {
+          .tab-toggle {
+            &.active {
+              span {
+                border-bottom: 2px solid $whitelabel-primary;
+              }
+            }
+          }
+        }
+      }
+
+      .reveal-overlay .reveal-modal [data-reveal-id="loading-image"] .modal-loading {
+        border-top: 4px solid $whitelabel-secondary;
+        border-right: 4px solid $whitelabel-secondary;
+      }
+
+      #quick-rate-container .input-container input,
+      #quick-rate-container .select-container input,
+      #recipient-gets-container .input-container input,
+      #recipient-gets-container .select-container input {
+        //font-weight: $title-weight !important;
+        font-family: $font-main;
+        font-weight: 600 !important;
+      }
+
+      a.temp-add-new-payee {
+        height: 46px !important;
+        color: white !important;
+        padding-top: 1.25em;
+      }
+    }
+  }
+
+  .section.content .callout header.sub-header {
+    h4, h5 {
+      font-size: 20px !important;
+    }
+  }
+
+  .element-group .element-group-header h6.element-group-title {
+    font-size: 17px;
+  }
+  
+  table {
+    thead {
+      *,
+      *:hover {
+        font-weight: $title-weight !important;
+      }
+    }
+
+  }
+  
+}
+
+@media (max-width: 1023px) {
+  .filter-container .button-simple {
+    background-color: $whitelabel-primary !important;
+    
+    span { font-family: $font-bold; }
+  }  
+}
+
+// IMAGE OVERWRITES
+body {
+  .close {
+    background-image: url("#{$get-path-to-assets}/icon-close.svg");
+  }
+
+  .button-grid-element.button-grid-element-image.button-make-a-transfer button {
+    background-image: url("#{$get-path-to-assets}/icon-make-a-transfer.svg");
+  }
+
+  .button-grid-element.button-grid-element-image.button-buy-currency button {
+    background-image: url("#{$get-path-to-assets}/icon-buy-currency.svg");
+  }
+
+  .button-grid-element.button-grid-element-image.button-add-a-payee-quick button {
+    background-image: url("#{$get-path-to-assets}/ic-profile.svg") !important;
+  }
+
+  .radio-container input[type="radio"]:checked, .row.main-container form .row .radio-container input[type=radio]:checked {
+    background-image: url("#{$get-path-to-assets}/ff-radiobutton-active.svg");
+  }
+
+  .row.main-container form .row .input-container input[data-role=show-password], .row.main-container form .row .input-container button[data-role=show-password] {
+    background-image: url("#{$get-path-to-assets}/icon-password-show.svg");
+    background-color: transparent !important;
+  }
+
+  .row.main-container form .row .input-container input[data-role=show-password].checked, .row.main-container form .row .input-container button[data-role=show-password].checked {
+    background-image: url("#{$get-path-to-assets}/icon-password-hide.svg");
+    background-color: transparent !important;
+  }
+
+  /*.row.main-container form .row .input-container input[type=search] {
+    background-image: url("#{$get-path-to-assets}/icon-search.svg");
+  }*/
+
+  .radio-group-container .radio input[type=radio]:checked ~ label::after {
+    background-image: url("#{$get-path-to-assets}/ff-radiobutton-active.svg");
+  }
+
+  .row.main-container form .row .input-container select {
+    background-image: url("#{$get-path-to-assets}/icon-drop-down.svg");
+  }
+
+  .filter-container .hasDatepicker {
+    background-image: url("#{$get-path-to-assets}/icon-calendar.svg");
+    
+    &:focus {
+      background: #fff;
+    }
+    
+  }
+  
+  .ui-datepicker {
+    
+    .ui-datepicker-prev span {
+      background-image: url("#{$get-path-to-assets}/ic-chevron-left.svg");
+    }
+    
+    .ui-datepicker-next span {
+      background-image: url("#{$get-path-to-assets}/ic-chevron-right.svg");
+    }
+    
+  }
+  
+  #ui-datepicker-div {
+    .ui-datepicker-current-day a {
+      background: $whitelabel-primary;
+    }
+  }
+
+  .exchange-rate-live {
+    em {
+      color: $whitelabel-primary-text;
+    }
+
+    .rate-refresh-icon {
+      background-color: $whitelabel-primary;
+      font-weight: normal;
+
+      &:hover { background: lighten($whitelabel-primary, 10); }
+    }
+  }
+  // Registration transfer range icons
+  .button-grid-element.button-grid-element-image-small.button-icon-less-than-25k > label::before {
+    background-image: url("#{$get-path-to-assets}/icon-transfer-amount-less-than-25k.svg");
+  }
+
+  .button-grid-element.button-grid-element-image-small.button-icon-between-25k-50k > label::before {
+    background-image: url("#{$get-path-to-assets}/icon-transfer-amount-between-25k-50k.svg");
+  }
+
+  .button-grid-element.button-grid-element-image-small.button-icon-more-than-50k > label::before {
+    background-image: url("#{$get-path-to-assets}/icon-transfer-amount-between-50k.svg");
+  }
+  
+  .accordion-item {
+    .accordion-title:before {
+      content: url("#{$get-path-to-assets}/ic-chevron-down.svg");
+    }
+    &.is-active {
+      .accordion-title:before {
+        content: url("#{$get-path-to-assets}/ic-chevron-up.svg");
+      }  
+    }
+  }
+
+  .input-container label[for], .select-container label[for], .textarea-container label[for] {
+    color: $whitelabel-highlight-text;
+  }
+
+  small, 
+  .exchange-rate-live,
+  .button-grid-element.button-grid-element-image > button[data-role] div p,
+  .dashboard-alert .dashboard-calendar-date .dashboard-calendar-day,
+  .dashboard-alert .dashboard-calendar-date .dashboard-calendar-month { 
+    font-family: $font-main;
+    color: $whitelabel-secondary-text; 
+    letter-spacing: normal;
+   }
+
+  .dashboard-alert .dashboard-alert-message .title 
+  { color: $whitelabel-secondary-text !important; }
+
+  .information { color: $whitelabel-secondary-text; }
+}
+
+body {
+  .section.content .callout { 
+    &, & header.main-header .description
+     {
+      color: $whitelabel-secondary-text;
+    }
+  }
+
+  ul.progress li {
+    color: white;
+
+    &.active {
+      color: $whitelabel-primary;
+
+      &:before {
+        background-color: $whitelabel-primary;
+      }
+    }
+
+    &.complete {
+      color: white;
+    }
+  }
+}
+
+//---------------------------------------------- BUTTONS
+body {
+  .button,
+  button,
+  button[type="button"],
+  button[type="reset"],
+  button[type="submit"] {
+    font-family: $font-semi !important;
+    letter-spacing: 0.03em;
+    padding-top: .9rem;
+
+    &, &:focus, &:visited {
+
+      background-color: $whitelabel-primary;
+      color: $whitelabel-button-text;      
+    }
+
+    &:hover {
+      background-color: $whitelabel-button-bg-hover;
+      color: $whitelabel-button-text-hover;
+    }
+
+    &:active {
+      background-color: $whitelabel-button-bg-click;
+      color: $whitelabel-button-text-click;
+    }  
+
+    &[disabled] {
+      background: #b8b8b8 !important;
+      opacity: 1;
+    }
+
+    span {
+      font-size: 1.1rem;
+      font-weight: 100;
+      font-family: $font-semi;
+
+    }   
+  }
+
+  .button-action button, .button-action button[type="submit"] { 
+    background-color: $whitelabel-primary; 
+
+    &:hover, &:focus, &:active {
+      background-color: $whitelabel-button-bg-hover;
+    }
+  }
+
+    .button-outline button {
+    &, &[type="button"], &[type="reset"], &[type="submit"] 
+     {
+      background-color: transparent !important;
+      border: 1px solid $whitelabel-primary !important;
+      color: $whitelabel-primary !important;
+
+      &:hover, &:active, &:focus, &:visited {
+        background-color: $whitelabel-primary !important;
+        border: 1px solid $whitelabel-primary !important;
+        color: $whitelabel-button-text-hover !important;        
+      }
+    }
+  }
+
+  .button-simple {
+    background-color: transparent !important;
+    color: $whitelabel-primary !important;
+    font-family: $font-semi;
+    letter-spacing: .045em;
+    font-weight: normal !important;
+
+    span {
+      letter-spacing: 0.03em;
+      font-weight: 100;
+      font-family: $font-semi;
+      font-size: 1.05em;
+    }
+  }
+
+  .button-simple button {
+    &, &[type="button"], &[type="reset"], &[type="submit"] {
+      background-color: transparent !important;
+      color: $whitelabel-primary !important;
+    }
+  }
+
+  button.tab-toggle {
+    background: transparent !important;
+  }
+
+  .temp-button-style-green button {
+    background-color: $whitelabel-primary !important;
+
+    &:hover {
+      background-color: $whitelabel-button-bg-hover !important;
+    }
+  }
+
+}
+
+
+
+body .button-grid-element button,
+body .button-grid-element button,
+body .button-grid-element button[type="button"],
+body .button-grid-element button[type="reset"],
+body .button-grid-element button[type="submit"] {
+  background-color: white;
+  background-image: url("#{$get-path-to-assets}/icon-chevron-right.svg");
+  background-repeat: no-repeat;
+
+  &:hover {
+    border: 1px solid $whitelabel-primary !important;
+    color: black;
+  }
+}
+
+body .template .input-file-upload-container .input-file-upload-buttons button { 
+  border: 1px solid $whitelabel-primary;
+  background: transparent;
+  label {
+    color: $whitelabel-primary;
+  }
+}
+
+body .button-grid-element.button-grid-element-image button {
+  background-position: center left 24px;
+  background-repeat: no-repeat;
+}
+
+body .button-grid-element.button-grid-element-image button div p {
+  color: #757575;
+}
+
+body .button-grid-element.button-grid-element-image button:hover {
+  border: 1px solid $whitelabel-primary !important;
+}
+
+@media only screen and (max-width: 39.9375em) {
+  body {
+    .site-transfers a.button-simple.columns[data-role="add-payee"],
+    .site-refer-and-earn a.button-simple.columns[data-role="add-payee"],
+    .site-page-profile a.button-simple.columns[data-role="add-payee"],
+    .site-page-dashboard a.button-simple.columns[data-role="add-payee"],
+    .site-rate-alerts a.button-simple.columns[data-role="add-payee"], 
+    .modal-make-transfer-show-details a.button-simple.columns[data-role="add-payee"],
+    .button-simple.button-outline-mobile {
+      border: 1px solid $whitelabel-primary;
+    }
+  }
+
+  .filter-container .button-simple {
+    background-color: $whitelabel-primary !important
+  }
+
+  .site-page-dashboard.template.template-core .row .columns .row .table-your-recipients { margin-top: -20px !important; }
+  .template.template-core .dashboard-account-alerts { padding-top: 0; margin-top: -10px; }
+}
+
+
+
+body .footer-help .footer-help-toggle {
+  background-color: $whitelabel-primary !important;
+  
+  span {
+    color: white;
+  }
+  
+}
+
+body .section.content .callout header.main-header .description strong {
+  color: $whitelabel-primary;
+}
+// STATUS NOTIFICATIONS
+body {
+  .status-notification {
+    background-color: $whitelabel-primary;
+
+    &.status-notification-announcement {
+      background-color: darken( $whitelabel-primary, 10% );
+    }
+    
+    .button-outline button {
+      border: 1px solid #fff !important;
+      span {
+        color: #fff;
+      }
+      &:hover {
+        background: #fff !important;
+        border: 1px solid #fff !important;
+        font-size: 14px !important;
+        span {
+          color: $whitelabel-primary;
+          font-size: 14px !important;
+        }
+      }
+    }
+  }
+}
+
+body {
+  .loader .internal-circle,
+  .loader .external-circle {
+    stroke: $whitelabel-primary;
+  }
+}
+
+body {
+  .switch-field {
+    input:checked + label {
+      border: 1px solid $whitelabel-primary;
+    }
+    label {
+      &:hover {
+        border: 1px solid $whitelabel-primary;
+      }
+    }
+  }
+}
+
+body {
+  
+  .select2.select2-container.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    background-image: url("#{$get-path-to-assets}/ic-chevron-down.svg") !important;
+  }
+  
+  .select2 .select2-selection__rendered { 
+    //font-weight: $title-weight !important;
+  }
+  
+}
+
+body {
+  
+  th .currency {
+    color: $whitelabel-primary;
+  }
+}
+
+.template .input-file-upload-container .input-file-upload-buttons div.button {
+  background-color: #fff !important;
+  border-color: $whitelabel-primary;
+
+  input[type="file"] {
+    border-color: $whitelabel-primary;
+  }
+
+  label {
+    color: $whitelabel-primary;
+  }
+}
+
+.img-email, .img-email-2 {
+  height: 70px;
+  width: 70px;
+  background-image: url(#{$get-path-to-assets}/ic-email.svg);
+}
+
+.status-notification.status-notification-general {
+  background-color: $whitelabel-primary;
+}
+
+.template.template-pin .status-notification p {
+    background-image: url(#{$get-path-to-assets}/ico-navbar-security-questions.svg);
+}
+
+.template.site-page-dashboard .button-grid-element button {
+  background-color: #fff !important;
+}
+
+.site-page-dashboard .button-add-a-payee-quick .button:hover {
+  color: #fff !important; 
+}
+
+html .main-container aside.transfers-summary .transfers-edit-button { color: #fff !important; font-weight: 500 !important; }
+
+html .main-container aside.transfers-summary {
+  .element-group {
+    background-color: $whitelabel-secondary;
+  }
+
+  .transfers-summary-sub-title.columns { color: #fff; }
+
+  .transfers-summary-selected-payee {
+    background-color: #3e3e3e;
+
+    .transfers-summary-full-name span:first-child {
+      color: #fff;
+    }
+  }  
+
+  table.table-summary tbody {
+    background-color: #3e3e3e;
+
+    td, td:nth-child(odd) { color: #fff; }
+
+    tr td span { border-color: $whitelabel-secondary !important; }
+  }
+}
+
+body .template.template-core nav.main-nav .user-profile {
+   background-color: transparent; 
+
+   .user-profile-name { color: #fff; letter-spacing: 0.015em !important; }
+
+   &.open { background-color: #fff; 
+
+    .user-profile-name { color: $whitelabel-primary; }
+
+   }
+}
+
+nav.main-nav .mobile-menu-toggle--container { right: 8px; }
+
+.checkbox-container input[type="checkbox"]:checked + label::after {
+  border-color: $whitelabel-primary;
+  }
+
+
+.minus {
+  background-image: url("#{$get-path-to-assets}/ic-remove.svg");
+}
+
+.plus {
+  background-image: url("#{$get-path-to-assets}/ic-add.svg");
+}
+
+html body .template.template-maintenance nav.main-nav .brand-logo-container {  
+  .brand-logo  { 
+    width: 230px!important;
+
+    @media only screen and (max-width: 960px) {
+      width: 180px!important;
+    }
+
+    &:before { 
+      width: 100% !important;
+      background-size: 100% !important;
+      background-image: url(/whitelabel/TMOz/images/logo.svg)!important;
+    }
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .input-container label[for], .select-container label[for] {
+      letter-spacing: -0.02em;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+
+  body {
+    .site-rate-alerts tr.row {
+      .table-td-currency, .table-td-payee {
+        font-family: $font-main;
+      }
+    }
+
+    .reveal .modal-frame .modal-content dl {
+      dt, dd {
+        font-family: $font-main;
+      }
+    }
+  }
+}
+
+
+@keyframes flash {
+  20% {
+    background: #afacc5;
+    color: $whitelabel-secondary; } 
+  }
+
+@keyframes flashExtra-1 {
+  20% {
+    border-color: #3e3e3e  !important; } 
+  }

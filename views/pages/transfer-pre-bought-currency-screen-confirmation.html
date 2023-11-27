@@ -1,0 +1,238 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Transactions - Make Transfer Step 1',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-01'
+			]
+		}
+	);
+%>
+
+	
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+
+<nav class="status-notification status-notification-success">
+	<div class="row">
+		<p class="columns">Thanks, your transfer is complete.</p>
+	</div>
+</nav>
+
+
+<div class="row main-container">
+	<div class="row">
+		<header class="large-8 main-header columns">
+			<h1 class="title">
+				Let your recipient know the currency is on its way!
+			</h1>
+			<p class="description">
+				You can send a personalised message to your recipient, so that they know the currency is on its way. Don't worry about this section if you’re sending money to your own overseas bank account.
+			</p>
+		</header>
+	</div>
+		
+	<div class="row">
+		<div class="columns">
+			<div class="row">
+				<form class="small-columns element-group element-group-table table-your-recipients">
+					<div class="row">
+						<div class="columns table-container">
+							<table class="table row">
+								<thead>
+									<tr class="row">
+										<th>
+											<span>Name</span>
+										</th>
+										<th>
+											<span>Country</span>
+										</th>
+										<th>
+											<span>Account/IBAN</span>
+										</th>
+										<th class="table-td-card-number">
+											<span>Currency</span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="row">
+										<td class="table-td-name">
+											<span>Captain America</span>
+										</td>
+										<td class="table-td-country">
+											<span>United States</span>
+										</td>
+										<td class="table-td-card-number">
+											<span>********9101</span>
+										</td>
+										<td class="table-td-currency">
+											<span>EUR 1,000</span>
+										</td>
+										<td class="table-td-options">
+											<div class="table-button-options">
+												<a class="button-simple button-simple-inline" href="#" data-index-link="AddMessage" data-open="add-message" aria-controls="add-message" aria-haspopup="true">
+													<span>Add message</span>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr class="row">
+										<td class="table-td-name">
+											<span>Captain America</span>
+										</td>
+										<td class="table-td-country">
+											<span>United States</span>
+										</td>
+										<td class="table-td-card-number">
+											<span>********9101</span>
+										</td>
+										<td class="table-td-currency">
+											<span>EUR 1,000</span>
+										</td>
+										<td class="table-td-options">
+											<div class="table-button-options">
+												<a class="button-simple button-simple-inline" href="#" data-index-link="AddMessage" data-open="add-message" aria-controls="add-message" aria-haspopup="true">
+													<span>Add message</span>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr class="row">
+										<td class="table-td-name">
+											<span>Captain America</span>
+										</td>
+										<td class="table-td-country">
+											<span>United States</span>
+										</td>
+										<td class="table-td-card-number">
+											<span>********9101</span>
+										</td>
+										<td class="table-td-currency">
+											<span>EUR 1,000</span>
+										</td>
+										<td class="table-td-options">
+											<div class="table-button-options">
+												<a class="button-simple button-simple-inline" href="#" data-index-link="AddMessage" data-open="add-message" aria-controls="add-message" aria-haspopup="true">
+													<span>Add message</span>
+												</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="row">
+						<p class="columns">
+							You can find the status of your transfer in <a href="/whitelabel/activity-history/" title="activity history">the activity section</a>.
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<!-- Begin modal -->
+<div class="reveal modal-container" id="add-message" data-reveal>
+	<div class="modal-frame">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">
+				Close
+			</span>
+			<h4>To: Captain America</h4>
+		</header>
+		<div class="modal-content clearfix">
+			<%-
+				include(
+					'../components/textarea.html',
+					{
+						assoc: 'message',
+						value: 'Hi Captain America, just letting you know I\'ve sent €500 to your account ending XXX today, with Bloomberg Money Transfer. John.',
+						labelText: 'Your personalised message',
+						classList: [
+							'medium-10',
+							'medium-offset-1',
+							'end',
+							'columns',
+							'small-label'
+						],
+						required: false,
+						readonly: false
+					}
+				);
+			%>
+			<%-
+				include(
+					'../components/input-type-text.html',
+					{
+						assoc: 'you-send',
+						labelText: 'Recipient’s email',
+						value: 'captain.america@sheild.usa.com',
+						classList: [
+							'medium-10',
+							'medium-offset-1',
+							'end',
+							'columns',
+							'small-label'
+						]
+					}
+				);
+			%>
+			<%-
+				include(
+					'../components/button.html',
+					{
+						type: 'button',
+						text: 'Send email',
+						classList: [ 
+							'medium-10',
+							'medium-offset-1',
+							'end',
+							'columns'
+						],
+						dataAttr: {
+							'data-hyperlink': ''
+						}
+					}
+				)
+			%>
+		</div>
+	</div>
+</div>
+<!-- End modal -->
+
+
+<%-
+  include('../partials/footer.html');
+%>
+

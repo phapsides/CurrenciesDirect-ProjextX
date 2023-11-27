@@ -1,0 +1,48 @@
+<%
+/*
+
+# Button Component
+
+### Notes
+
+! Button's type explanation
+
+#####
+
+# Simple
+
+include('components/button.html', { text: 'Click me' })
+
+# Verbose
+
+include(
+	'components/button.html',
+	{
+		type: 'submit',
+		text: 'Next step',
+		classList: [ 'small-12' ],
+		dataAttr: {
+			'data-role': 'progress',
+			'data-form-section-active': 'account',
+		}
+	}
+)
+
+*/
+%>
+
+<div class="columns <%=
+	(typeof classList != 'undefined' ? classList.join(' ') : '')
+%>">
+	<button
+		type="<%= (typeof type != 'undefined' ? type : 'button') %>"
+		class="columns button"
+		<% if (typeof dataAttr != 'undefined') { for (key in dataAttr) { %>
+		<%- key + '="' + dataAttr[key] + '" ' %>
+		<% } } %>
+	>
+		<span>
+			<%= (typeof text != 'undefined' ? text : '') %>
+		</span>
+	</button>
+</div>

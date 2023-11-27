@@ -1,0 +1,397 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Pay Contract',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-01'
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Choose deal', state: 'active', href: '/whitelabel/transactions/pay-contract/1/' },
+				{ title: 'Payment', state: '', href: '/whitelabel/transactions/pay-contract/2/' },
+				{ title: 'Confirm and pay', state: '', href: '/whitelabel/transactions/pay-contract/3/' }
+			],
+
+			backURL: '/whitelabel/transactions/currency/empty/',
+
+			registrationProcess: false
+		}
+	);
+%>
+
+
+
+		<div class="row main-container">			
+			<div class="row">
+				<header class="main-header columns">
+					<h1 class="title">
+						Pay for an open deal
+					</h1>
+					<p class="information">
+						These are your current open deals. Please select the contract you would like to pay.
+					</p>
+				</header>
+			</div>
+
+
+			<div class="row">
+				<div class="columns">
+					<div class="row">
+						<form class="small-columns element-group element-group-table table-your-recipients">
+							<div class="row">
+								<div class="columns table-container">
+									<table class="table row">
+											<thead>
+												<tr class="row">
+													<th class="">
+														<span>Deal</span>
+													</th>
+													<th class="">
+														<span class="">Date</span>
+													</th>
+													<th class="table-td-card-number">
+														<span>Amount payable</span>
+													</th>
+													<th class="">
+														<span>Current payment method</span>
+													</th>
+													<th class="">
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="row">
+													<td class="table-td-name">
+														<a href="#" data-role="table-show-details" data-open="deal-confirmation">1234567</a>
+													</td>
+													<td class="table-td-country">
+														<span>28/02/14</span>
+													</td>
+													<td class="table-td-currency">
+														<span class="currency usd">USD 6,500</span>
+													</td>
+													<td class="table-td-card-number">
+														<span>Bank transfer</span>
+													</td>
+													<td class="table-td-options">
+														<div class="table-button-options">
+															<a class="button-simple button-simple-inline" href="/whitelabel/transactions/pay-contract/2/">
+																<span>Select</span>
+															</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="row">
+													<td class="table-td-name">
+														<a href="#" data-role="table-show-details" data-open="deal-confirmation">1234567</a>
+													</td>
+													<td class="table-td-country">
+														<span>28/02/14</span>
+													</td>
+													<td class="table-td-currency">
+														<span class="currency usd">USD 6,500</span>
+													</td>
+													<td class="table-td-card-number">
+														<span>Bank transfer</span>
+													</td>
+													<td class="table-td-options">
+														<div class="table-button-options">
+															<a class="button-simple button-simple-inline" href="/whitelabel/transactions/pay-contract/2/">
+																<span>Select</span>
+															</a>
+														</div>
+													</td>
+												</tr>
+												<tr class="row">
+													<td class="table-td-name">
+														<a href="#" data-role="table-show-details" data-open="deal-confirmation">1234567</a>
+													</td>
+													<td class="table-td-country">
+														<span>28/02/14</span>
+													</td>
+													<td class="table-td-currency">
+														<span class="currency usd">USD 6,500</span>
+													</td>
+													<td class="table-td-card-number">
+														<span>Bank transfer</span>
+													</td>
+													<td class="table-td-options">
+														<div class="table-button-options">
+															<a class="button-simple button-simple-inline" href="/whitelabel/transactions/pay-contract/2/">
+																<span>Select</span>
+															</a>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+<!-- Begin modal -->
+<div class="reveal modal-container row modal-deal-confirmation" id="deal-confirmation" data-reveal>
+	<div class="modal-frame columns">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">Close</span>
+			<h4>Deal confirmation</h4>
+		</header>
+		<div class="modal-content text-left clearfix">
+			<div class="row">
+				<div class="column">
+					<p>
+						Hello <strong>$First Name$</strong>. Thanks for buying currency with us. We've summarised the details of your deal below, and require you to check this carefully to make sure we have the correct details.
+					</p>
+					<h5>1. Deal details</h5>
+					<div class="row">
+						<div class="column medium-6">
+							<dl>
+								<dt>Contract number</dt>
+								<dd>262965-047</dd>
+								<dt>Account name</dt>
+								<dd>Fayssal Loussaief</dd>
+								<dt>Rate</dt>
+								<dd>1.1487</dd>
+								<dt>Amount due date</dt>
+								<dd>10 May 2017</dd>
+								<dt>Transfer cost</dt>
+								<dd>0.00</dd>
+							</dl>
+						</div>
+
+						<div class="column medium-6">
+							<dl>
+								<dt>Deal date</dt>
+								<dd>10 May 2017</dd>
+								<dt>Currency bought</dt>
+								<dd>EUR</dd>
+								<dt>Email</dt>
+								<dd>email@cd.com</dd>
+								<dt>Amount to pay</dt>
+								<dd>100.00</dd>
+							</dl>	
+						</div>
+					</div>
+				</div>
+			</div>				
+			<div class="row">
+				<div class="column">
+					<h5>2. Important information</h5>
+					<div class="row">
+						<div class="column">
+							<h6>Late payments may liable to attract charges.</h6>
+							<p>
+								In the event of default, the trade will be sold at the prevailing market rate with you bearing any costs incurred. All payments to Currencies Direct must be from your own account. Payment from third parties cannot be accepted without prior approval. Under no circumstances should cash or cheques be paid directly into Currencies Direct bank accounts.
+							</p>
+							<h6>You have agreed to settle your deal by sending funds to the following account via bank transfer.</h6>
+							<br>
+						</div>
+					</div>
+					<fieldset class="row collapse">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'acc-name',
+									value: 'Currencies Direct, Client account',
+									labelText: 'Account name',
+									classList: [
+										'columns',
+										'small-label'
+									],
+									disabled: true,
+									readOnly: true
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'bank-name',
+									value: 'Barclays GBP Client Account',
+									labelText: 'Bank name',
+									classList: [
+										'columns',
+										'small-label'
+									],
+									disabled: true,
+									readOnly: true
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'sort-code',
+									value: '201990',
+									labelText: 'Sort code',
+									classList: [
+										'columns',
+										'small-label'
+									],
+									disabled: true,
+									readOnly: true
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'acc-number',
+									value: '63024083',
+									labelText: 'Account number',
+									classList: [
+										'columns',
+										'small-label'
+									],
+									disabled: true,
+									readOnly: true
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'acc-number',
+									value: 'GB28BARC20199063024083',
+									labelText: 'IBAN',
+									classList: [
+										'columns',
+										'small-label'
+									],
+									disabled: true,
+									readOnly: true
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'swift-code',
+									value: 'BARCGB22',
+									labelText: 'SWIFT code',
+									classList: [
+										'columns',
+										'small-label'
+									],
+									disabled: true,
+									readOnly: true
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'swift-code',
+									value: '262965-030',
+									labelText: 'Reference',
+									classList: [
+										'columns',
+										'small-label'
+									],
+									disabled: true,
+									readOnly: true
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'swift-code',
+									value: '2262965-030',
+									labelText: 'Please quote the following reference on your payment',
+									classList: [
+										'columns',
+										'small-label',
+										'extra-height'
+									],
+									disabled: true,
+									readOnly: true
+								}
+							);
+						%>
+					</fieldset>
+						               
+					<h5>3. Who you are paying <small>(onward payment/beneficiary details)</small></h5> 
+					<div class="row">
+						<dl class="dl-float column">
+							<dt>Payment</dt>
+							<dd>1 of 1</dd>
+							<dt>Amount to be paid to the bellow recipient</dt>
+							<dd>114.87</dd>
+							<dt>Recipient name</dt>
+							<dd>Test recipient</dd>
+							<dt>Bank name</dt>
+							<dd>Barclays Bank Plc</dd>
+							<dt>Account number/IBAN</dt>
+							<dd>GB51BARC20320673036065</dd>
+							<dt>Branch code</dt>
+							<dd>-</dd>
+							<dt>SWIFT code</dt>
+							<dd>BARCGB22XXX</dd>
+							<dt>Country</dt>
+							<dd>UK</dd>
+							<dt>Payment reference</dt>
+							<dd>ABCD REF</dd>
+							<dt>For further credit to</dt>
+							<dd>-</dd>
+							<dt>Purpose of transfer</dt>
+							<dd>Study fees</dd>
+						</dl>
+					</div>
+					<p>
+						10 May 2017 11:30:56 
+						<br />
+						<small>
+							Incorporated in England No. 03041197 Currencies Direct Ltd, One Canada Square, Canary Wharf, London, E14 5AA UK View as PDF Print now
+						</small>
+					</p>
+					<ul class="links-export">
+						<li>
+							<a href="#" title="" class="link-with-pdf">View as PDF</a>
+						</li>
+						<li>
+							<a href="#" title="" class="link-print-now">Print now</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End modal -->
+
+
+
+
+
+<%-
+  include('../partials/footer.html');
+%>
+

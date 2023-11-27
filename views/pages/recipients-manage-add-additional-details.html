@@ -1,0 +1,144 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Recipients - Add Additional Detials',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-02',
+				'site-recipients' // Correct class
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Recipient details', state: 'complete', href: '/whitelabel/recipients/manage/add/' },
+				{ title: 'Bank details', state: 'complete', href: '/whitelabel/recipients/manage/add/bank-details/'  },
+				{ title: 'Additional details', state: 'active', href: '/whitelabel/recipients/manage/add/additional-details/' }
+			],
+
+			backURL: '/whitelabel/recipients/manage/',
+
+			registrationProcess: false
+		}
+	);
+%>
+
+		<div class="row main-container">
+			<div class="row">
+				<header class="main-header columns">
+					<h1 class="title">
+						Additional details
+					</h1>
+					<p class="large-8 medium-12 end description">
+						Enter an alias and/or a reference which the recipient will see on their bank statement.
+					</p>
+				</header>
+			</div>
+
+			<hr class="show-for-small-only">
+				
+			<div class="row">
+				<div class="large-8 medium-12 columns">
+					
+					<form class="formNoBorder" data-abide>
+					<div class="element-group">
+
+						<fieldset>
+							<%-
+								include(
+									'../components/input-type-text.html',
+									{
+										assoc: 'alias',
+										labelText: 'Alias',
+										classList: [
+											'medium-8',
+											'end',
+											'columns'
+										]
+									}
+								);
+							%>
+						</fieldset>
+						<fieldset>
+							<%-
+								include(
+									'../components/input-type-text.html',
+									{
+										assoc: 'reference',
+										labelText: 'Reference',
+										classList: [
+											'medium-8',
+											'end',
+											'columns'
+										]
+									}
+								);
+							%>
+							<p class="columns medium-8 end">
+								<small>
+									(Please note: the reference isn’t guaranteed. It’s up to the recipient's bank whether or not this is shown.)										
+								</small>
+							</p>
+						</fieldset>
+					</div>
+
+					<div class="row multi-buttons">
+						<%-
+							include(
+								'../components/button.html',
+								{
+									type: 'button',
+									text: 'Save',
+									classList: [
+										'medium-4',
+										'medium-offset-3'
+										
+									],
+									dataAttr: {
+										'data-role': 'button-continue',
+										'data-hyperlink': '/whitelabel/transactions/make-transfer/2/',
+										//'disabled': 'disabled'
+									},
+								}
+							)
+						%>
+						<%-
+							include(
+								'../components/button.html',
+								{
+									type: 'button',
+									text: 'Save and add another',
+									classList: [
+										'medium-5',
+										'button-outline',
+										'nopadding-button',
+										'end'
+									],
+									dataAttr: {
+										'data-role': 'button-continue',
+										'data-hyperlink': '/whitelabel/recipients/manage/add/#recipient-new-complete'
+									},
+								}
+							)
+						%>
+					</div>
+					</form>	
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>

@@ -1,0 +1,547 @@
+/**
+ * TMOz Theme
+ */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@font-face {
+  font-family: 'semi';
+  src: url("/whitelabel/TMOz/fonts/PreloSlab-SemiBold.woff2") format("woff2"), url("/whitelabel/TMOz/fonts/PreloSlab-SemiBold.woff") format("woff"), url("/whitelabel/TMOz/fonts/PreloSlab-SemiBold.otf") format("truetype");
+  font-style: none;
+  font-weight: 100; }
+
+@font-face {
+  font-family: 'bold';
+  src: url("/whitelabel/TMOz/fonts/PreloSlab-ExtraBold.woff2") format("woff2"), url("/whitelabel/TMOz/fonts/PreloSlab-ExtraBold.woff") format("woff"), url("/whitelabel/TMOz/fonts/PreloSlab-ExtraBold.ttf") format("truetype");
+  font-style: none;
+  font-weight: 100; }
+
+* {
+  font-family: "Open Sans", Calibri, Arial, sans-serif; }
+
+nav.main-nav .mobile-menu-toggle--container {
+  right: 10px; }
+
+@media screen and (max-width: 960px) {
+  nav.main-nav .user-profile.user-logged-in .sub-menu li a {
+    color: #fff !important; } }
+
+body {
+  color: #061922;
+  font-family: "Open Sans", Calibri, Arial, sans-serif; }
+  body .exchange-rate-live,
+  body .radio-group-container .radio > label,
+  body .main-container .tc-section a,
+  body th,
+  body #ui-datepicker-div td a {
+    font-family: "Open Sans", Calibri, Arial, sans-serif; }
+  body .button-simple-x span {
+    font-family: "Open Sans", Calibri, Arial, sans-serif !important;
+    font-weight: 700;
+    font-size: 1.1em !important; }
+  body .transfers-summary-sub-title.sub-title-refresh {
+    font-family: "Open Sans", Calibri, Arial, sans-serif !important; }
+  body .checkbox-container label {
+    color: #061922; }
+  body a, body a:active, body a:hover, body a:visited,
+  body em,
+  body .footer-help .footer-help-content footer a,
+  body .template.template-registration form .forget a {
+    font-weight: 700 !important;
+    color: #1d592c; }
+  body h1, body h1.title {
+    font-family: "bold" !important;
+    font-weight: 100 !important;
+    letter-spacing: .04em !important; }
+  body .links-export a {
+    font-weight: 400 !important;
+    color: #4d4d4f !important; }
+  body h2,
+  body h3,
+  body h4,
+  body h5,
+  body h6 {
+    font-family: "semi" !important;
+    font-weight: 100 !important;
+    letter-spacing: 0.02em !important; }
+  body h5, body h6 {
+    font-size: 17px; }
+  body .reveal table th {
+    color: #061922; }
+  body .template.template-core input,
+  body .template.template-core textarea, body.template.template-core input,
+  body.template.template-core textarea {
+    caret-color: #1d592c; }
+  body .template.template-core nav.main-nav, body.template.template-core nav.main-nav {
+    background-color: #061922 !important;
+    border-bottom: 1px solid #f4f4f4 !important; }
+    @media screen and (max-width: 960px) {
+      body .template.template-core nav.main-nav .row, body.template.template-core nav.main-nav .row {
+        background-color: #061922; }
+      body .template.template-core nav.main-nav .mobile-menu-toggle--container .mobile-menu-toggle, body.template.template-core nav.main-nav .mobile-menu-toggle--container .mobile-menu-toggle {
+        background-color: #1d592c; }
+      body .template.template-core nav.main-nav .user-profile .user-profile-name, body .template.template-core nav.main-nav .user-profile .user-profile-id, body.template.template-core nav.main-nav .user-profile .user-profile-name, body.template.template-core nav.main-nav .user-profile .user-profile-id {
+        left: 0; } }
+    body .template.template-core nav.main-nav .brand-logo-container, body.template.template-core nav.main-nav .brand-logo-container {
+      margin-top: 17px; }
+      body .template.template-core nav.main-nav .brand-logo-container ::after, body.template.template-core nav.main-nav .brand-logo-container ::after {
+        color: #061922; }
+      body .template.template-core nav.main-nav .brand-logo-container .brand-logo::before, body.template.template-core nav.main-nav .brand-logo-container .brand-logo::before {
+        content: '';
+        background-image: url("/whitelabel/TMOz/images/logo.svg") !important;
+        background-position: none !important;
+        width: 230px;
+        height: 50px;
+        background-size: 100%;
+        background-position: initial !important;
+        color: white !important; }
+      @media screen and (max-width: 960px) {
+        body .template.template-core nav.main-nav .brand-logo-container .brand-logo, body.template.template-core nav.main-nav .brand-logo-container .brand-logo {
+          width: 165px;
+          height: 36px; }
+          body .template.template-core nav.main-nav .brand-logo-container .brand-logo::before, body.template.template-core nav.main-nav .brand-logo-container .brand-logo::before {
+            width: 36px !important;
+            height: 36px !important;
+            overflow: hidden;
+            background-image: url("/whitelabel/TMOz/images/logo-small.svg") !important;
+            margin-top: -2px; } }
+    body .template.template-core nav.main-nav .main-nav-content ul li a, body.template.template-core nav.main-nav .main-nav-content ul li a {
+      font-family: "Open Sans", Calibri, Arial, sans-serif;
+      letter-spacing: 0.015em;
+      color: #FFFFFF !important;
+      font-weight: 600 !important; }
+    body .template.template-core nav.main-nav .main-nav-content ul li.active, body .template.template-core nav.main-nav .main-nav-content ul li.open, body.template.template-core nav.main-nav .main-nav-content ul li.active, body.template.template-core nav.main-nav .main-nav-content ul li.open {
+      border-bottom: 2px solid #1d592c !important; }
+    body .template.template-core nav.main-nav .main-nav-content ul li.menu-item-has-sub-menu a::after, body.template.template-core nav.main-nav .main-nav-content ul li.menu-item-has-sub-menu a::after {
+      background-image: url("/whitelabel/TMOz/images/ic-chevron-down.svg") !important; }
+    body .template.template-core nav.main-nav .main-nav-content ul li ul.sub-menu, body.template.template-core nav.main-nav .main-nav-content ul li ul.sub-menu {
+      background-color: #1d592c; }
+      body .template.template-core nav.main-nav .main-nav-content ul li ul.sub-menu li a, body.template.template-core nav.main-nav .main-nav-content ul li ul.sub-menu li a {
+        font-weight: 600 !important; }
+    body .template.template-core nav.main-nav .user-profile, body.template.template-core nav.main-nav .user-profile {
+      background-color: white; }
+      body .template.template-core nav.main-nav .user-profile li .user-profile-name, body.template.template-core nav.main-nav .user-profile li .user-profile-name {
+        letter-spacing: normal;
+        font-weight: 600; }
+        @media screen and (max-width: 960px) {
+          body .template.template-core nav.main-nav .user-profile li .user-profile-name, body.template.template-core nav.main-nav .user-profile li .user-profile-name {
+            color: #FFFFFF; } }
+      @media screen and (max-width: 960px) {
+        body .template.template-core nav.main-nav .user-profile li .user-profile-id, body.template.template-core nav.main-nav .user-profile li .user-profile-id {
+          color: #FFFFFF; } }
+      body .template.template-core nav.main-nav .user-profile::after, body.template.template-core nav.main-nav .user-profile::after {
+        background-image: url("/whitelabel/TMOz/images/ic-chevron-down.svg") !important; }
+    body .template.template-core nav.main-nav .mobile-menu-toggle--container .mobile-menu-toggle, body.template.template-core nav.main-nav .mobile-menu-toggle--container .mobile-menu-toggle {
+      background-image: url("/whitelabel/TMOz/images/icon-mobile-menu.svg"); }
+    body .template.template-core nav.main-nav.open .mobile-menu-toggle--container .mobile-menu-toggle, body.template.template-core nav.main-nav.open .mobile-menu-toggle--container .mobile-menu-toggle {
+      background-image: url("/whitelabel/TMOz/images/icon-mobile-menu-close.svg"); }
+    body .template.template-core nav.main-nav.open .main-nav-content ul li ul.sub-menu, body.template.template-core nav.main-nav.open .main-nav-content ul li ul.sub-menu {
+      background: #1d592c; }
+      body .template.template-core nav.main-nav.open .main-nav-content ul li ul.sub-menu li, body.template.template-core nav.main-nav.open .main-nav-content ul li ul.sub-menu li {
+        background: #1d592c; }
+  body .template.template-core nav .main-nav-close a, body.template.template-core nav .main-nav-close a {
+    background-image: url("/whitelabel/TMOz/images/ico-cross-black.svg") !important; }
+  body .template.template-core nav.main-progress-nav ul li a, body.template.template-core nav.main-progress-nav ul li a {
+    font-weight: 600 !important;
+    color: #FFFFFF !important;
+    font-family: "Open Sans", Calibri, Arial, sans-serif; }
+    body .template.template-core nav.main-progress-nav ul li a::before, body.template.template-core nav.main-progress-nav ul li a::before {
+      background-color: #FFFFFF;
+      color: #061922; }
+      @media (max-width: 960px) {
+        body .template.template-core nav.main-progress-nav ul li a::before, body.template.template-core nav.main-progress-nav ul li a::before {
+          padding-top: 2px; } }
+  body .template.template-core nav.main-progress-nav ul li.active a::before, body.template.template-core nav.main-progress-nav ul li.active a::before {
+    background-color: #1d592c;
+    color: #FFFFFF;
+    font-weight: 600; }
+  body .template.template-core nav.main-progress-nav ul li.complete a::before, body.template.template-core nav.main-progress-nav ul li.complete a::before {
+    background-image: url("/whitelabel/TMOz/images/ico-ff-tick-green.svg") !important;
+    background-color: transparent; }
+  body .template.template-core nav.main-progress-nav .sub-title, body.template.template-core nav.main-progress-nav .sub-title {
+    color: #fff; }
+  body .template.template-core .navigation-tab-container .navigation-tabs .tab-toggle.active span, body.template.template-core .navigation-tab-container .navigation-tabs .tab-toggle.active span {
+    border-bottom: 2px solid #1d592c; }
+  body .template.template-core .reveal-overlay .reveal-modal [data-reveal-id="loading-image"] .modal-loading, body.template.template-core .reveal-overlay .reveal-modal [data-reveal-id="loading-image"] .modal-loading {
+    border-top: 4px solid #061922;
+    border-right: 4px solid #061922; }
+  body .template.template-core #quick-rate-container .input-container input,
+  body .template.template-core #quick-rate-container .select-container input,
+  body .template.template-core #recipient-gets-container .input-container input,
+  body .template.template-core #recipient-gets-container .select-container input, body.template.template-core #quick-rate-container .input-container input,
+  body.template.template-core #quick-rate-container .select-container input,
+  body.template.template-core #recipient-gets-container .input-container input,
+  body.template.template-core #recipient-gets-container .select-container input {
+    font-family: "Open Sans", Calibri, Arial, sans-serif;
+    font-weight: 600 !important; }
+  body .template.template-core a.temp-add-new-payee, body.template.template-core a.temp-add-new-payee {
+    height: 46px !important;
+    color: white !important;
+    padding-top: 1.25em; }
+  body .section.content .callout header.sub-header h4, body .section.content .callout header.sub-header h5 {
+    font-size: 20px !important; }
+  body .element-group .element-group-header h6.element-group-title {
+    font-size: 17px; }
+  body table thead *,
+  body table thead *:hover {
+    font-weight: 600 !important; }
+
+@media (max-width: 1023px) {
+  .filter-container .button-simple {
+    background-color: #1d592c !important; }
+    .filter-container .button-simple span {
+      font-family: "bold"; } }
+
+body {
+  /*.row.main-container form .row .input-container input[type=search] {
+    background-image: url("/whitelabel/TMOz/images/icon-search.svg");
+  }*/ }
+  body .close {
+    background-image: url("/whitelabel/TMOz/images/icon-close.svg"); }
+  body .button-grid-element.button-grid-element-image.button-make-a-transfer button {
+    background-image: url("/whitelabel/TMOz/images/icon-make-a-transfer.svg"); }
+  body .button-grid-element.button-grid-element-image.button-buy-currency button {
+    background-image: url("/whitelabel/TMOz/images/icon-buy-currency.svg"); }
+  body .button-grid-element.button-grid-element-image.button-add-a-payee-quick button {
+    background-image: url("/whitelabel/TMOz/images/ic-profile.svg") !important; }
+  body .radio-container input[type="radio"]:checked, body .row.main-container form .row .radio-container input[type=radio]:checked {
+    background-image: url("/whitelabel/TMOz/images/ff-radiobutton-active.svg"); }
+  body .row.main-container form .row .input-container input[data-role=show-password], body .row.main-container form .row .input-container button[data-role=show-password] {
+    background-image: url("/whitelabel/TMOz/images/icon-password-show.svg");
+    background-color: transparent !important; }
+  body .row.main-container form .row .input-container input[data-role=show-password].checked, body .row.main-container form .row .input-container button[data-role=show-password].checked {
+    background-image: url("/whitelabel/TMOz/images/icon-password-hide.svg");
+    background-color: transparent !important; }
+  body .radio-group-container .radio input[type=radio]:checked ~ label::after {
+    background-image: url("/whitelabel/TMOz/images/ff-radiobutton-active.svg"); }
+  body .row.main-container form .row .input-container select {
+    background-image: url("/whitelabel/TMOz/images/icon-drop-down.svg"); }
+  body .filter-container .hasDatepicker {
+    background-image: url("/whitelabel/TMOz/images/icon-calendar.svg"); }
+    body .filter-container .hasDatepicker:focus {
+      background: #fff; }
+  body .ui-datepicker .ui-datepicker-prev span {
+    background-image: url("/whitelabel/TMOz/images/ic-chevron-left.svg"); }
+  body .ui-datepicker .ui-datepicker-next span {
+    background-image: url("/whitelabel/TMOz/images/ic-chevron-right.svg"); }
+  body #ui-datepicker-div .ui-datepicker-current-day a {
+    background: #1d592c; }
+  body .exchange-rate-live em {
+    color: #1d592c; }
+  body .exchange-rate-live .rate-refresh-icon {
+    background-color: #1d592c;
+    font-weight: normal; }
+    body .exchange-rate-live .rate-refresh-icon:hover {
+      background: #2a7f3f; }
+  body .button-grid-element.button-grid-element-image-small.button-icon-less-than-25k > label::before {
+    background-image: url("/whitelabel/TMOz/images/icon-transfer-amount-less-than-25k.svg"); }
+  body .button-grid-element.button-grid-element-image-small.button-icon-between-25k-50k > label::before {
+    background-image: url("/whitelabel/TMOz/images/icon-transfer-amount-between-25k-50k.svg"); }
+  body .button-grid-element.button-grid-element-image-small.button-icon-more-than-50k > label::before {
+    background-image: url("/whitelabel/TMOz/images/icon-transfer-amount-between-50k.svg"); }
+  body .accordion-item .accordion-title:before {
+    content: url("/whitelabel/TMOz/images/ic-chevron-down.svg"); }
+  body .accordion-item.is-active .accordion-title:before {
+    content: url("/whitelabel/TMOz/images/ic-chevron-up.svg"); }
+  body .input-container label[for], body .select-container label[for], body .textarea-container label[for] {
+    color: #4d4d4f; }
+  body small,
+  body .exchange-rate-live,
+  body .button-grid-element.button-grid-element-image > button[data-role] div p,
+  body .dashboard-alert .dashboard-calendar-date .dashboard-calendar-day,
+  body .dashboard-alert .dashboard-calendar-date .dashboard-calendar-month {
+    font-family: "Open Sans", Calibri, Arial, sans-serif;
+    color: #061922;
+    letter-spacing: normal; }
+  body .dashboard-alert .dashboard-alert-message .title {
+    color: #061922 !important; }
+  body .information {
+    color: #061922; }
+
+body .section.content .callout, body .section.content .callout header.main-header .description {
+  color: #061922; }
+
+body ul.progress li {
+  color: white; }
+  body ul.progress li.active {
+    color: #1d592c; }
+    body ul.progress li.active:before {
+      background-color: #1d592c; }
+  body ul.progress li.complete {
+    color: white; }
+
+body .button,
+body button,
+body button[type="button"],
+body button[type="reset"],
+body button[type="submit"] {
+  font-family: "semi" !important;
+  letter-spacing: 0.03em;
+  padding-top: .9rem; }
+  body .button, body .button:focus, body .button:visited,
+  body button,
+  body button:focus,
+  body button:visited,
+  body button[type="button"],
+  body button[type="button"]:focus,
+  body button[type="button"]:visited,
+  body button[type="reset"],
+  body button[type="reset"]:focus,
+  body button[type="reset"]:visited,
+  body button[type="submit"],
+  body button[type="submit"]:focus,
+  body button[type="submit"]:visited {
+    background-color: #1d592c;
+    color: white; }
+  body .button:hover,
+  body button:hover,
+  body button[type="button"]:hover,
+  body button[type="reset"]:hover,
+  body button[type="submit"]:hover {
+    background-color: #2a7f3f;
+    color: white; }
+  body .button:active,
+  body button:active,
+  body button[type="button"]:active,
+  body button[type="reset"]:active,
+  body button[type="submit"]:active {
+    background-color: #36a652;
+    color: white; }
+  body .button[disabled],
+  body button[disabled],
+  body button[type="button"][disabled],
+  body button[type="reset"][disabled],
+  body button[type="submit"][disabled] {
+    background: #b8b8b8 !important;
+    opacity: 1; }
+  body .button span,
+  body button span,
+  body button[type="button"] span,
+  body button[type="reset"] span,
+  body button[type="submit"] span {
+    font-size: 1.1rem;
+    font-weight: 100;
+    font-family: "semi"; }
+
+body .button-action button, body .button-action button[type="submit"] {
+  background-color: #1d592c; }
+  body .button-action button:hover, body .button-action button:focus, body .button-action button:active, body .button-action button[type="submit"]:hover, body .button-action button[type="submit"]:focus, body .button-action button[type="submit"]:active {
+    background-color: #2a7f3f; }
+
+body .button-outline button, body .button-outline button[type="button"], body .button-outline button[type="reset"], body .button-outline button[type="submit"] {
+  background-color: transparent !important;
+  border: 1px solid #1d592c !important;
+  color: #1d592c !important; }
+  body .button-outline button:hover, body .button-outline button:active, body .button-outline button:focus, body .button-outline button:visited, body .button-outline button[type="button"]:hover, body .button-outline button[type="button"]:active, body .button-outline button[type="button"]:focus, body .button-outline button[type="button"]:visited, body .button-outline button[type="reset"]:hover, body .button-outline button[type="reset"]:active, body .button-outline button[type="reset"]:focus, body .button-outline button[type="reset"]:visited, body .button-outline button[type="submit"]:hover, body .button-outline button[type="submit"]:active, body .button-outline button[type="submit"]:focus, body .button-outline button[type="submit"]:visited {
+    background-color: #1d592c !important;
+    border: 1px solid #1d592c !important;
+    color: white !important; }
+
+body .button-simple {
+  background-color: transparent !important;
+  color: #1d592c !important;
+  font-family: "semi";
+  letter-spacing: .045em;
+  font-weight: normal !important; }
+  body .button-simple span {
+    letter-spacing: 0.03em;
+    font-weight: 100;
+    font-family: "semi";
+    font-size: 1.05em; }
+
+body .button-simple button, body .button-simple button[type="button"], body .button-simple button[type="reset"], body .button-simple button[type="submit"] {
+  background-color: transparent !important;
+  color: #1d592c !important; }
+
+body button.tab-toggle {
+  background: transparent !important; }
+
+body .temp-button-style-green button {
+  background-color: #1d592c !important; }
+  body .temp-button-style-green button:hover {
+    background-color: #2a7f3f !important; }
+
+body .button-grid-element button,
+body .button-grid-element button,
+body .button-grid-element button[type="button"],
+body .button-grid-element button[type="reset"],
+body .button-grid-element button[type="submit"] {
+  background-color: white;
+  background-image: url("/whitelabel/TMOz/images/icon-chevron-right.svg");
+  background-repeat: no-repeat; }
+  body .button-grid-element button:hover,
+  body .button-grid-element button:hover,
+  body .button-grid-element button[type="button"]:hover,
+  body .button-grid-element button[type="reset"]:hover,
+  body .button-grid-element button[type="submit"]:hover {
+    border: 1px solid #1d592c !important;
+    color: black; }
+
+body .template .input-file-upload-container .input-file-upload-buttons button {
+  border: 1px solid #1d592c;
+  background: transparent; }
+  body .template .input-file-upload-container .input-file-upload-buttons button label {
+    color: #1d592c; }
+
+body .button-grid-element.button-grid-element-image button {
+  background-position: center left 24px;
+  background-repeat: no-repeat; }
+
+body .button-grid-element.button-grid-element-image button div p {
+  color: #757575; }
+
+body .button-grid-element.button-grid-element-image button:hover {
+  border: 1px solid #1d592c !important; }
+
+@media only screen and (max-width: 39.9375em) {
+  body .site-transfers a.button-simple.columns[data-role="add-payee"],
+  body .site-refer-and-earn a.button-simple.columns[data-role="add-payee"],
+  body .site-page-profile a.button-simple.columns[data-role="add-payee"],
+  body .site-page-dashboard a.button-simple.columns[data-role="add-payee"],
+  body .site-rate-alerts a.button-simple.columns[data-role="add-payee"],
+  body .modal-make-transfer-show-details a.button-simple.columns[data-role="add-payee"],
+  body .button-simple.button-outline-mobile {
+    border: 1px solid #1d592c; }
+  .filter-container .button-simple {
+    background-color: #1d592c !important; }
+  .site-page-dashboard.template.template-core .row .columns .row .table-your-recipients {
+    margin-top: -20px !important; }
+  .template.template-core .dashboard-account-alerts {
+    padding-top: 0;
+    margin-top: -10px; } }
+
+body .footer-help .footer-help-toggle {
+  background-color: #1d592c !important; }
+  body .footer-help .footer-help-toggle span {
+    color: white; }
+
+body .section.content .callout header.main-header .description strong {
+  color: #1d592c; }
+
+body .status-notification {
+  background-color: #1d592c; }
+  body .status-notification.status-notification-announcement {
+    background-color: #103319; }
+  body .status-notification .button-outline button {
+    border: 1px solid #fff !important; }
+    body .status-notification .button-outline button span {
+      color: #fff; }
+    body .status-notification .button-outline button:hover {
+      background: #fff !important;
+      border: 1px solid #fff !important;
+      font-size: 14px !important; }
+      body .status-notification .button-outline button:hover span {
+        color: #1d592c;
+        font-size: 14px !important; }
+
+body .loader .internal-circle,
+body .loader .external-circle {
+  stroke: #1d592c; }
+
+body .switch-field input:checked + label {
+  border: 1px solid #1d592c; }
+
+body .switch-field label:hover {
+  border: 1px solid #1d592c; }
+
+body .select2.select2-container.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  background-image: url("/whitelabel/TMOz/images/ic-chevron-down.svg") !important; }
+
+body th .currency {
+  color: #1d592c; }
+
+.template .input-file-upload-container .input-file-upload-buttons div.button {
+  background-color: #fff !important;
+  border-color: #1d592c; }
+  .template .input-file-upload-container .input-file-upload-buttons div.button input[type="file"] {
+    border-color: #1d592c; }
+  .template .input-file-upload-container .input-file-upload-buttons div.button label {
+    color: #1d592c; }
+
+.img-email, .img-email-2 {
+  height: 70px;
+  width: 70px;
+  background-image: url(/whitelabel/TMOz/images/ic-email.svg); }
+
+.status-notification.status-notification-general {
+  background-color: #1d592c; }
+
+.template.template-pin .status-notification p {
+  background-image: url(/whitelabel/TMOz/images/ico-navbar-security-questions.svg); }
+
+.template.site-page-dashboard .button-grid-element button {
+  background-color: #fff !important; }
+
+.site-page-dashboard .button-add-a-payee-quick .button:hover {
+  color: #fff !important; }
+
+html .main-container aside.transfers-summary .transfers-edit-button {
+  color: #fff !important;
+  font-weight: 500 !important; }
+
+html .main-container aside.transfers-summary .element-group {
+  background-color: #061922; }
+
+html .main-container aside.transfers-summary .transfers-summary-sub-title.columns {
+  color: #fff; }
+
+html .main-container aside.transfers-summary .transfers-summary-selected-payee {
+  background-color: #3e3e3e; }
+  html .main-container aside.transfers-summary .transfers-summary-selected-payee .transfers-summary-full-name span:first-child {
+    color: #fff; }
+
+html .main-container aside.transfers-summary table.table-summary tbody {
+  background-color: #3e3e3e; }
+  html .main-container aside.transfers-summary table.table-summary tbody td, html .main-container aside.transfers-summary table.table-summary tbody td:nth-child(odd) {
+    color: #fff; }
+  html .main-container aside.transfers-summary table.table-summary tbody tr td span {
+    border-color: #061922 !important; }
+
+body .template.template-core nav.main-nav .user-profile {
+  background-color: transparent; }
+  body .template.template-core nav.main-nav .user-profile .user-profile-name {
+    color: #fff;
+    letter-spacing: 0.015em !important; }
+  body .template.template-core nav.main-nav .user-profile.open {
+    background-color: #fff; }
+    body .template.template-core nav.main-nav .user-profile.open .user-profile-name {
+      color: #1d592c; }
+
+nav.main-nav .mobile-menu-toggle--container {
+  right: 8px; }
+
+.checkbox-container input[type="checkbox"]:checked + label::after {
+  border-color: #1d592c; }
+
+.minus {
+  background-image: url("/whitelabel/TMOz/images/ic-remove.svg"); }
+
+.plus {
+  background-image: url("/whitelabel/TMOz/images/ic-add.svg"); }
+
+html body .template.template-maintenance nav.main-nav .brand-logo-container .brand-logo {
+  width: 230px !important; }
+  @media only screen and (max-width: 960px) {
+    html body .template.template-maintenance nav.main-nav .brand-logo-container .brand-logo {
+      width: 180px !important; } }
+  html body .template.template-maintenance nav.main-nav .brand-logo-container .brand-logo:before {
+    width: 100% !important;
+    background-size: 100% !important;
+    background-image: url(/whitelabel/TMOz/images/logo.svg) !important; }
+
+@media only screen and (max-width: 740px) {
+  .input-container label[for], .select-container label[for] {
+    letter-spacing: -0.02em; } }
+
+@media only screen and (max-width: 960px) {
+  body .site-rate-alerts tr.row .table-td-currency, body .site-rate-alerts tr.row .table-td-payee {
+    font-family: "Open Sans", Calibri, Arial, sans-serif; }
+  body .reveal .modal-frame .modal-content dl dt, body .reveal .modal-frame .modal-content dl dd {
+    font-family: "Open Sans", Calibri, Arial, sans-serif; } }
+
+@keyframes flash {
+  20% {
+    background: #afacc5;
+    color: #061922; } }
+
+@keyframes flashExtra-1 {
+  20% {
+    border-color: #3e3e3e  !important; } }

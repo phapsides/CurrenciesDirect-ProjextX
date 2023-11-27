@@ -1,0 +1,90 @@
+<%-
+include(
+	'../partials/head.html', {
+		title: 'Pay Contract',
+		bodyClassList: [
+			'template', 
+			'template-core', 
+			'template-layout-centered',
+			'template-registration'
+		]
+	}
+);
+%>
+
+	
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+<nav class="status-notification status-notification-success">
+	<div class="row">
+		<div class="columns">
+			<p>
+				Thanks, your payment for contract 123456789 is complete.
+			</p>
+		</div>
+	</div>
+</nav>
+
+<div class="row main-container">
+	<section class="large-5 medium-7 small-centered section content">
+		<header class="main-header center columns">
+			<h1 class="title">
+				Your payment was successful
+			</h1>
+			<p class="description">
+				The authorisation code for this card transaction is FFGGHH for 6,500.00 GBP.
+			</p>
+		</header>
+		<div class="row">
+			<%-
+				include(
+					'../components/button.html',
+					{
+						type: 'submit',
+						text: 'Make another transfer',
+						classList: [
+							'small-12'
+						],
+						dataAttr: {
+							'data-hyperlink': '/whitelabel/transactions/make-transfer/1/'
+						}
+					}
+				)
+			%>
+
+			<div class="columns center">
+				<a class="button-simple button-simple-inline" href="/whitelabel/dashboard/">
+					No thanks, I’ll do that later
+				</a>
+			</div>
+		</div>
+	</section>
+</div>
+
+
+
+
+<%-
+  /* Sitewide JS */
+  include('../partials/footer.html');
+%>

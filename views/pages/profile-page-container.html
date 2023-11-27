@@ -1,0 +1,121 @@
+<%-
+include(
+	'../partials/head.html', {
+		title: 'Profile',
+		bodyClassList: [
+			'template',
+			'template-core',
+			'site-page-profile'
+		]
+	}
+);
+%>
+
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+<nav class="status-notification status-notification-success hide">
+	<div class="row">
+		<p class="small-12 columns">
+			<span>
+				Success message.
+			</span>
+		</p>
+	</div>
+</nav>
+
+<div class="row main-container">
+	<div class="row">
+		<h1 class="medium-7 columns header-title title">
+			Profile management
+		</h1>
+		<p class="medium-7 columns element-group-title show-for-medium-up information information-small end">
+			Welcome to your profile management page, where you can check and change your personal and account details, and email preferences.
+		</p>
+	</div>
+	<div class="row">
+		<div class="columns">
+			<form class="columns element-group element-group-panel">
+				<nav class="row navigation-tab-container">
+					<div class="navigation-tabs">
+						<button class="tab-toggle active" data-tab-group="profile-page" data-tab-page="profile-your-details">
+							<span>Your details</span>
+						</button>
+						<button class="tab-toggle" data-tab-group="profile-page"data-tab-page="profile-account-details">
+							<span>Account details</span>
+						</button>
+						<button class="tab-toggle" data-tab-group="profile-page"data-tab-page="profile-email-preferences">
+							<span>Email preferences</span>
+						</button>
+						<button class="tab-toggle" data-tab-group="profile-page"data-tab-page="profile-your-devices">
+							<span>Your devices</span>
+						</button>
+					</div>
+				</nav>
+				<!-- Your Details -->
+				<div class="tab-page-container active" data-tab-group="profile-page" data-tab-toggle="profile-your-details">
+					<%- include('./profile-your-details.html') %>
+				</div>
+				<!-- Account Details -->
+				<div class="tab-page-container" data-tab-group="profile-page" data-tab-toggle="profile-account-details">
+					<%- include('./profile-account-details.html') %>
+				</div>
+				<!-- Email Preferences -->
+				<div class="tab-page-container" data-tab-group="profile-page" data-tab-toggle="profile-email-preferences">
+					<%- include('./profile-email-preferences.html') %>
+				</div>
+				<!-- Your Devices -->
+				<div class="tab-page-container" data-tab-group="profile-page" data-tab-toggle="profile-your-devices">
+					<%- include('./profile-your-devices.html') %>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<%-
+			include(
+				'../components/button.html',
+				{
+					type: 'button',
+					text: 'Save',
+					classList: [
+						'medium-3',
+						'medium-offset-9',
+						'end',
+						'temp-btn-continue'
+					],
+					dataAttr: {
+						'data-hyperlink': '#',
+						//'disabled': 'disabled'
+					},
+				}
+			)
+		%>
+	</div>
+</div>
+
+
+
+
+<%-
+  include('../partials/footer.html');
+%>

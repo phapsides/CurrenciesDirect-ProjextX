@@ -1,0 +1,37 @@
+<!-- Begin modal -->
+<div class="reveal modal-container row" id="language-select" data-reveal>
+	<div class="modal-frame columns">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">Close</span>
+			<h4>Please choose your preferred language</h4>
+		</header>
+		<div class="modal-content clearfix">
+
+			<%-
+				include(
+					'../components/select.html',
+					{
+						assoc: 'transfer-details-sell-currency',
+						text: 'Language',
+						containerClassList: [
+							'small-12'
+						],
+						optionsClassList: [
+							'needsclick'
+						],
+						options: [
+							{ text: 'English (United Kingdom)', value: 'en-gb' },
+							{ text: 'Español (España)', value: 'es-ES' },
+							{ text: 'Français (France)', value: 'fr' },
+							{ text: 'Italiano (Italia)', value: 'it' },
+							{ text: 'Norsk (Norge)', value: 'no' },
+							{ text: 'Português (Portugal)', value: 'pt-PT' },
+							{ text: 'Svenska (Sverige)', value: 'se' }
+						]
+					}
+				);
+			%>
+			
+		</div>
+	</div>
+</div>

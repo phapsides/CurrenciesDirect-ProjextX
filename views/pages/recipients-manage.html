@@ -1,0 +1,314 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Manage recipients',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-01',
+				'site-recipients'
+			]
+		}
+	);
+%>
+
+
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients active', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+<nav class="status-notification status-notification-success">
+	<div class="row">
+		<p class="columns medium-11">A new recipents has been added.</p>
+		<div class="columns medium-1">
+				<a class="close" href="#?clientId=currencies-direct" data-role="close">
+					<span>Close</span>
+				</a>
+			</div>
+	</div>
+</nav>
+
+
+<div class="row main-container">
+	<h1 class="medium-8 columns title end">
+		Manage recipients
+	</h1>
+	<p class="medium-8 end columns information">
+		You can make a transfer to recipients, edit or delete them.
+	</p>
+	<div class="row">
+		<div class="columns">
+			<div class="row">
+				<div class="small-columns element-group element-group-table table-your-recipients">
+					<div class="row">
+						<div class="columns table-container">
+							<table class="table row">
+								<thead>
+									<tr class="row">
+										<th class="small-3">
+											<span>Name</span>
+										</th>
+										<th class="small-2">
+											<span>Country</span>
+										</th>
+										<th class="table-td-card-number small-2">
+											<span>Currency</span>
+										</th>
+										<th class="small-3">
+											<span>Account/IBAN</span>
+										</th>
+										<th class="small-2">
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="row">
+										<td class="table-td-name">
+											<span>Captain America</span>
+										</td>
+										<td class="table-td-country">
+											<span>United States</span>
+										</td>
+										<td class="table-td-currency">
+											<span class="currency usd">USD</span>
+										</td>
+										<td class="table-td-card-number">
+											<span>********9101</span>
+										</td>
+										<td class="table-td-options">
+											<div class="table-button-options">
+												<a class="button-simple button-simple-inline" href="/whitelabel/recipients/manage/view-edit/" data-role="table-show-details">
+													<span>Edit</span>
+												</a>
+												<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/" data-role="table-send-details">
+													<span>Pay</span>
+												</a>
+												<a class="button-simple-x button-simple button-simple-inline" href="#" data-index-link="ManageRecipientsDelete" data-open="manage-recipients-delete">
+													<span>x</span>
+												</a>
+											</div>
+										</td>
+									</tr>
+									<tr class="row">
+										<td class="table-td-name">
+											<span>Harry Potter</span>
+										</td>
+										<td class="table-td-country">
+											<span>United Kingdom</span>
+										</td>
+										<td class="table-td-currency">
+											<span class="currency gbp">GBP</span>
+										</td>
+										<td class="table-td-card-number">
+											<span>********9101</span>
+										</td>
+										<td class="table-td-options">
+											<div class="table-button-options">
+												<a class="button-simple button-simple-inline" href="/whitelabel/recipients/manage/view-edit/" data-role="table-show-details">
+													<span>Edit</span>
+												</a>
+												<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/" data-role="table-send-details">
+													<span>Pay</span>
+												</a>
+												<a class="button-simple-x button-simple button-simple-inline" href="#" data-index-link="ManageRecipientsDelete" data-open="manage-recipients-delete">
+													<span>x</span>
+												</a>
+
+											</div>
+										</td>
+									</tr>
+									<tr class="row">
+										<td class="table-td-name">
+											<span>Don Quixote</span>
+										</td>
+										<td class="table-td-country">
+											<span>Spain</span>
+										</td>
+										<td class="table-td-currency">
+											<span class="currency eur">EUR</span>
+										</td>
+										<td class="table-td-card-number">
+											<span>********9101</span>
+										</td>
+										<td class="table-td-options">
+											<div class="table-button-options">
+												<a class="button-simple button-simple-inline" href="/whitelabel/recipients/manage/view-edit/" data-role="table-show-details">
+													<span>Edit</span>
+												</a>
+												<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/" data-role="table-send-details">
+													<span>Pay</span>
+												</a>
+												<a class="button-simple-x button-simple button-simple-inline" href="#" data-index-link="ManageRecipientsDelete" data-open="manage-recipients-delete">
+													<span>x</span>
+												</a>
+
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="row">
+						<a class="medium-4 columns button-simple  button-simple-inline" href="/whitelabel/recipients/manage/add/" data-role="add-payee">
+							<span>Add recipient</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="pending-approval">
+		<div class="row">
+			<h1 class="medium-8 title columns end">
+				 Pending approval
+			</h1>
+		</div>
+		<div class="row">
+			<div class="columns">
+				<div class="row">
+					<div class="small-columns element-group element-group-table table-pending-approval">
+						<div class="row">
+							<div class="columns table-container">
+								<table class="table row">
+									<thead>
+										<tr class="row">
+											<th class="small-3">
+												<span>Name</span>
+											</th>
+											<th class="small-2">
+												<span class="">Country</span>
+											</th>
+											<th class="table-td-card-number small-2">
+												<span>Currency</span>
+											</th>
+											<th class="small-3">
+												<span>Account/IBAN</span>
+											</th>
+											<th class="small-2"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="row">
+											<td class="table-td-name">
+												<span>Captain America</span>
+											</td>
+											<td class="table-td-country">
+												<span>United States</span>
+											</td>
+											<td class="table-td-currency">
+												<span class="currency usd">USD</span>
+											</td>
+											<td class="table-td-card-number">
+												<span>********9101</span>
+											</td>
+											<td></td>
+										</tr>
+										<tr class="row">
+											<td class="table-td-name">
+												<span>Harry Potter</span>
+											</td>
+											<td class="table-td-country">
+												<span>United Kingdom</span>
+											</td>
+											<td class="table-td-currency">
+												<span class="currency gbp">GBP</span>
+											</td>
+											<td class="table-td-card-number">
+												<span>********9101</span>
+											</td>
+											<td></td>
+										</tr>
+										<tr class="row">
+											<td class="table-td-name">
+												<span>Don Quixote</span>
+											</td>
+											<td class="table-td-country">
+												<span>Spain</span>
+											</td>
+											<td class="table-td-currency">
+												<span class="currency eur">EUR</span>
+											</td>
+											<td class="table-td-card-number">
+												<span>********9101</span>
+											</td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- Start modal -->
+<div class="reveal modal-container row" id="manage-recipients-delete" data-reveal>
+	<div class="modal-frame columns">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">
+				Close
+			</span>
+			<h4>Delete recipient?</h4>
+		</header>
+		<div class="modal-content clearfix">
+			<p class="columns">
+				Active payments to this recipient will be unaffected by this deletion and will still be sent.
+			</p>
+			<%-
+				include(
+					'../components/button.html',
+					{
+						type: 'submit',
+						text: 'Confirm',
+						classList: [ 
+							'large-8',
+							'large-centered'
+						],
+						dataAttr: {
+							'data-role': 'confirm-deletion',
+							'data-hyperlink': '#'
+						}
+					}
+				)
+			%>
+		</div>
+	</div>
+</div>
+<!-- End modal -->
+
+
+
+
+
+<%-
+  include('../partials/footer.html');
+%>
+

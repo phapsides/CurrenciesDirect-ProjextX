@@ -1,0 +1,190 @@
+/**
+ * Ramsdens	
+ */
+
+body {
+  background-color: white; 
+  /* Note: refactor CSS later - this is just for the demo */ 
+} 
+body a, body a:visited, body a:active, body a:hover {
+  color: #ac0028;
+}
+body em {
+  color: #ac0028 !important;
+}
+body nav.main-nav {
+  background-color: #005138 !important;
+  border-bottom: none !important;
+}
+body nav.main-nav .brand-logo-container .brand-logo {
+  background-image: none; //url("/whitelabel/TorFX/images/tor-fx-logo.svg") !important; 
+  background-position: none !important;
+  width: 109px !important;
+  background-size: 109px !important;
+  background-position: initial !important;
+  color: white !important;
+}
+body nav.main-nav a, body nav.main-nav span {
+  color: white !important;
+}
+body .user-profile {
+  background-color: #231e4f !important;
+}
+body .section.content .callout {
+  background-color: #f7f7f7 !important;
+}
+body ul.progress li {
+  color: white;
+}
+body ul.progress li::before {
+  background-color: #eeeeee;
+  color: #29235c;
+}
+body ul.progress li.active {
+  color: #e5234f;
+}
+body ul.progress li.active::before {
+  background-color: #e5234f;
+}
+body ul.progress li.complete {
+  color: white;
+}
+body .close {
+  background-image: url("/whitelabel/TorFX/images/icon-close.svg");
+}
+body .row.main-container form .columns > .row .button, body .row.main-container form .columns > .row .button:active, body .row.main-container form .columns > .row .button:hover, body .row.main-container form .columns > .row .button:visited {
+  background-color: #e5234f;
+}
+body button, body button:active, body button:hover, body button:visited, body button:focus,
+body button[type="button"],
+body button[type="button"]:active,
+body button[type="button"]:hover,
+body button[type="button"]:visited,
+body button[type="button"]:focus,
+body button[type="submit"],
+body button[type="submit"]:active,
+body button[type="submit"]:hover,
+body button[type="submit"]:visited,
+body button[type="submit"]:focus,
+body button[type="reset"],
+body button[type="reset"]:active,
+body button[type="reset"]:hover,
+body button[type="reset"]:visited,
+body button[type="reset"]:focus,
+body .button,
+body .button:active,
+body .button:hover,
+body .button:visited,
+body .button:focus {
+  background-color: #e5234f;
+}
+body button:hover,
+body button[type="button"]:hover,
+body button[type="submit"]:hover,
+body button[type="reset"]:hover,
+body .button:hover {
+  background: #ff5a3c;
+}
+body button:active,
+body button[type="button"]:active,
+body button[type="submit"]:active,
+body button[type="reset"]:active,
+body .button:active {
+  background: #ff963c;
+}
+body button[disabled],
+body button[type="button"][disabled],
+body button[type="submit"][disabled],
+body button[type="reset"][disabled],
+body .button[disabled] {
+  color: #9b9b9b !important;
+  background: #d8d8d8 !important;
+  opacity: 1;
+}
+body .button-tertiary button,
+body .button-tertiary button[type="button"],
+body .button-tertiary button[type="submit"],
+body .button-tertiary button[type="reset"],
+body .button-tertiary button {
+  background-color: transparent !important;
+  color: #e5234f !important;
+}
+body .button-outline button, body .button-outline button:active, body .button-outline button:hover, body .button-outline button:visited, body .button-outline button:focus,
+body .button-outline button[type="button"],
+body .button-outline button[type="button"]:active,
+body .button-outline button[type="button"]:hover,
+body .button-outline button[type="button"]:visited,
+body .button-outline button[type="button"]:focus,
+body .button-outline button[type="submit"],
+body .button-outline button[type="submit"]:active,
+body .button-outline button[type="submit"]:hover,
+body .button-outline button[type="submit"]:visited,
+body .button-outline button[type="submit"]:focus,
+body .button-outline button[type="reset"],
+body .button-outline button[type="reset"]:active,
+body .button-outline button[type="reset"]:hover,
+body .button-outline button[type="reset"]:visited,
+body .button-outline button[type="reset"]:focus,
+body .button-outline button,
+body .button-outline button:active,
+body .button-outline button:hover,
+body .button-outline button:visited,
+body .button-outline button:focus {
+  background-color: transparent !important;
+  border: 1px solid #e5234f !important;
+  color: #e5234f !important;
+}
+body .button-grid-element button,
+body .button-grid-element button[type="button"],
+body .button-grid-element button[type="submit"],
+body .button-grid-element button[type="reset"],
+body .button-grid-element button {
+  background-color: white;
+}
+body .button-grid-element.button-grid-element-image button {
+  background-position: center left 24px;
+  background-repeat: no-repeat;
+}
+body .button-grid-element.button-grid-element-image button div p {
+  color: #757575;
+}
+body .button-grid-element.button-grid-element-image button:hover {
+  border: 1px solid #e5234f;
+}
+body .button-grid-element.button-grid-element-image.button-make-a-transfer button {
+  background-image: url("/whitelabel/TorFX/images/icon-make-a-transfer.svg");
+}
+body .button-grid-element.button-grid-element-image.button-buy-currency button {
+  background-image: url("/whitelabel/TorFX/images/icon-buy-currency.svg");
+}
+body .status-notification {
+  background-color: #3333a0;
+}
+body .footer-help .footer-help-toggle {
+  background-color: #e5234f !important;
+  color: white;
+}
+body .section.content .callout header.main-header .description strong {
+  color: #e5234f;
+}
+body .row.main-container form .row .button {
+  background-color: #e5234f;
+}
+body .row.main-container form .row .radio-container input[type=radio]:checked {
+  background-image: url("/whitelabel/TorFX/images/ico-tick-torfx.svg");
+}
+body .row.main-container form .row .input-container input[data-role=show-password] {
+  background-image: url("/whitelabel/TorFX/images/icon-password-show.svg");
+}
+body .row.main-container form .row .input-container input[data-role=show-password]:checked {
+  background-image: url("/whitelabel/TorFX/images/icon-password-hide.svg");
+}
+body .row.main-container form .row .input-container input[type=search] {
+  background-image: url("/whitelabel/TorFX/images/icon-search-torfx.svg");
+}
+body .radio-group-container .radio input[type=radio]:checked ~ label::after {
+  background-image: url("/whitelabel/TorFX/images/tor-fx_ff-radiobutton-active.svg");
+}
+body .row.main-container form .row .input-container select {
+  background-image: url("/whitelabel/TorFX/images/tor-fx_icon-drop-down.svg");
+}

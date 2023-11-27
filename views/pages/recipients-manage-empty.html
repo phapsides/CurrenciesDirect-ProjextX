@@ -1,0 +1,77 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Manage recipients',
+			bodyClassList: [
+				'template',
+				'template-core'
+			]
+		}
+	);
+%>
+
+
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients active', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+
+<div class="row main-container">
+	<h1 class="medium-8 end columns title">
+		Manage recipients
+	</h1>
+	<section class="add-recipients clearfix columns">
+		<div class="img img-recipients">
+		</div>
+		<h4 class="title">
+			Looks like you haven’t got any recipients.
+		</h4>
+		<p class="description">
+			Add an individual or business using the button below.
+		</p>
+		<div class="large-5 medium-8 medium-centered">
+			<%-
+				include(
+					'../components/button.html',
+					{
+						type: 'button',
+						text: 'Add recipient',
+						classList: [ 
+							
+						],
+						dataAttr: {
+							'data-role': 'Add recipient',
+							'data-hyperlink': '/whitelabel/recipients/manage/add/'
+						}
+					}
+				)
+			%>
+		</div>
+	</section>
+</div>
+
+
+
+
+<%-
+  include('../partials/footer.html');
+%>
+

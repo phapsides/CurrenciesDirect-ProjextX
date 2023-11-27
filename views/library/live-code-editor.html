@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Component - Live Code Editor'
+			}
+		);
+	%>
+
+	<body class="template template-core template-layout-grid template-component-library">
+
+		<style type="text/css" scoped>
+    	body > iframe {
+    		margin-top: 80px;
+    	}
+		</style>
+
+		
+	<%- 
+		include(
+			'../components/navigation-main.html', {
+				navigationOptions: [
+					{ 
+						title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+						subMenu: [
+							{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+							{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+							{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+							{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+						] 
+					},
+					{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+					{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+					{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+					{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+				]
+			}
+		) 
+	%>
+
+
+
+
+		<script async src="//jsfiddle.net/LeslieOA/0n7so0o5/embed/result/"></script>
+
+	</body>
+</html>

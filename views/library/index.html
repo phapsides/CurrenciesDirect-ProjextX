@@ -1,0 +1,592 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+	<%-
+	include(
+		'../partials/head.html', {
+			title: 'Component Library'
+		}
+	);
+	%>
+
+
+	<body class="template template-core template-layout-grid template-component-library">
+
+
+
+	<%- 
+		include(
+			'../components/navigation-main.html', {
+				navigationOptions: [
+					{ 
+						title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+						subMenu: [
+							{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+							{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+							{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+							{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+						] 
+					},
+					{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+					{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+					{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+					{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+				]
+			}
+		) 
+	%>
+
+
+
+
+
+
+		<nav class="row main-container floating-menu-container">
+			<button class="floating-menu-toggle">Table of Contents</button>
+			<div class="floating-menu">
+				<ul class="">
+					<li class="">
+						<h6>Overview</h6>
+						<ul>
+							<li><a href="#about">About</a></li>
+						</ul>
+					</li>
+					<li class="">
+						<h6>Components</h6>
+						<ul>
+							<li><a href="#buttons">Buttons</a></li>
+							<li><a href="#inputs">Inputs</a></li>
+							<li><a href="#radios">Radios</a></li>
+						</ul>
+					</li>
+
+					<li class="">
+						<h6>Style</h6>
+						<ul>
+							<li><a href="#colour">Colour</a></li>
+						</ul>
+					</li>
+					<li class="">
+						<h6>Typography</h6>
+						<ul>
+							<li><a href="#paragraph">Paragraph</a></li>
+							<li><a href="#titles">Titles</a></li>
+							<li><a href="#hyperlinks">Hyperlinks</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+
+
+
+
+		<!-- Overview -->
+		<div class="row main-container" data-library-section="overview">
+			<h4 class="small-12 columns section-title">
+				Overview
+			</h4>
+			<a class="anchor" id="about"></a>
+			<h6 class="small-12 columns">
+				About
+			</h6>
+			<p class="small-12 columns">
+				Welcome to the frontend styleguide and component library.<br>
+				More text to come.
+			</p>
+		</div>
+
+
+
+
+
+
+
+		<div class="row main-container">
+			<h5 class="small-12 columns section-title" data-style-sticky>Buttons</h5>
+			<a class="anchor" id="buttons"></a>
+			<div class="small-12 columns">
+				<div class="row">
+					<h6 class="small-12 columns">Default</h6>
+					<p class="small-12 columns">
+
+						All buttons styles used on NGOP.
+						<em>[TODO - Improve copy for developers and designers]</em>
+					</p>
+				</div>
+				<div class="row">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								text: 'Button',
+								type: 'button',
+								classList: [
+									'small-12',
+									'large-8',
+									'large-offset-2',
+									'columns'
+								],
+								dataAttr: {
+									'data-role': 'example-button',
+									'data-hyperlink': ''
+								}
+							}
+						)
+					%>
+				</div>
+				<br><br>
+			</div>
+
+			<div class="small-12 columns">
+				<div class="row">
+					<h6 class="small-12 columns">Submit</h6>
+					<p class="small-12 columns">
+						In a sem augue. Maecenas nec accumsan purus. In hac habitasse platea dictumst.
+					</p>
+				</div>
+				<div class="row">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								text: 'Submit',
+								type: 'submit',
+								classList: [
+									'small-12',
+									'large-8',
+									'large-offset-2',
+									'columns'
+								],
+								dataAttr: {
+									'data-role': 'example-submit',
+									'data-hyperlink': ''
+								}
+							}
+						)
+					%>
+				</div>
+				<br><br>
+			</div>
+
+			<div class="small-12 columns">
+				<div class="row">
+					<h6 class="small-12 columns">Reset</h6>
+					<p class="small-12 columns">
+						In a sem augue. Maecenas nec accumsan purus. In hac habitasse platea dictumst.
+					</p>
+				</div>
+				<div class="row">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								text: 'Reset',
+								type: 'reset',
+								classList: [
+									'small-12',
+									'large-8',
+									'large-offset-2',
+									'columns'
+								],
+								dataAttr: {
+									'data-role': 'example-reset',
+									'data-hyperlink': ''
+								}
+							}
+						)
+					%>
+				</div>
+				<br><br>
+			</div>
+
+			<div class="small-12 columns">
+				<div class="row">
+					<h6 class="small-12 columns">Disabled</h6>
+					<p class="small-12 columns">
+						In a sem augue. Maecenas nec accumsan purus. In hac habitasse platea dictumst.
+					</p>
+				</div>
+				<div class="row">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								text: 'Disabled',
+								type: 'button',
+								classList: [
+									'small-12',
+									'large-8',
+									'large-offset-2',
+									'columns'
+								],
+								dataAttr: {
+									'disabled': 'disabled',
+									'data-hyperlink': ''
+								}
+							}
+						)
+					%>
+				</div>
+				<br><br>
+			</div>
+
+
+			<div class="small-12 columns">
+				<div class="row">
+					<h6 class="small-12 columns">Live Editor</h6>
+					<p class="small-12 columns">
+						Experiment below (note: requires better copy)
+					</p>
+				</div>
+			</div>
+
+
+
+			<div class="small-12 columns" data-editor-group>
+				<nav>
+					<button data-editor-toggle="html" class="active small-4">html</button>
+					<button data-editor-toggle="css" class="small-4">css</button>
+					<button data-editor-toggle="js" class="small-4">js</button>
+				</nav>
+				<div>
+					<textarea data-editor="html" class="html active" placeholder="html" autocomplete="off" spellcheck="false"></textarea>
+					<textarea data-editor="css" placeholder="css" autocomplete="off" spellcheck="false"></textarea>
+					<textarea data-editor="js" placeholder="js" autocomplete="off" spellcheck="false"></textarea>
+					<!--span data-role="reset">Reset</span-->
+				</div>
+				<iframe data-preview class="row column small-12"></iframe>
+
+			</div>
+			<div class="small-12 columns"><hr></div>
+
+		</div>
+
+
+
+
+
+
+
+
+		<div class="row main-container">
+			<h4 class="small-12 columns section-title" data-style-sticky>Inputs</h4>
+			<a class="anchor" id="inputs"></a>
+			<div class="small-12 columns">
+				<br>
+				<div class="row">
+					<h6 class="small-12 columns">Text Input Type</h6>
+					<p class="small-12 columns">
+						In a sem augue. Maecenas nec accumsan purus. In hac habitasse platea dictumst.
+					</p>
+				</div>
+				<div class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'example-input-text-001',
+								labelText: 'Text',
+								classList: [
+									'columns small-12 large-8 large-offset-2 columns'
+								]
+							}
+						);
+					%>
+				</div>
+				<br><br>
+			</div>
+
+			<div class="small-12 columns">
+				<div class="row">
+					<h6 class="small-12 columns">Email Input Type</h6>
+					<p class="small-12 columns">
+						In a sem augue. Maecenas nec accumsan purus. In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus.
+					</p>
+				</div>
+				<div class="row">
+					<%-
+						include(
+							'../components/input-type-email.html',
+							{
+								assoc: 'example-input-email-001',
+								labelText: 'Email address',
+								classList: [
+									'columns small-12 large-8 large-offset-2 columns'
+								]
+							}
+						);
+					%>
+				</div>
+				<br><br>
+			</div>
+			<div class="small-12 columns">
+				<!-- Input Email Sample -->
+				<div class="row">
+					<h6 class="small-12 columns">Password Input Type</h6>
+					<p class="small-12 columns">
+						In a sem augue. Maecenas nec accumsan purus. In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus.
+					</p>
+				</div>
+				<div class="row">
+					<%-
+						include(
+							'../components/input-type-password.html',
+							{
+								assoc: 'example-input-password-001',
+								labelText: 'Password',
+								classList: [
+									'columns small-12 large-8 large-offset-2 columns'
+								]
+							}
+						);
+					%>
+				</div>
+				<br><br>
+			</div>
+			<br class="small-12 columns">
+
+
+			<div class="small-12 columns">
+				<div class="row">
+					<h6 class="small-12 columns">Input Type File</h6>
+					<p class="small-12 columns">
+						In a sem augue. Maecenas nec accumsan purus. In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus.
+					</p>
+				</div>
+				<div class="row">
+					<%-
+						include(
+							'../components/input-file-upload.html',
+							{
+								text: 'Identification',
+								capture: 'camera',
+								assoc: 'take-a-photo',
+								classList: [
+									'small-12 large-offset-2 large-8 columns'
+								],
+								dataAttr: {
+									'data-role': 'example-input'
+								}
+							}
+						)
+					%>
+				</div>
+			</div>
+
+			<div class="small-12 columns">
+				<br><br>
+				<hr>
+			</div>
+
+		</div>
+
+
+
+
+
+
+
+
+
+		<section class="row main-container">
+			<h4 class="small-12 columns section-title" data-style-sticky>Radio Buttons</h4>
+			<a class="anchor" id="radios"></a>
+			<div class="small-12 columns">
+				<div class="row">
+					<h6 class="small-12 columns">Radio Input Group</h6>
+					<p class="small-12 columns">
+						In a sem augue. Maecenas nec accumsan purus. In hac habitasse platea dictumst.
+					</p>
+				</div>
+				<div class="row">
+					<div class="columns small-12 large-offset-2 large-8">
+						<%-
+							include(
+								'../components/radio-button-group.html',
+								{
+									assoc: 'account-type',
+									containerClassList: [ '__containerClassTest' ],
+									optionsClassList: [ '__optionsClassTest', 'small-4 ', 'needsclick' ],
+									options: [
+										{
+											assoc: 'personal',
+											value: 'Personal'
+										},
+										{
+											assoc: 'business',
+											value: 'Business'
+										},
+										{
+											assoc: 'e-tailor',
+											value: 'E-tailor'
+										}
+									]
+								}
+							);
+						%>
+					</div>
+				</div>
+				<br><br>
+			</div>
+			<style scoped>
+			.section.content .callout {
+				background-color: transparent !important;
+			}
+			</style>
+			<div class="small-12 columns">
+				<div class="row">
+					<h6 class="small-12 columns">Radio Input Group - Expanding</h6>
+					<p class="small-12 columns">
+						In a sem augue. Maecenas nec accumsan purus. In hac habitasse platea dictumst.
+					</p>
+				</div>
+				<div class="row">
+					<section class="small-12 columns section content active">
+						<form class="callout">
+							<fieldset class="row radio-group-container seperated">
+								<div class="small-12 columns radio expanding-section">
+									<input class="needsclick" type="radio" name="id-type" value="Passport" id="passport">
+									<label for="passport">Passport</label>
+									<div class="row">
+										<div class="small-12 columns input-container">
+											<input type="text" id="passport-number">
+											<label for="passport-number">Passport number</label>
+										</div>
+										<div class="small-12 columns">
+											<label>Expiry date</label>
+										</div>
+										<div class="small-12 medium-4 columns select-container">
+											<select id="expiry-day">
+												<option selected="" disabled="" hidden="">&nbsp;</option>
+												<option value="01">01</option>
+												<option value="02">02</option>
+											</select>
+											<label for="expiry-day">
+												Day
+											</label>
+										</div>
+										<div class="small-12 medium-4 columns select-container">
+											<select id="expiry-month">
+												<option selected="" disabled="" hidden="">&nbsp;</option>
+												<option value="01">01</option>
+												<option value="02">02</option>
+											</select>
+											<label for="expiry-month">
+												Month
+											</label>
+										</div>
+										<div class="small-12 medium-4 columns select-container">
+											<select id="expiry-year">
+												<option selected="" disabled="" hidden="">&nbsp;</option>
+												<option value="1998">1998</option>
+												<option value="1997">1997</option>
+											</select>
+											<label for="expiry-year">
+												Year
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="small-12 columns radio expanding-section">
+									<input class="needsclick" type="radio" name="id-type" value="Driving License" id="driving-license">
+									<label for="driving-license">Driving License</label>
+									<div class="row">
+										<div class="small-12 columns input-container">
+											<input type="text" id="driving-license-number">
+											<label for="driving-license-number">Number</label>
+										</div>
+									</div>
+								</div>
+								<div class="small-12 columns radio expanding-section">
+									<input class="needsclick" type="radio" name="id-type" value="National Insurance" id="national-insurance">
+									<label for="national-insurance">National Insurance</label>
+									<div class="row">
+										<div class="small-12 columns input-container">
+											<input type="text" id="national-insurance-number">
+											<label for="national-insurance-number">Number</label>
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</section>
+				</div>
+			</div>
+			<div class="small-12 columns">
+			<hr>
+				<br><br><br>
+			</div>
+		</section>
+
+
+
+
+
+
+
+
+		<div class="row main-container">
+			<h4 class="small-12 columns section-title">
+				Style
+			</h4>
+			<a class="anchor" id="colour"></a>
+			<h6 class="small-12 columns">TBD - Colours</h6>
+			<p class="small-12 columns">
+				In a sem augue. Maecenas nec accumsan purus. In hac habitasse platea dictumst.
+			</p>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section class="row main-container">
+			<h4 class="small-12 columns section-title" data-style-sticky>Grid</h4>
+			<div class="small-12 columns">
+				<div class="row">
+					<h6 class="small-12 columns">TBD - Sample Grid</h6>
+					<p class="small-12 large-7 columns">
+						This section is a work in progress.
+					</p>
+					<div class="columns small-4">
+						<!-- TODO - Insert coliurs -->
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+		<div class="row main-container">
+			<div class="small-12 columns">
+				<hr>
+				<br><br><br><br><br><br><br><br>
+			</div>
+		</div>
+
+
+
+
+        <%-
+        	include('../partials/scripts.html');
+        %>
+
+
+	</body>
+</html>

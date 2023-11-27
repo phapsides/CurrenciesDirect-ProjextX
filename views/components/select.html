@@ -1,0 +1,110 @@
+<%
+/*
+
+# Select Component
+
+### Notes
+
+
+#####
+
+# Simple
+
+include('components/select.html', { text: 'Title', options: data })
+
+# Verbose
+
+
+
+include(
+	'components/select.html',
+	{
+		assoc: 'title',
+		containerClassList: [
+			'medium-4'
+		],
+
+		labelClass: '',
+
+		dataAttr: {
+			'data-test': 'Test!'
+		},
+		optionsClassList: [
+			'needsclick'
+		],
+		options: [
+			{ text: 'Dr.', value: 'Dr', selected: 'selected' },
+			{ text: 'Mx.', value: 'Mx' },
+			{ text: 'Ms.', value: 'Ms' },
+			{ text: 'Miss.', value: 'Miss' },
+			{ text: 'Mrs.', value: 'Mrs' },
+			{ text: 'Mr.', value: 'Mr' }
+		]
+	}
+);
+
+
+*/
+%>
+
+
+
+
+
+<div class="columns select-container <%=
+	(typeof containerClassList != 'undefined' ? containerClassList.join(' ') : '')
+%>"
+<% if (typeof dataAttr != 'undefined') { for (key in dataAttr) { %>
+<%- key + '="' + dataAttr[key] + '" ' %>
+<% } } %>
+>
+	<select
+		id="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>"
+		<% if (typeof disabled != 'undefined') { %>disabled="true"<% } %>
+	>
+
+		<%
+			if (typeof defaultOption != 'undefined') {
+				if (defaultOption == true) {
+		%>
+					<option selected hidden disabled>&nbsp;</option>
+
+		<%
+				}
+			} else {
+		%>
+				<option selected disabled hidden>&nbsp;</option>
+
+		<%
+			}
+		%>
+
+
+<%
+if (typeof options != 'undefined') {
+	for (var i = 0; i < options.length; i++) {
+%>
+		<option
+			value="<%= (typeof options[i].value != 'undefined' ? options[i].value : '__undefined') %>"
+			<% if (typeof options[i].selected != 'undefined') { %>
+			selected="<%- options[i].selected %>"
+			<% } %>
+			<% if (typeof options[i].disabled != 'undefined') { %>
+			disabled
+			<% } %>
+			<% if (typeof options[i].classname != 'undefined') { %>
+			class="<%- options[i].classname %>"
+			<% } %>
+
+		>
+			<%= (typeof options[i].text != 'undefined' ? options[i].text : '__undefined') %>
+		</option>
+<%
+	}
+}
+%>
+	</select>
+	<label for="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>" class="<%= (typeof labelClass != 'undefined' ? labelClass : '') %>">
+		<%= (typeof text != 'undefined' ? text : '') %>
+	</label>
+</div>

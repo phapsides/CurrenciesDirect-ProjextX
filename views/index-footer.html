@@ -1,0 +1,66 @@
+
+
+
+    <%-
+        /* Sitewide JS */
+        include('./partials/scripts.html')
+    %>
+
+
+
+
+
+
+
+
+    <%
+    	/**
+    	 * Stakeholder Specific Code
+    	 */
+		if (typeof mode.stakeholder != 'undefined') {
+			if (mode.stakeholder == true) {
+	%>
+
+	<div id="__whitelabel_debug_overlay__" class="">
+		<span data-toggle="dashboard-state-01">
+			Demo Button 001
+		</span>
+	</div>
+
+	<script type="text/javascript">
+	const 
+
+	$(document).ready(function() {
+		console.log('Index specific JS')
+		$('a').each(function(link) {
+			var $this = $(this)
+			var url = $this.attr('href')
+			if ($('body').attr('data-whitelabel') != 'tor-fx') {
+				$this.after(
+					'<br><a href="' + $this.attr('href') + '?client=tor-fx">(Tor-FX version)</a>'
+				)					
+			}
+		})
+
+	})
+	</script>
+
+	<% } } %>
+
+
+
+
+    <%
+    	/**
+    	 * Developer Specific Code
+    	 */
+		if (typeof mode.developer != 'undefined') {
+			if (mode.developer == true) {
+	%>
+
+	<% } } %>
+
+
+
+
+

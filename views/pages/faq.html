@@ -1,0 +1,295 @@
+<%-
+include(
+	'../partials/head.html', {
+		title: 'FAQ',
+		bodyClassList: [
+			'template', 
+			'template-core', 
+			'template-layout-grid',
+			'site-page-dashboard'
+		]
+	}
+);
+%>
+
+
+	
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+
+	<div class="row main-container main-container--faq">
+		<div class="columns">
+			<header class="main-header">
+				<h1 class="title">
+					FAQ
+				</h1>
+			</header>
+			<p class="medium-9 end">
+				In case you’re stuck, we’ve listed below a list of our frequently asked questions. If you can’t find an answer to your question, just get in touch on <a href="tel:+61755604444" title="">+61 7 5560 4444</a> and we’ll be happy to help.
+			</p>
+			<div class="row collapse">
+  				<div class="columns">
+  					<ul id="idAccordion" class="accordion " data-accordion="v1lhgy-accordion" data-multi-expand="true" role="tablist">
+    				
+  				<li class="accordion-item" data-accordion-item="">
+					<a href="#" class="accordion-title" aria-controls="5wtjgk-accordion" role="tab" id="5wtjgk-accordion-label" aria-expanded="false" aria-selected="false">
+					    	How do I make a transfer?
+					</a>    
+					    
+					<div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="5wtjgk-accordion-label" aria-hidden="true" id="5wtjgk-accordion">
+					   <p>If you want to send money straight away, simply select <a href="makeTransfer.htm">'Make a transfer'</a> from your Currency Home, and follow the instructions.</p>
+						<p>If you’d rather buy currency now, to transfer at a later date, select <a href="buy_currency_step1.htm">'Buy currency'</a>.</p> 
+						<p>Finally, if you want to transfer currency you’ve already	bought, <a href="send_balance_step1.htm"> 'Transfer from balance'</a>. </p>
+					</div>
+				 </li>
+				
+				
+				 <li class="accordion-item" data-accordion-item="">
+				     <a href="#" class="accordion-title" aria-controls="bmz3cx-accordion" role="tab" id="bmz3cx-accordion-label" aria-expanded="false" aria-selected="false">
+				    	I’ve bought currency – now what?
+				     </a>
+				     <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="bmz3cx-accordion-label" aria-hidden="true" id="bmz3cx-accordion">
+				      <p>
+				      	You can leave your currency on your TorFX online account, and transfer it whenever you like. No rush!
+				      </p>
+				    </div>
+				  </li>
+					 
+				  <li class="accordion-item" data-accordion-item="">
+					     <a href="#" class="accordion-title" aria-controls="arzrx4-accordion" role="tab" id="arzrx4-accordion-label" aria-expanded="false" aria-selected="false">
+					    	Can I cancel my order?
+					    </a>
+					    <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="arzrx4-accordion-label" aria-hidden="true" id="arzrx4-accordion">
+				       		<p>
+								You can cancel an order – however if we’ve already purchased
+								the currency you may be required to pay any losses that we
+								incur from market movement. Please refer to our
+								<a target="_blank" name="aTag" href="http://www.torfx.com.au/assets/docs/PDF_Private_Terms.pdf" title="">terms
+									and conditions</a> (section 2) for full details.
+							</p>
+					    </div>
+				</li>
+				
+				
+				 <li class="accordion-item" data-accordion-item="">
+					    <a href="#" class="accordion-title" aria-controls="r4u4tc-accordion" role="tab" id="r4u4tc-accordion-label" aria-expanded="false" aria-selected="false">
+					    	I can’t access my account.
+					    </a>
+					     <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="r4u4tc-accordion-label" aria-hidden="true" id="r4u4tc-accordion">
+			      	 		<p>One of several things may have happened here:</p>
+							<ul>
+								<li>If you’ve just joined, you’ll need to click an
+									activation link that we’ve emailed to you. If you can’t find
+									it, or need a new link, you can request a new one <a href="secondaryActivationStepOne.htm">here</a>.
+								</li>
+
+								<li>If your password is incorrect, head to the <a href="forgotPassword.htm">Forgotten password</a> page.
+								</li>
+
+								<li>If you’re accessing your account from a new location,
+									you’ll be required to enter a PIN that we’ll send to your
+									mobile. This is for security, and you can request a new PIN if
+										you need one.
+								</li>
+									
+
+							</ul>
+					    </div>
+				 </li>
+				 
+				 
+				  <li class="accordion-item" data-accordion-item="">
+				    <a href="#?clientId=currencies-direct" class="accordion-title" aria-controls="7wuc0l-accordion" role="tab" id="7wuc0l-accordion-label" aria-expanded="false" aria-selected="false">
+				    	I can’t see currency I’ve bought on my account.
+				    </a>
+				    <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="7wuc0l-accordion-label" aria-hidden="true" id="7wuc0l-accordion">
+				      <p>
+							If you’ve bought currency, but haven’t transferred it yet, and
+							it’s not showing in your Currency Home please contact us on
+							<a href="tel:+61755604444">+61 7 5560 4444</a>
+						</p>
+				    </div>
+				  </li>
+					  
+					  
+					  <li class="accordion-item" data-accordion-item="">
+					     <a href="#" class="accordion-title" aria-controls="cojnaa-accordion" role="tab" id="cojnaa-accordion-label" aria-expanded="false" aria-selected="false">
+					    	I’ve forgotten my security answers.
+					    </a>
+					     <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="cojnaa-accordion-label" aria-hidden="true" id="cojnaa-accordion">
+					      <p>
+								Don’t worry – just give us a call on
+								<a href="tel:+61755604444">+61 7 5560 4444</a>. We’ll need
+								to verify your details, and then we can reset your security
+								question answers.
+							</p>
+					    </div>
+					  </li>
+					  
+					  
+					  <li class="accordion-item" data-accordion-item="">
+					    <a href="#" class="accordion-title" aria-controls="ujk2pg-accordion" role="tab" id="ujk2pg-accordion-label" aria-expanded="false" aria-selected="false">
+					    	The exchange rate doesn’t match your website.
+					    </a>
+					    <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="ujk2pg-accordion-label" aria-hidden="true" id="ujk2pg-accordion">
+					      <p>
+								Any rates given on our general website or by email are
+									interbank exchange rates – which are used for indicative
+									purposes only. To see our exchange rate just <a href="login.htm" title="log in">log in</a>
+									and we’ll give you instant rates.
+							</p>
+					    </div>
+					  </li>
+					  
+					  
+					  <li class="accordion-item" data-accordion-item="">
+						   <a href="#" class="accordion-title" aria-controls="4xnpd0-accordion" role="tab" id="4xnpd0-accordion-label" aria-expanded="false" aria-selected="false">
+						    	Funds I’ve transferred haven’t arrived yet.
+						    </a>
+						    <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="4xnpd0-accordion-label" aria-hidden="true" id="4xnpd0-accordion">
+						      <p>
+									It can take 2-3 working days for your currency to arrive,
+									depending on which country you’ve sent it to. You can check the
+									status of your transfer in the
+									<a href="activity-history.htm">Activity history</a> section. If
+									you’re still concerned, or the funds haven’t arrived after a few
+									days, please call us on
+									<a href="tel:+61755604444">+61 7 5560 4444</a> and we’ll
+									get to the bottom of it.
+								</p>
+						    </div>
+					 </li>
+					 
+					 <li class="accordion-item" data-accordion-item="">
+						   <a href="#" class="accordion-title" aria-controls="4xnpd0-accordion" role="tab" id="4xnpd0-accordion-label" aria-expanded="false" aria-selected="false">
+						    	Who is a recipient?
+						    </a>
+						    <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="4xnpd0-accordion-label" aria-hidden="true" id="4xnpd0-accordion">
+						      <p>
+								A recipient is the person you’re sending money to – it could be yourself,
+							    a friend/family member or a gas company (for example) if you’re paying a bill
+							    overseas. To add a recipient you’ll just need their basic info and an IBAN or
+							    account number and sort code.
+								</p>
+						    </div>
+					 </li>
+					  
+					  <li class="accordion-item" data-accordion-item="">
+					  <a href="#" class="accordion-title" aria-controls="tfzmss-accordion" role="tab" id="tfzmss-accordion-label" aria-expanded="false" aria-selected="false">
+					    	What’s an IBAN?
+					    </a>
+					    <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="tfzmss-accordion-label" aria-hidden="true" id="tfzmss-accordion">
+					      <p>The IBAN (International Bank Account Number) is the number
+								of your overseas account. It will vary between banks – it should
+								appear on your statement. If you aren’t sure of the IBAN on your
+								account, your bank should be able to tell you.</p>
+					    </div>
+					  </li>
+					  
+					  
+					  <li class="accordion-item" data-accordion-item="">
+					     <a href="#" class="accordion-title" aria-controls="bjxcso-accordion" role="tab" id="bjxcso-accordion-label" aria-expanded="false" aria-selected="false">
+					    	What’s a SWIFT or BIC code?
+					    </a>
+					      <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="bjxcso-accordion-label" aria-hidden="true" id="bjxcso-accordion">
+					      <p>A SWIFT or BIC code helps us to identify the bank that you’re
+								transferring money to. It consists of 8 or 11 characters, and
+								you may need to provide this to us to complete your transfer. If
+								you aren’t sure of the SWIFT or BIC code for your bank, just get in
+								touch with them and they will be able to help.</p>
+					    </div>
+					  </li>
+					  
+					  
+					  <li class="accordion-item" data-accordion-item="">
+					     <a href="#" class="accordion-title" aria-controls="gqz5j2-accordion" role="tab" id="gqz5j2-accordion-label" aria-expanded="false" aria-selected="false">
+					    	How can I pay funds to TorFX?
+					    </a>
+					    <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="gqz5j2-accordion-label" aria-hidden="true" id="gqz5j2-accordion">
+					      <p>
+			      	 		You can pay using your debit card, or by making a bank transfer.
+					      </p>
+					    </div>
+					  </li>
+					  
+					  
+					  <li class="accordion-item" data-accordion-item="">
+					     <a href="#" class="accordion-title" aria-controls="kxe95b-accordion" role="tab" id="kxe95b-accordion-label" aria-expanded="false" aria-selected="false">
+					    	I can’t find a transaction I made in my ‘Activity history’ section.
+					    </a>
+					   <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="kxe95b-accordion-label" aria-hidden="true" id="kxe95b-accordion">
+					      <p>
+			      	 		Any currency that you’ve bought, or transfers you’ve made, should appear in this section. Please contact us on <a href="tel:+61755604444" title="">+61 7 5560 4444</a>
+					      </p>
+					    </div>
+					  </li>
+					  
+					  
+					  
+					  <li class="accordion-item" data-accordion-item="">
+					     <a href="#" class="accordion-title" aria-controls="49evng-accordion" role="tab" id="49evng-accordion-label" aria-expanded="false" aria-selected="false">
+					    	What do the statuses mean in my ‘Activity history’ section?
+					    </a>
+					     <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="49evng-accordion-label" aria-hidden="true" id="49evng-accordion">
+					      <dl>
+									<dt>Awaiting funds</dt>
+									<dd>We’re waiting for all or part of your funds to arrive with us.</dd>
+									<dt>In progress</dt>
+									<dd>We’ve received your funds, and the currency is on it’s way to the overseas bank account.</dd>
+									<dt>Completed</dt>
+									<dd>Your funds have been received, and we’ve transferred the currency to the overseas bank account.</dd>
+									<dt>Cancelled</dt>
+									<dd>The contract has been cancelled, and we’re not awaiting for any payment.</dd>
+								</dl>
+								<p>
+									If your activity does not match the description above, please call us on <a href="tel:+61755604444" title="">+61 7 5560 4444</a> and we’ll investigate this for you.
+								</p>
+					    </div>
+					  </li>
+					  
+					  
+					  <li class="accordion-item" data-accordion-item="">
+					    <a href="#" class="accordion-title" aria-controls="trhn2y-accordion" role="tab" id="trhn2y-accordion-label" aria-expanded="false" aria-selected="false">
+					    	What are your opening hours?
+					    </a>
+					   <div class="accordion-content" data-tab-content="" role="tabpanel" aria-labelledby="trhn2y-accordion-label" aria-hidden="true" id="trhn2y-accordion">
+								<p>
+									Our online money transfer service is available 24/7. However, if you need to contact us by phone on <a href="tel:+61755604444" title="">+61 7 5560 4444</a>, our opening hours are Monday - Friday, 8am - 6pm; Saturday, 9am - 1pm EST.
+								</p>
+					    </div>
+					  </li>
+					  
+						<!-- <li style="display: list-item;" class="emptyMessage">No more contacts available</li> -->
+					
+					</ul>
+			 	</div>
+			</div>
+		</div>
+
+	</div>
+			
+
+
+<%-
+    include('../partials/footer.html');
+%>

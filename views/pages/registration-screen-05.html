@@ -1,0 +1,76 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Register - 05',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-layout-centered', 
+				'template-registration',
+				'site-registration-05'
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			classList: 'progress-container-has-sub-title',
+			progressOptions: [
+				{ title: 'Account', state: 'complete', subTitle: 'Personal', href: '/whitelabel/registration/2/' },
+				{ title: 'Details', state: 'complete', subTitle: app.data.user.firstName + ' ' + app.data.user.lastName, href: '/whitelabel/registration/3/' },
+				{ title: 'Security', state: 'active', href: '/whitelabel/registration/6/' },
+				{ title: 'Confirm', state: '', href: '/whitelabel/registration/7/' }
+			],
+
+			backURL: '/whitelabel/registration/1/',
+			
+			registrationProcess: true
+		}
+	);
+%>
+
+
+
+<div class="row main-container">
+	<section class="large-5 medium-7 small-centered section content">
+		<form class="callout">
+			<header class="main-header columns medium-10 medium-offset-1">
+				<h1 class="title">
+					Security check complete
+				</h1>
+				<p class="information">
+					We've secured your profile and you're almost ready to use your account!
+				</p>
+			</header>
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'submit',
+							text: 'Next',
+							classList: [ 'small-12' ],
+							dataAttr: {
+								'data-role': 'next',
+								'data-form-section-active': 'account',
+								'data-hyperlink': '/whitelabel/registration/6/'
+							}
+						}
+					)
+				%>
+			</fieldset>
+		</form>
+	</section>
+</div>
+
+
+
+
+
+
+<%-
+  include('../partials/footer.html');
+%>

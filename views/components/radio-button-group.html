@@ -1,0 +1,85 @@
+<%
+/*
+
+# Button Component
+
+### Notes
+
+! Button's type explanation
+
+#####
+
+# Simple
+
+include('components/button.html', { text: 'Click me' })
+
+# Verbose
+
+include(
+	'components/radio-button-group.html',
+	{
+		assoc: 'account-type',
+		containerClassList: [ '__containerClassTest' ],
+		optionsClassList: [ '__optionsClassTest', 'needsclick' ],
+		options: [
+			{
+				assoc: 'personal',
+				value: 'Personal'
+			},
+			{
+				assoc: 'business',
+				value: 'Business'
+			},
+			{
+				assoc: 'e-tailor',
+				value: 'E-tailor'
+			}
+		]
+	}
+);
+
+
+*/
+%>
+
+
+
+<fieldset class="row radio-group-container<%=
+	(typeof classList != 'undefined' ? classList.join(' ') : '')
+%>"
+<% if (typeof dataAttr != 'undefined') { for (key in dataAttr) { %>
+<%- key + '="' + dataAttr[key] + '" ' %>
+<% } } %>
+>
+
+
+<%
+if (typeof options != 'undefined') {
+	for (var i = 0; i < options.length; i++) {
+%>
+
+	<div class="small-12 columns radio">
+		<input
+			class="needsclick"
+			type="radio"
+			name="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>"
+			value="<%= (typeof options[i].value != 'undefined' ? options[i].value : '__undefined') %>"
+			id="<%= (typeof options[i].assoc != 'undefined' ? options[i].assoc : '__undefined') %>"
+		>
+		<label for="<%= (typeof options[i].assoc != 'undefined' ? options[i].assoc : '__undefined') %>"><%= (typeof options[i].value != 'undefined' ? options[i].value : '__undefined') %></label>
+	</div>
+
+<%
+	}
+}
+%>
+
+</fieldset>
+
+
+
+
+<% /*
+if (typeof dataAttr != 'undefined') { for (key in dataAttr) {
+		console.log(key + '="' + dataAttr[key]);
+} */ %>

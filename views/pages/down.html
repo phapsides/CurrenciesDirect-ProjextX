@@ -1,0 +1,59 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Maintenance',
+			bodyClassList: [
+				'template',
+				'template-core',
+				'template-layout-centered', 
+				'template-maintenance',
+			]
+		}
+	)
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-simple.html', {
+		loggedIn: false,
+		registrationProcess: false
+		}
+	);
+%>
+
+
+<div class="row main-container">
+	<section class="large-5 medium-7 small-centered section content active">
+		<form class="callout" data-abide>
+			<header class="main-header columns">
+				<h1 class="title">
+					Sorry, we’re offline!
+				</h1>
+
+				<p class="description">
+					So we can continue to upgrade our service, our online services (for both personal and business customers) will be down until <b class="nowrap">12pm on Saturday 2 December</b>.
+				</p>
+				&nbsp;
+				<p class="description">In the meantime, you can <a href="/content/contact-us/">send us your request via our website</a>, and we’ll be sure to contact you as soon as we re-open at 10.30am tomorrow.</p>
+			</header>
+		
+		</form>
+	</section>
+</div>
+
+
+	</div>
+	<!-- ==== End - Content Container ==== -->
+
+
+
+
+    <%-
+      /* Sitewide JS */
+      include('../partials/scripts.html');
+    %>
+
+
+	</body>
+</html>

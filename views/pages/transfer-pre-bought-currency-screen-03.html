@@ -1,0 +1,108 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Transactions - Make Transfer Step 1',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'site-transfers',
+				'site-transfers-pre-bought-currency-03'
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Choose funds', state: 'complete' },
+				{ title: 'Recipient and amount', state: 'complete' },
+				{ title: 'Confirm', state: 'active' }
+			],
+
+			backURL: '/whitelabel/transactions/currency/empty/',
+
+			registrationProcess: false
+		}
+	);
+%>
+
+<div class="row main-container">
+	<div class="row">
+		<header class="medium-11 main-header columns">
+			<h1 class="title">
+				You are about to send money to the <br class="hide-for-small-only">following recipient(s)
+			</h1>
+			<p class="description">
+				Please confirm the details below before we transfer your currency.
+			</p>
+		</header>
+	</div>
+	<div class="row">
+		<div class="columns">
+			<form class="formNoBorder element-group-table">
+				<div class="element-group">
+					<div class="row">
+						<div class="columns table-container">
+							<table class="table row">
+								<thead>
+									<tr class="row table-row-header">
+										<th class="table-td-contract-no">
+											<span>Name</span>
+										</th>
+										<th class="table-td-date">
+											<span>Country</span>
+										</th>
+										<th class="table-td-balance">
+											<span>Account no./IBAN</span>
+										</th>
+										<th colspan="3">
+											<span>Amount to transfer</span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="row">
+										<td class="table-td-contract-no">
+											<span>Captain America</span>
+										</td>
+										<td class="table-td-date">
+											<span>United States</span>
+										</td>
+										<td class="table-td-balance">
+											<span>********9101</span>
+										</td>
+										<td class="">
+											<span>EUR 1,000</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="columns large-3 large-offset-9  medium-4 medium-offset-8 end temp-btn-continue temp-button-style-green">
+						<button type="button" class="columns button" data-hyperlink="/whitelabel/transactions/pre-bought-currency/confirmation/">
+							<span>
+								Send now
+							</span>
+						</button>
+					</div>
+				</div>
+
+
+			</form>
+		</div>
+	</div>
+
+	
+</div>
+
+<%-
+  include('../partials/footer.html');
+%>
+

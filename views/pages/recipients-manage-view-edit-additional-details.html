@@ -1,0 +1,120 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Recipients - View / Edit Additional Detials',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-02',
+				'site-recipients' // Correct class
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Recipient details', state: 'complete', href: '/whitelabel/recipients/manage/view-edit/' },
+				{ title: 'Bank details', state: 'complete', href: '/whitelabel/recipients/manage/view-edit/bank-details/' },
+				{ title: 'Additional details', state: 'active', href: '/whitelabel/recipients/manage/view-edit/additional-details/' }
+			],
+
+			backURL: '/whitelabel/recipients/manage/',
+
+			registrationProcess: false
+		}
+	);
+%>
+
+
+
+<div class="row main-container">
+	<div class="row">
+		<header class="large-8 medium-12 columns end">
+			<h1 class="title">
+				Additional details
+			</h1>
+			<p class="description">
+				Enter an alias and/or a reference which the recipient will see on their bank statement.
+			</p>
+		</header>
+	</div>
+	<div class="row">
+		<div class="large-8 medium-12 columns">
+			<div class="row">
+				<form class="element-group" data-abide>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'alias',
+									labelText: 'Alias',
+									classList: [
+										'medium-8',
+										'end',
+										'columns'
+									]
+								}
+							);
+						%>
+					</fieldset>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'reference',
+									labelText: 'Reference',
+									classList: [
+										'medium-8',
+										'end',
+										'columns'
+									]
+								}
+							);
+						%>
+						<p class="columns medium-8 end">
+							<small>
+								(Please note: the reference isn’t guaranteed. It’s up to the recipient's bank whether or not this is shown.)										
+							</small>
+						</p>
+					</fieldset>
+				</form>
+					
+			</div>
+
+			<div class="row collapse">
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Update',
+							classList: [
+								'large-4',
+								'large-offset-8',
+								'end'
+							],
+							dataAttr: {
+								'data-role': 'button-continue',
+								'data-hyperlink': '/whitelabel/recipients/manage/',
+								//'disabled': 'disabled'
+							},
+						}
+					)
+				%>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>

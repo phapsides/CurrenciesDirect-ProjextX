@@ -1,0 +1,866 @@
+/**
+ * TorFX Theme
+ */
+$get-path-to-assets: '/whitelabel/TorFX/images';
+$get-path-to-fonts: '/whitelabel/TorFX/fonts';
+$link-weight: 400;
+$nav-link-weight: 600;
+$button-weight: 600;
+$title-weight: 600;
+$whitelabel-primary: #e5445e;
+$whitelabel-primary-text: #e5445e;
+$whitelabel-secondary: #231e4f;
+$whitelabel-secondary-text: #231e4f;
+$whitelabel-nav-bg: #231e4f;
+$whitelabel-nav-links: #FFFFFF;
+$whitelabel-button-bg: $whitelabel-primary;
+$whitelabel-button-bg-hover: lighten( $whitelabel-primary, 10% );
+$whitelabel-button-bg-click: lighten( $whitelabel-button-bg-hover, 10% );
+$whitelabel-button-text: white;
+$whitelabel-button-text-hover: $whitelabel-button-text;
+$whitelabel-button-text-click: $whitelabel-button-text-hover;
+// SHOW/HIDE SPECIFIC ELEMENTS
+// .menu-item-refer-and-earn {
+//   display: none !important;
+// }
+
+
+@font-face {
+  font-family: 'Neris';
+  src: url('#{$get-path-to-fonts}/Neris-Light-webfont.eot'); /* IE9 Compat Modes */
+  src: url('#{$get-path-to-fonts}/Neris-Light-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$get-path-to-fonts}/Neris-Light-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('#{$get-path-to-fonts}/Neris-Light-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$get-path-to-fonts}/Neris-Light-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+* {
+  font-family: 'Neris', Arial, Helvetica, sans-serif;
+}
+
+body {
+  nav.main-progress-nav ul li .title,
+  h1, h2, h3, h4, h5, h6, th,
+  h1.title,
+  .button-simple, th, .table-td-name,
+  nav.main-progress-nav ul.progress-container-has-sub-title li.progress-has-sub-title div .title,
+  .radio-group-container .radio > label,
+  #quick-rate-container .select-container:first-child input, 
+  #quick-rate-container .input-container:first-child input, 
+  #recipient-gets-container .select-container:first-child input, 
+  #recipient-gets-container .input-container:first-child input,
+  .exchange-rate-live,
+  nav.main-nav .main-nav-content a, nav.main-nav .main-nav-content span,
+  .button-grid-element.button-grid-element-image.button-make-a-transfer p,
+  .button-grid-element.button-grid-element-image.button-buy-currency p,
+  .button-grid-element.button-grid-element-image.button-add-a-payee-quick > button[data-role="buy-now"] p,
+  button, button[type="button"], button[type="submit"], button[type="reset"], input[type="button"], input[type="submit"], input[type="reset"], .button,
+  .modal-add-new-card .modal-content label[for="store-card-details"], .modal-add-new-card .modal-content label[for="canReuse"],
+  .modal-add-new-card .modal-content label[for="store-card-details"] small, .modal-add-new-card .modal-content label[for="canReuse"] small,
+  .main-container aside.transfers-summary .columns.sub-title-refresh,
+  .main-container aside.transfers-summary .columns.sub-title-refresh span[data-rate-refresh],
+  .modal-deal-confirmation .modal-content dt,
+  .reveal .modal-frame .modal-content dl dd,
+  .main-container .tc-section a,
+  .filter-container .button-simple span
+
+  {
+    font-family: 'Neris', Arial, Helvetica, sans-serif;    
+  }
+}
+
+nav.main-nav .mobile-menu-toggle--container {
+  right: 10px;
+}
+
+.brand-logo {
+  margin-top: -2px;
+}
+
+
+nav.main-nav .user-profile.user-logged-in .sub-menu li a {
+   @media screen and (max-width: 960px) {
+      color: #fff !important;
+    } 
+}
+
+@media only screen and (max-width: 740px) {
+  .input-container label[for], .select-container label[for] {
+      letter-spacing: -0.02em;
+  }
+}
+
+body {
+  .template, &.template {
+    &.template-core {
+      font-family: 'Neris', Arial, Helvetica, ssans-serif !important;
+
+      a,
+      a:active,
+      a:hover,
+      a:visited,
+      em {
+        font-weight: $link-weight !important;
+        color: $whitelabel-primary-text;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: $title-weight;
+        letter-spacing: -0.4px !important;
+      }
+
+      input,
+      textarea {
+        caret-color: $whitelabel-primary;
+      }
+
+      
+
+      nav {
+        &.main-nav {
+          background-color: $whitelabel-nav-bg !important;
+          border-bottom: 1px solid #f4f4f4 !important;
+          
+          @media screen and (max-width: 960px) {
+            .row {
+              background-color: $whitelabel-secondary;  
+            }
+          }
+
+          .brand-logo-container {
+            ::after {
+              color: $whitelabel-nav-bg;
+            }
+
+            .brand-logo {
+              
+              &::before {
+                content: '';
+                background-image: url("#{$get-path-to-assets}/tor-fx-logo.svg") !important;
+                background-position: none !important;
+                width: 190px !important;
+                background-size: 130px !important;
+                background-position: 0 !important;
+                color: white !important; 
+                
+              }
+              
+              @media screen and (max-width: 960px) {
+                
+                width: 36px;
+                height: 36px;
+                
+                &::before {
+                  width: 36px !important;
+                  height: 36px !important;
+                  overflow: hidden;
+                }
+                
+              }
+              
+            }
+          }
+
+          .main-nav-content {
+            ul {
+              li {
+                a {
+                  color: $whitelabel-nav-links !important;
+                  font-weight: $nav-link-weight !important;
+                }
+
+                &.active,
+                &.open {
+                  border-bottom: 2px solid $whitelabel-primary !important;
+                }
+                
+                &.menu-item-has-sub-menu {
+                  a {
+                    
+                    &::after {
+                      background-image: url("#{$get-path-to-assets}/ic-chevron-down.svg") !important;
+                    }
+                  }
+                }
+
+                ul.sub-menu {
+                  
+                  background-color: $whitelabel-primary;
+                  
+                  li {
+                    a {
+                      font-weight: $nav-link-weight !important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .user-profile {
+            background-color: white;
+            //background-image: url("#{$get-path-to-assets}/ic-chevron-down.svg") !important;
+
+            li {
+              .user-profile-name {
+                //color: $whitelabel-primary-text;
+                letter-spacing: normal;
+                font-weight: $nav-link-weight;
+                
+                @media screen and (max-width: 960px) {
+                    color: #FFFFFF;
+                }
+                
+              }
+            
+              .user-profile-id {
+                @media screen and (max-width: 960px) {
+                    color: #FFFFFF;
+                }
+              }
+              
+            }
+            
+            &::after {
+              background-image: url("#{$get-path-to-assets}/ic-chevron-down.svg") !important;
+            }
+            
+          }
+          
+          .mobile-menu-toggle--container {
+            .mobile-menu-toggle {
+              background-image: url("#{$get-path-to-assets}/icon-mobile-menu.svg");
+            }
+          }
+          
+          &.open {
+            
+            .mobile-menu-toggle--container {
+              .mobile-menu-toggle {
+                background-image: url("#{$get-path-to-assets}/icon-mobile-menu-close.svg");
+              }
+            }
+            
+            .main-nav-content {
+              ul {
+                li {
+                   ul {
+                     &.sub-menu {
+                       background: $whitelabel-primary;
+                       li {
+                         background: $whitelabel-primary;
+                       }
+                     }
+                   }
+                }
+              }
+            }
+            
+          }
+          
+        }
+        
+        .main-nav-close {
+          a {
+            background-image: url("#{$get-path-to-assets}/ico-cross-black.svg") !important;
+          }
+        }
+
+        &.main-progress-nav {
+          ul {
+            li {
+              a {
+                font-weight: $nav-link-weight !important;
+                color: #FFFFFF !important;
+                &::before {
+                  background-color: #FFFFFF;
+                  color: $whitelabel-primary;
+                  padding-top: 2.5px;
+                  padding-right: 1px;
+
+                  @media (max-width: 960px) {
+                    padding-top: 1.5px;
+                  }
+                }
+              }
+
+              &.active {
+                a {
+                  &::before {
+                    background-color: $whitelabel-primary;
+                    color: $whitelabel-nav-links;
+                    font-weight: $title-weight;
+                  }
+                }
+              }
+
+              &.complete {
+                a {
+                  &::before {
+                    background-image: url("#{$get-path-to-assets}/ico-ff-tick-green.svg") !important;
+                    background-color: transparent;
+                  }
+                }
+              }
+            }
+          }
+
+          .sub-title { color: #fff; }
+        }
+      }
+
+      .navigation-tab-container {
+        .navigation-tabs {
+          .tab-toggle {
+            &.active {
+              span {
+                border-bottom: 2px solid $whitelabel-primary;
+              }
+            }
+          }
+        }
+      }
+
+      .reveal-overlay .reveal-modal [data-reveal-id="loading-image"] .modal-loading {
+        border-top: 4px solid $whitelabel-secondary;
+        border-right: 4px solid $whitelabel-secondary;
+      }
+
+      #quick-rate-container .input-container input,
+      #quick-rate-container .select-container input,
+      #recipient-gets-container .input-container input,
+      #recipient-gets-container .select-container input {
+        font-weight: $title-weight !important;
+      }
+
+      a.temp-add-new-payee {
+        height: 46px !important;
+        color: white !important;
+      }
+    }
+  }
+  
+  table {
+    thead {
+      *,
+      *:hover {
+        font-weight: $title-weight !important;
+      }
+    }
+  }
+  
+}
+
+.reveal .modal-frame {
+
+  .modal-header h4 { font-weight: 600; }
+  
+  .modal-content h5 { font-weight: 700; }
+}
+
+// IMAGE OVERWRITES
+body {
+  .close {
+    background-image: url("#{$get-path-to-assets}/icon-close.svg");
+  }
+
+  .button-grid-element.button-grid-element-image.button-make-a-transfer button {
+    background-image: url("#{$get-path-to-assets}/icon-make-a-transfer.svg");
+  }
+
+  .button-grid-element.button-grid-element-image.button-buy-currency button {
+    background-image: url("#{$get-path-to-assets}/icon-buy-currency.svg");
+  }
+
+  .button-grid-element.button-grid-element-image.button-add-a-payee-quick button {
+    background-image: url("#{$get-path-to-assets}/ic-profile.svg") !important;
+  }
+
+  .radio-container input[type="radio"]:checked, .row.main-container form .row .radio-container input[type=radio]:checked {
+    background-image: url("#{$get-path-to-assets}/ff-radiobutton-active.svg");
+  }
+
+  .row.main-container form .row .input-container input[data-role=show-password], .row.main-container form .row .input-container button[data-role=show-password] {
+    background-image: url("#{$get-path-to-assets}/icon-password-show.svg");
+    background-color: transparent !important;
+  }
+
+  .row.main-container form .row .input-container input[data-role=show-password].checked, .row.main-container form .row .input-container button[data-role=show-password].checked {
+    background-image: url("#{$get-path-to-assets}/icon-password-hide.svg");
+    background-color: transparent !important;
+  }
+
+  /*.row.main-container form .row .input-container input[type=search] {
+    background-image: url("#{$get-path-to-assets}/icon-search.svg");
+  }*/
+
+  .radio-group-container .radio input[type=radio]:checked ~ label::after {
+    background-image: url("#{$get-path-to-assets}/ff-radiobutton-active.svg");
+  }
+
+  .row.main-container form .row .input-container select {
+    background-image: url("#{$get-path-to-assets}/icon-drop-down.svg");
+  }
+
+  .filter-container .hasDatepicker {
+    background-image: url("#{$get-path-to-assets}/icon-calendar.svg");
+    
+    &:focus {
+      background: #fff;
+    }
+    
+  }
+  
+  .ui-datepicker {
+    
+    .ui-datepicker-prev span {
+      background-image: url("#{$get-path-to-assets}/ic-chevron-left.svg");
+    }
+    
+    .ui-datepicker-next span {
+      background-image: url("#{$get-path-to-assets}/ic-chevron-right.svg");
+    }
+    
+  }
+  
+  #ui-datepicker-div {
+    .ui-datepicker-current-day a {
+      background: $whitelabel-primary;
+    }
+  }
+
+  .exchange-rate-live {
+    em {
+      color: $whitelabel-primary-text;
+    }
+
+    .rate-refresh-icon {
+      background-color: $whitelabel-primary;
+      font-size: 1em;
+      padding: 3px 6px 5px;
+
+      &:hover { background: lighten($whitelabel-primary, 5); }
+    }
+  }
+  // Registration transfer range icons
+  .button-grid-element.button-grid-element-image-small.button-icon-less-than-25k > label::before {
+    background-image: url("#{$get-path-to-assets}/icon-transfer-amount-less-than-25k.svg");
+  }
+
+  .button-grid-element.button-grid-element-image-small.button-icon-between-25k-50k > label::before {
+    background-image: url("#{$get-path-to-assets}/icon-transfer-amount-between-25k-50k.svg");
+  }
+
+  .button-grid-element.button-grid-element-image-small.button-icon-more-than-50k > label::before {
+    background-image: url("#{$get-path-to-assets}/icon-transfer-amount-between-50k.svg");
+  }
+  
+  .accordion-item {
+    .accordion-title:before {
+      content: url("#{$get-path-to-assets}/ic-chevron-down.svg");
+    }
+    &.is-active {
+      .accordion-title:before {
+        content: url("#{$get-path-to-assets}/ic-chevron-up.svg");
+      }  
+    }
+  }
+}
+
+body .section.content .callout {
+  //background-color: #f7f7f7 !important;
+}
+
+body ul.progress li {
+  color: white;
+}
+
+body ul.progress li::before {
+  background-color: #eeeeee;
+  color: #29235c;
+}
+
+body ul.progress li.active {
+  color: $whitelabel-primary;
+}
+
+body ul.progress li.active::before {
+  background-color: $whitelabel-primary;
+}
+
+body ul.progress li.complete {
+  color: white;
+}
+
+
+body .button,
+body .button:active,
+body .button:focus,
+body .button:hover,
+body .button:visited,
+body button,
+body button:active,
+body button:focus,
+body button:hover,
+body button:visited,
+body button[type="button"],
+body button[type="button"]:active,
+body button[type="button"]:focus,
+body button[type="button"]:hover,
+body button[type="button"]:visited,
+body button[type="reset"],
+body button[type="reset"]:active,
+body button[type="reset"]:focus,
+body button[type="reset"]:hover,
+body button[type="reset"]:visited,
+body button[type="submit"],
+body button[type="submit"]:active,
+body button[type="submit"]:focus,
+body button[type="submit"]:hover,
+body button[type="submit"]:visited {
+  background-color: $whitelabel-primary !important;
+  color: $whitelabel-button-text;
+
+  span {
+    font-size: 1rem;
+    font-weight: $button-weight;
+  }
+}
+
+body .button:hover,
+body button:hover,
+body button[type="button"]:hover,
+body button[type="reset"]:hover,
+body button[type="submit"]:hover {
+  background-color: $whitelabel-button-bg-hover;
+  color: $whitelabel-button-text-hover;
+}
+
+body .button:active,
+body button:active,
+body button[type="button"]:active,
+body button[type="reset"]:active,
+body button[type="submit"]:active {
+  background-color: $whitelabel-button-bg-click;
+  color: $whitelabel-button-text-click;
+}
+
+body .button[disabled],
+body button[disabled],
+body button[type="button"][disabled],
+body button[type="reset"][disabled],
+body button[type="submit"][disabled] {
+  //color: #9b9b9b !important;
+  background: #b8b8b8 !important;
+  opacity: 1;
+}
+
+body .button-tertiary button,
+body .button-tertiary button[type="button"],
+body .button-tertiary button[type="reset"],
+body .button-tertiary button[type="submit"] {
+  background-color: transparent !important;
+  color: $whitelabel-primary !important;
+}
+
+body .button-simple button,
+body .button-simple button[type="button"],
+body .button-simple button[type="reset"],
+body .button-simple button[type="submit"] {
+  background-color: transparent !important;
+  color: $whitelabel-primary !important;
+}
+
+body .button-simple.button-simple-inline {
+  background-color: transparent !important;
+  color: $whitelabel-primary !important;
+
+  span {
+    font-weight: $button-weight;
+  }
+}
+
+body .button-outline button,
+body .button-outline button[type="button"],
+body .button-outline button[type="reset"],
+body .button-outline button[type="submit"]
+ {
+  background-color: transparent !important;
+  border: 1px solid $whitelabel-primary !important;
+  color: $whitelabel-primary !important;
+}
+
+body .button-outline button:hover,
+body .button-outline button:active,
+body .button-outline button:focus,
+body .button-outline button:visited,
+body .button-outline button[type="button"]:hover,
+body .button-outline button[type="button"]:active,
+body .button-outline button[type="button"]:focus,
+body .button-outline button[type="button"]:visited,
+body .button-outline button[type="reset"]:hover,
+body .button-outline button[type="reset"]:active,
+body .button-outline button[type="reset"]:focus,
+body .button-outline button[type="reset"]:visited,
+body .button-outline button[type="submit"]:hover,
+body .button-outline button[type="submit"]:active,
+body .button-outline button[type="submit"]:focus,
+body .button-outline button[type="submit"]:visited {
+  background-color: $whitelabel-primary !important;
+  border: 1px solid $whitelabel-primary !important;
+  color: $whitelabel-button-text-hover !important;
+}
+
+body button.tab-toggle {
+  background: transparent !important;
+}
+
+body .button-grid-element button,
+body .button-grid-element button,
+body .button-grid-element button[type="button"],
+body .button-grid-element button[type="reset"],
+body .button-grid-element button[type="submit"] {
+  background-color: white;
+  background-image: url("#{$get-path-to-assets}/icon-chevron-right.svg");
+  background-repeat: no-repeat;
+
+  &:hover {
+    border: 1px solid $whitelabel-primary !important;
+    color: black;
+  }
+}
+
+body .template .input-file-upload-container .input-file-upload-buttons button { 
+  border: 1px solid $whitelabel-primary;
+  background: transparent;
+  label {
+    color: $whitelabel-primary;
+  }
+}
+
+body .button-grid-element.button-grid-element-image button {
+  background-position: center left 24px;
+  background-repeat: no-repeat;
+}
+
+body .button-grid-element.button-grid-element-image button div p {
+  color: #757575;
+}
+
+body .button-grid-element.button-grid-element-image button:hover {
+  border: 1px solid $whitelabel-primary !important;
+}
+
+@media only screen and (max-width: 39.9375em) {
+  body {
+    .site-transfers a.button-simple.columns[data-role="add-payee"],
+    .site-refer-and-earn a.button-simple.columns[data-role="add-payee"],
+    .site-page-profile a.button-simple.columns[data-role="add-payee"],
+    .site-page-dashboard a.button-simple.columns[data-role="add-payee"],
+    .site-rate-alerts a.button-simple.columns[data-role="add-payee"], 
+    .modal-make-transfer-show-details a.button-simple.columns[data-role="add-payee"],
+    .button-simple.button-outline-mobile {
+      border: 1px solid $whitelabel-primary;
+    }
+  }
+
+  .site-page-dashboard.template.template-core .row .columns .row .table-your-recipients { margin-top: -20px !important; }
+  .template.template-core .dashboard-account-alerts { padding-top: 0; margin-top: -10px; }
+}
+
+@media (max-width: 1023px) {
+  .filter-container .button-simple {
+    background-color: $whitelabel-primary !important
+  }  
+}
+
+
+body .footer-help .footer-help-toggle {
+  background-color: $whitelabel-primary !important;
+  
+  span {
+    color: white;
+    vertical-align: top;
+  }
+  
+}
+
+body .section.content .callout header.main-header .description strong {
+  color: $whitelabel-primary;
+}
+// STATUS NOTIFICATIONS
+body {
+  .status-notification {
+    background-color: $whitelabel-primary;
+
+    &.status-notification-announcement {
+      background-color: darken( $whitelabel-primary, 10% );
+    }
+    
+    .button-outline button {
+      border: 1px solid #fff !important;
+      span {
+        color: #fff;
+      }
+      &:hover {
+        background: #fff !important;
+        border: 1px solid #fff !important;
+        font-size: 14px !important;
+        span {
+          color: $whitelabel-primary;
+          font-size: 14px !important;
+        }
+      }
+    }
+  }
+}
+
+body {
+  .loader .internal-circle,
+  .loader .external-circle {
+    stroke: $whitelabel-primary;
+  }
+}
+
+body {
+  .switch-field {
+    input:checked + label {
+      border: 1px solid $whitelabel-primary;
+    }
+    label {
+      &:hover {
+        border: 1px solid $whitelabel-primary;
+      }
+    }
+  }
+}
+
+body {
+  
+  .select2.select2-container.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    background-image: url("#{$get-path-to-assets}/ic-chevron-down.svg") !important;
+  }
+  
+  .select2 .select2-selection__rendered { 
+    //font-weight: $title-weight !important;
+  }
+  
+}
+
+body {
+  
+  th .currency {
+    color: $whitelabel-primary;
+  }
+}
+
+.template .input-file-upload-container .input-file-upload-buttons div.button {
+  background-color: #fff !important;
+
+  input[type="file"] {
+    border-color: $whitelabel-primary;
+  }
+
+  label {
+    color: $whitelabel-primary;
+  }
+}
+
+.img-email, .img-email-2 {
+  height: 70px;
+  width: 70px;
+  background-image: url(#{$get-path-to-assets}/ic-email.svg);
+}
+
+.status-notification.status-notification-general {
+  background-color: $whitelabel-primary;
+}
+
+.template.template-pin .status-notification p {
+    background-image: url(#{$get-path-to-assets}/ico-navbar-security-questions.svg);
+}
+
+.template.site-page-dashboard .button-grid-element button {
+  background-color: #fff !important;
+}
+
+.site-page-dashboard .button-add-a-payee-quick .button:hover {
+  color: #fff !important; 
+}
+
+html .main-container aside.transfers-summary .transfers-edit-button { color: #fff !important; }
+
+html .main-container aside.transfers-summary {
+  .element-group {
+    background-color: $whitelabel-secondary;
+  }
+
+  .transfers-summary-sub-title.columns { color: #fff; }
+
+  .transfers-summary-selected-payee {
+    background-color: #514d73;
+
+    .transfers-summary-full-name span:first-child {
+      color: #fff;
+    }
+  }  
+
+  table.table-summary tbody {
+    background-color: #514d73;
+
+    td, td:nth-child(odd) { color: #fff; }
+
+    tr td span { border-color: $whitelabel-secondary !important; }
+  }
+}
+
+body .template.template-core nav.main-nav .user-profile {
+   background-color: transparent; 
+
+   .user-profile-name { color: #fff; }
+
+   &.open { background-color: #fff; 
+
+    .user-profile-name { color: $whitelabel-primary; }
+
+   }
+}
+
+nav.main-nav .mobile-menu-toggle--container { right: 8px; }
+
+
+.minus {
+  background-image: url("#{$get-path-to-assets}/ic-remove.svg");
+}
+
+.plus {
+  background-image: url("#{$get-path-to-assets}/ic-add.svg");
+}
+
+html body .template.template-maintenance nav.main-nav .brand-logo-container {  
+  .brand-logo  { 
+    width: 190px!important;
+
+    &:before { 
+      width: 100% !important;
+      background-size: 130px !important;
+    }
+  }
+}
+
+
+@keyframes flash {
+  20% {
+    background: #afacc5;
+    color: $whitelabel-secondary; } 
+  }
+
+@keyframes flashExtra-1 {
+  20% {
+    border-color: #514d73  !important; } 
+  }

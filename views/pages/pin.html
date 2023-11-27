@@ -1,0 +1,141 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Pin',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-layout-centered', 
+				'template-registration',
+				'template-pin'
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-simple.html', {
+		loggedIn: false,
+		registrationProcess: false,
+		closeOpt: true
+		}
+	);
+%>
+
+<nav class="status-notification status-notification-general">
+	<div class="row">
+		<p class="columns medium-7 large-8">
+			<strong>Hi $First name, last name$, it seems that you have not set-up your security questions yet.</strong><br>
+			Please try to enter a 5-digit PIN code instead or call us now <br class="show-for-small-only"><strong>1800 291 073.</strong>
+		</p>
+
+		<div class="columns medium-4 large-3 button-outline">
+			<button type="button" class="columns button" data-hyperlink="">
+				<span>
+					Or request call back
+				</span>
+			</button>
+		</div>
+		<div class="columns medium-1">
+			<a class="close"  href="#" data-role="close">
+				<span>Close</span>
+			</a>
+		</div>
+	</div>
+</nav>
+
+<div class="row main-container">
+	<section class="large-5 medium-7 small-centered section content">
+		<form class="callout" data-abide>
+			<header class="main-header columns">
+				<h1 class="title">
+					Enter your PIN code
+				</h1>
+				<p class="description">
+					We've sent you a 5-digit PIN code.<br>Please enter it <strong>within 60 minutes</strong> to log in.
+				</p>
+			</header>
+
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-number.html',
+						{
+							assoc: 'pin-number',
+							labelText: 'Your one-time PIN code',
+							max: '4',
+							classList: [
+								'columns'
+							]
+						}
+					);
+				%>
+			</fieldset>
+
+			<fieldset class="row">
+				<p class="columns text-left">
+					<a href="/whitelabel/password/forgotten/">
+						Send me a new code
+					</a>
+				</p>
+			</fieldset>
+
+
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Log in',
+							classList: [
+								'small-12'
+							],
+							dataAttr: {
+								'data-hyperlink': '/whitelabel/dashboard/'
+							}
+						}
+					)
+				%>
+			</fieldset>
+		</form>
+
+		<br class="show-for-medium-up">
+
+		<div class="row">
+			<p class="columns medium-6">
+				Or verify your identity with your security answers.
+				<a class="tooltip-popup" href="#" title="Help keep the bad guys out of your account by using both your password and a security question. If you have not done so already, you need to first set-up your security questions in your account settings. That way you add an extra layer of security to your account for future verification requests."></a>
+			</p>
+
+			<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Answer questions',
+							classList: [
+								'medium-6',
+								'button-outline'
+							],
+							dataAttr: {
+								'data-hyperlink': '/whitelabel/security-questions/'
+							}
+						}
+					)
+				%>
+		</div>
+	</section>
+</div>
+
+
+
+
+
+<%-
+  include('../partials/footer.html');
+%>
+
+

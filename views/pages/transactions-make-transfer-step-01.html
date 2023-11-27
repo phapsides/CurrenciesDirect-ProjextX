@@ -1,0 +1,426 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Transactions - Make Transfer Step 1',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-01'
+			]
+		}
+	);
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Choose recipient', state: 'active', href: '/whitelabel/transactions/make-transfer/1/' },
+				{ title: 'Transfer details', state: '', href: '/whitelabel/transactions/make-transfer/2/'  },
+				{ title: 'Payment', state: '', href: '/whitelabel/transactions/make-transfer/3/' },
+				{ title: 'Confirm transfer', state: '', href: '/whitelabel/transactions/make-transfer/4/'  }
+			],
+
+			backURL: '/whitelabel/transactions/make-transfer/0/',
+			
+			registrationProcess: false
+		}
+	);
+%>
+
+
+
+<div class="row main-container">
+	<div class="row">
+		<header class="large-8 main-header columns">
+			<h1 class="title">
+				Make a transfer
+			</h1>
+			<p class="information">
+				Start your transfer by selecting a recipient - this is the person you're sending currency to (this can be your own bank account).
+			</p>
+		</header>
+	</div>
+
+	<div class="row">
+		<div class="columns">
+			<form class="element-group element-group-table table-your-recipients">
+				<div class="row">
+					<div class="columns table-container">
+						<table class="table row" id="table-recipients">
+							<thead>
+								<tr class="row">
+									<th>
+										<span>Name</span>
+									</th>
+									<th>
+										<span class="">Country</span>
+									</th>
+									<th class="table-td-card-number">
+										<span>Currency</span>
+									</th>
+									<th>
+										<span>Account no./IBAN</span>
+									</th>
+									<th>
+										<!--  -->
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="row">
+									<td class="table-td-name">
+										<span>Captain America</span>
+									</td>
+									<td class="table-td-country">
+										<span>United States</span>
+									</td>
+									<td class="table-td-currency">
+										<span class="currency usd">USD</span>
+									</td>
+									<td class="table-td-card-number">
+										<span>4567********1234</span>
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<!-- href="#?clientId=currencies-direct" -->
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="transactions-make-transfer-show-details" aria-controls="transactions-make-transfer-show-details" aria-haspopup="true">
+												<span>Show details</span>
+											</a>
+											<!-- MODAL -->
+											<a class="button-simple button-simple-inline" href="#" data-role="" data-open="transactions-needs-address" aria-controls="transactions-needs-address" aria-haspopup="true">
+												<span>Select</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr class="row">
+									<td class="table-td-name">
+										<span>Harry Potter</span>
+									</td>
+									<td class="table-td-country">
+										<span>United Kingdom</span>
+									</td>
+									<td class="table-td-currency">
+										<span class="currency gbp">GBP</span>
+									</td>
+									<td class="table-td-card-number">
+										<span>4567********1234</span>
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<!-- href="#?clientId=currencies-direct" -->
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="transactions-make-transfer-show-details" aria-controls="transactions-make-transfer-show-details" aria-haspopup="true">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/">
+												<span>Select</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr class="row">
+									<td class="table-td-name">
+										<span>Don Quixote</span>
+									</td>
+									<td class="table-td-country">
+										<span>Spain</span>
+									</td>
+									<td class="table-td-currency">
+										<span class="currency eur">EUR</span>
+									</td>
+									<td class="table-td-card-number">
+										<span>4567********1234</span>
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<!-- href="#?clientId=currencies-direct" -->
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="transactions-make-transfer-show-details" aria-controls="transactions-make-transfer-show-details" aria-haspopup="true">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/">
+												<span>Select</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+
+								<tr class="row hide">
+									<td class="table-td-name">
+										<span>Captain America</span>
+									</td>
+									<td class="table-td-country">
+										<span>United States</span>
+									</td>
+									<td class="table-td-currency">
+										<span class="currency usd">USD</span>
+									</td>
+									<td class="table-td-card-number">
+										<span>4567********1234</span>
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<!-- href="#?clientId=currencies-direct" -->
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="transactions-make-transfer-show-details" aria-controls="transactions-make-transfer-show-details" aria-haspopup="true">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/">
+												<span>Select</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr class="row hide">
+									<td class="table-td-name">
+										<span>Harry Potter</span>
+									</td>
+									<td class="table-td-country">
+										<span>United Kingdom</span>
+									</td>
+									<td class="table-td-currency">
+										<span class="currency gbp">GBP</span>
+									</td>
+									<td class="table-td-card-number">
+										<span>4567********1234</span>
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<!-- href="#?clientId=currencies-direct" -->
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="transactions-make-transfer-show-details" aria-controls="transactions-make-transfer-show-details" aria-haspopup="true">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/">
+												<span>Select</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr class="row hide">
+									<td class="table-td-name">
+										<span>Don Quixote</span>
+									</td>
+									<td class="table-td-country">
+										<span>Spain</span>
+									</td>
+									<td class="table-td-currency">
+										<span class="currency eur">EUR</span>
+									</td>
+									<td class="table-td-card-number">
+										<span>4567********1234</span>
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<!-- href="#?clientId=currencies-direct" -->
+											<a class="button-simple button-simple-inline" href="#" data-role="table-show-details" data-open="transactions-make-transfer-show-details" aria-controls="transactions-make-transfer-show-details" aria-haspopup="true">
+												<span>Show details</span>
+											</a>
+											<a class="button-simple button-simple-inline" href="/whitelabel/transactions/make-transfer/2/">
+												<span>Select</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="row">
+					<a class="medium-6 float-right columns button-simple button-simple-inline" href="#" data-role="show-more" data-section="table-recipients" data-number="2">
+						<span>Show more</span>
+					</a>
+
+					<a class="medium-6 large-4 end columns button-simple button-simple-inline" href="/whitelabel/recipients/manage/add/" data-role="add-payee">
+						<span>Add a new recipient</span>
+					</a>
+					
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>
+
+
+
+<!-- Begin modal -->
+<div class="reveal modal-container row" id="transactions-make-transfer-show-details" data-reveal>
+	<div class="modal-frame clearfix columns">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-role="modal-close" data-close>Close</span>
+			<h4>Alberto Gonazles</h4>
+		</header>
+		<div class="modal-content modal-content--modified">
+			<fieldset class="row">
+				<div class="form-field--container currency gbp input-container columns small-label">
+					<input id="phonenumber" value="+44 1234 45 6979" readonly="" type="email">
+					<label for="phonenumber" class="shrink">
+						Phone number
+					</label>
+				</div>
+			</fieldset>
+			<fieldset class="row">
+				<div class="form-field--container input-container columns small-label">
+					<input id="emailaddress" value="Alberto.gonzales@gmail.com" readonly="" type="email">
+					<label for="emailaddress" class="shrink">
+						Email address
+					</label>
+				</div>
+			</fieldset>
+			<fieldset class="row">
+				<div class="form-field--container input-container columns small-label">
+					<input id="country" value="Germany" readonly="" type="text">
+					<label for="country" class="shrink">
+						Country
+					</label>
+				</div>
+			</fieldset>
+			<fieldset class="row">
+				<div class="form-field--container input-container columns small-label">
+					<input id="currency" value="EUR" readonly="" type="text">
+					<label for="currency" class="shrink">
+						Currency
+					</label>
+				</div>
+			</fieldset>
+			<fieldset class="row">
+				<div class="form-field--container input-container columns small-label">
+					<input id="accountno" value="DE7612030000019975687" readonly="" type="text">
+					<label for="accountno" class="shrink">
+						Account no
+					</label>
+				</div>
+			</fieldset>
+			<fieldset class="row">
+				<div class="form-field--container input-container columns small-label">
+					<input id="sortcode" value="BYLADEM1001" readonly="" type="text">
+					<label for="sortcode" class="shrink">
+						Sort code
+					</label>
+				</div>
+			</fieldset>
+			<fieldset class="row">
+				<div class="form-field--container input-container columns small-label">
+					<input id="bankname" value="DEUTSCHE KREDIT BANK A.G. BERLIN" readonly="" type="text">
+					<label for="bankname" class="shrink">
+						Bank name
+					</label>
+				</div>
+			</fieldset>
+			<fieldset class="row">
+				<div class="form-field--container input-container columns small-label">
+					<input id="bankaddress" value="Gonzales" readonly="" type="text">
+					<label for="bankaddress" class="shrink">
+						Bank address
+					</label>
+				</div>
+			</fieldset>
+			<fieldset class="row">
+				<div class="form-field--container input-container columns small-label">
+					<input id="note" value="" readonly="" type="text">
+					<label for="note" class="shrink">
+						Alias
+					</label>
+				</div>
+			</fieldset>
+			<fieldset class="row">
+				<div class="form-field--container input-container columns small-label">
+					<input id="recipientreference" value="Storm Rechnung" readonly="" type="text">
+					<label for="recipientreference" class="shrink">
+						Recipient reference
+					</label>
+				</div>
+			</fieldset>
+		</div>
+	</div>
+</div>
+<!-- End modal -->
+<!-- Begin modal -->
+<div class="reveal modal-container row" id="transactions-needs-address" data-reveal>
+	<div class="modal-frame clearfix columns">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-role="modal-close" data-close>Close</span>
+			<h4>Add Recipient's address</h4>
+		</header>
+		<div class="modal-content modal-content--modified">
+			<div class="row">
+				<div class="column">
+					<p>To make a transfer please add the recipient's address.</p>
+				</div>
+				<fieldset class="row">
+
+					<%-
+						include(
+							'../components/textarea.html',
+							{
+								assoc: 'recipient-address-details',
+								labelText: 'Address',
+								classList: [
+									'columns',
+									'small-label'
+								]
+							}
+						);
+					%>
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'county',
+								labelText: 'County',
+								classList: [
+									'columns'
+								]
+							}
+						);
+					%>
+					<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'postcode-search',
+									labelText: 'Postal code / ZIP code',
+									classList: [
+										'columns'
+									]
+								}
+							);
+						%>
+				</fieldset>
+				<div class="row">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'button',
+								text: 'Confirm',
+								classList: [
+									'large-offset-2',
+									'large-8',
+									'end'
+								],
+								dataAttr: {
+									'data-hyperlink': '#'
+								}
+							}
+						)
+					%>
+				</div>		
+			</div>			
+		</div>
+	</div>
+</div>
+<!-- End modal -->
+
+
+
+
+
+<%-
+  include('../partials/footer.html');
+%>
+

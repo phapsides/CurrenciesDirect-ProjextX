@@ -1,0 +1,185 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Rate Alerts - View/edit',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'site-rate-alerts'
+			]
+		}
+	);
+%>
+
+	<%- 
+		include(
+			'../components/navigation-main.html', {
+				navigationOptions: [
+					{ 
+						title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+						subMenu: [
+							{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+							{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+							{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+							{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+						] 
+					},
+					{ title: 'Rate alerts', class: 'menu-item-alerts active', href: '/whitelabel/rate-alerts/management/' },
+					{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+					{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+					{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+				]
+			}
+		) 
+	%>
+
+
+	<div class="row main-container">
+		<div class="large-8 medium-12 columns">
+			<header class="main-header">
+				<h1 class="title">
+					Edit your rate alert
+				</h1>
+				<p class="end information">
+					You can change your rate alert details and notification preference here.
+				</p>
+			</header>
+			<div class="row">
+
+				<form class="formNoBorder">
+					<div class="columns element-group">
+
+						<header class="element-group-header row">
+							<h5 class="small-8 columns end element-group-title">
+								Select currencies
+							</h5>
+						</header>
+
+						<fieldset class="row">
+							<div class="medium-8 columns select-container">
+								<select id="title">
+									<option selected disabled hidden>&nbsp;</option>
+									<option value="GB">GBP - Pounds sterling</option>
+									<option value="US">EUR - Euro</option>
+									<option value="US">USD - US Dollar</option>
+									<option value="US">ZAR - South African rand</option>
+								</select>
+								<label for="title">
+									I intend to buy
+								</label>
+							</div>
+						</fieldset>
+						<fieldset class="row">
+							<div class="medium-8 columns select-container">
+								<select id="title-01">
+									<option selected value="AU">AUD - Australian Dollar</option>
+									<option value="GB">GBP - Pounds sterling</option>
+									<option value="US">EUR - Euro</option>
+									<option value="US">USD - US Dollar</option>
+									<option value="US">ZAR - South African rand</option>
+								</select>
+								<label for="title-01">
+									I intend to sell
+								</label>
+							</div>
+						</fieldset>
+
+						<hr>
+
+						<fieldset class="row">
+							<div class="medium-8 columns select-container">
+								<select id="title-02">
+									<option selected disabled hidden>&nbsp;</option>
+									<option value="GB">Email &amp; SMS</option>
+									<option value="US">Email only</option>
+									<option value="US">SMS only</option>
+								</select>
+								<label for="title-02">
+									Alert me via
+								</label>
+							</div>
+						</fieldset>
+
+
+						<fieldset class="row">
+							<%-
+								include(
+									'../components/input-type-text.html',
+									{
+										assoc: 'firstname',
+										labelText: 'Email address',
+										value: 'alberto@fiftysprints.co',
+										classList: [
+											'medium-8',
+											'end',
+											'columns',
+											'small-label'
+										]
+									}
+								);
+							%>								
+						</fieldset>
+
+
+						<fieldset class="row">
+							<%-
+								include(
+									'../components/input-type-number.html',
+									{
+										assoc: 'firstname',
+										labelText: 'Mobile number',
+										value: '07913371337',
+										classList: [
+											'medium-8',
+											'end',
+											'columns',
+											'small-label'
+										]
+									}
+								);
+							%>								
+						</fieldset>
+
+						<fieldset class="row">
+							<div class="medium-8 columns select-container">
+								<select id="title-03">
+									<option selected disabled hidden>&nbsp;</option>
+									<option value="GB">Once my target rate is reached</option>
+									<option value="US">On specific date</option>
+								</select>
+								<label for="title-03">
+									Expire my alert
+								</label>
+							</div>
+						</fieldset>
+					</div>
+
+					<fieldset class="row collapse">
+						<div class="columns medium-3 medium-offset-9">
+							<button type="submit" class="columns button" data-hyperlink="/whitelabel/rate-alerts/management/#rate-alert-updated">
+								<span>
+									Update
+								</span>
+							</button>
+						</div>
+					</fieldset>
+
+				</form>
+
+			</div>
+
+
+		</div>
+	</div>
+
+
+
+  <%-
+    /* Sitewide JS */
+    include('../partials/footer.html');
+  %>
+
+
+
+	</body>
+</html>

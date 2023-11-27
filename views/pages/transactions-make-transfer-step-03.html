@@ -1,0 +1,214 @@
+
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Transactions - Make Transfer Step 3',
+				bodyClassList: [
+					'template',
+					'template-core', 
+					'template-navigation-progress',
+					'site-transfers',
+					'site-transfers-03'
+				]
+			}
+		);
+	%>
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Choose recipient', state: 'complete', href: '/whitelabel/transactions/make-transfer/1/' },
+				{ title: 'Transfer details', state: 'complete', href: '/whitelabel/transactions/make-transfer/2/' },
+				{ title: 'Payment', state: 'active', href: '/whitelabel/transactions/make-transfer/3/' },
+				{ title: 'Confirm transfer', state: '', href: '/whitelabel/transactions/make-transfer/4/' }
+			],
+
+			backURL: '/whitelabel/transactions/make-transfer/0/',
+			
+			registrationProcess: false
+		}
+	);
+%>
+
+<nav class="status-notification status-notification-success hide">
+	<div class="row">
+		<p class="small-12 columns">
+			<span>
+				You card has successfully been added.
+			</span>
+		</p>
+	</div>
+</nav>
+
+<div class="row main-container">
+	<div class="row">
+		<header class="large-8 medium-7 main-header columns">
+			<h1 class="title">
+				How would you like to pay?
+			</h1>
+			<p class="description">
+				Please select a payment method for this transfer.
+			</p>
+		</header>
+	</div>
+	<div class="row">
+		<div class="large-8 medium-7 columns" id="sticky-anchor">
+			<form class="formNoBorder" data-abide>
+
+				<div class="element-group">
+
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/select.html',
+								{
+									assoc: 'transfer-details-reason-for-transfer-a0',
+									text: 'Payment method',
+									containerClassList: [
+										'large-8',
+										'medium-12'
+									],
+
+									options: [
+
+										{ value: 'a1', text: 'Debit card' },
+										{ value: 'a2', text: 'Bank transfer' },
+										{ value: 'a5', text: 'EUR Wallet (balance: 300405.20)' },
+										
+									]
+								}
+							);
+						%>
+					</fieldset>
+
+
+					<div class="row">
+						<p class="columns">
+							Simply make a transfer from your bank into our account, using telephone or internet banking. Our bank details are on the next page.
+						</p>
+					</div>
+
+
+					<div class="row option-toggle option-a-group option-a5">
+						<p class="columns">
+							Copy for the wallet option
+						</p>
+					</div>
+				</div>
+
+				<div class="row collapse">
+					<%-
+						include(
+							'../components/button.html',
+							{
+								type: 'button',
+								text: 'Continue',
+								classList: [
+									'medium-4',
+									'medium-offset-8',
+									'end',
+									'temp-btn-continue'
+								],
+								dataAttr: {
+									'data-hyperlink': '/whitelabel/transactions/make-transfer/4/',
+									'data-role': 'button-continue'
+								},
+							}
+						)
+					%>
+				</div>
+
+			</form>
+			
+		</div>
+
+		<div class="large-4 medium-5 columns">
+			<div data-sticky-container>
+				<aside class="transfers-summary sticky" data-sticky  data-margin-top="6" data-top-anchor="sticky-anchor:top">
+					<div class="row">
+						<div class="element-group columns">
+							<div class="row">
+								<h5 class="columns transfers-summary-title">
+									Transfer summary
+								</h5>
+								<h6 class="small-6 columns transfers-summary-sub-title">
+									Recipient
+								</h6>
+								<a  class="transfers-edit-button" href="/whitelabel/transactions/make-transfer/1/?clientId=currencies-direct">Edit</a>
+								<div class="columns transfers-summary-selected-payee">
+									<div class="transfers-summary-initials">
+										<span>DQ</span>
+									</div>
+									<div class="transfers-summary-full-name">
+										<span>
+											Don Quixote
+										</span>
+										<span>
+											ES1182271MIFLGB221
+										</span>
+									</div>
+								</div>
+
+								<h6 class="small-6 columns transfers-summary-sub-title">
+									Transfer amount
+								</h6>
+								<a  class="transfers-edit-button" href="/whitelabel/transactions/make-transfer/1/?clientId=currencies-direct">Edit</a>
+
+								<table class="table-summary">
+									<thead></thead>
+									<tbody>
+										<tr>
+											<td><span>Sending</span></td>
+											<td><span>EUR 11456</span></td>
+										</tr>
+										<tr>
+											<td><span>Rate</span></td>
+											<td><span>1.1456</span></td>
+										</tr>
+										<tr>
+											<td><span>Fee</span></td>
+											<td><span>GBP 0</span></td>
+										</tr>
+										<tr>
+											<td><span>Total you pay</span></td>
+											<td><span>GBP 1000</span></td>
+										</tr>
+									</tbody>
+								</table>
+
+								<h6 class="columns transfers-summary-sub-title sub-title-refresh">
+									Your rate will refresh in <span data-rate-refresh>5 seconds</span>
+									<a class="tooltip-popup" href="#" title="We will hold this rate for you for 60 seconds, but as the markets are always moving, we need to periodically update the exchange rate we offer."></a>
+								</h6>
+
+							</div>
+						</div>
+					</div>
+				</aside>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+<!-- Begin modal -->
+<%-
+	include(
+		'../partials/modal-add-card.html', {}
+	);
+%>
+<!-- End modal -->
+
+
+
+
+<%-
+  include('../partials/footer.html');
+%>

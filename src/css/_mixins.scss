@@ -1,0 +1,109 @@
+/**
+ * Mixins
+ * http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+ */
+
+
+@mixin linear-gradient($start, $end) {
+	background-image: -ms-linear-gradient(left, $start 0%, $end 100%); 													// Internet Explorer
+	background-image: -moz-linear-gradient(left, $start 0%, $end 100%); 												// Firefox
+	background-image: -o-linear-gradient(left, $start 0%, $end 100%); 													// Opera
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0, $start), color-stop(100, $end)); 		// Webkit - Safari/Chrome 10
+	background-image: -webkit-linear-gradient(left, $start 0%, $end 100%); 												// Webkit - Chrome 11+
+	background-image: linear-gradient(to right, $start 0%, $end 100%);
+}
+
+
+
+// Keyframe Animations
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes $animation-name {
+		@content;
+	}
+	@-moz-keyframes $animation-name {
+		@content;
+	}
+	@-ms-keyframes $animation-name {
+		@content;
+	}
+	@-o-keyframes $animation-name {
+		@content;
+	}
+	@keyframes $animation-name {
+		@content;
+	}
+}
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+}
+/*
+@include keyframes(slide-down) {
+  0% { opacity: 1; }
+  90% { opacity: 0; }
+}
+.element {
+  width: 100px;
+  height: 100px;
+  background: black;
+  @include animation('slide-down 5s 3');
+}
+ */
+
+
+
+/* Transitions */
+@mixin transition($args) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+/*
+@include transition(color .3s ease);
+ */
+
+
+
+/* Transform */
+@mixin transform($args) {
+	-webkit-transform: $args;
+	-moz-transform: $args;
+	-ms-transform: $args;
+	-o-transform: $args;
+	transform: $args;
+}
+/*
+@include transform(color .3s ease);
+ */
+
+
+
+
+
+/* Accessibility */
+
+/* Visually Hidden */
+%visuallyhidden {
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	position: absolute;
+}
+/*
+<button class="mobile-navigation-trigger">
+	<b class="visually-hidden">Open the navigation</b>
+	<img src="img/mobile-navigation-icon.svg">
+</button>
+.visually-hidden {
+	@extend %visuallyhidden;
+}
+ */

@@ -1,0 +1,263 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Rate Alerts - Management',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-rate-alerts',
+				'site-rate-alerts-01'
+			]
+		}
+	);
+%>
+
+
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts active', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+
+<nav class="status-notification status-notification-success">
+	<div class="row">
+		<div class="columns">
+			<p>
+				Thanks, your rate alert has been added successfully.
+			</p>
+		</div>
+	</div>
+</nav>
+
+
+
+<div class="row main-container">
+	<div class="row">
+		<header class="main-header columns">
+			<h1 class="title">Rate alerts</h1>
+		</header>
+	</div>
+	<div class="row">
+		<div class="columns">
+
+			<div class="small-columns element-group element-group-table table-your-recipients">
+				<header class="element-group-header row">
+					<h5 class="small-8 columns end element-group-title">
+						Active rate alerts
+					</h5>
+					<p class="small-11 medium-10 end columns title">
+						Our rate alert service will notify you by email or SMS once your target exchange rate is reached.
+					</p>
+				</header>
+
+				<hr class="show-for-medium-up">
+
+				<div class="row">
+					<div class="columns table-container">
+						<table class="table row">
+							<thead>
+								<tr class="row">
+									<th>Created</th>
+									<th>Selling</th>
+									<th>Buying</th>
+									<th>Target rate</th>
+									<th>Current rate</th>
+									<th>Expires</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="row">
+									<td class="table-td-payee">
+										27/08/15
+									</td>
+									<td class="table-td-currency">
+										<span class="currency gbp">GBP</span>
+										&nbsp;7,750
+									</td>
+									<td class="table-td-currency">
+										<span class="currency usd">USD</span>
+									</td>
+									<td>
+										1.4
+									</td>
+									<td>
+										1.374
+									</td>
+									<td>
+										Rate hit
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<a class="button-simple button-simple-inline" href="/whitelabel/rate-alerts/management/view-edit/" data-role="table-show-details">
+												<span>Edit</span>
+											</a>
+											<!-- TODO: Change data-open name -->
+											<a class="button-simple button-simple-x button-simple-inline" href="#" data-index-link="ManageRecipientsDelete" data-open="manage-recipients-delete">
+												<span>x</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr class="row">
+									<td class="table-td-payee">
+										27/08/15
+									</td>
+									<td class="table-td-currency">
+										<span class="currency usd">USD</span>
+									</td>
+									<td class="table-td-currency">
+										<span class="currency gbp">GBP</span>
+										&nbsp;400
+									</td>
+									<td>
+										1.4
+									</td>
+									<td>
+										1.243
+									</td>
+									<td>
+										27/08/15
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<a class="button-simple button-simple-inline" href="/whitelabel/rate-alerts/management/view-edit/" data-role="table-show-details">
+												<span>Edit</span>
+											</a>
+											<!-- TODO: Change data-open name -->
+											<a class="button-simple button-simple-x button-simple-inline" href="#" data-index-link="ManageRecipientsDelete" data-open="manage-recipients-delete">
+												<span>x</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr class="row">
+									<td class="table-td-payee">
+										27/08/15
+									</td>
+									<td class="table-td-currency">
+										<span class="currency gbp">GBP</span>
+										&nbsp;15,750
+									</td>
+									<td class="table-td-currency">
+										<span class="currency usd">USD</span>
+									</td>
+									<td>
+										1.4
+									</td>
+									<td>
+										1.522
+									</td>
+									<td>
+										Rate hit
+									</td>
+									<td class="table-td-options">
+										<div class="table-button-options">
+											<a class="button-simple button-simple-inline" href="/whitelabel/rate-alerts/management/view-edit/" data-role="table-show-details">
+												<span>Edit</span>
+											</a>
+											<!-- TODO: Change data-open name -->
+											<a class="button-simple button-simple-x button-simple-inline" href="#" data-index-link="ManageRecipientsDelete" data-open="manage-recipients-delete">
+												<span>x</span>
+											</a>
+										</div>
+									</td>
+								</tr>
+
+
+							</tbody>
+						</table>
+					</div>
+
+					<div class="columns end">
+
+						<a class="small-12 button-simple button-simple-inline button-outline-mobile" href="/whitelabel/rate-alerts/management/new/" data-role="create-rate-alert">
+							<span>Create new rate alert</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<hr class="show-for-small-only">
+
+
+			<div class="row">
+				<div class="small-columns element-group element-group-table table-your-recipients">
+					<header class="element-group-header row">
+						<h5 class="small-8 columns end element-group-title">
+							Rate alert history
+						</h5>
+						<p class="medium-10 end columns title">
+							You currently have no expired or hit rate alerts.
+						</p>
+					</header>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- Start modal -->
+<!-- TODO: Change data-open name -->
+<div class="reveal modal-container row" id="manage-recipients-delete" data-reveal>
+	<div class="modal-frame columns">
+		<header class="modal-header">
+			<span class="button-icon modal-close" aria-label="Close modal" data-close="">
+				Close
+			</span>
+			<h4>Do you want to delete this rate alert?</h4>
+		</header>
+		<div class="modal-content clearfix">
+			<p class="columns">
+				If you delete this rate alert you will no longer receive a notification if your target rate is hit.
+			</p>
+			<%-
+				include(
+					'../components/button.html',
+					{
+						type: 'submit',
+						text: 'Confirm',
+						classList: [ 
+							'large-8',
+							'large-centered'
+						],
+						dataAttr: {
+							'data-role': 'confirm-deletion',
+							'data-hyperlink': '#'
+						}
+					}
+				)
+			%>
+		</div>
+	</div>
+</div>
+<!-- End modal -->
+
+
+
+
+<%-
+  include('../partials/footer.html');
+%>
+

@@ -1,0 +1,45 @@
+<%
+/*
+
+# Input Telephone Component
+
+### Notes
+
+### Usage
+
+# Simple
+include('components/input-type-text.html', assoc: 'phone');
+
+# Verbose
+include(
+	'components/input-type-tel.html',
+	{
+		assoc: 'telelphone-number',
+		pattern: '[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}',
+		value: '01818118181',
+		labelText: 'Number',
+		classList: [
+			'small-12',
+			'columns'
+		],
+		required: false
+	}
+);
+
+*/
+%>
+
+<div class="input-container <%=
+	(typeof classList != 'undefined' ? classList.join(' ') : '')
+%>">
+	<input
+		type="tel"
+		id="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>"
+                pattern="<%= (typeof pattern != 'undefined' ? pattern : '') %>" 
+		value="<%= (typeof value != 'undefined' ? value : '') %>"
+	>
+	<label for="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>">
+		<%= (typeof labelText != 'undefined' ? labelText : '') %>
+	</label>
+</div>
+

@@ -1,0 +1,38 @@
+<%
+/*
+
+# Navigation Main
+
+*/
+%>
+
+
+<nav class="main-nav <%= (typeof registrationProcess != 'undefined' && registrationProcess == true ? 'main-nav-registration' : '') %>">
+	<div class="row">
+		<div class="large-2 medium-2 small-1 columns brand-logo-container">
+			<a class="brand-logo" href="/whitelabel/dashboard/full-state/">
+				<!-- Currencies Direct -->
+			</a>
+		</div>
+		<nav class="large-8 medium-9 small-10 main-progress-nav columns">
+			<ul class="small-12 columns">
+			<% if (typeof progressOptions != 'undefined') { for (key in progressOptions) { %>
+				<li class="<%- progressOptions[key] %>">
+					<a href="#">
+						<%- key %>
+					</a>
+				</li>
+			<% } } %>
+			</ul>
+		</nav>
+
+		<% if (typeof closeOpt != 'undefined') { %>
+			<div class="large-2 medium-1 small-1 columns main-nav-close">
+				<a target="_blank" href="http://www.currenciesdirect.com/">Close</a>
+			</div>
+
+		<% } %>
+
+
+	</div>
+</nav>

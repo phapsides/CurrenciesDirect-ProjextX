@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="16px" viewBox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>6507148E-036B-4D35-BF87-51DBA5A61E68</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="cta-primary-large-active" transform="translate(-172.000000, -22.000000)">
+            <g id="Group-2" transform="translate(170.000000, 6.000000)">
+                <g id="icon-m-next" transform="translate(0.000000, 12.000000)">
+                    <g transform="translate(3.000000, 4.000000)">
+                        <path d="M8.79289322,2.20710678 L15.3120956,8.72630919 C15.7026199,9.11683348 16.3357849,9.11683348 16.7263092,8.72630919 C17.1168335,8.33578489 17.1168335,7.70261992 16.7263092,7.31209562 L10.2071068,0.792893219 C9.81658249,0.402368927 9.18341751,0.402368927 8.79289322,0.792893219 C8.40236893,1.18341751 8.40236893,1.81658249 8.79289322,2.20710678 Z" id="Line" fill="#FFFFFF"></path>
+                        <path d="M10.2071068,15.2071068 L16.7263092,8.68790438 C17.1168335,8.29738008 17.1168335,7.66421511 16.7263092,7.27369081 C16.3357849,6.88316652 15.7026199,6.88316652 15.3120956,7.27369081 L8.79289322,13.7928932 C8.40236893,14.1834175 8.40236893,14.8165825 8.79289322,15.2071068 C9.18341751,15.5976311 9.81658249,15.5976311 10.2071068,15.2071068 Z" id="Line-Copy" fill="#FFFFFF"></path>
+                        <path d="M15.5,8 L0.5,8" id="Line" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Help/FAQ - Proof of concept'
+			}
+		);
+	%>
+
+
+	<body class="template template-core wireframe-transfers">
+
+
+
+
+	<%- 
+		include(
+			'../components/navigation-main.html', {
+				navigationOptions: [
+					{ 
+						title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+						subMenu: [
+							{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+							{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+							{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+							{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+						] 
+					},
+					{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+					{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+					{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+					{ title: 'Recommend us', class: 'menu-item-refer-and-earn', href: '/whitelabel/refer-and-earn/' }
+				]
+			}
+		) 
+	%>
+
+
+
+
+<div class="row main-container main-container--legal-pages">
+	<%- /* include('../components/navigation-sub.html') */ %>
+	<header class="main-header columns">
+		<h1 class="title">
+			Frequently Asked Questions
+		</h1>
+	</header>
+
+	<div class="row">
+		<div class="columns">
+			<div class="element-group">
+
+				<div class="pad--24">
+
+					<p>
+						In case you’re stuck, we’ve listed below a list of our frequently asked questions. <br>
+						Use the search field below to
+						If you can’t find an answer to your question, <br>just get in touch on 1800 291 073 and we’ll be happy to help.
+					</p>
+
+					<div id="search-results">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'fuzzy-search',
+								labelText: 'Search',
+								classList: [
+									'medium-6',
+									'columns',
+									'fuzzy-search'
+								]
+							}
+						);
+					%>
+					<ul class="list small-12 columns">
+						<li>
+							<h4 class="title">
+								How do I make a transfer?
+							</h4>
+							If you want to send money straight away, simply select Make a transfer from your Currency Home, and follow the instructions.
+							If you’d rather buy currency now, to transfer at a later date, select Buy currency.
+							Finally, if you want to transfer currency you’ve already bought, Transfer pre-bought currency.
+						</li>
+						<li>
+							<h4 class="title">
+								I’ve bought currency – now what?
+							</h4>
+								You can leave your currency on your Currencies Direct online account, and transfer it whenever you like. No rush!
+						</li>
+						<li>
+							<h4 class="title">
+								Can I cancel my order?
+							</h4>
+								You can cancel an order – however if we’ve already purchased the currency you may be required to pay any losses that we incur. Please refer to our terms and conditions (section 2) for full details.
+						</li>
+						<li>
+							<h4 class="title">
+								I can’t see currency I’ve bought on my account.
+							</h4>
+								If you’ve bought currency, but haven’t transferred it yet, and it’s not showing in your Currency Home please contact us on 1800 291 073
+						</li>
+						<li>
+							<h4 class="title">
+								I can’t access my account.
+							</h4>
+								One of several things may have happened here:
+								If you’ve just joined, you’ll need to click an activation link that we’ve emailed to you. If you can’t find it, or need a new link, you can request a new one here.
+								If your password is incorrect, head to the Forgotten password page.
+								If you’re accessing your account from a new location, you’ll be required to enter a PIN that we’ll send to your mobile. This is for security, and you can request a new PIN if you need one.
+						</li>
+						<li>
+							<h4 class="title">
+								I’ve forgotten my security answers.
+							</h4>
+								Don’t worry – just give us a call on 1800 291 073. We’ll need to verify your details, and then we can reset your security question answers.
+						</li>
+						<li>
+							<h4 class="title">
+								The exchange rate doesn’t match your website.
+							</h4>
+								Any rates given on our website or by email are indicative, based on the interbank rate. To get a full quote, just log in to your Currencies Direct online account, or call us for a quote.
+						</li>
+						<li>
+							<h4 class="title">
+								Funds I’ve transferred haven’t arrived yet.
+							</h4>
+								It can take 2-3 working days for your currency to arrive, depending on which country you’ve sent it to. You can check the status of your transfer in the Activity history section. If you’re still concerned, or the funds haven’t arrived after a few days, please call us on 1800 291 073 and we’ll get to the bottom of it.
+						</li>
+						<li>
+							<h4 class="title">
+								What’s an IBAN?
+							</h4>
+								The IBAN (International Bank Account Number) is the number of your overseas account. It will vary between banks – it should appear on your statement. If you aren’t sure of the IBAN on your account, your bank should be able to tell you.
+						</li>
+						<li>
+							<h4 class="title">
+									What’s a SWIFT code?
+								</h4>
+							A SWIFT code helps us to identify the bank that you’re transferring money to. It consists of 8 or 11 characters, and you may need to provide this to us to complete your transfer. If you aren’t sure of the SWIFT code for your bank, just get in touch with them and they will be able to help.
+						</li>
+						<li>
+							<h4 class="title">
+								How can I pay funds to Currencies Direct?
+							</h4>
+							You can pay using your debit card, or by making a bank transfer.
+						</li>
+						<li>
+							<h4 class="title">
+								I can’t find a transaction I made in my ‘Activity history’ section.
+							</h4>
+							Any currency that you’ve bought, or transfers you’ve made, should appear in this section. Please contact us on 1800 291 073.
+						</li>
+						<li>
+							<h4 class="title">
+									What do the statuses mean in my ‘Activity history’ section?
+								</h4>
+									<strong>Awaiting funds</strong>
+									We’re waiting for all or part of your funds to arrive with us.
+									<strong>In progress</strong>
+									We’ve received your funds, and the currency is on it’s way to the overseas bank account.
+									<strong>Completed</strong>
+									Your funds have been received, and we’ve transferred the currency to the overseas bank account.
+									<strong>.Cancelled</strong>
+									The contract has been cancelled, and we’re not awaiting for any payment.
+									If your activity does not match the description above, please call us on 1800 291 073 and we’ll investigate this for you.
+						</li>
+						<li>
+							<h4 class="title">
+									What are your opening hours?
+								</h4>
+									Our online money transfer service is available 24/7. However, if you need to contact us by phone on 1800 291 073, our opening hours are Monday - Thursday, 8am - 8pm; Friday, 8am - 7pm; Saturday, 10am - 2pm
+						</li>
+					</ul>
+				</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%-
+  include('../partials/footer.html');
+%>

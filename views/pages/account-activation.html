@@ -1,0 +1,87 @@
+<!doctype html>
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Activate your account online'
+			}
+		);
+	%>
+
+
+	<body>
+		<div class="template template-core template-layout-centered template-registration">
+			<%-
+				include(
+					'../components/navigation-main-simple.html', {
+					loggedIn: false,
+					registrationProcess: false,
+					closeOpt: true
+					}
+				);
+			%>
+
+
+
+			<div class="row main-container">
+				<section class="large-5 medium-7 small-centered section content">
+					<form class="callout" data-abide>
+						<header class="main-header column">
+							<h1 class="title">
+								Activate your account online
+							</h1>
+							<p class="description">
+								To enable your account for our online services, we just need to identify you. Please enter the email address associated with your account.
+							</p>
+						</header>
+						<fieldset class="row">
+							<%-
+								include(
+									'../components/input-type-email.html',
+									{
+										assoc: 'email-address',
+										labelText: 'Email address',
+										classList: [
+											'columns'
+										]
+
+									}
+								);
+							%>
+						</fieldset>
+						<fieldset class="row">
+							<%-
+								include(
+									'../components/button.html',
+									{
+										type: 'submit',
+										text: 'Send me a link',
+										classList: [
+											'small-12'
+										],
+										dataAttr: {
+											'data-hyperlink': '/whitelabel/account-activation-sent/'
+										}
+									}
+								)
+							%>
+						</fieldset>
+						<hr>
+						<div class="row">
+							<p class="columns">
+								We’ll send an email to your inbox with a link to activate. Please click the link inside the email to continue.
+							</p>
+						</div>
+					</form>
+				</section>
+			</div>
+
+	    <%-
+	      /* Sitewide JS */
+	      include('../partials/footer.html');
+	    %>
+
+    	</div>
+
+	</body>
+</html>

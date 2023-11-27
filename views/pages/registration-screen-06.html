@@ -1,0 +1,147 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Register - 06',
+			bodyClassList: [
+				'template', 
+				'template-core', 
+				'template-layout-centered', 
+				'template-registration',
+				'site-registration-06'
+			]
+		}
+	);
+%>
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			classList: 'progress-container-has-sub-title',
+			progressOptions: [
+				{ title: 'Account', state: 'complete', subTitle: 'Personal', href: '/whitelabel/registration/2/' },
+				{ title: 'Details', state: 'complete', subTitle: app.data.user.firstName + ' ' + app.data.user.lastName, href: '/whitelabel/registration/3/' },
+				{ title: 'Security', state: 'active', href: '/whitelabel/registration/6/' },
+				{ title: 'Confirm', state: '', href: '/whitelabel/registration/7/' }
+			],
+
+			backURL: '/whitelabel/registration/1/',
+			
+			registrationProcess: true
+		}
+	);
+%>
+
+
+<div class="row main-container">
+	<section class="large-5 medium-7 small-centered columns section content" data-form-section="details">
+		<form class="callout">
+			<header class="main-header">
+				<h3 class="title">
+					Please select your I.D. type
+				</h3>
+			</header>
+			<div class="row">
+				<section class="columns section content active">
+					<fieldset class="row radio-group-container seperated">
+						<div class="columns radio radio-expanding-section">
+							<input class="needsclick" type="radio" name="sec_id-type" value="Passport" id="sec_passport">
+							<label for="sec_passport">Passport</label>
+							<div class="row">
+								<div class="columns input-container">
+									<input type="text" id="sec_passport-number">
+									<label for="sec_passport-number">Passport number</label>
+								</div>
+								<div class="columns">
+									<label>Expiry date</label>
+								</div>
+								<div class="medium-4 columns select-container">
+									<select id="sec_expiry-day">
+										<option selected="" disabled="" hidden="">&nbsp;</option>
+										<option value="01">01</option>
+										<option value="02">02</option>
+									</select>
+									<label for="sec_expiry-day">
+										Day
+									</label>
+								</div>
+								<div class="medium-4 columns select-container">
+									<select id="sec_expiry-month">
+										<option selected disabled hidden>&nbsp;</option>
+										<option value="01">January</option>
+										<option value="02">Feburary</option>
+										<option value="03">March</option>
+										<option value="04">April</option>
+										<option value="05">May</option>
+										<option value="06">June</option>
+										<option value="07">July</option>
+										<option value="08">August</option>
+										<option value="09">September</option>
+										<option value="10">October</option>
+										<option value="11">November</option>
+										<option value="12">December</option>
+									</select>
+									<label for="sec_expiry-month">
+										Month
+									</label>
+								</div>
+								<div class="medium-4 columns select-container">
+									<select id="sec_expiry-year">
+										<option selected="" disabled="" hidden="">&nbsp;</option>
+										<option value="1998">1998</option>
+										<option value="1997">1997</option>
+									</select>
+									<label for="sec_expiry-year">
+										Year
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="columns radio radio-expanding-section">
+							<input class="needsclick" type="radio" name="sec_id-type" value="Driving License" id="sec_driving-license">
+							<label for="sec_driving-license">Driving license</label>
+							<div class="row">
+								<div class="columns input-container">
+									<input type="text" id="sec_driving-license-number">
+									<label for="sec_driving-license-number">Number</label>
+								</div>
+							</div>
+						</div>
+						<div class="columns radio radio-expanding-section">
+							<input class="needsclick" type="radio" name="sec_id-type" value="National Insurance" id="sec_national-insurance">
+							<label for="sec_national-insurance">Medicare Number</label>
+							<div class="row">
+								<div class="columns input-container">
+									<input type="text" id="sec_national-medicare-number">
+									<label for="sec_national-medicare-number">Number</label>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/button.html',
+								{
+									type: 'submit',
+									text: 'Next',
+									classList: [ 'small-12' ],
+									dataAttr: {
+										'data-role': 'next',
+										'data-form-section-active': 'account',
+										'data-hyperlink': '/whitelabel/registration/7/'
+									}
+								}
+							)
+						%>
+					</fieldset>
+				</section>
+			</div>
+		</form>
+	</section>
+</div>
+
+
+
+	<%-
+	  include('../partials/footer.html');
+	%>

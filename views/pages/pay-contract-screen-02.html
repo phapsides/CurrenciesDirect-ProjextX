@@ -1,0 +1,216 @@
+
+
+	<%-
+		include(
+			'../partials/head.html', {
+				title: 'Pay Contract',
+				bodyClassList: [
+					'template',
+					'template-core', 
+					'template-navigation-progress',
+					'site-pay-contract'
+				]
+			}
+		);
+	%>
+
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Choose deal', state: 'complete', href: '/whitelabel/transactions/pay-contract/1/' },
+				{ title: 'Payment', state: 'active', href: '/whitelabel/transactions/pay-contract/2/' },
+				{ title: 'Confirm and pay', state: '', href: '/whitelabel/transactions/pay-contract/3/' }
+			],
+
+			backURL: '/whitelabel/transactions/currency/empty/',
+			
+			registrationProcess: false
+		}
+	);
+%>
+
+
+
+<div class="row main-container">
+	<div class="row">
+		<header class="large-8 medium-12 main-header columns">
+			<h1 class="title">
+				How would you like to pay us?
+			</h1>
+			<p class="description">
+				Please select a method you wish to pay this transfer with.
+			</p>
+		</header>
+	</div>
+	<div class="row">
+		<div class="large-8 medium-12 columns">
+			<form class="element-group" data-abide>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'amount-due-001',
+								value: 'GBP 6,500',
+								labelText: 'Amount payable',
+								classList: [
+									'small-12',
+									'medium-8',
+									'end',
+									'columns',
+									'small-label'
+								],
+								disabled: true,
+								readOnly: true
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'amount-due-002',
+								value: '1234567',
+								labelText: "Contract number",
+								classList: [
+									'small-12',
+									'medium-8',
+									'columns',
+									'small-label'
+								],
+								disabled: true,
+								readOnly: true
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'amount-due-003',
+								value: '28/02/14',
+								labelText: 'Contract date',
+								classList: [
+									'small-12',
+									'medium-8',
+									'end',
+									'columns',
+									'small-label'
+								],
+								disabled: true,
+								readOnly: true
+							}
+						);
+					%>
+				</fieldset>
+
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'card-number',
+								value: 'GBP - USD',
+								labelText: 'Currency pair',
+								classList: [
+									'small-12',
+									'medium-8',
+									'end',
+									'columns',
+									'small-label'
+								],
+								disabled: true,
+								readOnly: true
+							}
+						);
+					%>
+				</fieldset>
+
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/input-type-text.html',
+							{
+								assoc: 'card-number',
+								value: 'Bank transfer',
+								labelText: 'Currency payment method',
+								classList: [
+									'small-12',
+									'medium-8',
+									'end',
+									'columns',
+									'small-label'
+								],
+								disabled: true,
+								readOnly: true
+							}
+						);
+					%>
+				</fieldset>
+				<fieldset class="row">
+					<%-
+						include(
+							'../components/select.html',
+							{
+								assoc: 'transfer-details-reason-for-transfer-a0',
+								text: 'New payment method',
+								containerClassList: [
+									'medium-8'
+								],
+								optionsClassList: [
+									'needsclick'
+								],
+								options: [
+									{ value: 'a2', text: 'Bank transfer' },
+									{ value: 'a3', text: 'Funds already paid' }
+								]
+							}
+						);
+					%>
+				</fieldset>
+
+
+				<div class="row option-toggle option-a-group option-a2">
+					<p class="columns"> 
+						Simply make a transfer from your bank into our account, using telephone or internet banking. Our bank details are on the next page.
+					</p>
+				</div>
+
+
+
+			</form>
+
+			<div class="row collapse">
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Continue',
+							classList: [
+								'medium-4',
+								'medium-offset-8',
+								'end',
+								'button-continue'
+							],
+							dataAttr: {
+								'data-hyperlink': '/whitelabel/transactions/pay-contract/3/'
+							},
+						}
+					)
+				%>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>

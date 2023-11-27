@@ -1,0 +1,379 @@
+<%-
+include(
+	'../partials/head.html', {
+		title: 'Refer and earn',
+		bodyClassList: [
+			'template', 
+			'template-core', 
+			'template-layout-grid',
+			'site-refer-and-earn'
+		]
+	}
+);
+%> 
+
+
+<%- 
+	include(
+		'../components/navigation-main.html', {
+			navigationOptions: [
+				{ 
+					title: 'Transfer', class: 'menu-item-transfer menu-item-has-sub-menu', 
+					subMenu: [
+						{ href: '/whitelabel/transactions/make-transfer/1/', title: 'Make a transfer' },
+						{ href: '/whitelabel/transactions/buy-currency/1/', title: 'Buy Currency' },
+						{ href: '/whitelabel/transactions/pre-bought-currency/1/', title: 'Transfer pre-bought Currency' }, 
+						{ href: '/whitelabel/transactions/pay-contract/1/', title: 'Pay open deals' }
+					] 
+				},
+				{ title: 'Rate alerts', class: 'menu-item-alerts', href: '/whitelabel/rate-alerts/management/' },
+				{ title: 'Activity', class: 'menu-item-activity-history', href: '/whitelabel/activity-history/' },
+				{ title: 'Recipients', class: 'menu-item-recipients', href: '/whitelabel/recipients/manage/' },
+				{ title: 'Recommend us', class: 'menu-item-refer-and-earn active', href: '/whitelabel/refer-and-earn/' }
+			]
+		}
+	) 
+%>
+
+<nav class="status-notification status-notification-success">
+	<div class="row">
+		<div class="columns">
+			<p>
+				Referal success message
+			</p>
+		</div>
+	</div>
+</nav>
+
+<div class="row main-container">
+	<div class="columns">
+
+		<h1 class="title">
+			Recommend your friends, earn £50 in vouchers!
+		</h1>
+
+	<div class="row show-for-medium-up">
+		<div class="medium-4 columns refer-icon refer-01">
+			<h5 class="row">Step 1:</h5>
+			<p class="row">
+				Recommend your friend or share your link on Facebook or Twitter.
+			</p>
+		</div>
+		<div class="medium-4 columns refer-icon refer-02">
+			<h5 class="row">Step 2:</h5>
+			<p class="row">
+				Your friend transfers a total of £10,000 or more.
+			</p>
+		</div>
+		<div class="medium-4 columns refer-icon refer-03">
+			<h5 class="row">Step 3:</h5>
+			<p class="row">
+				You'll earn a £50 voucher and your friend recieves £50 too!
+			</p>
+		</div>
+	</div>
+
+	<div class="row element-grid">
+
+		<!-- First Column -->
+		<div class="large-6 columns">
+			<div class="row">
+				<form class="columns element-group" data-abide>
+					<header class="element-group-header row">
+						<h4 class="columns element-group-title">
+							Recommend your friend
+						</h4>
+					</header>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'email-address',
+									labelText: 'Email address',
+									value: 'Simonhill@gmail.com',
+									classList: [
+										'columns',
+										'small-label'
+									]
+								}
+							);
+						%>
+					</fieldset>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'first-name',
+									labelText: 'First name',
+									value: 'Simon',
+									classList: [
+										'medium-6',
+										'columns',
+										'small-label'
+									]
+								}
+							);
+						%>
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'last-name',
+									labelText: 'Last name',
+									value: 'Hill',
+									classList: [
+										'medium-6',
+										'columns',
+										'small-label'
+									]
+								}
+							);
+						%>
+					</fieldset>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'phone-number',
+									labelText: 'Phone number',
+									value: '07907619242',
+									classList: [
+										'columns',
+										'small-label'
+									]
+								}
+							);
+						%>
+					</fieldset>
+
+					<fieldset class="row">
+						<!--
+						<%-
+							include(
+								'../components/button.html',
+								{
+									type: 'button',
+									text: 'Add another friend',
+									classList: [ 
+										'medium-6', 
+										'large-5', 
+										'button-tertiary' 
+									],
+									dataAttr: {
+										'data-role': 'buy-now',
+										'data-hyperlink': '/whitelabel/transactions/buy-currency/1/'
+									}
+								}
+							)
+						%>
+						-->
+						<%-
+							include(
+								'../components/button.html',
+								{
+									type: 'button',
+									text: 'Refer now',
+									classList: [ 
+										'medium-6', 
+										'large-5', 
+										'float-right'
+									],
+									dataAttr: {
+										'data-role': 'Refer now',
+										'data-hyperlink': '#'
+									}
+								}
+							)
+						%>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
+		<!-- 2nd Column -->
+		<div class="large-6 columns">
+			<div class="row element-grid">
+				<div class="columns element-group quick-rate-finder" data-abide>
+					<header class="element-group-header row">
+						<h4 class="columns element-group-title">
+							My recommendations so far
+						</h4>
+					</header>
+					<fieldset class="row">
+						<p class="columns">
+							You have invited <a href="#">0</a> friends so far, <a href="#">0</a> of whom have made a transfer.<br>
+							Your total earnings: <a href="#">£0.00</a>
+						</p>
+					</fieldset>
+				</div>
+
+				<div class="columns element-group quick-rate-finder" data-abide>
+					<header class="element-group-header row">
+						<h4 class="columns element-group-title">
+							Share
+						</h4>
+						<p class="columns">
+							Post personal link to Facebook wall, Twitter feed or send a link.
+						</p>
+					</header>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'phone-number',
+									labelText: 'Share link',
+									value: 'http://www.mypersonalUrl.com',
+									classList: [
+										'columns',
+										'small-label',
+										'share-link'
+									]
+								}
+							);
+						%>
+					</fieldset>
+					<fieldset class="row">
+						<p class="columns">
+							<a href="#" class="refer-share-icon refer-share-icon-link copy-link">
+								Copy link
+							</a>
+							<a href="#" class="refer-share-icon refer-share-icon-facebook">
+								Share on Facebook
+							</a>
+							<a href="#" class="refer-share-icon refer-share-icon-twitter">
+								Share on Twitter
+							</a>
+						</p>
+					</fieldset>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+			<!--  New Row -->
+
+	<div class="row element-grid">
+		<div class="small-columns element-group element-group-table">
+
+			<header class="element-group-header row">
+				<h4 class="columns element-group-title">
+					How your recommendations are doing so far
+				</h4>
+			</header>							
+
+			<div class="row">
+				<div class="columns">
+					<table class="table row">
+						<thead class="table-head-expanding-section" data-expanding-section="table-eur">
+							<tr class="row">
+								<th>
+									<span>Name/email</span>
+								</th>
+								<th>
+									<span>Date</span>
+								</th>
+								<th>
+									<span>Registered</span>
+								</th>
+								<th>
+									<span>Made a transfer</span>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="row">
+								<td>
+									<span>Dimitris</span>
+								</td>
+								<td>
+									<span>09/04/14</span>
+								</td>
+								<td class="table-td-status">
+									<span class="status status-complete">
+										Complete
+									</span>
+								</td>
+								<td class="table-td-status">
+									<span class="status status-complete">
+										Complete
+									</span>
+								</td>
+							</tr>
+							<tr class="row">
+								<td>
+									<span>Dimitris</span>
+								</td>
+								<td>
+									<span>09/04/14</span>
+								</td>
+								<td class="table-td-status">
+									<span class="status status-complete">
+										Complete
+									</span>
+								</td>
+								<td class="table-td-status">
+									<span class="status status-complete">
+										Complete
+									</span>
+								</td>
+							</tr>
+							<tr class="row">
+								<td>
+									<span>Dimitris</span>
+								</td>
+								<td>
+									<span>09/04/14</span>
+								</td>
+								<td class="table-td-status">
+									<span class="status status-complete">
+										Complete
+									</span>
+								</td>
+								<td class="table-td-status">
+									<span class="status status-complete">
+										Complete
+									</span>
+								</td>
+							</tr>
+							<tr class="row">
+								<td>
+									<span>Dimitris</span>
+								</td>
+								<td>
+									<span>09/04/14</span>
+								</td>
+								<td class="table-td-status">
+									<span class="status status-complete">
+										Complete
+									</span>
+								</td>
+								<td class="table-td-status">
+									<span class="status status-complete">
+										Complete
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<p>
+		For more information about our recommendation promotion, read our <a target="_blank" href="https://www.currenciesdirect.com/en/info/refer-a-friend" title="">terms and conditions</a>. 
+	</p>
+	</div>
+
+	</div>
+</div>
+
+<%-
+  include('../partials/footer.html');
+%>

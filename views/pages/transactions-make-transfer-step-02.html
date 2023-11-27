@@ -1,0 +1,308 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Transactions - Make Transfer Step 2',
+			bodyClassList: [
+				'template',
+				'template-core', 
+				'template-navigation-progress',
+				'site-transfers',
+				'site-transfers-02'
+			]
+		}
+	);
+%>
+
+<%-
+	include(
+		'../components/navigation-main-progress.html', {
+			progressOptions: [
+				{ title: 'Choose recipient', state: 'complete', href: '/whitelabel/transactions/make-transfer/1/' },
+				{ title: 'Transfer details', state: 'active', href: '/whitelabel/transactions/make-transfer/2/' },
+				{ title: 'Payment', state: '', href: '/whitelabel/transactions/make-transfer/3/' },
+				{ title: 'Confirm transfer', state: '', href: '/whitelabel/transactions/make-transfer/4/' }
+			],
+
+			backURL: '/whitelabel/transactions/make-transfer/0/',
+			
+			registrationProcess: false
+		}
+	);
+%>
+
+
+<div class="row main-container">
+	<div class="row">
+		<header class="large-8 medium-7 main-header columns">
+			<h1 class="title">
+				Your transfer details
+			</h1>
+			<p class="end description">
+				Tell us some information about your transfer, and how much you’re looking to send.
+			</p>
+		</header>
+	</div>
+	<div class="row">
+		<div class="large-8 medium-7 columns" id="sticky-anchor">
+			<form class="formNoBorder" data-abide>
+
+				<div class="element-group">
+
+					<div class="row" data-expanding-section="how-much-do-you-want-to-transfer">
+
+								
+
+							<div class="columns">
+
+								<br>
+								<h5 class="columns">
+									How much do you want to transfer?
+								</h5>
+
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/select.html',
+								{
+									assoc: 'transfer-details-reason-for-transfer-1',
+									text: 'Send to recipient',
+									containerClassList: [
+										'medium-7',
+										'columns'
+									],
+									options: [
+										{ text: 'GBP - Pounds sterling', value: 'gbp' },
+										{ text: 'EUR - Euro', value: 'eur' },
+										{ text: 'USD - US Dollar', value: 'usd' },
+										{ text: 'ZAR - South African rand', value: 'zar' }
+									]
+								}
+							);
+						%>
+
+						<span class="small-3 medium-1 columns column-operand second-line">
+							<span class="currency currency-buy"></span>
+						</span>
+
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'amount-due-002',
+									labelText: 'Amount',
+									value: '',
+									classList: [
+										'small-9',
+										'medium-4',
+										'columns',
+										'end'
+									]
+								}
+							);
+						%>
+
+					</fieldset>
+					<fieldset class="row">
+
+						<%-
+							include(
+								'../components/select.html',
+								{
+									assoc: 'transfer-details-sell-currency',
+									text: 'You pay',
+									containerClassList: [
+										'medium-7',
+										'columns'
+									],
+
+									options: [
+										{ text: 'AUD - Australian Dollar', value: 'aud' },
+										{ text: 'GBP - Pounds sterling', value: 'gbp' },
+										{ text: 'EUR - Euro', value: 'eur' },
+										{ text: 'USD - US Dollar', value: 'usd' },
+										{ text: 'ZAR - South African rand', value: 'zar' }
+									]
+								}
+							);
+						%>
+
+						<span class="small-3 medium-1 columns column-operand second-line">
+							<span class="currency currency-pay"></span>
+						</span>
+
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'amount-due-001',
+									labelText: 'Amount',
+									value: '',
+									classList: [
+										'small-9',
+										'medium-4',
+										'columns',
+										'end'
+									]
+								}
+							)
+						%>
+						<div class="wallet-balance-hint">
+							<div class="columns medium-6 wallets-container">
+								<small class="wallet gbp">(Your wallet balance: <strong>1,340.00 GBP</strong>)</small>
+								<small class="wallet usd">(Your wallet balance: <strong>22,542.30 USD</strong>)</small>
+								<small class="wallet eur">(Your wallet balance: <strong>00.00 EUR</strong>)</small>
+							</div>
+							<div class="columns medium-1 end">
+								<a class="tooltip-popup" href="#" title="Explanation goes here."></a>
+							</div>
+						</div>
+
+
+					</fieldset>
+
+					<div class="row">
+
+						<div class="small-12">
+
+							<fieldset class="row">
+
+
+								<div class="row">
+									
+									<%-
+										include(
+											'../components/button.html',
+											{
+												type: 'button',
+												text: 'Get rate',
+												classList: [
+													'button-outline',
+													'get-rate',
+													'medium-3',
+													'end'
+												]
+											}
+										)
+									%>
+
+									<%-
+										include(
+											'../components/input-type-text.html',
+											{
+												assoc: 'amount-due-005',
+												value: '1.14567',
+												labelText: 'Exchange rate',
+												classList: [
+													'small-9',
+													'medium-4',
+													'columns',
+													'small-label',
+													'end'
+												],
+												disabled: true,
+												readOnly: true
+											}
+										);
+									%>
+						
+								</div>
+
+								<div class="row">
+									<small class="medium-6 medium-offset-3 columns copy-rate-refresh">The rate will refresh in <strong>5 sec</strong>.</small>
+									
+								</div>
+
+
+							</fieldset>
+
+							<fieldset class="row">
+						<%-
+							include(
+								'../components/select.html',
+								{
+									assoc: 'transfer-details-reason-for-transfer-1',
+									text: 'Reason for this transfer',
+									containerClassList: [
+										'medium-12',	
+										'large-7',
+										'end',
+										'columns'
+									],
+									optionsClassList: [
+										'needsclick'
+									],
+									options: [
+										{ value: '2', text: 'Payment of salaries' },
+										{ value: '3', text: 'Repatriation of overseas earnings' },
+										{ value: '4', text: 'Property purchase' },
+										{ value: '5', text: 'International investment' },
+										{ value: '6', text: 'E-commerce sales' },
+										{ value: '7', text: 'Charitable payment' },
+										{ value: '0', text: 'Other' }
+									]
+								}
+							);
+						%>
+					</fieldset>
+					<fieldset class="row">
+						<%-
+							include(
+								'../components/input-type-text.html',
+								{
+									assoc: 'recipient-reference',
+									labelText: 'Recipient reference',
+									max: '18',
+									classList: [
+										'medium-12',	
+										'large-7',
+										'end',
+										'columns'
+									]
+								}
+							);
+						%>
+					</fieldset>
+
+						</div>
+				</div>
+
+						</div>
+					</div>
+
+				</div>
+
+				<div class="row collapse">
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Continue',
+							classList: [
+								'medium-4',
+								'medium-offset-8',
+								'end'
+							],
+							dataAttr: {
+								'data-role': 'button-continue',
+								'data-hyperlink': '/whitelabel/transactions/make-transfer/3/',
+								'disabled': 'disabled'
+							},
+						}
+					)
+				%>
+			</div>
+
+			</form>
+			
+		</div>
+
+		
+	</div>
+
+</div>
+
+
+<%-
+  include('../partials/footer.html');
+%>

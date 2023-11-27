@@ -1,0 +1,133 @@
+<%-
+	include(
+		'../partials/head.html', {
+			title: 'Login',
+			bodyClassList: [
+				'template',
+				'template-core',
+				'template-layout-centered', 
+				'template-registration'
+			]
+		}
+	)
+%>
+
+
+<%-
+	include(
+		'../components/navigation-main-simple.html', {
+		loggedIn: false,
+		registrationProcess: false,
+		closeOpt: true
+		}
+	);
+%>
+
+
+<div class="row main-container">
+	<section class="large-5 medium-7 small-centered section content active">
+		<form class="callout" data-abide>
+			<header class="main-header columns">
+				<h1 class="title">
+					Welcome to Travel Money Oz
+				</h1>
+				<p class="description">
+					First time online? If you haven't used our online service before, you'll need to <a href="/whitelabel/account-activation/" title="">activate your account here</a>.
+				</p>
+			</header>
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/input-type-email.html',
+						{
+							assoc: 'email-address',
+							labelText: 'Email address',
+							classList: [
+								'columns'
+							]
+						}
+					);
+				%>
+				<%-
+					include(
+						'../components/input-type-password.html',
+						{
+							assoc: 'password',
+							labelText: 'Password',
+							classList: [
+								'columns'
+							]
+						}
+					);
+				%>
+			</fieldset>
+			<fieldset class="row">
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'submit',
+							text: 'Log in',
+							classList: [
+							],
+							dataAttr: {
+								'data-hyperlink': '/whitelabel/dashboard/'
+							}
+						}
+					)
+				%>
+			</fieldset>
+
+			<fieldset class="row">
+				<div class="small-6 columns checkbox-container checkbox-small">
+					<input class="needsclick" type="checkbox" name="add-another-person" value="No" id="no">
+					<label for="no">Remember me</label>
+				</div>
+				<div class="small-6 columns forget">
+					<a href="/whitelabel/password/forgotten/" title="">
+						Forgot password?
+					</a>
+				</div>
+			</fieldset>
+			<fieldset class="row signUp">
+				<div class="medium-7 columns">
+					<p>Don't have an account?</p>
+				</div>
+				<%-
+					include(
+						'../components/button.html',
+						{
+							type: 'button',
+							text: 'Sign up',
+							classList: [
+								'medium-5',
+								'button-outline'
+							],
+							dataAttr: {
+								'data-hyperlink': '/whitelabel/registration/1/'
+							}
+						}
+					)
+				%>
+			</fieldset>
+			<fieldset class="row languageSelector">
+				<div class="columns center">
+					<a class="button-simple button-simple-inline" href="#" data-index-link="LanguageSelect" data-open="language-select" aria-controls="language-select" aria-haspopup="true">
+						Change language preference
+					</a>
+				</div>
+			</fieldset>
+		</form>
+	</section>
+</div>
+
+
+<%-
+  include('../partials/modal-choose-language.html');
+%>
+
+
+<%-
+  /* Sitewide JS */
+  include('../partials/footer.html');
+%>

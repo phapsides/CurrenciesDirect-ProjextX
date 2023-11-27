@@ -1,0 +1,45 @@
+<%
+/*
+
+# Input Text Component
+
+### Notes
+
+### Usage
+
+# Simple
+include('components/input-type-text.html', assoc: 'firstname');
+
+# Verbose
+include(
+	'components/textarea.html',
+	{
+		assoc: 'email-address',
+		value: 'Grace',
+		labelText: 'First name',
+		classList: [
+			'columns'
+		],
+		required: false,
+		readonly: false
+	}
+);
+
+*/
+%>
+
+<div class="small-12 textarea-container <%=
+	(typeof classList != 'undefined' ? classList.join(' ') : '')
+%>">
+	<textarea
+		type="text"
+		id="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>"
+		<% if (typeof maxLength != 'undefined') { %>maxlength="<%- maxLength %>" <% } %>
+		<% if (typeof title != 'undefined') { %>title="<%- title %>" <% } %>
+		<% if (typeof readOnly != 'undefined') { %>readonly <% } %>
+	><%= (typeof value != 'undefined' ? value : '') %></textarea>
+	<label for="<%= (typeof assoc != 'undefined' ? assoc : '__undefined') %>">
+		<%= (typeof labelText != 'undefined' ? labelText : '') %>
+	</label>
+</div>
+
